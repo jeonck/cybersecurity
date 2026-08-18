@@ -28,17 +28,6 @@ flowchart LR
 
 ## II. Structure & Process
 
-| Field | Description |
-|---|---|
-| Metric Name | The indicator being tracked, e.g. mean time to detect, patch compliance rate. |
-| Data Source | The underlying log or system the metric is pulled from. |
-| Current Value | Latest measured value for the reporting period. |
-| Target/Threshold | Goal or acceptable range set by the security program. |
-| Trend | Direction of change versus the prior reporting period. |
-| Reporting Owner | Person accountable for accuracy of this metric. |
-| Reporting Frequency | How often the metric is refreshed, e.g. weekly, monthly, quarterly. |
-| Escalation Trigger | Condition under which the metric prompts leadership escalation. |
-
 ```mermaid
 sequenceDiagram
     participant Teams as "Security Sub-teams"
@@ -52,6 +41,17 @@ sequenceDiagram
     CISO->>Exec: "Present trends and flag threshold breaches"
     Exec->>CISO: "Direct resourcing or remediation priorities"
 ```
+
+| Field | Description |
+|---|---|
+| Metric Name | The indicator being tracked, e.g. mean time to detect, patch compliance rate. |
+| Data Source | The underlying log or system the metric is pulled from. |
+| Current Value | Latest measured value for the reporting period. |
+| Target/Threshold | Goal or acceptable range set by the security program. |
+| Trend | Direction of change versus the prior reporting period. |
+| Reporting Owner | Person accountable for accuracy of this metric. |
+| Reporting Frequency | How often the metric is refreshed, e.g. weekly, monthly, quarterly. |
+| Escalation Trigger | Condition under which the metric prompts leadership escalation. |
 
 Underlying metrics are refreshed continuously or weekly depending on the source system, the consolidated dashboard is compiled monthly, and a summarized version is presented to executive leadership or the board on a quarterly cycle.
 

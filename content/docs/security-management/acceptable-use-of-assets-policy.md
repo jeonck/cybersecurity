@@ -28,17 +28,6 @@ flowchart LR
 
 ## II. Structure & Process
 
-| Field | Description |
-|---|---|
-| Scope of Assets | Devices, accounts, and services covered — laptops, mobile devices, email, cloud storage, network access. |
-| Permitted Use | Business use and reasonable incidental personal use, clearly bounded. |
-| Prohibited Activities | Unauthorized software installation, unlicensed media, illegal content, harassment, personal commercial activity. |
-| Monitoring & Privacy Notice | Statement that company assets and traffic may be logged, inspected, or monitored. |
-| BYOD Provisions | Rules for personally owned devices accessing corporate data, if permitted. |
-| Consequences of Violation | Disciplinary escalation path, up to termination and legal referral. |
-| Acknowledgment Requirement | Signature or digital attestation required at onboarding and on policy update. |
-| Exception Process | How a business unit requests a deviation, and who approves it. |
-
 ```mermaid
 sequenceDiagram
     participant Security as "Security/GRC Team"
@@ -52,6 +41,17 @@ sequenceDiagram
     Security->>Employee: "Distribute policy and collect acknowledgment"
     Employee->>Security: "Sign attestation at onboarding and on update"
 ```
+
+| Field | Description |
+|---|---|
+| Scope of Assets | Devices, accounts, and services covered — laptops, mobile devices, email, cloud storage, network access. |
+| Permitted Use | Business use and reasonable incidental personal use, clearly bounded. |
+| Prohibited Activities | Unauthorized software installation, unlicensed media, illegal content, harassment, personal commercial activity. |
+| Monitoring & Privacy Notice | Statement that company assets and traffic may be logged, inspected, or monitored. |
+| BYOD Provisions | Rules for personally owned devices accessing corporate data, if permitted. |
+| Consequences of Violation | Disciplinary escalation path, up to termination and legal referral. |
+| Acknowledgment Requirement | Signature or digital attestation required at onboarding and on policy update. |
+| Exception Process | How a business unit requests a deviation, and who approves it. |
 
 The AUP is drafted by security with HR input, approved by the ISMS steering committee, and reissued for signature whenever materially revised — typically on an annual cycle or after a significant incident prompts a scope change.
 

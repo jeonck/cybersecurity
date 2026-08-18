@@ -28,17 +28,6 @@ flowchart LR
 
 ## II. Structure & Process
 
-| Field | Description |
-|---|---|
-| Attack Vector | Category of DDoS threat covered, e.g. **UDP/ICMP Flood**, **TCP SYN Flood**, **DNS/NTP Reflection**, **HTTP GET Flood**, **Slowloris** |
-| Mitigation Control | Defense mechanism assigned to the vector, e.g. **SYN Cookies**, **rate limiting**, **WAF** rule, **scrubbing center**, **anycast** routing |
-| Detection Threshold | Traffic or connection-rate value that triggers automated or manual mitigation |
-| Upstream / ISP Contact | Escalation point for volumetric attacks exceeding local link capacity |
-| Runbook Reference | Link to the step-by-step response procedure for this vector |
-| Last Tabletop Drill Date | Date the mitigation was last exercised or simulated |
-| Drill Outcome | Pass/fail notes, time-to-mitigate, and follow-up actions |
-| Owner | Individual or team accountable for keeping the control current |
-
 ```mermaid
 sequenceDiagram
     participant NE as "Network Engineer"
@@ -53,6 +42,17 @@ sequenceDiagram
     Lead->>NOC: "Approve and schedule next tabletop drill"
     NOC->>NE: "Report drill results back into tracker"
 ```
+
+| Field | Description |
+|---|---|
+| Attack Vector | Category of DDoS threat covered, e.g. **UDP/ICMP Flood**, **TCP SYN Flood**, **DNS/NTP Reflection**, **HTTP GET Flood**, **Slowloris** |
+| Mitigation Control | Defense mechanism assigned to the vector, e.g. **SYN Cookies**, **rate limiting**, **WAF** rule, **scrubbing center**, **anycast** routing |
+| Detection Threshold | Traffic or connection-rate value that triggers automated or manual mitigation |
+| Upstream / ISP Contact | Escalation point for volumetric attacks exceeding local link capacity |
+| Runbook Reference | Link to the step-by-step response procedure for this vector |
+| Last Tabletop Drill Date | Date the mitigation was last exercised or simulated |
+| Drill Outcome | Pass/fail notes, time-to-mitigate, and follow-up actions |
+| Owner | Individual or team accountable for keeping the control current |
 
 The tracker is updated whenever a control changes or a drill runs, and reviewed quarterly by the security lead alongside capacity and threat-intelligence updates.
 

@@ -27,18 +27,6 @@ flowchart LR
 
 ## II. Structure & Process
 
-| Field | Description |
-|---|---|
-| System/Workload | The application, database, or resource the backup protects. |
-| Backup Method | Snapshot, managed backup service, or cross-region/cross-account replication. |
-| Backup Frequency | How often backups are taken. |
-| Retention Period | How long backups are kept before expiry. |
-| RPO Target | Recovery point objective — maximum tolerable data loss. |
-| RTO Target | Recovery time objective — maximum tolerable downtime. |
-| Last Restore Test Date | When the restore was most recently exercised. |
-| Restore Test Result | Pass, fail, or pass with noted gaps. |
-| Next Scheduled Test | Date of the next planned restore exercise. |
-
 ```mermaid
 sequenceDiagram
     participant Admin as "Backup Administrator"
@@ -52,6 +40,18 @@ sequenceDiagram
     Owner->>DR: "Sign off or request remediation"
     DR->>Auditor: "Provide tracker as recovery assurance evidence"
 ```
+
+| Field | Description |
+|---|---|
+| System/Workload | The application, database, or resource the backup protects. |
+| Backup Method | Snapshot, managed backup service, or cross-region/cross-account replication. |
+| Backup Frequency | How often backups are taken. |
+| Retention Period | How long backups are kept before expiry. |
+| RPO Target | Recovery point objective — maximum tolerable data loss. |
+| RTO Target | Recovery time objective — maximum tolerable downtime. |
+| Last Restore Test Date | When the restore was most recently exercised. |
+| Restore Test Result | Pass, fail, or pass with noted gaps. |
+| Next Scheduled Test | Date of the next planned restore exercise. |
 
 Backup jobs run on their configured schedule, but restore tests are executed on a separate, explicit cadence — typically quarterly for critical workloads — with the workload owner signing off on whether the result met agreed RTO/RPO targets before the tracker entry is closed.
 

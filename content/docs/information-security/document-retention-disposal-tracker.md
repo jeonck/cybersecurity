@@ -27,6 +27,15 @@ flowchart LR
 
 ## II. Structure & Process
 
+```mermaid
+flowchart LR
+    Legal["Legal/Compliance"] -- "Defines required retention period" --> Tracker["Retention & Disposal Tracker"]
+    Owner["Data/Record Owner"] -- "Confirms disposal trigger reached" --> Tracker
+    Tracker -- "Authorizes disposal action" --> IT["IT/Records Management"]
+    IT -- "Executes and logs disposal evidence" --> Tracker
+    Tracker -- "Reviewed annually" --> Legal
+```
+
 | Field | Description |
 |---|---|
 | Record Category | Type of record, e.g. financial, HR, customer transaction, security log. |
@@ -37,15 +46,6 @@ flowchart LR
 | Disposal Trigger | Event that starts the countdown to disposal, e.g. contract end date. |
 | Responsible Party | Team or role accountable for executing disposal. |
 | Last Disposal Action | Date and evidence of the most recent completed disposal. |
-
-```mermaid
-flowchart LR
-    Legal["Legal/Compliance"] -- "Defines required retention period" --> Tracker["Retention & Disposal Tracker"]
-    Owner["Data/Record Owner"] -- "Confirms disposal trigger reached" --> Tracker
-    Tracker -- "Authorizes disposal action" --> IT["IT/Records Management"]
-    IT -- "Executes and logs disposal evidence" --> Tracker
-    Tracker -- "Reviewed annually" --> Legal
-```
 
 The tracker is updated whenever a new record category is onboarded or a regulation changes, and disposal actions are executed on a recurring schedule (commonly quarterly) once a record's retention period and disposal trigger have both been met, with evidence of destruction logged for audit purposes.
 

@@ -28,6 +28,16 @@ flowchart LR
 
 ## II. Structure & Process
 
+```mermaid
+flowchart TD
+    D["Detect potential incident"] --> L["Log against policy criteria"]
+    L --> T["Triage and assign severity tier"]
+    T --> E["Escalate per defined chain"]
+    E --> R["Resolve within policy timeline"]
+    R --> P["Report and conduct post-incident review"]
+    P --> D
+```
+
 | Field | Description |
 |---|---|
 | Incident Definition | Criteria that distinguish an incident from a routine service event or minor issue |
@@ -38,16 +48,6 @@ flowchart LR
 | Scope | Categories covered: security, IT operations, physical safety, HR/personnel |
 | Review Cadence | Frequency of policy review and re-approval by executive sponsors |
 | Enforcement | Consequences for non-compliance with reporting or response obligations |
-
-```mermaid
-flowchart TD
-    D["Detect potential incident"] --> L["Log against policy criteria"]
-    L --> T["Triage and assign severity tier"]
-    T --> E["Escalate per defined chain"]
-    E --> R["Resolve within policy timeline"]
-    R --> P["Report and conduct post-incident review"]
-    P --> D
-```
 
 The policy is reviewed at least annually or after any incident that exposes a gap in classification, escalation, or notification requirements.
 

@@ -28,17 +28,6 @@ flowchart LR
 
 ## II. Structure & Process
 
-| Field | Description |
-|---|---|
-| Scope Statement | Business units, systems, and locations the ISMS covers. |
-| Security Objectives | High-level goals the ISMS is designed to achieve, tied to business risk appetite. |
-| Governance Structure | Roles and committees responsible for ISMS oversight, e.g. the ISMS steering committee. |
-| Risk Management Approach | Reference to the risk assessment and treatment methodology the ISMS follows. |
-| Policy Hierarchy | How subordinate policies (password, classification, transfer) relate back to this charter. |
-| Legal & Regulatory Commitment | Statement of commitment to applicable laws, standards, and contractual obligations. |
-| Continual Improvement Cycle | The plan-do-check-act (or equivalent) cadence for reviewing and improving the ISMS. |
-| Management Review | Frequency and scope of leadership review of ISMS performance. |
-
 ```mermaid
 sequenceDiagram
     participant CISO as "CISO"
@@ -52,6 +41,17 @@ sequenceDiagram
     CISO->>Auditor: "Provide ISMS policy as certification evidence"
     Auditor->>Committee: "Report findings for management review"
 ```
+
+| Field | Description |
+|---|---|
+| Scope Statement | Business units, systems, and locations the ISMS covers. |
+| Security Objectives | High-level goals the ISMS is designed to achieve, tied to business risk appetite. |
+| Governance Structure | Roles and committees responsible for ISMS oversight, e.g. the ISMS steering committee. |
+| Risk Management Approach | Reference to the risk assessment and treatment methodology the ISMS follows. |
+| Policy Hierarchy | How subordinate policies (password, classification, transfer) relate back to this charter. |
+| Legal & Regulatory Commitment | Statement of commitment to applicable laws, standards, and contractual obligations. |
+| Continual Improvement Cycle | The plan-do-check-act (or equivalent) cadence for reviewing and improving the ISMS. |
+| Management Review | Frequency and scope of leadership review of ISMS performance. |
 
 The CISO drafts the ISMS charter with the steering committee, executive leadership approves it and commits resources, and internal or external audit periodically validates that the ISMS operates as documented. Management review occurs at least annually, feeding into the plan-do-check-act improvement cycle.
 

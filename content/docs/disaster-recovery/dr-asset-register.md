@@ -28,17 +28,6 @@ flowchart LR
 
 ## II. Structure & Process
 
-| Field | Description |
-|---|---|
-| Asset/System Name | The application, database, or infrastructure component being tracked. |
-| Business Owner | The individual or team accountable for the asset. |
-| Criticality Tier | Recovery priority tier assigned per the DR Approach Document. |
-| Dependencies | Upstream and downstream systems required for this asset to function. |
-| Target RTO | Maximum acceptable downtime for this specific asset. |
-| Target RPO | Maximum acceptable data loss for this specific asset. |
-| Recovery Site/Method | Where and how the asset is restored (hot site, cloud failover, backup restore). |
-| Last Validated Date | Date the entry was last confirmed accurate against the live environment. |
-
 ```mermaid
 sequenceDiagram
     participant Owner as "Asset/System Owner"
@@ -51,6 +40,17 @@ sequenceDiagram
     Coordinator->>Plan: "Feed prioritized asset list into recovery plan"
     Coordinator->>Register: "Reconcile against CMDB on fixed cadence"
 ```
+
+| Field | Description |
+|---|---|
+| Asset/System Name | The application, database, or infrastructure component being tracked. |
+| Business Owner | The individual or team accountable for the asset. |
+| Criticality Tier | Recovery priority tier assigned per the DR Approach Document. |
+| Dependencies | Upstream and downstream systems required for this asset to function. |
+| Target RTO | Maximum acceptable downtime for this specific asset. |
+| Target RPO | Maximum acceptable data loss for this specific asset. |
+| Recovery Site/Method | Where and how the asset is restored (hot site, cloud failover, backup restore). |
+| Last Validated Date | Date the entry was last confirmed accurate against the live environment. |
 
 ## III. Best Practices & Comparison
 

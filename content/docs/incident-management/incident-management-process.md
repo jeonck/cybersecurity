@@ -28,17 +28,6 @@ flowchart LR
 
 ## II. Structure & Process
 
-| Field | Description |
-|---|---|
-| Detection Source | Origin of the alert, e.g. **SIEM** correlation rule, **EDR** behavioral alert, user report |
-| Incident ID | Unique tracking number assigned at logging for chain-of-custody and reporting |
-| Severity Level | Tier assigned during triage per the governing policy |
-| Assigned Responder | Analyst or incident commander responsible for the response |
-| Containment Action | Immediate step taken to limit spread (isolate host, disable account, block IP) |
-| Timeline | Timestamped sequence of detection, triage, containment, and resolution events |
-| Root Cause | Underlying technical or process failure identified during investigation |
-| Corrective Action | Follow-up remediation or control change to prevent recurrence |
-
 ```mermaid
 sequenceDiagram
     participant SIEM as "SIEM / EDR"
@@ -54,6 +43,17 @@ sequenceDiagram
     Team->>IC: "Report resolution"
     IC->>Analyst: "Conduct post-incident review"
 ```
+
+| Field | Description |
+|---|---|
+| Detection Source | Origin of the alert, e.g. **SIEM** correlation rule, **EDR** behavioral alert, user report |
+| Incident ID | Unique tracking number assigned at logging for chain-of-custody and reporting |
+| Severity Level | Tier assigned during triage per the governing policy |
+| Assigned Responder | Analyst or incident commander responsible for the response |
+| Containment Action | Immediate step taken to limit spread (isolate host, disable account, block IP) |
+| Timeline | Timestamped sequence of detection, triage, containment, and resolution events |
+| Root Cause | Underlying technical or process failure identified during investigation |
+| Corrective Action | Follow-up remediation or control change to prevent recurrence |
 
 Every incident record is closed only after root cause and corrective actions are documented, and high-severity incidents proceed to a formal post-incident review meeting.
 

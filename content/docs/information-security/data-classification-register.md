@@ -27,6 +27,15 @@ flowchart LR
 
 ## II. Structure & Process
 
+```mermaid
+flowchart LR
+    Owner["Data Owner"] -- "Proposes classification" --> Security["Security/GRC Team"]
+    Security -- "Validates against policy criteria" --> Register["Data Classification Register"]
+    Register -- "Drives control requirements" --> Access["Access Rights Matrix"]
+    Register -- "Drives control requirements" --> Retention["Retention & Disposal Tracker"]
+    Register -- "Reviewed annually or on data change" --> Owner
+```
+
 | Field | Description |
 |---|---|
 | Data Asset/System | The dataset, repository, or system holding the data. |
@@ -37,15 +46,6 @@ flowchart LR
 | Storage Location | Where the data physically or logically resides. |
 | Retention Reference | Link to the applicable retention schedule entry. |
 | Last Reviewed | Date the classification was last validated. |
-
-```mermaid
-flowchart LR
-    Owner["Data Owner"] -- "Proposes classification" --> Security["Security/GRC Team"]
-    Security -- "Validates against policy criteria" --> Register["Data Classification Register"]
-    Register -- "Drives control requirements" --> Access["Access Rights Matrix"]
-    Register -- "Drives control requirements" --> Retention["Retention & Disposal Tracker"]
-    Register -- "Reviewed annually or on data change" --> Owner
-```
 
 Classification is assigned when a data asset is created or onboarded, re-validated whenever its content or regulatory scope materially changes, and formally reviewed on an annual cycle by the data owner in coordination with security.
 

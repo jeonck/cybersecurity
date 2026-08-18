@@ -28,6 +28,16 @@ flowchart LR
 
 ## II. Structure & Process
 
+```mermaid
+flowchart TD
+    A["Problem identified from incident pattern or major incident"] --> B["Problem Record opened and categorized"]
+    B --> C["Root cause analysis performed"]
+    C --> D["Workaround documented as Known Error"]
+    D --> E["Permanent fix implemented"]
+    E --> F["Resolution verified against linked incidents"]
+    F --> G["Problem Record closed"]
+```
+
 | Field | Description |
 |---|---|
 | Problem ID | Unique identifier for the record. |
@@ -38,16 +48,6 @@ flowchart LR
 | Known Error Status | Whether the problem has been published as a known error. |
 | Linked Incidents | Incident records that triggered or are associated with this problem. |
 | Resolution/Closure Details | Permanent fix applied and verification evidence. |
-
-```mermaid
-flowchart TD
-    A["Problem identified from incident pattern or major incident"] --> B["Problem Record opened and categorized"]
-    B --> C["Root cause analysis performed"]
-    C --> D["Workaround documented as Known Error"]
-    D --> E["Permanent fix implemented"]
-    E --> F["Resolution verified against linked incidents"]
-    F --> G["Problem Record closed"]
-```
 
 The record stays open through diagnosis and remediation, referencing every linked incident as evidence of ongoing impact, and closes only when the permanent fix is verified to prevent recurrence.
 

@@ -28,6 +28,15 @@ flowchart LR
 
 ## II. Structure & Process
 
+```mermaid
+flowchart LR
+    Req["Requestor submits IP + justification"] --> Rev["Security reviewer validates need"]
+    Rev -->|"Approved"| Impl["Network engineer implements rule"]
+    Rev -->|"Rejected"| Req
+    Impl --> Track["Entry logged in tracker with expiration"]
+    Track --> Audit["Quarterly review purges stale entries"]
+```
+
 | Field | Description |
 |---|---|
 | IP Address / CIDR | The address, range, or subnet being listed |
@@ -38,15 +47,6 @@ flowchart LR
 | Enforcement Point | Device or service applying the rule, e.g. **firewall**, **WAF**, **cloud security group** |
 | Date Added | When the entry took effect |
 | Expiration / Review Date | Date the entry must be re-justified or removed |
-
-```mermaid
-flowchart LR
-    Req["Requestor submits IP + justification"] --> Rev["Security reviewer validates need"]
-    Rev -->|"Approved"| Impl["Network engineer implements rule"]
-    Rev -->|"Rejected"| Req
-    Impl --> Track["Entry logged in tracker with expiration"]
-    Track --> Audit["Quarterly review purges stale entries"]
-```
 
 Entries are requested on demand, approved before implementation, and swept quarterly so expired or unjustified rules are removed rather than accumulating indefinitely.
 

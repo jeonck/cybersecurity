@@ -28,17 +28,6 @@ flowchart LR
 
 ## II. Structure & Process
 
-| Field | Description |
-|---|---|
-| Minimum Length & Complexity | Character-length floor and composition rules, or passphrase guidance where complexity rules are relaxed. |
-| Rotation Requirements | Whether and how often passwords must change, distinguishing standard and privileged accounts. |
-| Reuse Restrictions | Number of prior passwords that cannot be reused. |
-| MFA Requirements | Systems and roles where multi-factor authentication is mandatory. |
-| Lockout Thresholds | Failed-attempt count that triggers account lockout, and unlock procedure. |
-| Storage & Transmission | Requirement that passwords be hashed at rest and never transmitted in plaintext. |
-| Privileged Account Rules | Stricter requirements for admin, service, and root-level accounts, often paired with a password vault. |
-| Exception Process | How a system that cannot meet the standard (legacy application) is documented and compensated for. |
-
 ```mermaid
 sequenceDiagram
     participant Security as "Security/IAM Team"
@@ -52,6 +41,17 @@ sequenceDiagram
     IT->>User: "Apply technical controls at login"
     Security->>Committee: "Report compliance metrics and exceptions"
 ```
+
+| Field | Description |
+|---|---|
+| Minimum Length & Complexity | Character-length floor and composition rules, or passphrase guidance where complexity rules are relaxed. |
+| Rotation Requirements | Whether and how often passwords must change, distinguishing standard and privileged accounts. |
+| Reuse Restrictions | Number of prior passwords that cannot be reused. |
+| MFA Requirements | Systems and roles where multi-factor authentication is mandatory. |
+| Lockout Thresholds | Failed-attempt count that triggers account lockout, and unlock procedure. |
+| Storage & Transmission | Requirement that passwords be hashed at rest and never transmitted in plaintext. |
+| Privileged Account Rules | Stricter requirements for admin, service, and root-level accounts, often paired with a password vault. |
+| Exception Process | How a system that cannot meet the standard (legacy application) is documented and compensated for. |
 
 Security drafts the standard against current industry guidance, the ISMS steering committee approves it, and IT operations implements enforcement through directory policy and MFA configuration. The policy is reviewed annually and whenever authentication guidance from standards bodies materially changes.
 

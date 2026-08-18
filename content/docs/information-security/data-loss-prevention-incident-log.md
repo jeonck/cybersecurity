@@ -28,17 +28,6 @@ flowchart LR
 
 ## II. Structure & Process
 
-| Field | Description |
-|---|---|
-| Alert ID | Unique identifier from the DLP tool or ticketing system. |
-| Detection Channel | Where the event was flagged, e.g. email, endpoint, cloud storage, USB. |
-| Data Classification Involved | Sensitivity tier of the data implicated in the alert. |
-| User/Device | Individual or asset associated with the triggering action. |
-| Disposition | Outcome of triage: false positive, policy violation, confirmed exfiltration. |
-| Severity | Assigned risk level based on data sensitivity and intent. |
-| Action Taken | Response, e.g. block, user coaching, HR referral, escalation to breach process. |
-| Repeat Occurrence | Whether the same user/device has prior entries. |
-
 ```mermaid
 sequenceDiagram
     participant DLP as "DLP Tooling"
@@ -52,6 +41,17 @@ sequenceDiagram
     SecOps->>IR: "Escalate confirmed exfiltration as a breach"
     SecOps->>SecOps: "Log outcome and close alert"
 ```
+
+| Field | Description |
+|---|---|
+| Alert ID | Unique identifier from the DLP tool or ticketing system. |
+| Detection Channel | Where the event was flagged, e.g. email, endpoint, cloud storage, USB. |
+| Data Classification Involved | Sensitivity tier of the data implicated in the alert. |
+| User/Device | Individual or asset associated with the triggering action. |
+| Disposition | Outcome of triage: false positive, policy violation, confirmed exfiltration. |
+| Severity | Assigned risk level based on data sensitivity and intent. |
+| Action Taken | Response, e.g. block, user coaching, HR referral, escalation to breach process. |
+| Repeat Occurrence | Whether the same user/device has prior entries. |
 
 Each alert is logged at detection and closed once triaged, typically within one business day; the log itself is reviewed weekly by security operations and summarized monthly for management reporting.
 

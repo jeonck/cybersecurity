@@ -28,15 +28,6 @@ flowchart LR
 
 ## II. Structure & Process
 
-| Field | Description |
-|---|---|
-| Process Stage | Named phase, e.g. identification, logging, categorization, diagnosis. |
-| Entry Criteria | Condition that triggers the stage, such as recurrence threshold. |
-| Key Activities | Actions performed by the problem manager or investigation team. |
-| Roles Involved | Service desk, problem manager, technical SMEs, security team. |
-| Exit Criteria | Deliverable required to advance, e.g. confirmed root cause. |
-| Supporting Records | Problem Record, Known Error Record, or Major Problem Report produced. |
-
 ```mermaid
 flowchart LR
     A["Problem identification"] --> B["Problem logging"]
@@ -47,6 +38,15 @@ flowchart LR
     F --> G["Resolution verified"]
     G --> H["Problem closure"]
 ```
+
+| Field | Description |
+|---|---|
+| Process Stage | Named phase, e.g. identification, logging, categorization, diagnosis. |
+| Entry Criteria | Condition that triggers the stage, such as recurrence threshold. |
+| Key Activities | Actions performed by the problem manager or investigation team. |
+| Roles Involved | Service desk, problem manager, technical SMEs, security team. |
+| Exit Criteria | Deliverable required to advance, e.g. confirmed root cause. |
+| Supporting Records | Problem Record, Known Error Record, or Major Problem Report produced. |
 
 Problems are identified either proactively, through trend analysis of incident data, or reactively, from a single major incident; both paths converge on the same logging, diagnosis, and closure stages so every problem is tracked with equal rigor regardless of origin.
 

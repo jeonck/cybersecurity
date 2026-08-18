@@ -28,18 +28,6 @@ flowchart LR
 
 ## II. Structure & Process
 
-| Field | Description |
-|---|---|
-| Incident ID | Unique identifier for tracking and cross-referencing. |
-| Detection Source | CSPM/CWPP/CNAPP alert, cloud audit trail, or user report. |
-| Affected Account/Resource | The specific cloud account, service, or resource involved. |
-| Severity | Impact classification, e.g. critical, high, medium, low. |
-| Detection Time | Timestamp the incident was first flagged. |
-| Containment Actions | Immediate steps taken to limit exposure. |
-| Root Cause | Underlying configuration, credential, or process failure identified. |
-| Remediation | Fix applied and verification that it holds. |
-| Closure Date | When the incident was formally closed. |
-
 ```mermaid
 sequenceDiagram
     participant Detect as "Detection Tool/Analyst"
@@ -54,6 +42,18 @@ sequenceDiagram
     SOC->>Owner: "Coordinate root-cause remediation"
     SOC->>SOC: "Log root cause and close incident"
 ```
+
+| Field | Description |
+|---|---|
+| Incident ID | Unique identifier for tracking and cross-referencing. |
+| Detection Source | CSPM/CWPP/CNAPP alert, cloud audit trail, or user report. |
+| Affected Account/Resource | The specific cloud account, service, or resource involved. |
+| Severity | Impact classification, e.g. critical, high, medium, low. |
+| Detection Time | Timestamp the incident was first flagged. |
+| Containment Actions | Immediate steps taken to limit exposure. |
+| Root Cause | Underlying configuration, credential, or process failure identified. |
+| Remediation | Fix applied and verification that it holds. |
+| Closure Date | When the incident was formally closed. |
 
 Every alert that reaches triage gets a log entry regardless of eventual severity, and the log is only closed once containment, root cause, and remediation are all recorded — with a post-incident review feeding lessons learned back into the configuration baseline.
 

@@ -28,17 +28,6 @@ flowchart LR
 
 ## II. Structure & Process
 
-| Field | Description |
-|---|---|
-| Timestamp | Date and time of the access event |
-| Identity | User, device, or service account attempting access |
-| Source Location | Originating IP, VLAN, or physical port |
-| Target Zone / Segment | Network segment or resource the identity attempted to reach |
-| Authentication Method | e.g. **802.1X**, **VPN certificate**, **MFA**, **SPA** (Single Packet Authorization) |
-| Decision | Allowed, denied, or quarantined |
-| Policy Reference | Access control policy or rule that produced the decision |
-| Reviewed By | Analyst who signed off during periodic log review |
-
 ```mermaid
 sequenceDiagram
     participant Dev as "Device / User"
@@ -52,6 +41,17 @@ sequenceDiagram
     SOC->>Log: "Review log for anomalies (daily/weekly)"
     SOC->>NAC: "Escalate policy change if pattern found"
 ```
+
+| Field | Description |
+|---|---|
+| Timestamp | Date and time of the access event |
+| Identity | User, device, or service account attempting access |
+| Source Location | Originating IP, VLAN, or physical port |
+| Target Zone / Segment | Network segment or resource the identity attempted to reach |
+| Authentication Method | e.g. **802.1X**, **VPN certificate**, **MFA**, **SPA** (Single Packet Authorization) |
+| Decision | Allowed, denied, or quarantined |
+| Policy Reference | Access control policy or rule that produced the decision |
+| Reviewed By | Analyst who signed off during periodic log review |
 
 Log entries are generated automatically at each access attempt; the SOC reviews aggregated entries on a daily or weekly cadence and escalates recurring denials or unexpected access patterns.
 

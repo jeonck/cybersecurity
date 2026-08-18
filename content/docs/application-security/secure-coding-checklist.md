@@ -27,16 +27,6 @@ flowchart LR
 
 ## II. Structure & Process
 
-| Field | Description |
-|---|---|
-| Category | Weakness class covered, e.g. **Input Validation**, **Authentication**, **Session Management**, **Output Encoding** |
-| Requirement | Specific, testable rule (e.g. "use parameterized queries, never string-concatenated SQL") |
-| Applies To | Language, framework, or component the rule targets |
-| Verification Method | How compliance is confirmed — code review, SAST rule, or manual test |
-| Severity if Violated | Impact rating used to decide whether a violation blocks release |
-| Reference | Link to the underlying standard, e.g. **OWASP ASVS** (Application Security Verification Standard) control ID |
-| Sign-off | Reviewer and date confirming the checklist was completed for the release |
-
 ```mermaid
 sequenceDiagram
     participant Dev as "Developer"
@@ -52,6 +42,16 @@ sequenceDiagram
     Reviewer->>AppSec: "Escalate unresolved high-severity items"
     AppSec->>Dev: "Approve merge or request changes"
 ```
+
+| Field | Description |
+|---|---|
+| Category | Weakness class covered, e.g. **Input Validation**, **Authentication**, **Session Management**, **Output Encoding** |
+| Requirement | Specific, testable rule (e.g. "use parameterized queries, never string-concatenated SQL") |
+| Applies To | Language, framework, or component the rule targets |
+| Verification Method | How compliance is confirmed — code review, SAST rule, or manual test |
+| Severity if Violated | Impact rating used to decide whether a violation blocks release |
+| Reference | Link to the underlying standard, e.g. **OWASP ASVS** (Application Security Verification Standard) control ID |
+| Sign-off | Reviewer and date confirming the checklist was completed for the release |
 
 The checklist is applied on every pull request and re-validated at release time; AppSec updates the requirement set quarterly as new weakness classes emerge.
 

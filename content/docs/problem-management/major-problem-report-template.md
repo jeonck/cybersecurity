@@ -28,6 +28,16 @@ flowchart LR
 
 ## II. Structure & Process
 
+```mermaid
+flowchart TD
+    A["Major problem identified and prioritized"] --> B["Root cause analysis completed"]
+    B --> C["Known error and workaround published"]
+    C --> D["Permanent fix implemented and verified"]
+    D --> E["Major Problem Report drafted"]
+    E --> F["Review with stakeholders and leadership"]
+    F --> G["Follow-up preventive actions tracked to completion"]
+```
+
 | Field | Description |
 |---|---|
 | Report ID | Unique identifier linking the report to the source Problem Record. |
@@ -38,16 +48,6 @@ flowchart LR
 | Resolution Summary | Permanent fix delivered and how it was validated. |
 | Lessons Learned | Process, tooling, or design gaps identified during review. |
 | Follow-Up Actions | Preventive actions with owners and target dates. |
-
-```mermaid
-flowchart TD
-    A["Major problem identified and prioritized"] --> B["Root cause analysis completed"]
-    B --> C["Known error and workaround published"]
-    C --> D["Permanent fix implemented and verified"]
-    D --> E["Major Problem Report drafted"]
-    E --> F["Review with stakeholders and leadership"]
-    F --> G["Follow-up preventive actions tracked to completion"]
-```
 
 Drafting begins once the permanent fix is verified, and the report is finalized after stakeholder review confirms the root cause, impact figures, and follow-up actions are accurate and assigned.
 

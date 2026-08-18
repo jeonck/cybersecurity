@@ -28,17 +28,6 @@ flowchart LR
 
 ## II. Structure & Process
 
-| Field | Description |
-|---|---|
-| Classification Tiers | The defined sensitivity levels, e.g. public, internal, confidential, restricted. |
-| Tier Criteria | Objective criteria for assigning data to each tier (legal, contractual, competitive impact). |
-| Labeling Requirements | How classified data and documents must be marked, physically and digitally. |
-| Handling Rules per Tier | Access, storage, transmission, and retention requirements for each tier. |
-| Data Owner Responsibilities | Who assigns and can reclassify data, and how often classification is revisited. |
-| Third-Party Handling | Rules for sharing classified data with vendors or partners. |
-| Declassification Process | How and when data may be moved to a lower tier. |
-| Exceptions | Process for handling data that doesn't map cleanly to a defined tier. |
-
 ```mermaid
 sequenceDiagram
     participant Owner as "Data Owner"
@@ -52,6 +41,17 @@ sequenceDiagram
     Owner->>Staff: "Communicate tier assignments and labeling rules"
     Staff->>Owner: "Flag unclassified or ambiguous data for review"
 ```
+
+| Field | Description |
+|---|---|
+| Classification Tiers | The defined sensitivity levels, e.g. public, internal, confidential, restricted. |
+| Tier Criteria | Objective criteria for assigning data to each tier (legal, contractual, competitive impact). |
+| Labeling Requirements | How classified data and documents must be marked, physically and digitally. |
+| Handling Rules per Tier | Access, storage, transmission, and retention requirements for each tier. |
+| Data Owner Responsibilities | Who assigns and can reclassify data, and how often classification is revisited. |
+| Third-Party Handling | Rules for sharing classified data with vendors or partners. |
+| Declassification Process | How and when data may be moved to a lower tier. |
+| Exceptions | Process for handling data that doesn't map cleanly to a defined tier. |
 
 Data owners propose tier assignments for the datasets they are accountable for, security defines the corresponding technical controls, and the ISMS steering committee approves the scheme. Classification of individual datasets is revisited whenever data inventory changes; the policy framework itself is reviewed annually.
 

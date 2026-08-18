@@ -28,17 +28,6 @@ flowchart LR
 
 ## II. Structure & Process
 
-| Field | Description |
-|---|---|
-| App Version / Build | Identifier of the build under test |
-| Platform | **iOS** or **Android**, with minimum OS version tested |
-| Test Category | e.g. **Insecure Data Storage**, **Transport Layer Security**, **Reverse Engineering / Tampering**, **Authentication**, **Permission Scope** |
-| Test Method | Static binary analysis, dynamic instrumentation (e.g. on a rooted/jailbroken device), or manual review |
-| Finding | Description of the weakness identified, if any |
-| Severity | Risk rating of the finding |
-| Status | **Open**, **In Remediation**, **Retested**, or **Closed** |
-| Tester | Individual or vendor who performed the assessment |
-
 ```mermaid
 sequenceDiagram
     participant Mobile as "Mobile Engineering"
@@ -54,6 +43,17 @@ sequenceDiagram
     AppSec->>Lead: "Confirm closure or escalate blockers"
     Lead->>QA: "Approve build for store submission"
 ```
+
+| Field | Description |
+|---|---|
+| App Version / Build | Identifier of the build under test |
+| Platform | **iOS** or **Android**, with minimum OS version tested |
+| Test Category | e.g. **Insecure Data Storage**, **Transport Layer Security**, **Reverse Engineering / Tampering**, **Authentication**, **Permission Scope** |
+| Test Method | Static binary analysis, dynamic instrumentation (e.g. on a rooted/jailbroken device), or manual review |
+| Finding | Description of the weakness identified, if any |
+| Severity | Risk rating of the finding |
+| Status | **Open**, **In Remediation**, **Retested**, or **Closed** |
+| Tester | Individual or vendor who performed the assessment |
 
 Testing runs on every major release and on any build introducing new storage, networking, or authentication logic; the tracker is reviewed by the AppSec lead before store submission.
 

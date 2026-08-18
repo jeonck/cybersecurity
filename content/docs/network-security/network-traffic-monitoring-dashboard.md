@@ -28,17 +28,6 @@ flowchart LR
 
 ## II. Structure & Process
 
-| Field | Description |
-|---|---|
-| Data Source | Flow export, mirrored traffic, or IDS/IPS feed contributing to the view, e.g. **NetFlow**, **sFlow**, **packet capture** |
-| Metric / Widget | Displayed measure, e.g. throughput by segment, top talkers, protocol distribution |
-| Baseline Range | Expected normal value or pattern for the metric |
-| Alert Threshold | Value that triggers an anomaly alert, e.g. sudden spike in outbound volume |
-| Alert Severity | Priority assigned to threshold breaches, e.g. **low / medium / critical** |
-| Escalation Path | Team or on-call rotation notified when a critical alert fires |
-| Retention Window | How long historical traffic data is kept for investigation |
-| Dashboard Owner | Team responsible for maintaining widgets and thresholds |
-
 ```mermaid
 sequenceDiagram
     participant Src as "Flow / IDS Sources"
@@ -52,6 +41,17 @@ sequenceDiagram
     NOC->>SOC: "Escalate suspected security event"
     SOC->>Dash: "Tune thresholds after investigation"
 ```
+
+| Field | Description |
+|---|---|
+| Data Source | Flow export, mirrored traffic, or IDS/IPS feed contributing to the view, e.g. **NetFlow**, **sFlow**, **packet capture** |
+| Metric / Widget | Displayed measure, e.g. throughput by segment, top talkers, protocol distribution |
+| Baseline Range | Expected normal value or pattern for the metric |
+| Alert Threshold | Value that triggers an anomaly alert, e.g. sudden spike in outbound volume |
+| Alert Severity | Priority assigned to threshold breaches, e.g. **low / medium / critical** |
+| Escalation Path | Team or on-call rotation notified when a critical alert fires |
+| Retention Window | How long historical traffic data is kept for investigation |
+| Dashboard Owner | Team responsible for maintaining widgets and thresholds |
 
 The dashboard ingests data continuously; the NOC watches it around the clock for operational anomalies and escalates suspected security events to the SOC, which periodically tunes alert thresholds based on investigation outcomes.
 

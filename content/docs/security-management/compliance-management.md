@@ -28,17 +28,6 @@ flowchart LR
 
 ## II. Structure & Process
 
-| Field | Description |
-|---|---|
-| Obligation Inventory | Register of applicable laws, standards, and contractual security clauses. |
-| Control Mapping | Which internal control satisfies which obligation, avoiding duplicated effort. |
-| Evidence Collection | How proof of control operation is gathered and stored for audit. |
-| Gap Tracking | Register of identified deficiencies, owners, and remediation deadlines. |
-| Audit Calendar | Schedule of internal reviews, external assessments, and certification cycles. |
-| Regulatory Change Monitoring | Process for detecting new or amended obligations. |
-| Reporting Cadence | How compliance status is reported to leadership and the board. |
-| Non-Compliance Escalation | Path for escalating unresolved gaps that carry legal or contractual risk. |
-
 ```mermaid
 sequenceDiagram
     participant GRC as "GRC Team"
@@ -52,6 +41,17 @@ sequenceDiagram
     Committee->>GRC: "Approve remediation priorities"
     GRC->>Auditor: "Present evidence during certification/audit"
 ```
+
+| Field | Description |
+|---|---|
+| Obligation Inventory | Register of applicable laws, standards, and contractual security clauses. |
+| Control Mapping | Which internal control satisfies which obligation, avoiding duplicated effort. |
+| Evidence Collection | How proof of control operation is gathered and stored for audit. |
+| Gap Tracking | Register of identified deficiencies, owners, and remediation deadlines. |
+| Audit Calendar | Schedule of internal reviews, external assessments, and certification cycles. |
+| Regulatory Change Monitoring | Process for detecting new or amended obligations. |
+| Reporting Cadence | How compliance status is reported to leadership and the board. |
+| Non-Compliance Escalation | Path for escalating unresolved gaps that carry legal or contractual risk. |
 
 The GRC team maintains the obligation inventory and control mapping continuously, with legal input on interpretation. Status is reported to the ISMS steering committee on a fixed cadence, and external audits or certification assessments validate the program on their own cycle, typically annually.
 

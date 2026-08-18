@@ -28,17 +28,6 @@ flowchart LR
 
 ## II. Structure & Process
 
-| Field | Description |
-|---|---|
-| System/Service in Scope | The application, database, or infrastructure component the plan covers. |
-| Recovery Team & Roles | Named individuals or roles responsible for executing each recovery step. |
-| Activation Criteria | Conditions under which this specific plan is invoked. |
-| Step-by-Step Recovery Procedure | Ordered, executable instructions to restore the system. |
-| Target RTO | Maximum acceptable downtime for this system. |
-| Target RPO | Maximum acceptable data loss for this system. |
-| Dependencies & Prerequisites | Upstream systems, credentials, or infrastructure that must be available first. |
-| Test/Exercise History | Record of tabletop or full-failover exercises run against this plan and their outcomes. |
-
 ```mermaid
 flowchart LR
     A["Plan drafted"] --> B["Tested via tabletop or full exercise"]
@@ -49,6 +38,17 @@ flowchart LR
     F --> G["Closure and lessons learned"]
     G --> A
 ```
+
+| Field | Description |
+|---|---|
+| System/Service in Scope | The application, database, or infrastructure component the plan covers. |
+| Recovery Team & Roles | Named individuals or roles responsible for executing each recovery step. |
+| Activation Criteria | Conditions under which this specific plan is invoked. |
+| Step-by-Step Recovery Procedure | Ordered, executable instructions to restore the system. |
+| Target RTO | Maximum acceptable downtime for this system. |
+| Target RPO | Maximum acceptable data loss for this system. |
+| Dependencies & Prerequisites | Upstream systems, credentials, or infrastructure that must be available first. |
+| Test/Exercise History | Record of tabletop or full-failover exercises run against this plan and their outcomes. |
 
 ## III. Best Practices & Comparison
 

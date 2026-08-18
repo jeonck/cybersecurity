@@ -28,17 +28,6 @@ flowchart LR
 
 ## II. Structure & Process
 
-| Field | Description |
-|---|---|
-| Location & Date | Building, room, or facility affected and when the damage was discovered |
-| Damage Type | Category, e.g. water, fire, structural collapse, storm, equipment failure |
-| Reported By | Individual who first identified or reported the damage |
-| Severity & Safety Risk | Assessment of whether the area is safe to occupy or requires evacuation |
-| IT / Infrastructure Impact | Whether servers, network gear, or access-control systems are affected |
-| Immediate Action | Steps taken to secure the area and prevent further damage |
-| Repair & Restoration Plan | Vendor, timeline, and cost estimate for remediation |
-| Insurance / Compliance Notes | Claim reference and any regulatory notifications required |
-
 ```mermaid
 flowchart TD
     D["Damage discovered"] --> L["Facilities logs report"]
@@ -51,6 +40,17 @@ flowchart TD
     Assess --> Repair["Repair and restore"]
     Repair --> Close["Close report with insurance/compliance notes"]
 ```
+
+| Field | Description |
+|---|---|
+| Location & Date | Building, room, or facility affected and when the damage was discovered |
+| Damage Type | Category, e.g. water, fire, structural collapse, storm, equipment failure |
+| Reported By | Individual who first identified or reported the damage |
+| Severity & Safety Risk | Assessment of whether the area is safe to occupy or requires evacuation |
+| IT / Infrastructure Impact | Whether servers, network gear, or access-control systems are affected |
+| Immediate Action | Steps taken to secure the area and prevent further damage |
+| Repair & Restoration Plan | Vendor, timeline, and cost estimate for remediation |
+| Insurance / Compliance Notes | Claim reference and any regulatory notifications required |
 
 Facilities logs the report within hours of discovery, and IT security is notified immediately if the affected area houses infrastructure or physical access controls.
 

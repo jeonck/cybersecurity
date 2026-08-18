@@ -28,17 +28,6 @@ flowchart LR
 
 ## II. Structure & Process
 
-| Field | Description |
-|---|---|
-| Intern Name & Program | Identity of the intern and the department or program they are assigned to |
-| Supervisor | Name of the direct supervisor or program manager |
-| Date & Location | When and where the incident occurred |
-| Incident Type | Category, e.g. safety, conduct, policy violation, data/device exposure |
-| Description | Objective, factual account of what happened |
-| Witnesses | Names of any other staff present or involved |
-| Immediate Action Taken | Steps taken at the time (first aid, access revocation, verbal warning) |
-| Follow-up / Corrective Action | HR decision or remediation, including any escalation to IT security |
-
 ```mermaid
 flowchart TD
     D["Incident observed or reported"] --> L["Supervisor logs report"]
@@ -49,6 +38,17 @@ flowchart TD
     Loop --> R
     R --> Rev["Review and close with corrective action"]
 ```
+
+| Field | Description |
+|---|---|
+| Intern Name & Program | Identity of the intern and the department or program they are assigned to |
+| Supervisor | Name of the direct supervisor or program manager |
+| Date & Location | When and where the incident occurred |
+| Incident Type | Category, e.g. safety, conduct, policy violation, data/device exposure |
+| Description | Objective, factual account of what happened |
+| Witnesses | Names of any other staff present or involved |
+| Immediate Action Taken | Steps taken at the time (first aid, access revocation, verbal warning) |
+| Follow-up / Corrective Action | HR decision or remediation, including any escalation to IT security |
 
 HR logs the report within 24 hours of notification and loops in IT security immediately if the incident involves system access, a company device, or data handling.
 

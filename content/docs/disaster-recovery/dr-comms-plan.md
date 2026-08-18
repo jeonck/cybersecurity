@@ -28,17 +28,6 @@ flowchart LR
 
 ## II. Structure & Process
 
-| Field | Description |
-|---|---|
-| Stakeholder Group | Internal staff, executives, customers, regulators, or media. |
-| Notification Trigger | The event or elapsed time that requires this group to be informed. |
-| Channel | Email, SMS/paging, status page, press release, or direct call. |
-| Message Template/Reference | Pre-approved wording or reference to the template library. |
-| Responsible Communicator | Named role authorized to send the notification. |
-| Approval Requirement | Whether legal or executive sign-off is required before sending. |
-| Escalation Timing | Maximum time allowed between disaster declaration and first notification per group. |
-| Regulatory/Legal Review Needed | Whether the event triggers mandatory disclosure obligations. |
-
 ```mermaid
 sequenceDiagram
     participant IC as "Incident Commander"
@@ -53,6 +42,17 @@ sequenceDiagram
     Comms->>External: "Send external notification if required"
     Comms->>Staff: "Issue stand-down notice at closure"
 ```
+
+| Field | Description |
+|---|---|
+| Stakeholder Group | Internal staff, executives, customers, regulators, or media. |
+| Notification Trigger | The event or elapsed time that requires this group to be informed. |
+| Channel | Email, SMS/paging, status page, press release, or direct call. |
+| Message Template/Reference | Pre-approved wording or reference to the template library. |
+| Responsible Communicator | Named role authorized to send the notification. |
+| Approval Requirement | Whether legal or executive sign-off is required before sending. |
+| Escalation Timing | Maximum time allowed between disaster declaration and first notification per group. |
+| Regulatory/Legal Review Needed | Whether the event triggers mandatory disclosure obligations. |
 
 ## III. Best Practices & Comparison
 

@@ -28,17 +28,6 @@ flowchart LR
 
 ## II. Structure & Process
 
-| Field | Description |
-|---|---|
-| Incident ID & Severity | Unique tracking number and severity tier (**Critical**/**High**) |
-| Detection Source | How the incident was found, e.g. **SIEM** alert, **EDR** detection, external report |
-| Impact Summary | Systems, data, or business processes affected and estimated scope |
-| Timeline | Chronological, timestamped record from first indicator to resolution |
-| Containment & Eradication | Actions taken to isolate affected systems and remove the threat |
-| Evidence & Chain of Custody | Forensic artifacts collected and their handling record, per digital forensics practice |
-| Root Cause | Technical or procedural failure that allowed the incident |
-| Corrective Actions & Owner | Remediation items with assigned owners and due dates |
-
 ```mermaid
 sequenceDiagram
     participant SIEM as "SIEM / EDR"
@@ -54,6 +43,17 @@ sequenceDiagram
     Forensics->>IC: "Report findings"
     IC->>CISO: "Submit major incident report for sign-off"
 ```
+
+| Field | Description |
+|---|---|
+| Incident ID & Severity | Unique tracking number and severity tier (**Critical**/**High**) |
+| Detection Source | How the incident was found, e.g. **SIEM** alert, **EDR** detection, external report |
+| Impact Summary | Systems, data, or business processes affected and estimated scope |
+| Timeline | Chronological, timestamped record from first indicator to resolution |
+| Containment & Eradication | Actions taken to isolate affected systems and remove the threat |
+| Evidence & Chain of Custody | Forensic artifacts collected and their handling record, per digital forensics practice |
+| Root Cause | Technical or procedural failure that allowed the incident |
+| Corrective Actions & Owner | Remediation items with assigned owners and due dates |
 
 Evidence collection follows chain-of-custody practice — timestamped, hashed, and logged from collection to closure — so the report can withstand legal or regulatory scrutiny.
 

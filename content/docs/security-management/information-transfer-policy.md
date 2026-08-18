@@ -28,17 +28,6 @@ flowchart LR
 
 ## II. Structure & Process
 
-| Field | Description |
-|---|---|
-| Approved Channels | Permitted transfer methods per classification tier — encrypted email, secure file transfer, physical courier. |
-| Encryption Requirements | Minimum encryption standard for data in transit, by tier. |
-| Third-Party Transfer Rules | Requirements before sharing data with vendors or partners, including contractual data-protection clauses. |
-| Physical Media Controls | Rules for transferring data on removable media or hardware. |
-| Authorization Requirements | Who must approve transfer of confidential or restricted data before it occurs. |
-| DLP/Monitoring | Automated controls that detect or block unauthorized transfer attempts. |
-| Cross-Border Transfer | Additional legal review required when data crosses jurisdictional boundaries. |
-| Incident Reporting | Process for reporting a transfer made in error or to an unauthorized recipient. |
-
 ```mermaid
 sequenceDiagram
     participant Sender as "Data Sender"
@@ -52,6 +41,17 @@ sequenceDiagram
     Sender->>Recipient: "Transfer data via approved channel"
     Security->>Security: "Monitor via DLP for policy violations"
 ```
+
+| Field | Description |
+|---|---|
+| Approved Channels | Permitted transfer methods per classification tier — encrypted email, secure file transfer, physical courier. |
+| Encryption Requirements | Minimum encryption standard for data in transit, by tier. |
+| Third-Party Transfer Rules | Requirements before sharing data with vendors or partners, including contractual data-protection clauses. |
+| Physical Media Controls | Rules for transferring data on removable media or hardware. |
+| Authorization Requirements | Who must approve transfer of confidential or restricted data before it occurs. |
+| DLP/Monitoring | Automated controls that detect or block unauthorized transfer attempts. |
+| Cross-Border Transfer | Additional legal review required when data crosses jurisdictional boundaries. |
+| Incident Reporting | Process for reporting a transfer made in error or to an unauthorized recipient. |
 
 The data owner authorizes transfer of confidential or restricted data, security confirms the required channel and encryption controls, and DLP tooling monitors for violations after the fact. The policy is reviewed annually and whenever a new transfer channel or third-party integration is introduced.
 

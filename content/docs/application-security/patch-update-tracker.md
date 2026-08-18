@@ -28,17 +28,6 @@ flowchart LR
 
 ## II. Structure & Process
 
-| Field | Description |
-|---|---|
-| Component | Application, service, framework, or library affected, with current version |
-| Vulnerability / CVE ID | Identifier of the known weakness, sourced from vendor advisories, NVD, or an SCA tool |
-| Severity | Risk rating, typically **CVSS** score plus exploitability context (e.g. actively exploited in the wild) |
-| Patched Version | Version that resolves the issue |
-| Remediation Deadline | SLA-driven date by which the patch must be applied, based on severity |
-| Status | **Open**, **Scheduled**, **In Progress**, **Verified**, or **Risk Accepted** |
-| Owning Team | Engineering team responsible for applying and validating the patch |
-| Compensating Control | Interim mitigation (WAF rule, feature flag, network restriction) if the patch cannot be applied immediately |
-
 ```mermaid
 sequenceDiagram
     participant SCA as "SCA / Vulnerability Scanner"
@@ -53,6 +42,17 @@ sequenceDiagram
     Eng->>AppSec: "Submit for verification"
     AppSec->>Lead: "Escalate any SLA breaches"
 ```
+
+| Field | Description |
+|---|---|
+| Component | Application, service, framework, or library affected, with current version |
+| Vulnerability / CVE ID | Identifier of the known weakness, sourced from vendor advisories, NVD, or an SCA tool |
+| Severity | Risk rating, typically **CVSS** score plus exploitability context (e.g. actively exploited in the wild) |
+| Patched Version | Version that resolves the issue |
+| Remediation Deadline | SLA-driven date by which the patch must be applied, based on severity |
+| Status | **Open**, **Scheduled**, **In Progress**, **Verified**, or **Risk Accepted** |
+| Owning Team | Engineering team responsible for applying and validating the patch |
+| Compensating Control | Interim mitigation (WAF rule, feature flag, network restriction) if the patch cannot be applied immediately |
 
 New entries are logged continuously as scanners and vendor advisories surface issues; the tracker itself is reviewed weekly by the AppSec team and audited monthly for SLA compliance.
 

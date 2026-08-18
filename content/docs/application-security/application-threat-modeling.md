@@ -28,16 +28,6 @@ flowchart LR
 
 ## II. Structure & Process
 
-| Field | Description |
-|---|---|
-| System / Feature | Component or feature being modeled, with a data flow diagram reference |
-| Trust Boundary | Point where data crosses between differently-trusted zones (e.g. client to API, service to database) |
-| Threat | Specific attacker scenario, categorized by **STRIDE** or an equivalent taxonomy |
-| Likelihood / Impact | Qualitative or scored assessment of risk |
-| Mitigation | Control that addresses the threat, e.g. input validation, authentication, encryption |
-| Status | **Identified**, **Mitigation Planned**, **Mitigated**, or **Accepted Risk** |
-| Reviewer | AppSec representative who validated the model |
-
 ```mermaid
 sequenceDiagram
     participant Eng as "Engineering (Design Owner)"
@@ -53,6 +43,16 @@ sequenceDiagram
     Arch->>Lead: "Sign off before implementation begins"
     Eng->>AppSec: "Re-review on major architecture change"
 ```
+
+| Field | Description |
+|---|---|
+| System / Feature | Component or feature being modeled, with a data flow diagram reference |
+| Trust Boundary | Point where data crosses between differently-trusted zones (e.g. client to API, service to database) |
+| Threat | Specific attacker scenario, categorized by **STRIDE** or an equivalent taxonomy |
+| Likelihood / Impact | Qualitative or scored assessment of risk |
+| Mitigation | Control that addresses the threat, e.g. input validation, authentication, encryption |
+| Status | **Identified**, **Mitigation Planned**, **Mitigated**, or **Accepted Risk** |
+| Reviewer | AppSec representative who validated the model |
 
 Threat modeling is performed at design time for any new system or major feature, and re-run whenever a trust boundary changes; AppSec reviews the model at each architecture review gate.
 

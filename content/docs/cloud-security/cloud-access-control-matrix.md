@@ -28,18 +28,6 @@ flowchart LR
 
 ## II. Structure & Process
 
-| Field | Description |
-|---|---|
-| Cloud Account/Subscription | The specific account, project, or subscription the entry applies to. |
-| Identity Type | Human user, group, federated identity, or service/machine account. |
-| Role/Policy Name | The IAM role or managed policy assigned. |
-| Permission Scope | Actions permitted, e.g. read-only, contributor, administrator. |
-| Resource Scope | Boundary of the grant, e.g. specific resource group, tag, or account-wide. |
-| MFA Enforced | Whether multi-factor authentication is required for this identity. |
-| Business Justification | Why this identity requires this level of cloud access. |
-| Approver | Resource owner or cloud security lead who authorized the grant. |
-| Last Review Date | Date of the most recent access recertification. |
-
 ```mermaid
 sequenceDiagram
     participant Requester as "Requesting Team"
@@ -53,6 +41,18 @@ sequenceDiagram
     CloudSec->>Owner: "Send matrix for periodic recertification"
     Owner->>Auditor: "Provide matrix as posture review evidence"
 ```
+
+| Field | Description |
+|---|---|
+| Cloud Account/Subscription | The specific account, project, or subscription the entry applies to. |
+| Identity Type | Human user, group, federated identity, or service/machine account. |
+| Role/Policy Name | The IAM role or managed policy assigned. |
+| Permission Scope | Actions permitted, e.g. read-only, contributor, administrator. |
+| Resource Scope | Boundary of the grant, e.g. specific resource group, tag, or account-wide. |
+| MFA Enforced | Whether multi-factor authentication is required for this identity. |
+| Business Justification | Why this identity requires this level of cloud access. |
+| Approver | Resource owner or cloud security lead who authorized the grant. |
+| Last Review Date | Date of the most recent access recertification. |
 
 The matrix is updated whenever a role, policy, or service account is provisioned or changed, and undergoes full recertification on a fixed cadence — typically monthly for administrative and cross-account roles, and quarterly for standard access — with resource owners attesting each entry is still required.
 

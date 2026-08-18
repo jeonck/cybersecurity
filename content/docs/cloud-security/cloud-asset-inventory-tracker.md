@@ -28,6 +28,14 @@ flowchart LR
 
 ## II. Structure & Process
 
+```mermaid
+flowchart LR
+    Scan["Automated Discovery Scan\n(CSPM / API / Billing)"] -- "Surfaces new or changed assets" --> Reconcile["Platform Team Reconciles Inventory"]
+    Reconcile -- "Unowned or unexpected asset found" --> Flag["Flag for Owner Assignment"]
+    Flag -- "Owner confirms or asset is decommissioned" --> Update["Inventory Updated"]
+    Update -- "Feeds scoped review" --> Review["Security Review of Shadow/Orphaned Assets"]
+```
+
 | Field | Description |
 |---|---|
 | Asset ID | Unique identifier or ARN/resource ID assigned by the provider. |
@@ -39,14 +47,6 @@ flowchart LR
 | Data Classification | Sensitivity of data the asset stores or processes, if any. |
 | Discovery Method | Agentless API scan, CSPM tool, billing reconciliation, or manual registration. |
 | Last Verified Date | When the asset's existence and ownership were last confirmed. |
-
-```mermaid
-flowchart LR
-    Scan["Automated Discovery Scan\n(CSPM / API / Billing)"] -- "Surfaces new or changed assets" --> Reconcile["Platform Team Reconciles Inventory"]
-    Reconcile -- "Unowned or unexpected asset found" --> Flag["Flag for Owner Assignment"]
-    Flag -- "Owner confirms or asset is decommissioned" --> Update["Inventory Updated"]
-    Update -- "Feeds scoped review" --> Review["Security Review of Shadow/Orphaned Assets"]
-```
 
 Discovery scans run continuously or on a fixed schedule (typically daily), with the platform team reconciling results into the inventory and routing any unowned or unexpected asset to security for a shadow-resource review before it is either assigned an owner or decommissioned.
 

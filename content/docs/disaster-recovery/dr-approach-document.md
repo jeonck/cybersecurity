@@ -28,6 +28,15 @@ flowchart LR
 
 ## II. Structure & Process
 
+```mermaid
+flowchart LR
+    A["Business Impact Analysis conducted"] --> B["Approach drafted by DR coordinator"]
+    B --> C["Reviewed by IT/security leadership"]
+    C --> D["Approved by executive sponsor"]
+    D --> E["Feeds system-level DR Plan Template"]
+    E --> F["Revisited on annual cycle or major change"]
+```
+
 | Field | Description |
 |---|---|
 | Document Scope | Business units, sites, and system categories covered by the DR strategy. |
@@ -38,15 +47,6 @@ flowchart LR
 | Target RTO/RPO Bands | Organization-wide recovery time and recovery point targets by tier, used as inputs to system-level plans. |
 | Review Cadence | How often the approach is revisited relative to business and infrastructure change. |
 | Executive Sponsor | Leadership role accountable for the strategy and its funding. |
-
-```mermaid
-flowchart LR
-    A["Business Impact Analysis conducted"] --> B["Approach drafted by DR coordinator"]
-    B --> C["Reviewed by IT/security leadership"]
-    C --> D["Approved by executive sponsor"]
-    D --> E["Feeds system-level DR Plan Template"]
-    E --> F["Revisited on annual cycle or major change"]
-```
 
 ## III. Best Practices & Comparison
 

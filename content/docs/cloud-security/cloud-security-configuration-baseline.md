@@ -28,17 +28,6 @@ flowchart LR
 
 ## II. Structure & Process
 
-| Field | Description |
-|---|---|
-| Service/Resource Type | The cloud service the control applies to, e.g. object storage, IAM, VPC. |
-| Control ID | Unique identifier cross-referenced to the standard it derives from. |
-| Setting/Requirement | The specific configuration required, e.g. public access blocked by default. |
-| Standard Reference | Source standard, such as a CIS Benchmark or NIST control. |
-| Enforcement Mechanism | How it is enforced, e.g. service control policy, policy-as-code, CSPM rule. |
-| Compliance Status | Current scan result across the resource population. |
-| Exception Process | How and for how long a documented deviation may be approved. |
-| Last Reviewed | Date the control was last validated against provider changes. |
-
 ```mermaid
 sequenceDiagram
     participant Arch as "Cloud Security Architecture"
@@ -53,6 +42,17 @@ sequenceDiagram
     CSPM->>Owner: "Flag non-compliant resource"
     Owner->>Arch: "Remediate or request time-boxed exception"
 ```
+
+| Field | Description |
+|---|---|
+| Service/Resource Type | The cloud service the control applies to, e.g. object storage, IAM, VPC. |
+| Control ID | Unique identifier cross-referenced to the standard it derives from. |
+| Setting/Requirement | The specific configuration required, e.g. public access blocked by default. |
+| Standard Reference | Source standard, such as a CIS Benchmark or NIST control. |
+| Enforcement Mechanism | How it is enforced, e.g. service control policy, policy-as-code, CSPM rule. |
+| Compliance Status | Current scan result across the resource population. |
+| Exception Process | How and for how long a documented deviation may be approved. |
+| Last Reviewed | Date the control was last validated against provider changes. |
 
 The baseline is version-controlled and reviewed whenever a provider introduces new services or changes default behavior, while individual resources are checked continuously by CSPM tooling rather than on a periodic audit cycle — exceptions are logged with an expiry date and revisited at each baseline review.
 

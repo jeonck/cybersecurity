@@ -28,6 +28,15 @@ flowchart LR
 
 ## II. Structure & Process
 
+```mermaid
+flowchart LR
+    Disc["Automated discovery scan"] --> Inv["Inventory updated with new/changed devices"]
+    Inv --> Val["Network engineer validates against CMDB"]
+    Val --> Vuln["Vulnerability management cross-checks patch status"]
+    Vuln -->|"Overdue patch found"| Rem["Remediation ticket opened"]
+    Val --> Rev["Quarterly inventory review"]
+```
+
 | Field | Description |
 |---|---|
 | Device Name / ID | Unique identifier or hostname |
@@ -38,15 +47,6 @@ flowchart LR
 | Patch Status | Up to date, pending, or overdue against the patch policy |
 | Configuration Baseline | Reference to the approved configuration template applied |
 | Owner / Point of Contact | Team responsible for maintaining the device |
-
-```mermaid
-flowchart LR
-    Disc["Automated discovery scan"] --> Inv["Inventory updated with new/changed devices"]
-    Inv --> Val["Network engineer validates against CMDB"]
-    Val --> Vuln["Vulnerability management cross-checks patch status"]
-    Vuln -->|"Overdue patch found"| Rem["Remediation ticket opened"]
-    Val --> Rev["Quarterly inventory review"]
-```
 
 Automated discovery scans populate and refresh the inventory continuously; a network engineer validates changes, and the full inventory is reconciled against the CMDB quarterly.
 

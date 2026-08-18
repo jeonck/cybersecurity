@@ -28,18 +28,6 @@ flowchart LR
 
 ## II. Structure & Process
 
-| Field | Description |
-|---|---|
-| System/Application | The resource being controlled (ERP, file share, cloud console, database). |
-| Role/Group | The job function or security group the entry applies to, not an individual by default. |
-| Access Level | Permission tier granted, e.g. read, write, admin, or no access. |
-| Business Justification | Why this role requires this level of access. |
-| Approver | Manager or data owner who authorized the grant. |
-| Grant Date | When access was provisioned. |
-| Last Review Date | Date of the most recent recertification. |
-| Review Frequency | Cadence for revalidation, e.g. quarterly for privileged accounts. |
-| Revocation Trigger | Event that should remove access, e.g. role change or termination. |
-
 ```mermaid
 sequenceDiagram
     participant Manager as "Requesting Manager"
@@ -53,6 +41,18 @@ sequenceDiagram
     IAM->>Owner: "Send matrix for periodic recertification"
     Owner->>Auditor: "Provide matrix as audit evidence"
 ```
+
+| Field | Description |
+|---|---|
+| System/Application | The resource being controlled (ERP, file share, cloud console, database). |
+| Role/Group | The job function or security group the entry applies to, not an individual by default. |
+| Access Level | Permission tier granted, e.g. read, write, admin, or no access. |
+| Business Justification | Why this role requires this level of access. |
+| Approver | Manager or data owner who authorized the grant. |
+| Grant Date | When access was provisioned. |
+| Last Review Date | Date of the most recent recertification. |
+| Review Frequency | Cadence for revalidation, e.g. quarterly for privileged accounts. |
+| Revocation Trigger | Event that should remove access, e.g. role change or termination. |
 
 The matrix is updated at every access request or role change and undergoes a full recertification on a fixed schedule, typically quarterly for privileged roles and semi-annually for standard access, with the system/data owner attesting that each entry is still required.
 

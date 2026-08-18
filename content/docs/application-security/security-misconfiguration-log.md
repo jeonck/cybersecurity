@@ -27,17 +27,6 @@ flowchart LR
 
 ## II. Structure & Process
 
-| Field | Description |
-|---|---|
-| Environment | Where the misconfiguration was found, e.g. **Production**, **Staging**, specific cluster or service |
-| Component | Application, framework, web server, or cloud service affected |
-| Misconfiguration | Description of the gap, e.g. default admin credentials, debug mode enabled, open S3 bucket |
-| Discovery Method | Manual audit, DAST scan, cloud posture tool (**CSPM**), or incident finding |
-| Severity | Risk rating based on exposure and exploitability |
-| Remediation | Corrective action taken or planned |
-| Status | **Open**, **In Progress**, **Fixed**, or **Accepted Risk** |
-| Owner | Team responsible for the affected environment or component |
-
 ```mermaid
 sequenceDiagram
     participant Scanner as "DAST / CSPM Scanner"
@@ -52,6 +41,17 @@ sequenceDiagram
     Ops->>AppSec: "Submit for verification"
     AppSec->>Lead: "Report recurring misconfiguration patterns"
 ```
+
+| Field | Description |
+|---|---|
+| Environment | Where the misconfiguration was found, e.g. **Production**, **Staging**, specific cluster or service |
+| Component | Application, framework, web server, or cloud service affected |
+| Misconfiguration | Description of the gap, e.g. default admin credentials, debug mode enabled, open S3 bucket |
+| Discovery Method | Manual audit, DAST scan, cloud posture tool (**CSPM**), or incident finding |
+| Severity | Risk rating based on exposure and exploitability |
+| Remediation | Corrective action taken or planned |
+| Status | **Open**, **In Progress**, **Fixed**, or **Accepted Risk** |
+| Owner | Team responsible for the affected environment or component |
 
 Findings are logged continuously from scans, audits, and incidents; the log is reviewed monthly to identify recurring patterns worth fixing at the baseline-template level rather than per instance.
 

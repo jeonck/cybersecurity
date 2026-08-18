@@ -28,17 +28,6 @@ flowchart LR
 
 ## II. Structure & Process
 
-| Field | Description |
-|---|---|
-| Scope of Systems | Which systems and data stores are covered, prioritized by business criticality. |
-| Backup Frequency | How often backups run — continuous, daily, weekly — per system tier. |
-| Recovery Point Objective (RPO) | Maximum acceptable data loss, measured in time, per system. |
-| Recovery Time Objective (RTO) | Maximum acceptable downtime before restoration, per system. |
-| Retention Period | How long backup copies are kept before rotation or deletion. |
-| Storage & Offsite Requirements | Onsite vs. offsite/cloud copies, encryption at rest, and geographic separation. |
-| Restoration Testing | Frequency and method of test restores to validate backup integrity. |
-| Incident Escalation | Who authorizes and executes a restoration during an active incident. |
-
 ```mermaid
 sequenceDiagram
     participant IT as "IT Operations"
@@ -52,6 +41,17 @@ sequenceDiagram
     IT->>IT: "Run scheduled test restorations"
     IT->>Auditor: "Provide test-restore evidence for review"
 ```
+
+| Field | Description |
+|---|---|
+| Scope of Systems | Which systems and data stores are covered, prioritized by business criticality. |
+| Backup Frequency | How often backups run — continuous, daily, weekly — per system tier. |
+| Recovery Point Objective (RPO) | Maximum acceptable data loss, measured in time, per system. |
+| Recovery Time Objective (RTO) | Maximum acceptable downtime before restoration, per system. |
+| Retention Period | How long backup copies are kept before rotation or deletion. |
+| Storage & Offsite Requirements | Onsite vs. offsite/cloud copies, encryption at rest, and geographic separation. |
+| Restoration Testing | Frequency and method of test restores to validate backup integrity. |
+| Incident Escalation | Who authorizes and executes a restoration during an active incident. |
 
 IT operations proposes technical parameters, security/GRC validates them against business impact analysis, and the ISMS steering committee approves the policy. Test restorations are logged as evidence and reviewed by internal audit; the policy itself is reviewed annually or after any recovery failure.
 

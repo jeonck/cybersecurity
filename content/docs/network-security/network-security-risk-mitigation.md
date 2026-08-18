@@ -28,6 +28,16 @@ flowchart LR
 
 ## II. Structure & Process
 
+```mermaid
+flowchart LR
+    Id["Risk identified (audit, pentest, incident)"] --> Reg["Logged in risk register with score"]
+    Reg --> Pri["Prioritized by risk score"]
+    Pri --> Plan["Mitigation plan assigned to owner"]
+    Plan --> Exec["Mitigation executed and verified"]
+    Exec --> Close["Risk closed or re-scored"]
+    Reg --> QR["Quarterly risk review with CISO"]
+```
+
 | Field | Description |
 |---|---|
 | Risk ID | Unique identifier for tracking |
@@ -38,16 +48,6 @@ flowchart LR
 | Mitigation Plan | Proposed control or architectural change to reduce the risk |
 | Owner | Person or team accountable for executing the mitigation |
 | Target Date / Status | Planned completion date and current progress |
-
-```mermaid
-flowchart LR
-    Id["Risk identified (audit, pentest, incident)"] --> Reg["Logged in risk register with score"]
-    Reg --> Pri["Prioritized by risk score"]
-    Pri --> Plan["Mitigation plan assigned to owner"]
-    Plan --> Exec["Mitigation executed and verified"]
-    Exec --> Close["Risk closed or re-scored"]
-    Reg --> QR["Quarterly risk review with CISO"]
-```
 
 Risks are logged as they are identified through audits, penetration tests, or incidents, prioritized by score, and reviewed quarterly with the CISO's office to track mitigation progress and re-prioritize as the environment changes.
 

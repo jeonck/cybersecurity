@@ -27,16 +27,6 @@ flowchart LR
 
 ## II. Structure & Process
 
-| Field | Description |
-|---|---|
-| Repository / Component | Codebase or service where the finding occurred |
-| Rule / Weakness Type | Class of issue, e.g. **hardcoded credential**, **SQL injection sink**, **unsafe deserialization**, mapped to a CWE ID |
-| File / Location | Path and line number of the flagged code |
-| Severity | Tool-assigned rating, adjusted by AppSec triage |
-| Status | **New**, **Triaged**, **False Positive**, **In Remediation**, or **Fixed** |
-| Build / Commit Reference | CI run or commit hash the finding was detected in |
-| Assignee | Developer responsible for resolving the finding |
-
 ```mermaid
 sequenceDiagram
     participant CI as "CI Pipeline"
@@ -53,6 +43,16 @@ sequenceDiagram
     Dev->>SAST: "Trigger re-scan"
     SAST-->>AppSec: "Confirm finding closed"
 ```
+
+| Field | Description |
+|---|---|
+| Repository / Component | Codebase or service where the finding occurred |
+| Rule / Weakness Type | Class of issue, e.g. **hardcoded credential**, **SQL injection sink**, **unsafe deserialization**, mapped to a CWE ID |
+| File / Location | Path and line number of the flagged code |
+| Severity | Tool-assigned rating, adjusted by AppSec triage |
+| Status | **New**, **Triaged**, **False Positive**, **In Remediation**, or **Fixed** |
+| Build / Commit Reference | CI run or commit hash the finding was detected in |
+| Assignee | Developer responsible for resolving the finding |
 
 The scan runs automatically on every commit or pull request; AppSec triages new findings within one business day, and the full log is reviewed weekly for aging high-severity items.
 

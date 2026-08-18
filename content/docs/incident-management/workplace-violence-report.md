@@ -28,17 +28,6 @@ flowchart LR
 
 ## II. Structure & Process
 
-| Field | Description |
-|---|---|
-| Date, Time & Location | When and where the incident occurred |
-| Parties Involved | Names and roles of the individuals involved, including any witnesses |
-| Incident Type | Category, e.g. verbal threat, physical altercation, weapon involved, intimidation |
-| Description | Objective, factual account of what was said or done |
-| Immediate Action Taken | Steps taken at the time (separation, security called, law enforcement notified) |
-| Injuries / Medical Attention | Whether anyone was injured and what medical response occurred |
-| HR / Legal Follow-up | Disciplinary action, legal referral, or protective measures put in place |
-| Confidentiality Handling | Access restrictions applied to the report given its sensitivity |
-
 ```mermaid
 sequenceDiagram
     participant Witness as "Reporter / Witness"
@@ -53,6 +42,17 @@ sequenceDiagram
     Legal->>HR: "Advise on disciplinary/legal action"
     HR->>Witness: "Close loop on protective measures"
 ```
+
+| Field | Description |
+|---|---|
+| Date, Time & Location | When and where the incident occurred |
+| Parties Involved | Names and roles of the individuals involved, including any witnesses |
+| Incident Type | Category, e.g. verbal threat, physical altercation, weapon involved, intimidation |
+| Description | Objective, factual account of what was said or done |
+| Immediate Action Taken | Steps taken at the time (separation, security called, law enforcement notified) |
+| Injuries / Medical Attention | Whether anyone was injured and what medical response occurred |
+| HR / Legal Follow-up | Disciplinary action, legal referral, or protective measures put in place |
+| Confidentiality Handling | Access restrictions applied to the report given its sensitivity |
 
 Immediate safety takes priority over documentation; the written report is completed as soon as the situation is stabilized, and access to it is restricted to HR, security, and legal.
 

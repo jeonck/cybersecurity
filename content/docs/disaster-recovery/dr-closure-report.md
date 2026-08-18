@@ -28,6 +28,16 @@ flowchart LR
 
 ## II. Structure & Process
 
+```mermaid
+flowchart LR
+    A["Disaster declared or exercise run"] --> B["Recovery executed per DR Plan Template"]
+    B --> C["Stand-down declared"]
+    C --> D["Closure report drafted"]
+    D --> E["Reviewed by steering committee"]
+    E --> F["Corrective actions tracked to closure"]
+    F --> G["DR Plan Template updated"]
+```
+
 | Field | Description |
 |---|---|
 | Event/Exercise Reference | Identifier linking the report to the specific activation or exercise. |
@@ -38,16 +48,6 @@ flowchart LR
 | Corrective Actions | Remediation items raised to close each identified gap. |
 | Action Owner & Due Date | Individual accountable for each corrective action and its deadline. |
 | Sign-off/Approval | Steering committee or leadership approval closing the event. |
-
-```mermaid
-flowchart LR
-    A["Disaster declared or exercise run"] --> B["Recovery executed per DR Plan Template"]
-    B --> C["Stand-down declared"]
-    C --> D["Closure report drafted"]
-    D --> E["Reviewed by steering committee"]
-    E --> F["Corrective actions tracked to closure"]
-    F --> G["DR Plan Template updated"]
-```
 
 ## III. Best Practices & Comparison
 

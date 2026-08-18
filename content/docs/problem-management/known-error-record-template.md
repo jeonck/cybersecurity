@@ -28,6 +28,16 @@ flowchart LR
 
 ## II. Structure & Process
 
+```mermaid
+flowchart TD
+    A["Problem Record with confirmed root cause"] --> B["Workaround identified and validated"]
+    B --> C["Known Error Record created and published"]
+    C --> D["Service desk applies workaround on recurrence"]
+    D --> E["Permanent fix developed via change management"]
+    E --> F["Fix deployed and verified"]
+    F --> G["Known Error Record closed"]
+```
+
 | Field | Description |
 |---|---|
 | KE ID | Unique identifier linking the known error to its source Problem Record. |
@@ -38,16 +48,6 @@ flowchart LR
 | Known Error Status | Workaround available, fix scheduled, fix deployed, or closed. |
 | Linked Incidents | Incident tickets that triggered or referenced this known error. |
 | Permanent Fix Reference | Change record or release that will resolve the underlying cause. |
-
-```mermaid
-flowchart TD
-    A["Problem Record with confirmed root cause"] --> B["Workaround identified and validated"]
-    B --> C["Known Error Record created and published"]
-    C --> D["Service desk applies workaround on recurrence"]
-    D --> E["Permanent fix developed via change management"]
-    E --> F["Fix deployed and verified"]
-    F --> G["Known Error Record closed"]
-```
 
 The record is created as soon as a workaround exists, referenced by the service desk on every matching incident, and closed only after the linked permanent fix is confirmed to eliminate the root cause.
 

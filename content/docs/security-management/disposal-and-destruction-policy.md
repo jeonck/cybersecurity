@@ -28,17 +28,6 @@ flowchart LR
 
 ## II. Structure & Process
 
-| Field | Description |
-|---|---|
-| Asset Scope | Media types covered — hard drives, SSDs, backup tapes, mobile devices, paper records. |
-| Sanitization Method | Approved method per media type — cryptographic erasure, degaussing, physical shredding. |
-| Sensitivity-Based Handling | Stricter destruction requirements tied to the data's classification level. |
-| Chain of Custody | Tracking of the asset from decommission to final destruction. |
-| Certificate of Destruction | Documentation required from internal teams or third-party vendors as proof. |
-| Vendor Requirements | Qualification criteria for any outsourced destruction service. |
-| Retention Before Disposal | Minimum holding period required by legal or regulatory obligation before destruction is permitted. |
-| Audit Trail | Log of what was destroyed, when, by whom, and with what method. |
-
 ```mermaid
 sequenceDiagram
     participant Owner as "Asset/System Owner"
@@ -52,6 +41,17 @@ sequenceDiagram
     Vendor->>IT: "Provide certificate of destruction"
     IT->>Security: "File audit trail and certificate"
 ```
+
+| Field | Description |
+|---|---|
+| Asset Scope | Media types covered — hard drives, SSDs, backup tapes, mobile devices, paper records. |
+| Sanitization Method | Approved method per media type — cryptographic erasure, degaussing, physical shredding. |
+| Sensitivity-Based Handling | Stricter destruction requirements tied to the data's classification level. |
+| Chain of Custody | Tracking of the asset from decommission to final destruction. |
+| Certificate of Destruction | Documentation required from internal teams or third-party vendors as proof. |
+| Vendor Requirements | Qualification criteria for any outsourced destruction service. |
+| Retention Before Disposal | Minimum holding period required by legal or regulatory obligation before destruction is permitted. |
+| Audit Trail | Log of what was destroyed, when, by whom, and with what method. |
 
 IT operations initiates disposal once an asset's retention obligation has lapsed, routes sensitive media to a certified destruction vendor, and files the resulting certificate with security/GRC as audit evidence. The policy itself is reviewed annually or when new media types are introduced.
 

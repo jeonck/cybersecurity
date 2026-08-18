@@ -27,18 +27,6 @@ flowchart LR
 
 ## II. Structure & Process
 
-| Field | Description |
-|---|---|
-| Incident ID | Unique reference linking to the broader incident response record. |
-| Discovery Date/Time | When the breach was first confirmed, which starts the notification clock. |
-| Data Categories Affected | Types of data exposed, e.g. personal identifiers, financial, health. |
-| Estimated Affected Individuals | Count or estimate of impacted data subjects. |
-| Root Cause | Summary of how the breach occurred. |
-| Regulatory Notification Status | Whether and when the relevant authority was notified. |
-| Individual Notification Status | Whether and when affected individuals were informed. |
-| Notification Deadline | Regulatory or contractual deadline applicable to the incident. |
-| Remediation Actions | Containment and corrective steps taken. |
-
 ```mermaid
 sequenceDiagram
     participant SOC as "Security Operations"
@@ -52,6 +40,18 @@ sequenceDiagram
     IR->>Regulator: "Submit notification within required window"
     IR->>IR: "Record all decisions and timestamps in log"
 ```
+
+| Field | Description |
+|---|---|
+| Incident ID | Unique reference linking to the broader incident response record. |
+| Discovery Date/Time | When the breach was first confirmed, which starts the notification clock. |
+| Data Categories Affected | Types of data exposed, e.g. personal identifiers, financial, health. |
+| Estimated Affected Individuals | Count or estimate of impacted data subjects. |
+| Root Cause | Summary of how the breach occurred. |
+| Regulatory Notification Status | Whether and when the relevant authority was notified. |
+| Individual Notification Status | Whether and when affected individuals were informed. |
+| Notification Deadline | Regulatory or contractual deadline applicable to the incident. |
+| Remediation Actions | Containment and corrective steps taken. |
 
 Entries are created the moment a breach is confirmed, updated continuously through containment and notification, and formally closed once all required disclosures are complete and remediation is verified.
 
