@@ -1,0 +1,90 @@
+baseURL = "https://cybersecurity.metacog.co.kr/"
+locale = "en-us"
+title = "Cybersecurity Knowledge Base"
+contentDir = "content"
+enableEmoji = true
+enableGitInfo = true
+
+defaultContentLanguage = "en"
+[languages]
+  [languages.en]
+    title = "Cybersecurity Knowledge Base"
+    label = "English"
+    weight = 10
+
+[module]
+  [module.hugoVersion]
+    extended = true
+    min = "0.100.0"
+  [[module.imports]]
+    path = "github.com/colinwilson/lotusdocs"
+    disable = false
+  [[module.imports]]
+    path = "github.com/gohugoio/hugo-mod-bootstrap-scss/v5"
+    disable = false
+
+[markup]
+  defaultMarkdownHandler = "goldmark"
+  [markup.tableOfContents]
+    endLevel = 3
+    startLevel = 1
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+  [markup.highlight]
+    noClasses = false
+
+[params]
+  google_fonts = [
+    ["Inter", "300, 400, 600, 700"],
+    ["Fira Code", "500, 700"]
+  ]
+  sans_serif_font = "Inter"
+  secondary_font  = "Inter"
+  mono_font       = "Fira Code"
+
+  [params.footer]
+    copyright = "© :YEAR: Cybersecurity Knowledge Base. Built with [**Lotus Docs**](https://github.com/colinwilson/lotusdocs)"
+
+  [params.social]
+    github = "https://github.com/jeonck/cybersecurity"
+
+  [params.docs]
+    title           = "Cybersecurity Knowledge Base"
+    themeColor      = "blue"
+    darkMode        = true
+    prism           = true
+    prismTheme      = "lotusdocs"
+
+    repoURL         = "https://github.com/jeonck/cybersecurity"
+    repoBranch      = "main"
+    editPage        = true
+    lastMod         = true
+    lastModRelative = true
+
+    sidebarIcons    = true
+    breadcrumbs     = true
+    backToTop       = true
+
+    toc             = true
+    tocMobile       = true
+    scrollSpy       = true
+
+    descriptions    = true
+    titleIcon       = true
+
+    navDesc         = true
+    navDescTrunc    = 30
+    listDescTrunc   = 140
+
+    intLinkTooltip  = true
+
+  [params.flexsearch]
+    enabled = true
+
+[menu]
+[[menu.primary]]
+  name       = "Docs"
+  url        = "docs/"
+  identifier = "docs"
+  weight     = 10

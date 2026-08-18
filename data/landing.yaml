@@ -1,0 +1,93 @@
+# Note: Template blocks require a 'weight' parameter so they're correctly ordered on the landing page
+
+# Hero
+hero:
+  enable: true
+  weight: 10
+  template: hero
+
+  badge:
+    text: "8 Domains · 45+ Templates"
+    color: primary
+    pill: true
+    soft: true
+
+  title: "Cybersecurity Knowledge Base"
+  subtitle: A practitioner's library of **cybersecurity templates and documents** — policies, trackers, logs, and report formats organised across **8 operational domains**, ready to adapt for your own security program.
+
+  ctaButton:
+    icon: rocket_launch
+    btnText: "Browse the Docs"
+    url: "/docs/"
+  cta2Button:
+    icon: hub
+    btnText: "View on GitHub"
+    url: "https://github.com/jeonck/cybersecurity"
+
+  info: "Built with **Hugo** and **Lotus Docs**. Content adapted from an internal security knowledge base."
+
+# Feature Grid
+featureGrid:
+  enable: true
+  weight: 20
+  template: feature grid
+
+  title: "Eight domains, one knowledge base"
+  subtitle: Every template below pairs a ready-to-use document structure with the background knowledge needed to fill it in with confidence.
+
+  items:
+    - title: Information Security
+      icon: lock
+      description: Access rights, data classification, breach notification, DLP, retention, and security KPIs.
+      ctaLink:
+        text: browse
+        url: /docs/information-security/
+
+    - title: Network Security
+      icon: hub
+      description: DDoS mitigation, IP allow/deny lists, access control logging, device inventory, and traffic monitoring.
+      ctaLink:
+        text: browse
+        url: /docs/network-security/
+
+    - title: Cloud Security
+      icon: cloud
+      description: Cloud access control, asset inventory, backup and recovery testing, incident logging, and configuration baselines.
+      ctaLink:
+        text: browse
+        url: /docs/cloud-security/
+
+    - title: Application Security
+      icon: code
+      description: Patch tracking, secure coding, mobile app testing, misconfiguration logs, static analysis, and threat modeling.
+      ctaLink:
+        text: browse
+        url: /docs/application-security/
+
+    - title: Security Management
+      icon: policy
+      description: Acceptable use, password, backup, disposal, classification, transfer, and ISMS policies plus compliance management.
+      ctaLink:
+        text: browse
+        url: /docs/security-management/
+
+    - title: Incident Management
+      icon: report_problem
+      description: Incident policy and process, major and intern incident reports, and structural or workplace incident reporting.
+      ctaLink:
+        text: browse
+        url: /docs/incident-management/
+
+    - title: Problem Management
+      icon: build_circle
+      description: Known error records, major problem reports, the problem management process, and problem record templates.
+      ctaLink:
+        text: browse
+        url: /docs/problem-management/
+
+    - title: Disaster Recovery
+      icon: restore
+      description: DR approach, asset register, closure reports, communications plans, and DR plan templates.
+      ctaLink:
+        text: browse
+        url: /docs/disaster-recovery/
