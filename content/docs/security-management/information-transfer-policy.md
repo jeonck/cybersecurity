@@ -1,5 +1,5 @@
 ---
-weight: 570
+weight: 5070
 title: "Information Transfer Policy"
 description: "Governs how classified data may be exchanged internally, with partners, and with third parties, across physical and digital channels."
 icon: "send"

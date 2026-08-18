@@ -1,5 +1,5 @@
 ---
-weight: 830
+weight: 8030
 title: "DR Closure Report"
 description: "A post-exercise or post-activation record capturing recovery outcomes against RTO/RPO targets and driving corrective action."
 icon: "task_alt"

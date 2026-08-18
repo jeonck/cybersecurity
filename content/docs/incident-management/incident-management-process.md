@@ -1,5 +1,5 @@
 ---
-weight: 620
+weight: 6020
 title: "Incident Management Process"
 description: "The operational, step-by-step procedure the SOC and IR team follow from detection through resolution and post-incident review."
 icon: "sync_alt"

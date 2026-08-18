@@ -1,5 +1,5 @@
 ---
-weight: 320
+weight: 3020
 title: "Cloud Asset Inventory Tracker"
 description: "A discovery-driven register of cloud resources across accounts and providers, used to close visibility gaps and shadow cloud usage."
 icon: "inventory"

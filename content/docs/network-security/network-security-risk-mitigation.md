@@ -1,5 +1,5 @@
 ---
-weight: 250
+weight: 2050
 title: "Network Security Risk Mitigation"
 description: "A prioritized register of network-level risks, their likelihood and impact, and the mitigation plan and owner for each."
 icon: "security"

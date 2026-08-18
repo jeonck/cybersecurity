@@ -1,5 +1,5 @@
 ---
-weight: 240
+weight: 2040
 title: "Network Device Inventory"
 description: "An authoritative catalog of every router, switch, firewall, and access point, its configuration state, and patch status."
 icon: "router"

@@ -1,5 +1,5 @@
 ---
-weight: 470
+weight: 4070
 title: "Application Threat Modeling"
 description: "A structured record of an application's threat model — trust boundaries, attacker scenarios, and mitigations — reviewed at design time and on major change."
 icon: "psychology"

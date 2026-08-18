@@ -1,5 +1,5 @@
 ---
-weight: 220
+weight: 2020
 title: "IP Whitelist–Blacklist Tracker"
 description: "A single source of truth for every allowed and blocked IP address, subnet, and the business justification behind each entry."
 icon: "rule"

@@ -1,5 +1,5 @@
 ---
-weight: 580
+weight: 5080
 title: "ISMS Policy"
 description: "The top-level charter that establishes scope, objectives, and governance structure for the organization's information security management system."
 icon: "account_balance"

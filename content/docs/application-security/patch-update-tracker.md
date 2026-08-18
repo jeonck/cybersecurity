@@ -1,5 +1,5 @@
 ---
-weight: 410
+weight: 4010
 title: "Patch & Update Tracker"
 description: "A living record of known application and dependency vulnerabilities, patch status, and remediation deadlines across owned software."
 icon: "system_update"

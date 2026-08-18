@@ -1,5 +1,5 @@
 ---
-weight: 550
+weight: 5050
 title: "Disposal and Destruction Policy"
 description: "Specifies how data-bearing media and physical records must be sanitized or destroyed at end of life to prevent data exposure."
 icon: "delete_forever"

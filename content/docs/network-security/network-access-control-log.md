@@ -1,5 +1,5 @@
 ---
-weight: 230
+weight: 2030
 title: "Network Access Control Log"
 description: "A chronological record of who or what connected to the network, from where, and whether that access was authorized."
 icon: "fact_check"

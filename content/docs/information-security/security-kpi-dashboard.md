@@ -1,5 +1,5 @@
 ---
-weight: 160
+weight: 1060
 title: "Security KPI Dashboard"
 description: "A curated set of recurring metrics that translate security program activity into indicators leadership and auditors can track over time."
 icon: "dashboard"

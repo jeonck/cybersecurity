@@ -1,5 +1,5 @@
 ---
-weight: 210
+weight: 2010
 title: "DDoS Attack Mitigation Plan Tracker"
 description: "A living record of DDoS defense readiness — attack vectors covered, mitigation controls, and drill history for the network perimeter."
 icon: "bolt"

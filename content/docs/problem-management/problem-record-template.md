@@ -1,5 +1,5 @@
 ---
-weight: 740
+weight: 7040
 title: "Problem Record Template"
 description: "The working record that tracks a single problem's investigation from suspected root cause through to closure."
 icon: "description"

@@ -1,5 +1,5 @@
 ---
-weight: 610
+weight: 6010
 title: "Incident Management Policy"
 description: "The governing policy that defines what counts as an incident, who is accountable, and the mandatory response timelines across the organization."
 icon: "policy"

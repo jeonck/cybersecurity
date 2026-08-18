@@ -1,5 +1,5 @@
 ---
-weight: 330
+weight: 3030
 title: "Cloud Backup & Recovery Testing Tracker"
 description: "A log of cloud backup schedules and periodic restore tests, used to verify recovery objectives can actually be met."
 icon: "backup"

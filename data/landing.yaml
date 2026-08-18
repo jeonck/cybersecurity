@@ -7,13 +7,13 @@ hero:
   template: hero
 
   badge:
-    text: "8 Domains · 45+ Templates"
+    text: "11 Domains · 45+ Templates · 85+ Concepts"
     color: primary
     pill: true
     soft: true
 
   title: "Cybersecurity Knowledge Base"
-  subtitle: A practitioner's library of **cybersecurity templates and documents** — policies, trackers, logs, and report formats organised across **8 operational domains**, ready to adapt for your own security program.
+  subtitle: A practitioner's library of **cybersecurity templates and documents** — policies, trackers, logs, and report formats — paired with a **concept reference library** covering cryptography, IAM, offensive security, and more, organised across **11 domains**.
 
   ctaButton:
     icon: rocket_launch
@@ -32,8 +32,8 @@ featureGrid:
   weight: 20
   template: feature grid
 
-  title: "Eight domains, one knowledge base"
-  subtitle: Every template below pairs a ready-to-use document structure with the background knowledge needed to fill it in with confidence.
+  title: "Eleven domains, one knowledge base"
+  subtitle: The first eight domains pair ready-to-use document templates with background knowledge; the last three are pure concept-reference libraries covering identity, offense, and emerging technology.
 
   items:
     - title: Information Security
@@ -91,3 +91,24 @@ featureGrid:
       ctaLink:
         text: browse
         url: /docs/disaster-recovery/
+
+    - title: Identity & Access Management
+      icon: fingerprint
+      description: Authentication and authorization protocols and models — OAuth, OIDC, SAML, SSO, Kerberos, FIDO, and directory federation.
+      ctaLink:
+        text: browse
+        url: /docs/identity-access-management/
+
+    - title: Offensive Security
+      icon: radar
+      description: Penetration testing methodology, OSINT, fuzzing, and red team / CTF concepts used to proactively find weaknesses.
+      ctaLink:
+        text: browse
+        url: /docs/offensive-security/
+
+    - title: Emerging Security & Technology
+      icon: auto_awesome
+      description: AI/ML system security, LLM security, deepfakes, IoT/OT, and blockchain — concepts for the newest attack surfaces.
+      ctaLink:
+        text: browse
+        url: /docs/emerging-security/

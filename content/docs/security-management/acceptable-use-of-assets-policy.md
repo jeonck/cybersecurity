@@ -1,5 +1,5 @@
 ---
-weight: 510
+weight: 5010
 title: "Acceptable Use of Assets Policy"
 description: "Defines permitted and prohibited use of company-owned devices, accounts, and network resources by employees and contractors."
 icon: "gavel"

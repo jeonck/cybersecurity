@@ -1,5 +1,5 @@
 ---
-weight: 850
+weight: 8050
 title: "DR Plan Template"
 description: "A step-by-step recovery runbook per system, invoked on disaster declaration and validated through regular exercises."
 icon: "event_note"

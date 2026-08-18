@@ -1,5 +1,5 @@
 ---
-weight: 660
+weight: 6060
 title: "Workplace Violence Report"
 description: "An HR/security-owned template for documenting threats, altercations, or violent conduct involving employees, contractors, or visitors."
 icon: "report"

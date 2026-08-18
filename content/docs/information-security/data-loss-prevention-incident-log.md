@@ -1,5 +1,5 @@
 ---
-weight: 140
+weight: 1040
 title: "Data Loss Prevention (DLP) Incident Log"
 description: "A record of detected policy violations and potential data exfiltration events used to track containment and repeat offenders."
 icon: "shield"

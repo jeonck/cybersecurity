@@ -1,5 +1,5 @@
 ---
-weight: 640
+weight: 6040
 title: "Major Incident Report Template"
 description: "The structured record used to document a critical or high-severity security incident from detection through root-cause analysis."
 icon: "warning"

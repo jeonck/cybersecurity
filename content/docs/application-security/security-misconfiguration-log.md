@@ -1,5 +1,5 @@
 ---
-weight: 440
+weight: 4040
 title: "Security Misconfiguration Log"
 description: "A record of hardening gaps found in application, server, and framework configuration, and their remediation status."
 icon: "settings_alert"

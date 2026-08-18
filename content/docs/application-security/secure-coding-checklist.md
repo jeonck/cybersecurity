@@ -1,5 +1,5 @@
 ---
-weight: 420
+weight: 4020
 title: "Secure Coding Checklist"
 description: "A per-release checklist of secure coding requirements covering input validation, authentication, and safe handling of common vulnerability classes."
 icon: "checklist"

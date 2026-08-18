@@ -1,5 +1,5 @@
 ---
-weight: 530
+weight: 5030
 title: "Backup and Recovery Policy"
 description: "Establishes requirements for data backup frequency, retention, testing, and restoration to protect against data loss."
 icon: "backup"

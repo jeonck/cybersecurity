@@ -1,5 +1,5 @@
 ---
-weight: 520
+weight: 5020
 title: "Password Policy"
 description: "Sets enforceable minimum standards for password strength, rotation, storage, and multi-factor authentication across systems."
 icon: "password"

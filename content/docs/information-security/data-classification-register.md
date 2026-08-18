@@ -1,5 +1,5 @@
 ---
-weight: 130
+weight: 1030
 title: "Data Classification Register"
 description: "An inventory of data assets tagged by sensitivity tier to drive proportionate access, handling, and protection controls."
 icon: "folder_special"

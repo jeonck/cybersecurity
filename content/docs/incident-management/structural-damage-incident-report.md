@@ -1,5 +1,5 @@
 ---
-weight: 650
+weight: 6050
 title: "Structural Damage Incident Report"
 description: "A facilities-owned template for documenting physical damage to buildings, equipment, or infrastructure and the resulting corrective actions."
 icon: "domain_disabled"

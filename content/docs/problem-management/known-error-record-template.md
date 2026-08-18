@@ -1,5 +1,5 @@
 ---
-weight: 710
+weight: 7010
 title: "Known Error (KE) Record Template"
 description: "A structured record documenting a diagnosed root cause and its workaround until a permanent fix is delivered."
 icon: "fact_check"

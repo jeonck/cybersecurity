@@ -1,5 +1,5 @@
 ---
-weight: 450
+weight: 4050
 title: "Static Code Analysis Log"
 description: "A record of SAST findings across the codebase, their severity, and remediation status, tracked per build or commit."
 icon: "manage_search"

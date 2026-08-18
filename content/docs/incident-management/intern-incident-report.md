@@ -1,5 +1,5 @@
 ---
-weight: 630
+weight: 6030
 title: "Intern Incident Report"
 description: "A structured template for documenting incidents involving interns or temporary staff, from policy violations to safety events."
 icon: "person_alert"

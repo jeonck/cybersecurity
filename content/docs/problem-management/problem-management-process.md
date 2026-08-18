@@ -1,5 +1,5 @@
 ---
-weight: 730
+weight: 7030
 title: "Problem Management Process"
 description: "The end-to-end ITIL workflow for turning recurring incidents into diagnosed problems, known errors, and permanent fixes."
 icon: "sync_alt"

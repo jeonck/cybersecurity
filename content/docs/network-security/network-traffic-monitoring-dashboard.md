@@ -1,5 +1,5 @@
 ---
-weight: 260
+weight: 2060
 title: "Network Traffic Monitoring Dashboard"
 description: "A live and historical view of network flow volume, protocol mix, and anomaly alerts used to spot threats in near real time."
 icon: "monitoring"

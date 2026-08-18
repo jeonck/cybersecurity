@@ -1,5 +1,5 @@
 ---
-weight: 560
+weight: 5060
 title: "Information Classification Policy"
 description: "Defines sensitivity tiers for organizational data and the handling requirements attached to each tier."
 icon: "label"

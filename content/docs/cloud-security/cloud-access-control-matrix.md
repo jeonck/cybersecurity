@@ -1,5 +1,5 @@
 ---
-weight: 310
+weight: 3010
 title: "Cloud Access Control Matrix"
 description: "A structured record mapping human and service identities to cloud accounts, roles, and permission scopes to enforce least privilege."
 icon: "admin_panel_settings"

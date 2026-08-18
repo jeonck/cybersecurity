@@ -1,5 +1,5 @@
 ---
-weight: 540
+weight: 5040
 title: "Compliance Management"
 description: "Coordinates how the organization tracks, evidences, and reports adherence to security regulations, standards, and contractual obligations."
 icon: "verified"

@@ -1,5 +1,5 @@
 ---
-weight: 350
+weight: 3050
 title: "Cloud Security Configuration Baseline"
 description: "The approved, enforceable hardening standard cloud resources must meet, derived from recognized benchmarks and checked continuously."
 icon: "tune"

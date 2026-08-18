@@ -1,5 +1,5 @@
 ---
-weight: 810
+weight: 8010
 title: "DR Approach Document"
 description: "A leadership-endorsed statement of the organization's overall disaster recovery strategy, scope, and recovery tiers, ahead of detailed planning."
 icon: "map"

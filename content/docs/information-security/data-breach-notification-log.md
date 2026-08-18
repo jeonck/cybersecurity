@@ -1,5 +1,5 @@
 ---
-weight: 120
+weight: 1020
 title: "Data Breach Notification Log"
 description: "A chronological record of confirmed breaches, notification decisions, and disclosure timelines used to demonstrate regulatory compliance."
 icon: "report"

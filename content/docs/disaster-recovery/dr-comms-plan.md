@@ -1,5 +1,5 @@
 ---
-weight: 840
+weight: 8040
 title: "DR Communications Plan"
 description: "A predefined protocol for who communicates what, to whom, and through which channel during a declared disaster."
 icon: "campaign"

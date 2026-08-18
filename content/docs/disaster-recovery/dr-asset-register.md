@@ -1,5 +1,5 @@
 ---
-weight: 820
+weight: 8020
 title: "DR Asset Register"
 description: "A maintained inventory mapping systems and infrastructure to criticality tier, dependencies, and recovery targets."
 icon: "inventory_2"

@@ -1,5 +1,5 @@
 ---
-weight: 720
+weight: 7020
 title: "Major Problem Report Template"
 description: "A formal post-resolution review of a high-impact problem's root cause, resolution, and lessons learned."
 icon: "assessment"

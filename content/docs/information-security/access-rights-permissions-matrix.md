@@ -1,5 +1,5 @@
 ---
-weight: 110
+weight: 1010
 title: "Access Rights & Permissions Matrix"
 description: "A structured record mapping roles, systems, and access levels to enforce least privilege and support access audits."
 icon: "table_chart"
