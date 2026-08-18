@@ -10,15 +10,21 @@ draft: false
 
 ## I. Overview
 
-An Acceptable Use of Assets Policy (AUP) sets the rules for how employees, contractors, and third parties may use company-owned IT assets — laptops, mobile devices, email accounts, cloud storage, and network access. It is maintained by the CISO or IT security team and enforced jointly with HR, since violations can trigger disciplinary action. Organizations need a written AUP because informal expectations do not hold up in an audit, a legal dispute, or a termination-for-cause case; a signed policy gives the organization a documented basis for monitoring, restricting, and disciplining misuse.
-
 ```mermaid
 %%{init: { 'theme': 'base', 'themeVariables': { 'edgeLabelBackground': '#fff' }}}%%
 flowchart LR
-    A["Unwritten, assumed norms for using company devices"] -- "Need for an enforceable, signed baseline" --> B["Formal Acceptable Use of Assets Policy"]
-    style A fill:#f9f9f9,stroke:#333,stroke-width:1px
-    style B fill:#e1f5fe,stroke:#01579b,stroke-width:1px
+    A["Unwritten, assumed norms\nfor using company devices"] -- "Need for an enforceable,\nsigned baseline" --> B["Formal Acceptable Use\nof Assets Policy"]
+    style A fill:#f9f9f9,stroke:#333,stroke-width:3px
+    style B fill:#e1f5fe,stroke:#01579b,stroke-width:3px
 ```
+
+**Definition**: An Acceptable Use of Assets Policy (AUP) is the document that sets the rules for how employees, contractors, and third parties may use company-owned IT assets — laptops, mobile devices, email accounts, cloud storage, and network access.
+
+**Features**:  
+( **Ownership** ) Maintained by the CISO or IT security team and enforced jointly with HR, since violations can trigger disciplinary action.  
+( **Audit Basis** ) Gives the organization a documented basis for monitoring, restricting, and disciplining misuse.  
+( **Legal Standing** ) Holds up in an audit, a legal dispute, or a termination-for-cause case where informal expectations would not.  
+( **Scope** ) Covers company-owned devices, accounts, cloud storage, and network access across employees and third parties.
 
 ## II. Structure & Process
 

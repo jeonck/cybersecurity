@@ -10,15 +10,21 @@ draft: false
 
 ## I. Overview
 
-A Backup and Recovery Policy defines what data must be backed up, how often, where copies are stored, and how restoration is tested and executed. It is jointly owned by IT operations, who run the backups, and the CISO or GRC team, who set the risk-driven requirements. Without a formal policy, backup coverage tends to drift — some systems are backed up inconsistently or not at all — and organizations only discover the gap during an actual incident, when it is too late to correct.
-
 ```mermaid
 %%{init: { 'theme': 'base', 'themeVariables': { 'edgeLabelBackground': '#fff' }}}%%
 flowchart LR
-    A["Ad-hoc, unverified system backups"] -- "Need for guaranteed recovery within defined limits" --> B["Formal Backup and Recovery Policy"]
-    style A fill:#f9f9f9,stroke:#333,stroke-width:1px
-    style B fill:#e1f5fe,stroke:#01579b,stroke-width:1px
+    A["Ad-hoc, unverified\nsystem backups"] -- "Need for guaranteed recovery\nwithin defined limits" --> B["Formal Backup\nand Recovery Policy"]
+    style A fill:#f9f9f9,stroke:#333,stroke-width:3px
+    style B fill:#e1f5fe,stroke:#01579b,stroke-width:3px
 ```
+
+**Definition**: A Backup and Recovery Policy is the document that defines what data must be backed up, how often, where copies are stored, and how restoration is tested and executed.
+
+**Features**:  
+( **Ownership** ) Jointly owned by IT operations, who run the backups, and the CISO or GRC team, who set the risk-driven requirements.  
+( **Coverage Assurance** ) Prevents backup coverage from drifting, where some systems end up backed up inconsistently or not at all.  
+( **Early Discovery** ) Surfaces gaps before an actual incident, rather than after it is too late to correct.  
+( **Restoration Testing** ) Requires that restoration procedures are tested and executed, not just that backups are taken.
 
 ## II. Structure & Process
 

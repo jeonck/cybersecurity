@@ -10,15 +10,20 @@ draft: false
 
 ## I. Overview
 
-A Data Breach Notification Log is the authoritative record of confirmed data breaches: what happened, who was affected, which regulators or individuals were notified, and when. It is owned by the CISO or incident response lead, with input from legal/privacy counsel who determine notification obligations. Many breach notification regulations require disclosure to a supervisory authority within a tight window — commonly cited as 72 hours from confirmed discovery — so the log exists to prove that timeline was met, or to explain any deviation, during a regulatory inquiry.
-
 ```mermaid
 %%{init: { 'theme': 'base', 'themeVariables': { 'edgeLabelBackground': '#fff' }}}%%
 flowchart LR
-    A["Informal incident notes scattered across email"] -- "Need to prove regulatory notification timelines" --> B["Centralized Data Breach Notification Log"]
-    style A fill:#f9f9f9,stroke:#333,stroke-width:1px
-    style B fill:#e1f5fe,stroke:#01579b,stroke-width:1px
+    A["Informal incident notes\nscattered across email"] -- "Need to prove regulatory\nnotification timelines" --> B["Centralized Data Breach\nNotification Log"]
+    style A fill:#f9f9f9,stroke:#333,stroke-width:3px
+    style B fill:#e1f5fe,stroke:#01579b,stroke-width:3px
 ```
+
+**Definition**: A Data Breach Notification Log is the authoritative record of confirmed data breaches: what happened, who was affected, which regulators or individuals were notified, and when.
+
+**Features**:  
+( **Ownership** ) Owned by the CISO or incident response lead, with input from legal/privacy counsel who determine notification obligations.  
+( **Regulatory Window** ) Many breach notification regulations require disclosure to a supervisory authority within a tight window, commonly cited as 72 hours from confirmed discovery.  
+( **Compliance Evidence** ) Exists to prove that timeline was met, or to explain any deviation, during a regulatory inquiry.
 
 ## II. Structure & Process
 

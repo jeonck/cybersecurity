@@ -10,15 +10,21 @@ draft: false
 
 ## I. Overview
 
-The Incident Management Policy is the top-level governance document that defines what qualifies as an incident, establishes severity tiers, assigns accountability, and sets mandatory response and notification timelines. It is owned by the CISO's office (for security incidents) in coordination with HR and facilities leadership (for physical and personnel incidents), and approved by executive management or the board. Organizations need it because without a documented policy, incident classification and escalation become inconsistent, response times are unpredictable, and regulatory notification deadlines (e.g. breach disclosure laws) are easily missed.
-
 ```mermaid
 %%{init: { 'theme': 'base', 'themeVariables': { 'edgeLabelBackground': '#fff' }}}%%
 flowchart LR
-    A["No shared definition of what counts as an incident"] -- "Need for consistent classification and accountability" --> B["Formal Incident Management Policy"]
-    style A fill:#f9f9f9,stroke:#333,stroke-width:1px
-    style B fill:#e1f5fe,stroke:#01579b,stroke-width:1px
+    A["No shared definition of\nwhat counts as an incident"] -- "Need for consistent classification and accountability" --> B["Formal Incident\nManagement Policy"]
+    style A fill:#f9f9f9,stroke:#333,stroke-width:3px
+    style B fill:#e1f5fe,stroke:#01579b,stroke-width:3px
 ```
+
+**Definition**: The Incident Management Policy is the top-level governance document that defines what qualifies as an incident, establishes severity tiers, assigns accountability, and sets mandatory response and notification timelines.
+
+**Features**:  
+( **Ownership** ) Owned by the CISO's office for security incidents, in coordination with HR and facilities leadership for physical and personnel incidents.  
+( **Approval** ) Approved by executive management or the board before it takes effect.  
+( **Consistency** ) Without it, incident classification and escalation become inconsistent and response times unpredictable.  
+( **Regulatory Compliance** ) Prevents missed regulatory notification deadlines, such as breach disclosure laws.
 
 ## II. Structure & Process
 

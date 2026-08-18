@@ -10,15 +10,21 @@ draft: false
 
 ## I. Overview
 
-The Intern Incident Report is a structured template for documenting any incident involving an intern or temporary staff member — policy violations, safety events, conduct issues, or accidental data exposure. It is owned by HR, typically in coordination with the intern's direct supervisor and, where the incident touches systems or data, IT security. Organizations need this dedicated template because interns often sit outside standard onboarding and access-control assumptions, and unrecorded incidents involving temporary staff create both liability exposure and gaps in the intern program's safety record.
-
 ```mermaid
 %%{init: { 'theme': 'base', 'themeVariables': { 'edgeLabelBackground': '#fff' }}}%%
 flowchart LR
-    A["Supervisor handles intern incidents informally, undocumented"] -- "Need for consistent HR record and liability protection" --> B["Formal Intern Incident Report"]
-    style A fill:#f9f9f9,stroke:#333,stroke-width:1px
-    style B fill:#e1f5fe,stroke:#01579b,stroke-width:1px
+    A["Supervisor handles intern\nincidents informally, undocumented"] -- "Need for consistent HR record and liability protection" --> B["Formal Intern\nIncident Report"]
+    style A fill:#f9f9f9,stroke:#333,stroke-width:3px
+    style B fill:#e1f5fe,stroke:#01579b,stroke-width:3px
 ```
+
+**Definition**: The Intern Incident Report is a structured template for documenting any incident involving an intern or temporary staff member — policy violations, safety events, conduct issues, or accidental data exposure.
+
+**Features**:  
+( **Ownership** ) Owned by HR, typically in coordination with the intern's direct supervisor.  
+( **IT Security Involvement** ) IT security is looped in wherever the incident touches systems or data.  
+( **Scope** ) Covers interns, who often sit outside standard onboarding and access-control assumptions.  
+( **Liability Protection** ) Unrecorded incidents involving temporary staff create liability exposure and gaps in the intern program's safety record.
 
 ## II. Structure & Process
 

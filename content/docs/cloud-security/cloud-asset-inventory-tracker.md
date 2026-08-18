@@ -10,15 +10,21 @@ draft: false
 
 ## I. Overview
 
-A Cloud Asset Inventory Tracker is a continuously updated register of every resource running across an organization's cloud accounts — virtual machines, containers, storage buckets, managed databases, serverless functions, and PaaS/SaaS subscriptions — along with its owner, environment, and data sensitivity. It is maintained by the cloud platform team, populated primarily through automated discovery rather than manual entry, and reconciled against billing and API scans to surface resources that were never registered through a formal process. Cloud elasticity makes unmanaged, forgotten, or shadow resources easy to create and easy to miss, so this tracker is the foundation every other cloud security control — access review, patching, backup — depends on for accurate scope.
-
 ```mermaid
 %%{init: { 'theme': 'base', 'themeVariables': { 'edgeLabelBackground': '#fff' }}}%%
 flowchart LR
-    A["Unknown or shadow cloud resources"] -- "Need for continuous discovery and ownership" --> B["Formal Cloud Asset Inventory Tracker"]
-    style A fill:#f9f9f9,stroke:#333,stroke-width:1px
-    style B fill:#e1f5fe,stroke:#01579b,stroke-width:1px
+    A["Unknown or shadow\ncloud resources"] -- "Need for continuous\ndiscovery and ownership" --> B["Formal Cloud Asset\nInventory Tracker"]
+    style A fill:#f9f9f9,stroke:#333,stroke-width:3px
+    style B fill:#e1f5fe,stroke:#01579b,stroke-width:3px
 ```
+
+**Definition**: A Cloud Asset Inventory Tracker is a continuously updated register of every resource running across an organization's cloud accounts — virtual machines, containers, storage buckets, managed databases, serverless functions, and PaaS/SaaS subscriptions — along with its owner, environment, and data sensitivity.
+
+**Features**:  
+( **Ownership** ) Maintained by the cloud platform team, populated primarily through automated discovery rather than manual entry.  
+( **Reconciliation** ) Cross-checked against billing records and API scans to surface resources never registered through a formal process.  
+( **Shadow Resource Control** ) Addresses how cloud elasticity makes unmanaged, forgotten, or shadow resources easy to create and easy to miss.  
+( **Foundational Scope** ) Serves as the foundation every other cloud security control — access review, patching, backup — depends on for accurate scope.
 
 ## II. Structure & Process
 

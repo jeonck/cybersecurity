@@ -10,15 +10,21 @@ draft: false
 
 ## I. Overview
 
-An **IP** (Internet Protocol) Whitelist–Blacklist Tracker records every address or subnet explicitly permitted or denied at the firewall, WAF, or reverse proxy, along with who requested the entry, why, and when it expires. It is maintained by the network security engineering team, with entries requested by application owners and approved by a security reviewer. Without a tracker, allow and deny lists accumulate silently inside device configurations, so stale entries persist for years and no one can explain why a given IP has access.
-
 ```mermaid
 %%{init: { 'theme': 'base', 'themeVariables': { 'edgeLabelBackground': '#fff' }}}%%
 flowchart LR
-    A["Undocumented ACL entries scattered across firewalls"] -- "Need for a centralized, justified, and expiring allow/deny list" --> B["IP Whitelist–Blacklist Tracker"]
-    style A fill:#f9f9f9,stroke:#333,stroke-width:1px
-    style B fill:#e1f5fe,stroke:#01579b,stroke-width:1px
+    A["Undocumented ACL entries\nscattered across firewalls"] -- "Need for a centralized,\njustified, expiring allow/deny list" --> B["IP Whitelist–Blacklist\nTracker"]
+    style A fill:#f9f9f9,stroke:#333,stroke-width:3px
+    style B fill:#e1f5fe,stroke:#01579b,stroke-width:3px
 ```
+
+**Definition**: An **IP** (Internet Protocol) Whitelist–Blacklist Tracker records every address or subnet explicitly permitted or denied at the firewall, WAF, or reverse proxy, along with who requested the entry, why, and when it expires.
+
+**Features**:  
+( **Ownership** ) Maintained by the network security engineering team, with entries requested by application owners and approved by a security reviewer.  
+( **Justification Trail** ) Captures who requested each entry, why it exists, and when it expires.  
+( **Prevents Silent Accumulation** ) Without it, allow and deny lists build up silently inside device configurations.  
+( **Traceability** ) Stale entries would otherwise persist for years with no record of why a given IP has access.
 
 ## II. Structure & Process
 

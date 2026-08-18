@@ -10,15 +10,21 @@ draft: false
 
 ## I. Overview
 
-A **DLP** (Data Loss Prevention) Incident Log records every event flagged by DLP tooling or manual detection where classified data moved, or attempted to move, outside approved boundaries — email exfiltration, unauthorized uploads, removable media transfers, and similar policy violations. It is maintained by the security operations team, with escalation paths to HR and legal for policy violations involving insiders. It matters because most DLP alerts are false positives or minor mistakes rather than breaches, and this log is what lets a team separate routine noise from patterns that indicate a genuine control gap or malicious insider activity.
-
 ```mermaid
 %%{init: { 'theme': 'base', 'themeVariables': { 'edgeLabelBackground': '#fff' }}}%%
 flowchart LR
-    A["DLP alerts triaged ad hoc, no pattern tracking"] -- "Need to distinguish noise from real exfiltration risk" --> B["Structured DLP Incident Log"]
-    style A fill:#f9f9f9,stroke:#333,stroke-width:1px
-    style B fill:#e1f5fe,stroke:#01579b,stroke-width:1px
+    A["DLP alerts triaged ad hoc,\nno pattern tracking"] -- "Need to distinguish noise\nfrom real exfiltration risk" --> B["Structured DLP\nIncident Log"]
+    style A fill:#f9f9f9,stroke:#333,stroke-width:3px
+    style B fill:#e1f5fe,stroke:#01579b,stroke-width:3px
 ```
+
+**Definition**: A **DLP** (Data Loss Prevention) Incident Log records every event flagged by DLP tooling or manual detection where classified data moved, or attempted to move, outside approved boundaries.
+
+**Features**:  
+( **Ownership** ) Maintained by the security operations team, with escalation paths to HR and legal for policy violations involving insiders.  
+( **Event Coverage** ) Spans email exfiltration, unauthorized uploads, removable media transfers, and similar policy violations.  
+( **Noise Filtering** ) Separates routine noise, since most DLP alerts are false positives or minor mistakes rather than breaches, from patterns that indicate a genuine control gap.  
+( **Insider Risk** ) Surfaces patterns that indicate malicious insider activity.
 
 ## II. Structure & Process
 

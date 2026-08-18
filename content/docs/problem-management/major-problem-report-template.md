@@ -10,15 +10,21 @@ draft: false
 
 ## I. Overview
 
-A Major Problem Report is the formal, executive-facing review produced after a high-impact or high-recurrence problem has been resolved (or requires escalated attention). It is owned by the problem manager, typically with sign-off from service owners and, for security-rooted problems, the CISO. Where an incident report explains how service was restored, this report explains why the fault existed in the first place, what it cost across every recurrence, and what structural changes prevent it happening again — turning a technical fix into an organizational lesson.
-
 ```mermaid
 %%{init: { 'theme': 'base', 'themeVariables': { 'edgeLabelBackground': '#fff' }}}%%
 flowchart LR
-    A["Major problem closed with no formal review"] -- "Need to capture cost, cause, and lessons for leadership" --> B["Major Problem Report"]
-    style A fill:#f9f9f9,stroke:#333,stroke-width:1px
-    style B fill:#e1f5fe,stroke:#01579b,stroke-width:1px
+    A["Major problem closed\nwith no formal review"] -- "Need to capture cost, cause, and lessons for leadership" --> B["Major Problem\nReport"]
+    style A fill:#f9f9f9,stroke:#333,stroke-width:3px
+    style B fill:#e1f5fe,stroke:#01579b,stroke-width:3px
 ```
+
+**Definition**: A Major Problem Report is the formal, executive-facing review produced after a high-impact or high-recurrence problem has been resolved (or requires escalated attention).
+
+**Features**:  
+( **Ownership** ) Owned by the problem manager, typically with sign-off from service owners and, for security-rooted problems, the CISO.  
+( **Root-Cause Focus** ) Explains why the fault existed in the first place, where an incident report explains only how service was restored.  
+( **Cost Accounting** ) Captures what the problem cost across every recurrence, not just the final incident.  
+( **Structural Change** ) Documents what structural changes prevent the problem happening again, turning a technical fix into an organizational lesson.
 
 ## II. Structure & Process
 

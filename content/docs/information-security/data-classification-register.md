@@ -10,15 +10,20 @@ draft: false
 
 ## I. Overview
 
-A Data Classification Register catalogs an organization's data assets and assigns each a sensitivity tier — such as public, internal, confidential, and restricted — based on the confidentiality impact of unauthorized disclosure. It is maintained by data owners with guidance from the security team, and it underpins nearly every other control: access rights, encryption requirements, retention periods, and breach notification scope all key off the classification assigned here. Without a register, security controls end up applied uniformly (either too loose on sensitive data or too costly on trivial data) rather than proportionate to actual risk.
-
 ```mermaid
 %%{init: { 'theme': 'base', 'themeVariables': { 'edgeLabelBackground': '#fff' }}}%%
 flowchart LR
-    A["Uniform handling of all data regardless of sensitivity"] -- "Need for proportionate, risk-based controls" --> B["Formal Data Classification Register"]
-    style A fill:#f9f9f9,stroke:#333,stroke-width:1px
-    style B fill:#e1f5fe,stroke:#01579b,stroke-width:1px
+    A["Uniform handling of all\ndata regardless of sensitivity"] -- "Need for proportionate,\nrisk-based controls" --> B["Formal Data\nClassification Register"]
+    style A fill:#f9f9f9,stroke:#333,stroke-width:3px
+    style B fill:#e1f5fe,stroke:#01579b,stroke-width:3px
 ```
+
+**Definition**: A Data Classification Register catalogs an organization's data assets and assigns each a sensitivity tier — such as public, internal, confidential, and restricted — based on the confidentiality impact of unauthorized disclosure.
+
+**Features**:  
+( **Ownership** ) Maintained by data owners with guidance from the security team.  
+( **Control Foundation** ) Underpins nearly every other control, since access rights, encryption requirements, retention periods, and breach notification scope all key off the classification assigned here.  
+( **Proportionate Risk** ) Keeps controls proportionate to actual risk instead of applied uniformly, either too loose on sensitive data or too costly on trivial data.
 
 ## II. Structure & Process
 

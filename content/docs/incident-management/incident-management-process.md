@@ -10,15 +10,21 @@ draft: false
 
 ## I. Overview
 
-The Incident Management Process is the operational runbook that translates the Incident Management Policy into concrete, repeatable steps: how an event is detected, logged, triaged, escalated, contained, and closed out. It is owned and executed by the SOC / incident response team, with SIEM and EDR platforms providing the detection and telemetry that feed the process. Organizations need a documented process because inconsistent, memory-based handling extends dwell time, loses forensic evidence, and produces incident records too thin to support root-cause analysis or compliance audits.
-
 ```mermaid
 %%{init: { 'theme': 'base', 'themeVariables': { 'edgeLabelBackground': '#fff' }}}%%
 flowchart LR
-    A["Ad-hoc verbal incident handoffs"] -- "Need for consistent triage and accountability" --> B["Formal Incident Management Process"]
-    style A fill:#f9f9f9,stroke:#333,stroke-width:1px
-    style B fill:#e1f5fe,stroke:#01579b,stroke-width:1px
+    A["Ad-hoc verbal\nincident handoffs"] -- "Need for consistent triage and accountability" --> B["Formal Incident\nManagement Process"]
+    style A fill:#f9f9f9,stroke:#333,stroke-width:3px
+    style B fill:#e1f5fe,stroke:#01579b,stroke-width:3px
 ```
+
+**Definition**: The Incident Management Process is the operational runbook that translates the Incident Management Policy into concrete, repeatable steps: how an event is detected, logged, triaged, escalated, contained, and closed out.
+
+**Features**:  
+( **Ownership** ) Owned and executed by the SOC / incident response team.  
+( **Telemetry** ) SIEM and EDR platforms provide the detection and telemetry that feed the process.  
+( **Consistency** ) Replaces inconsistent, memory-based handling that extends dwell time and loses forensic evidence.  
+( **Audit Readiness** ) Produces incident records detailed enough to support root-cause analysis and compliance audits.
 
 ## II. Structure & Process
 

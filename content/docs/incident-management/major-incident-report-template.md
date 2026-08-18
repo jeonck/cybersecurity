@@ -10,15 +10,21 @@ draft: false
 
 ## I. Overview
 
-The Major Incident Report Template captures the full lifecycle of a critical or high-severity security incident: detection source, impact, timeline, containment actions, root cause, and corrective actions. It is owned by the SOC / incident response team and typically requires sign-off from the incident commander and CISO before closure. Organizations need this level of detail for major incidents because regulators, auditors, and executive leadership expect a defensible, evidence-backed account of what happened, how it was detected (via **SIEM** correlation or **EDR** behavioral alerting), and what was done to prevent recurrence — informal notes are not sufficient for legal or compliance review.
-
 ```mermaid
 %%{init: { 'theme': 'base', 'themeVariables': { 'edgeLabelBackground': '#fff' }}}%%
 flowchart LR
-    A["Informal notes scattered across chat and email"] -- "Need for a defensible, auditable incident record" --> B["Formal Major Incident Report Template"]
-    style A fill:#f9f9f9,stroke:#333,stroke-width:1px
-    style B fill:#e1f5fe,stroke:#01579b,stroke-width:1px
+    A["Informal notes scattered\nacross chat and email"] -- "Need for a defensible, auditable incident record" --> B["Formal Major Incident\nReport Template"]
+    style A fill:#f9f9f9,stroke:#333,stroke-width:3px
+    style B fill:#e1f5fe,stroke:#01579b,stroke-width:3px
 ```
+
+**Definition**: The Major Incident Report Template captures the full lifecycle of a critical or high-severity security incident: detection source, impact, timeline, containment actions, root cause, and corrective actions.
+
+**Features**:  
+( **Ownership** ) Owned by the SOC / incident response team.  
+( **Sign-Off** ) Requires sign-off from the incident commander and CISO before closure.  
+( **Detection Sources** ) Documents how the incident was detected, via **SIEM** correlation or **EDR** behavioral alerting.  
+( **Defensibility** ) Provides the defensible, evidence-backed account that regulators, auditors, and executive leadership expect — informal notes are not sufficient for legal or compliance review.
 
 ## II. Structure & Process
 

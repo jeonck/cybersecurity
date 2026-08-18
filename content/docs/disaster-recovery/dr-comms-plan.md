@@ -10,15 +10,21 @@ draft: false
 
 ## I. Overview
 
-A DR Communications Plan defines, in advance, who notifies which stakeholder group during a declared disaster, through which channel, using which pre-approved message templates, and under what escalation timing. It is owned by the DR coordinator working with corporate communications and legal, and it is exercised alongside the DR Plan Template. Without it, teams improvise messaging under pressure while racing against **RTO** targets, which produces inconsistent or premature statements to staff, customers, or regulators — a failure mode distinct from, but as damaging as, missing a recovery deadline.
-
 ```mermaid
 %%{init: { 'theme': 'base', 'themeVariables': { 'edgeLabelBackground': '#fff' }}}%%
 flowchart LR
-    A["Ad hoc, inconsistent messaging during past outages"] -- "Need a pre-approved, role-based communication protocol" --> B["Formal DR Communications Plan"]
-    style A fill:#f9f9f9,stroke:#333,stroke-width:1px
-    style B fill:#e1f5fe,stroke:#01579b,stroke-width:1px
+    A["Ad hoc, inconsistent messaging\nduring past outages"] -- "Need a pre-approved,\nrole-based communication protocol" --> B["Formal DR Communications\nPlan"]
+    style A fill:#f9f9f9,stroke:#333,stroke-width:3px
+    style B fill:#e1f5fe,stroke:#01579b,stroke-width:3px
 ```
+
+**Definition**: A DR Communications Plan defines, in advance, who notifies which stakeholder group during a declared disaster, through which channel, using which pre-approved message templates, and under what escalation timing.
+
+**Features**:  
+( **Ownership** ) Owned by the DR coordinator working with corporate communications and legal, and exercised alongside the DR Plan Template.  
+( **Distinct Failure Mode** ) Without it, teams improvise messaging under pressure while racing against **RTO** targets.  
+( **Stakeholder Reach** ) Covers inconsistent or premature statements to staff, customers, or regulators.  
+( **Comparable Damage** ) A messaging failure is a failure mode distinct from, but as damaging as, missing a recovery deadline.
 
 ## II. Structure & Process
 

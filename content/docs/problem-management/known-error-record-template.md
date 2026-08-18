@@ -10,15 +10,21 @@ draft: false
 
 ## I. Overview
 
-A Known Error (KE) Record documents a problem for which the root cause has been diagnosed and a workaround identified, even though a permanent fix has not yet been implemented. It is owned and maintained by the problem manager or a designated technical lead, and published so service desk and incident responders can apply the workaround immediately instead of re-diagnosing the same fault. This distinction matters operationally: an incident response restores service fast using whatever workaround is on file, while the known error record is what makes that workaround discoverable and consistent across every recurrence.
-
 ```mermaid
 %%{init: { 'theme': 'base', 'themeVariables': { 'edgeLabelBackground': '#fff' }}}%%
 flowchart LR
-    A["Same fault re-diagnosed from scratch each time it recurs"] -- "Need a reusable, discoverable workaround" --> B["Published Known Error Record"]
-    style A fill:#f9f9f9,stroke:#333,stroke-width:1px
-    style B fill:#e1f5fe,stroke:#01579b,stroke-width:1px
+    A["Same fault re-diagnosed from scratch\neach time it recurs"] -- "Need a reusable, discoverable workaround" --> B["Published Known Error\nRecord"]
+    style A fill:#f9f9f9,stroke:#333,stroke-width:3px
+    style B fill:#e1f5fe,stroke:#01579b,stroke-width:3px
 ```
+
+**Definition**: A Known Error (KE) Record documents a problem for which the root cause has been diagnosed and a workaround identified, even though a permanent fix has not yet been implemented.
+
+**Features**:  
+( **Ownership** ) Owned and maintained by the problem manager or a designated technical lead.  
+( **Publication** ) Published so service desk and incident responders can apply the workaround immediately instead of re-diagnosing the same fault.  
+( **Operational Role** ) Complements incident response, which restores service fast using whatever workaround is on file.  
+( **Discoverability** ) Makes the workaround discoverable and consistent across every recurrence of the fault.
 
 ## II. Structure & Process
 

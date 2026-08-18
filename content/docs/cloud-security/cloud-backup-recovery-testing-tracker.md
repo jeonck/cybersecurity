@@ -10,15 +10,20 @@ draft: false
 
 ## I. Overview
 
-A Cloud Backup & Recovery Testing Tracker records what is backed up in cloud environments, how, and — critically — when the restore was last tested and whether it succeeded. It is maintained by the cloud platform or disaster recovery team, with sign-off from workload owners on recovery results. A configured backup that has never been restored is an unverified assumption, not a control; this tracker exists so recovery point and recovery time objectives are demonstrated against real restore attempts rather than inferred from a backup job's success status.
-
 ```mermaid
 %%{init: { 'theme': 'base', 'themeVariables': { 'edgeLabelBackground': '#fff' }}}%%
 flowchart LR
-    A["Backups configured but never restore-tested"] -- "Need for verified recovery assurance" --> B["Formal Cloud Backup & Recovery Testing Tracker"]
-    style A fill:#f9f9f9,stroke:#333,stroke-width:1px
-    style B fill:#e1f5fe,stroke:#01579b,stroke-width:1px
+    A["Backups configured but\nnever restore-tested"] -- "Need for verified\nrecovery assurance" --> B["Formal Cloud Backup &\nRecovery Testing Tracker"]
+    style A fill:#f9f9f9,stroke:#333,stroke-width:3px
+    style B fill:#e1f5fe,stroke:#01579b,stroke-width:3px
 ```
+
+**Definition**: A Cloud Backup & Recovery Testing Tracker records what is backed up in cloud environments, how, and — critically — when the restore was last tested and whether it succeeded.
+
+**Features**:  
+( **Ownership** ) Maintained by the cloud platform or disaster recovery team, with sign-off from workload owners on recovery results.  
+( **Verified Assurance** ) Treats a backup that has never been restored as an unverified assumption, not a control.  
+( **Objective Validation** ) Demonstrates recovery point and recovery time objectives against real restore attempts rather than a backup job's success status.
 
 ## II. Structure & Process
 

@@ -10,15 +10,21 @@ draft: false
 
 ## I. Overview
 
-A DR Closure Report is produced after a disaster recovery exercise or a real disaster activation is stood down. It documents what was actually recovered, the actual **RTO** and **RPO** achieved against target, gaps encountered, and the corrective actions assigned to close them. The DR coordinator drafts it and the business continuity steering committee reviews it; without a closure report, exercises and real activations leave no auditable record of whether the DR program actually works, and the same gaps resurface at the next event.
-
 ```mermaid
 %%{init: { 'theme': 'base', 'themeVariables': { 'edgeLabelBackground': '#fff' }}}%%
 flowchart LR
-    A["Exercises and activations end with no formal outcome record"] -- "Need auditable evidence recovery worked and lessons captured" --> B["Formal DR Closure Report"]
-    style A fill:#f9f9f9,stroke:#333,stroke-width:1px
-    style B fill:#e1f5fe,stroke:#01579b,stroke-width:1px
+    A["Exercises and activations end\nwith no formal outcome record"] -- "Need auditable evidence recovery\nworked and lessons captured" --> B["Formal DR Closure\nReport"]
+    style A fill:#f9f9f9,stroke:#333,stroke-width:3px
+    style B fill:#e1f5fe,stroke:#01579b,stroke-width:3px
 ```
+
+**Definition**: A DR Closure Report is produced after a disaster recovery exercise or a real disaster activation is stood down, documenting what was actually recovered, the actual **RTO** and **RPO** achieved against target, gaps encountered, and the corrective actions assigned to close them.
+
+**Features**:  
+( **Ownership** ) Drafted by the DR coordinator and reviewed by the business continuity steering committee.  
+( **Auditability** ) Without it, exercises and real activations leave no auditable record of whether the DR program actually works.  
+( **Gap Recurrence** ) A missing closure report lets the same gaps resurface at the next event.  
+( **Corrective Tracking** ) Ties measured RTO/RPO outcomes to assigned corrective actions and owners.
 
 ## II. Structure & Process
 

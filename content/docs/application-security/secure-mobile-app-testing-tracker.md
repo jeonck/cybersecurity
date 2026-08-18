@@ -10,15 +10,21 @@ draft: false
 
 ## I. Overview
 
-A Secure Mobile App Testing Tracker records which security tests have been run against a mobile application build — insecure storage checks, transport security validation, reverse-engineering resistance, and platform-specific permission review — and the status of any findings. It is maintained jointly by the AppSec team and the mobile engineering team, and it exists because mobile apps carry risks web apps do not: client-side binaries can be decompiled, local storage and keychains can be inspected on a jailbroken or rooted device, and app-store review does not substitute for a security assessment. Without a tracker, mobile releases ship on the assumption that "it works" is the same as "it is safe."
-
 ```mermaid
 %%{init: { 'theme': 'base', 'themeVariables': { 'edgeLabelBackground': '#fff' }}}%%
 flowchart LR
-    A["Mobile releases shipped with only functional QA, no security testing"] -- "Need for platform-specific security validation" --> B["Formal Secure Mobile App Testing Tracker"]
-    style A fill:#f9f9f9,stroke:#333,stroke-width:1px
-    style B fill:#e1f5fe,stroke:#01579b,stroke-width:1px
+    A["Mobile releases shipped with\nfunctional QA, not security testing"] -- "Need for platform-specific\nsecurity validation" --> B["Formal Secure Mobile\nApp Testing Tracker"]
+    style A fill:#f9f9f9,stroke:#333,stroke-width:3px
+    style B fill:#e1f5fe,stroke:#01579b,stroke-width:3px
 ```
+
+**Definition**: A Secure Mobile App Testing Tracker records which security tests have been run against a mobile application build — insecure storage checks, transport security validation, reverse-engineering resistance, and platform-specific permission review — and the status of any findings.
+
+**Features**:  
+( **Ownership** ) Maintained jointly by the AppSec team and the mobile engineering team.  
+( **Mobile-Specific Risk** ) Exists because mobile apps carry risks web apps do not — client-side binaries can be decompiled, and local storage and keychains can be inspected on a jailbroken or rooted device.  
+( **Beyond Store Review** ) App-store review does not substitute for a security assessment.  
+( **Prevents False Confidence** ) Without a tracker, mobile releases ship on the assumption that "it works" is the same as "it is safe."
 
 ## II. Structure & Process
 

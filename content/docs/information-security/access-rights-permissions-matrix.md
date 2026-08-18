@@ -10,15 +10,21 @@ draft: false
 
 ## I. Overview
 
-An Access Rights & Permissions Matrix is a structured inventory that maps who (users, roles, or groups) can access which systems, applications, or data at what level of privilege. It is maintained jointly by system/application owners and the security or IAM (identity and access management) team, and reviewed by managers who approve access for their staff. Without it, organizations cannot answer basic audit questions — who has admin rights, whether access matches job function, or whether departed employees still hold active accounts — which makes it a baseline control for least privilege and segregation of duties.
-
 ```mermaid
 %%{init: { 'theme': 'base', 'themeVariables': { 'edgeLabelBackground': '#fff' }}}%%
 flowchart LR
-    A["Ad-hoc, undocumented access grants"] -- "Need for auditability and least privilege" --> B["Formal Access Rights & Permissions Matrix"]
-    style A fill:#f9f9f9,stroke:#333,stroke-width:1px
-    style B fill:#e1f5fe,stroke:#01579b,stroke-width:1px
+    A["Ad-hoc, undocumented\naccess grants"] -- "Need for auditability\nand least privilege" --> B["Formal Access Rights &\nPermissions Matrix"]
+    style A fill:#f9f9f9,stroke:#333,stroke-width:3px
+    style B fill:#e1f5fe,stroke:#01579b,stroke-width:3px
 ```
+
+**Definition**: An Access Rights & Permissions Matrix is a structured inventory that maps who (users, roles, or groups) can access which systems, applications, or data at what level of privilege.
+
+**Features**:  
+( **Ownership** ) Maintained jointly by system/application owners and the security or IAM (identity and access management) team, and reviewed by managers who approve access for their staff.  
+( **Audit Readiness** ) Lets organizations answer basic audit questions, such as who has admin rights or whether access matches job function.  
+( **Departure Control** ) Confirms whether departed employees still hold active accounts instead of leaving that question unanswered.  
+( **Baseline Control** ) Functions as a baseline control for least privilege and segregation of duties.
 
 ## II. Structure & Process
 

@@ -10,15 +10,20 @@ draft: false
 
 ## I. Overview
 
-A Security Misconfiguration Log tracks hardening gaps in how an application, its framework, and its supporting infrastructure are configured — default credentials left in place, verbose error messages exposing stack traces, unnecessary services or ports left open, and permissive **CORS** (Cross-Origin Resource Sharing) or cloud storage policies. It is maintained jointly by the AppSec team and platform/operations engineers, and it exists because misconfiguration is not a code defect a scanner necessarily catches at the source level — it is an operational gap that only shows up when a running system is inspected. Left untracked, the same misconfiguration tends to reappear across every new environment stood up.
-
 ```mermaid
 %%{init: { 'theme': 'base', 'themeVariables': { 'edgeLabelBackground': '#fff' }}}%%
 flowchart LR
-    A["Hardening gaps discovered ad hoc, per incident, with no shared record"] -- "Need for a centralized, reusable hardening baseline" --> B["Formal Security Misconfiguration Log"]
-    style A fill:#f9f9f9,stroke:#333,stroke-width:1px
-    style B fill:#e1f5fe,stroke:#01579b,stroke-width:1px
+    A["Hardening gaps discovered ad hoc,\nper incident, with no shared record"] -- "Need for a centralized,\nreusable hardening baseline" --> B["Formal Security\nMisconfiguration Log"]
+    style A fill:#f9f9f9,stroke:#333,stroke-width:3px
+    style B fill:#e1f5fe,stroke:#01579b,stroke-width:3px
 ```
+
+**Definition**: A Security Misconfiguration Log tracks hardening gaps in how an application, its framework, and its supporting infrastructure are configured — default credentials left in place, verbose error messages exposing stack traces, unnecessary services or ports left open, and permissive **CORS** (Cross-Origin Resource Sharing) or cloud storage policies.
+
+**Features**:  
+( **Ownership** ) Maintained jointly by the AppSec team and platform/operations engineers.  
+( **Distinct From Code Defects** ) Exists because misconfiguration is not a code defect a scanner necessarily catches at the source level — it is an operational gap that only shows up when a running system is inspected.  
+( **Recurrence Risk** ) Left untracked, the same misconfiguration tends to reappear across every new environment stood up.
 
 ## II. Structure & Process
 

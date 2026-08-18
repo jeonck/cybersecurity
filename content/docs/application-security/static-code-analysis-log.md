@@ -10,15 +10,20 @@ draft: false
 
 ## I. Overview
 
-A Static Code Analysis Log records the findings produced by **SAST** (Static Application Security Testing) tools scanning source code before it runs — insecure API usage, hardcoded secrets, and syntax patterns known to cause injection or memory-safety issues — along with each finding's disposition. It is maintained by the AppSec team with remediation performed by the owning engineering team, and it exists because SAST is only useful if its output is triaged and acted on; a scanner that runs but whose findings pile up unreviewed provides no more protection than not scanning at all.
-
 ```mermaid
 %%{init: { 'theme': 'base', 'themeVariables': { 'edgeLabelBackground': '#fff' }}}%%
 flowchart LR
-    A["SAST findings generated but left untriaged in CI output"] -- "Need for tracked, accountable remediation of static findings" --> B["Formal Static Code Analysis Log"]
-    style A fill:#f9f9f9,stroke:#333,stroke-width:1px
-    style B fill:#e1f5fe,stroke:#01579b,stroke-width:1px
+    A["SAST findings generated\nbut left untriaged in CI output"] -- "Need for tracked, accountable\nremediation of static findings" --> B["Formal Static Code\nAnalysis Log"]
+    style A fill:#f9f9f9,stroke:#333,stroke-width:3px
+    style B fill:#e1f5fe,stroke:#01579b,stroke-width:3px
 ```
+
+**Definition**: A Static Code Analysis Log records the findings produced by **SAST** (Static Application Security Testing) tools scanning source code before it runs — insecure API usage, hardcoded secrets, and syntax patterns known to cause injection or memory-safety issues — along with each finding's disposition.
+
+**Features**:  
+( **Ownership** ) Maintained by the AppSec team, with remediation performed by the owning engineering team.  
+( **Triage Requirement** ) Exists because SAST is only useful if its output is triaged and acted on.  
+( **Prevents Silent Scanning** ) A scanner that runs but whose findings pile up unreviewed provides no more protection than not scanning at all.
 
 ## II. Structure & Process
 

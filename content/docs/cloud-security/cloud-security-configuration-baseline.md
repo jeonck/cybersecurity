@@ -10,15 +10,21 @@ draft: false
 
 ## I. Overview
 
-A Cloud Security Configuration Baseline defines the approved secure settings — IAM policy limits, storage access defaults, network exposure rules, logging requirements — that every cloud resource of a given type must meet, expressed as controls a CSPM tool or policy engine can check automatically. It is owned by the cloud security architecture team and implemented jointly with platform engineering through infrastructure-as-code and policy-as-code. Left to individual teams, cloud configuration drifts fast because resources are cheap to create and self-service by design; the baseline is what turns "secure by default" from an aspiration into an enforced, auditable standard, typically derived from recognized references such as CIS Benchmarks or provider well-architected frameworks.
-
 ```mermaid
 %%{init: { 'theme': 'base', 'themeVariables': { 'edgeLabelBackground': '#fff' }}}%%
 flowchart LR
-    A["Inconsistent, per-team cloud configurations"] -- "Need for a single enforceable hardening standard" --> B["Formal Cloud Security Configuration Baseline"]
-    style A fill:#f9f9f9,stroke:#333,stroke-width:1px
-    style B fill:#e1f5fe,stroke:#01579b,stroke-width:1px
+    A["Inconsistent, per-team\ncloud configurations"] -- "Need for a single\nenforceable hardening standard" --> B["Formal Cloud Security\nConfiguration Baseline"]
+    style A fill:#f9f9f9,stroke:#333,stroke-width:3px
+    style B fill:#e1f5fe,stroke:#01579b,stroke-width:3px
 ```
+
+**Definition**: A Cloud Security Configuration Baseline defines the approved secure settings — IAM policy limits, storage access defaults, network exposure rules, logging requirements — that every cloud resource of a given type must meet, expressed as controls a CSPM tool or policy engine can check automatically.
+
+**Features**:  
+( **Ownership** ) Owned by the cloud security architecture team and implemented jointly with platform engineering through infrastructure-as-code and policy-as-code.  
+( **Drift Prevention** ) Counters how cloud configuration drifts fast when resources are cheap to create and self-service by design.  
+( **Enforced Standard** ) Turns "secure by default" from an aspiration into an enforced, auditable standard.  
+( **Recognized Derivation** ) Typically derived from recognized references such as CIS Benchmarks or provider well-architected frameworks.
 
 ## II. Structure & Process
 

@@ -10,15 +10,21 @@ draft: false
 
 ## I. Overview
 
-A Security KPI Dashboard aggregates recurring metrics — patch latency, phishing test results, incident counts, access recertification completion, and similar indicators — into a single reporting view that tracks the health of the security program over time. It is owned by the CISO and compiled by the security team from underlying logs, tickets, and trackers, then presented to executive leadership and the board on a fixed cadence. It matters because individual logs and registers show operational detail but do not, on their own, answer the governance question leadership needs answered: is the security posture improving, stable, or degrading, and where should investment go next.
-
 ```mermaid
 %%{init: { 'theme': 'base', 'themeVariables': { 'edgeLabelBackground': '#fff' }}}%%
 flowchart LR
-    A["Security activity scattered across disconnected logs"] -- "Need for trend visibility and leadership accountability" --> B["Consolidated Security KPI Dashboard"]
-    style A fill:#f9f9f9,stroke:#333,stroke-width:1px
-    style B fill:#e1f5fe,stroke:#01579b,stroke-width:1px
+    A["Security activity scattered\nacross disconnected logs"] -- "Need for trend visibility\nand leadership accountability" --> B["Consolidated Security\nKPI Dashboard"]
+    style A fill:#f9f9f9,stroke:#333,stroke-width:3px
+    style B fill:#e1f5fe,stroke:#01579b,stroke-width:3px
 ```
+
+**Definition**: A Security KPI Dashboard aggregates recurring metrics into a single reporting view that tracks the health of the security program over time.
+
+**Features**:  
+( **Ownership** ) Owned by the CISO and compiled by the security team from underlying logs, tickets, and trackers, then presented to executive leadership and the board on a fixed cadence.  
+( **Metric Coverage** ) Spans patch latency, phishing test results, incident counts, access recertification completion, and similar indicators.  
+( **Governance Answer** ) Answers the governance question individual logs and registers cannot on their own: is the security posture improving, stable, or degrading.  
+( **Investment Guidance** ) Indicates where security investment should go next.
 
 ## II. Structure & Process
 

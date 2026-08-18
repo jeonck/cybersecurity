@@ -10,15 +10,21 @@ draft: false
 
 ## I. Overview
 
-A DR Plan Template is the operational runbook invoked once a disaster is declared: it lays out, per system or service, the recovery team, activation criteria, and the exact step-by-step procedure to restore operation within its target **RTO** (Recovery Time Objective) and **RPO** (Recovery Point Objective). It is drafted by the system or application owner in coordination with the DR coordinator, built from the DR Approach Document's strategy and the DR Asset Register's dependency data. A business cannot claim resilience on a strategy document alone — this is the artifact that gets tested in tabletop and full-failover exercises and actually executed during a real event.
-
 ```mermaid
 %%{init: { 'theme': 'base', 'themeVariables': { 'edgeLabelBackground': '#fff' }}}%%
 flowchart LR
-    A["No documented recovery strategy for critical systems"] -- "Need to meet defined RTO and RPO targets" --> B["Formal DR Plan Template"]
-    style A fill:#f9f9f9,stroke:#333,stroke-width:1px
-    style B fill:#e1f5fe,stroke:#01579b,stroke-width:1px
+    A["No documented recovery strategy\nfor critical systems"] -- "Need to meet defined\nRTO and RPO targets" --> B["Formal DR Plan\nTemplate"]
+    style A fill:#f9f9f9,stroke:#333,stroke-width:3px
+    style B fill:#e1f5fe,stroke:#01579b,stroke-width:3px
 ```
+
+**Definition**: A DR Plan Template is the operational runbook invoked once a disaster is declared: it lays out, per system or service, the recovery team, activation criteria, and the exact step-by-step procedure to restore operation within its target **RTO** (Recovery Time Objective) and **RPO** (Recovery Point Objective).
+
+**Features**:  
+( **Ownership** ) Drafted by the system or application owner in coordination with the DR coordinator.  
+( **Source Material** ) Built from the DR Approach Document's strategy and the DR Asset Register's dependency data.  
+( **Tested Artifact** ) The artifact actually tested in tabletop and full-failover exercises and executed during a real event.  
+( **Beyond Strategy** ) A business cannot claim resilience on a strategy document alone — this is where that strategy becomes executable.
 
 ## II. Structure & Process
 

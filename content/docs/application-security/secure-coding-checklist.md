@@ -10,15 +10,20 @@ draft: false
 
 ## I. Overview
 
-A Secure Coding Checklist is the standardized set of requirements developers verify before code is merged or released — covering input validation, output encoding, authentication and session handling, and safe use of database and file-system APIs. It is maintained by the AppSec team and applied by engineering during development and code review, and it exists because vulnerability classes like **SQL injection**, **XSS** (Cross-Site Scripting), and **CSRF** (Cross-Site Request Forgery) are well understood, well documented, and still ship into production when developers have no standard to check against. The checklist turns "know the OWASP Top 10" into a concrete, auditable per-release gate.
-
 ```mermaid
 %%{init: { 'theme': 'base', 'themeVariables': { 'edgeLabelBackground': '#fff' }}}%%
 flowchart LR
-    A["Vulnerabilities found only late, in production"] -- "Need to shift security left in the SDLC" --> B["Formal Secure Coding Checklist"]
-    style A fill:#f9f9f9,stroke:#333,stroke-width:1px
-    style B fill:#e1f5fe,stroke:#01579b,stroke-width:1px
+    A["Vulnerabilities found only\nlate, in production"] -- "Need to shift security\nleft in the SDLC" --> B["Formal Secure\nCoding Checklist"]
+    style A fill:#f9f9f9,stroke:#333,stroke-width:3px
+    style B fill:#e1f5fe,stroke:#01579b,stroke-width:3px
 ```
+
+**Definition**: A Secure Coding Checklist is the standardized set of requirements developers verify before code is merged or released — covering input validation, output encoding, authentication and session handling, and safe use of database and file-system APIs.
+
+**Features**:  
+( **Ownership** ) Maintained by the AppSec team and applied by engineering during development and code review.  
+( **Why Needed** ) Vulnerability classes like **SQL injection**, **XSS** (Cross-Site Scripting), and **CSRF** (Cross-Site Request Forgery) are well understood and well documented, yet still ship into production when developers have no standard to check against.  
+( **Concrete Gate** ) Turns "know the OWASP Top 10" into a concrete, auditable per-release gate.
 
 ## II. Structure & Process
 

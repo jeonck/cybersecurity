@@ -10,15 +10,21 @@ draft: false
 
 ## I. Overview
 
-A Password Policy defines the minimum authentication standards employees and systems must meet — length, complexity, rotation, reuse restrictions, and where multi-factor authentication (MFA) is mandatory. It is maintained by the CISO or IT security team and technically enforced through identity and access management (IAM) tooling and directory services. A written, enforceable standard is necessary because weak or reused credentials remain one of the most common initial-access vectors in breaches, and regulators and auditors expect a documented baseline rather than per-system, ad hoc rules.
-
 ```mermaid
 %%{init: { 'theme': 'base', 'themeVariables': { 'edgeLabelBackground': '#fff' }}}%%
 flowchart LR
-    A["Informal, unwritten password expectations"] -- "Need for enforceable, auditable minimum standards" --> B["Formal Password Policy"]
-    style A fill:#f9f9f9,stroke:#333,stroke-width:1px
-    style B fill:#e1f5fe,stroke:#01579b,stroke-width:1px
+    A["Informal, unwritten\npassword expectations"] -- "Need for enforceable,\nauditable minimum standards" --> B["Formal Password\nPolicy"]
+    style A fill:#f9f9f9,stroke:#333,stroke-width:3px
+    style B fill:#e1f5fe,stroke:#01579b,stroke-width:3px
 ```
+
+**Definition**: A Password Policy is the document that defines the minimum authentication standards employees and systems must meet — length, complexity, rotation, reuse restrictions, and where multi-factor authentication (MFA) is mandatory.
+
+**Features**:  
+( **Ownership** ) Maintained by the CISO or IT security team and technically enforced through identity and access management (IAM) tooling and directory services.  
+( **Breach Prevention** ) Closes off weak or reused credentials, one of the most common initial-access vectors in breaches.  
+( **Regulatory Baseline** ) Gives regulators and auditors a documented baseline rather than per-system, ad hoc rules.  
+( **MFA Requirements** ) Specifies where multi-factor authentication is mandatory alongside password strength rules.
 
 ## II. Structure & Process
 

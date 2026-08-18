@@ -10,15 +10,21 @@ draft: false
 
 ## I. Overview
 
-A Disposal and Destruction Policy defines how data-bearing assets — hard drives, backup tapes, mobile devices, printed records — must be sanitized or physically destroyed once they are no longer needed, so that discarded equipment or paper cannot leak sensitive information. It is maintained by the CISO or GRC team and executed by IT operations and facilities, often with certified third-party destruction vendors for high-sensitivity media. A written policy is necessary because retired equipment and old paper records are a well-documented breach vector, and regulators expect proof that decommissioned assets were sanitized, not just discarded.
-
 ```mermaid
 %%{init: { 'theme': 'base', 'themeVariables': { 'edgeLabelBackground': '#fff' }}}%%
 flowchart LR
-    A["Retired hardware and records discarded without controls"] -- "Need for verifiable, secure end-of-life handling" --> B["Formal Disposal and Destruction Policy"]
-    style A fill:#f9f9f9,stroke:#333,stroke-width:1px
-    style B fill:#e1f5fe,stroke:#01579b,stroke-width:1px
+    A["Retired hardware and records\ndiscarded without controls"] -- "Need for verifiable,\nsecure end-of-life handling" --> B["Formal Disposal\nand Destruction Policy"]
+    style A fill:#f9f9f9,stroke:#333,stroke-width:3px
+    style B fill:#e1f5fe,stroke:#01579b,stroke-width:3px
 ```
+
+**Definition**: A Disposal and Destruction Policy is the document that defines how data-bearing assets — hard drives, backup tapes, mobile devices, printed records — must be sanitized or physically destroyed once they are no longer needed.
+
+**Features**:  
+( **Ownership** ) Maintained by the CISO or GRC team and executed by IT operations and facilities.  
+( **Third-Party Destruction** ) Often relies on certified third-party destruction vendors for high-sensitivity media.  
+( **Breach Prevention** ) Prevents discarded equipment or paper records from leaking sensitive information, a well-documented breach vector.  
+( **Regulatory Proof** ) Gives regulators proof that decommissioned assets were sanitized, not just discarded.
 
 ## II. Structure & Process
 

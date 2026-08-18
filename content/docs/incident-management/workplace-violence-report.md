@@ -10,15 +10,21 @@ draft: false
 
 ## I. Overview
 
-The Workplace Violence Report documents any threat, altercation, or act of violence involving employees, contractors, or visitors, capturing what happened, who was involved, and what immediate and follow-up action was taken. It is jointly owned by HR and physical security, with legal counsel involved for incidents that may carry criminal or employment-law implications. Organizations need this template because workplace violence incidents carry immediate safety, legal liability, and duty-of-care obligations, and undocumented handling leaves the organization unable to demonstrate it responded appropriately.
-
 ```mermaid
 %%{init: { 'theme': 'base', 'themeVariables': { 'edgeLabelBackground': '#fff' }}}%%
 flowchart LR
-    A["Verbal handling of threats with no formal record"] -- "Need for safety response and legal accountability" --> B["Formal Workplace Violence Report"]
-    style A fill:#f9f9f9,stroke:#333,stroke-width:1px
-    style B fill:#e1f5fe,stroke:#01579b,stroke-width:1px
+    A["Verbal handling of threats\nwith no formal record"] -- "Need for safety response and legal accountability" --> B["Formal Workplace\nViolence Report"]
+    style A fill:#f9f9f9,stroke:#333,stroke-width:3px
+    style B fill:#e1f5fe,stroke:#01579b,stroke-width:3px
 ```
+
+**Definition**: The Workplace Violence Report documents any threat, altercation, or act of violence involving employees, contractors, or visitors, capturing what happened, who was involved, and what immediate and follow-up action was taken.
+
+**Features**:  
+( **Ownership** ) Jointly owned by HR and physical security.  
+( **Legal Involvement** ) Legal counsel is involved for incidents that may carry criminal or employment-law implications.  
+( **Duty of Care** ) Addresses the immediate safety, legal liability, and duty-of-care obligations these incidents carry.  
+( **Accountability** ) Undocumented handling leaves the organization unable to demonstrate it responded appropriately.
 
 ## II. Structure & Process
 

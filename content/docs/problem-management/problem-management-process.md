@@ -10,15 +10,21 @@ draft: false
 
 ## I. Overview
 
-The Problem Management Process defines how an organization moves from a pattern of incidents to a diagnosed root cause to a permanent fix, in a repeatable, auditable way. It is owned by the problem manager as a process document, referenced by service desk, incident response, and engineering teams whenever incidents recur or a single incident is significant enough to warrant investigation. The process exists precisely to enforce the ITIL distinction between incident and problem: incident management is optimized for speed of restoration, while this process is optimized for permanence of resolution, deliberately trading immediate closure for durable prevention.
-
 ```mermaid
 %%{init: { 'theme': 'base', 'themeVariables': { 'edgeLabelBackground': '#fff' }}}%%
 flowchart LR
-    A["Ad-hoc, inconsistent handling of recurring incidents"] -- "Need a repeatable path from symptom to root-cause fix" --> B["Documented Problem Management Process"]
-    style A fill:#f9f9f9,stroke:#333,stroke-width:1px
-    style B fill:#e1f5fe,stroke:#01579b,stroke-width:1px
+    A["Ad-hoc, inconsistent handling\nof recurring incidents"] -- "Need a repeatable path from symptom to root-cause fix" --> B["Documented Problem\nManagement Process"]
+    style A fill:#f9f9f9,stroke:#333,stroke-width:3px
+    style B fill:#e1f5fe,stroke:#01579b,stroke-width:3px
 ```
+
+**Definition**: The Problem Management Process defines how an organization moves from a pattern of incidents to a diagnosed root cause to a permanent fix, in a repeatable, auditable way.
+
+**Features**:  
+( **Ownership** ) Owned by the problem manager as a process document.  
+( **Reference Use** ) Referenced by service desk, incident response, and engineering teams whenever incidents recur or a single incident warrants investigation.  
+( **ITIL Distinction** ) Enforces the ITIL split between incident management, optimized for speed of restoration, and problem management, optimized for permanence of resolution.  
+( **Trade-off** ) Deliberately trades immediate closure for durable prevention of the root cause.
 
 ## II. Structure & Process
 

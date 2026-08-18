@@ -10,15 +10,21 @@ draft: false
 
 ## I. Overview
 
-A Cloud Incident Response Log is the chronological record of security incidents detected in cloud environments — exposed storage, compromised credentials, misused service accounts, or compromised workloads — tracked from detection through containment, root cause, and remediation. It is owned by the cloud security operations team, with input from the platform team on containment actions and from resource owners on impact. Cloud incidents often span multiple accounts, providers, and detection tools (CSPM, CWPP, cloud-native audit logs), so a single consolidated log is what allows a security program to see patterns, measure response time, and prove an incident was actually closed rather than just alerted on.
-
 ```mermaid
 %%{init: { 'theme': 'base', 'themeVariables': { 'edgeLabelBackground': '#fff' }}}%%
 flowchart LR
-    A["Cloud alerts handled ad hoc across teams"] -- "Need for consistent tracking and root-cause closure" --> B["Formal Cloud Incident Response Log"]
-    style A fill:#f9f9f9,stroke:#333,stroke-width:1px
-    style B fill:#e1f5fe,stroke:#01579b,stroke-width:1px
+    A["Cloud alerts handled\nad hoc across teams"] -- "Need for consistent tracking\nand root-cause closure" --> B["Formal Cloud Incident\nResponse Log"]
+    style A fill:#f9f9f9,stroke:#333,stroke-width:3px
+    style B fill:#e1f5fe,stroke:#01579b,stroke-width:3px
 ```
+
+**Definition**: A Cloud Incident Response Log is the chronological record of security incidents detected in cloud environments — exposed storage, compromised credentials, misused service accounts, or compromised workloads — tracked from detection through containment, root cause, and remediation.
+
+**Features**:  
+( **Ownership** ) Owned by the cloud security operations team, with input from the platform team on containment actions and from resource owners on impact.  
+( **Cross-Tool Consolidation** ) Consolidates incidents that often span multiple accounts, providers, and detection tools (CSPM, CWPP, cloud-native audit logs) into a single log.  
+( **Pattern Visibility** ) Lets a security program see patterns and measure response time across incidents.  
+( **Verified Closure** ) Proves an incident was actually closed rather than just alerted on.
 
 ## II. Structure & Process
 

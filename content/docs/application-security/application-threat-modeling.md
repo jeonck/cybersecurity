@@ -10,15 +10,21 @@ draft: false
 
 ## I. Overview
 
-An Application Threat Modeling document captures the structured analysis of a system's attack surface — its trust boundaries, data flows, and the ways an attacker could abuse each one — performed before or during design, rather than after the code is written. It is produced collaboratively by the application's engineering team and AppSec, typically using a frame like **STRIDE** (Spoofing, Tampering, Repudiation, Information Disclosure, Denial of Service, Elevation of Privilege), and it exists because security controls chosen after architecture is fixed are patches, not design decisions; threat modeling is how a team decides what to build defensively in the first place instead of retrofitting defenses onto a shipped system.
-
 ```mermaid
 %%{init: { 'theme': 'base', 'themeVariables': { 'edgeLabelBackground': '#fff' }}}%%
 flowchart LR
-    A["Security controls bolted on after architecture is already fixed"] -- "Need to identify attacker scenarios during design" --> B["Formal Application Threat Modeling process"]
-    style A fill:#f9f9f9,stroke:#333,stroke-width:1px
-    style B fill:#e1f5fe,stroke:#01579b,stroke-width:1px
+    A["Security controls bolted on\nafter architecture is fixed"] -- "Need to identify attacker\nscenarios during design" --> B["Formal Application Threat\nModeling process"]
+    style A fill:#f9f9f9,stroke:#333,stroke-width:3px
+    style B fill:#e1f5fe,stroke:#01579b,stroke-width:3px
 ```
+
+**Definition**: An Application Threat Modeling document captures the structured analysis of a system's attack surface — its trust boundaries, data flows, and the ways an attacker could abuse each one — performed before or during design, rather than after the code is written.
+
+**Features**:  
+( **Ownership** ) Produced collaboratively by the application's engineering team and AppSec.  
+( **Taxonomy** ) Typically uses a frame like **STRIDE** (Spoofing, Tampering, Repudiation, Information Disclosure, Denial of Service, Elevation of Privilege).  
+( **Design-Time Rationale** ) Exists because security controls chosen after architecture is fixed are patches, not design decisions.  
+( **Proactive Defense** ) Lets a team decide what to build defensively in the first place instead of retrofitting defenses onto a shipped system.
 
 ## II. Structure & Process
 

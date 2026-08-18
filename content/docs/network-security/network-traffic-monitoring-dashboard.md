@@ -10,15 +10,21 @@ draft: false
 
 ## I. Overview
 
-A Network Traffic Monitoring Dashboard consolidates flow data, packet captures, and IDS/IPS alerts into a single operational view of what is moving across the network, at what volume, and whether any of it deviates from baseline. It is built and maintained by the network security engineering team and used day to day by the SOC and NOC for detection and troubleshooting. Without centralized traffic visibility, threats that manifest as subtle traffic anomalies — reconnaissance scans, slow data exfiltration, protocol-layer floods — go unnoticed until they escalate into an outage or breach.
-
 ```mermaid
 %%{init: { 'theme': 'base', 'themeVariables': { 'edgeLabelBackground': '#fff' }}}%%
 flowchart LR
-    A["Traffic visibility siloed per device, checked only reactively"] -- "Need for continuous, centralized traffic visibility" --> B["Network Traffic Monitoring Dashboard"]
-    style A fill:#f9f9f9,stroke:#333,stroke-width:1px
-    style B fill:#e1f5fe,stroke:#01579b,stroke-width:1px
+    A["Traffic visibility siloed\nper device, checked only reactively"] -- "Need for continuous,\ncentralized traffic visibility" --> B["Network Traffic Monitoring\nDashboard"]
+    style A fill:#f9f9f9,stroke:#333,stroke-width:3px
+    style B fill:#e1f5fe,stroke:#01579b,stroke-width:3px
 ```
+
+**Definition**: A Network Traffic Monitoring Dashboard consolidates flow data, packet captures, and IDS/IPS alerts into a single operational view of what is moving across the network and whether any of it deviates from baseline.
+
+**Features**:  
+( **Ownership** ) Built and maintained by the network security engineering team and used day to day by the SOC and NOC for detection and troubleshooting.  
+( **Data Sources** ) Combines flow data, packet captures, and IDS/IPS alerts into one operational view.  
+( **Anomaly Detection** ) Surfaces subtle traffic anomalies such as reconnaissance scans, slow data exfiltration, and protocol-layer floods.  
+( **Prevents Blind Spots** ) Without centralized visibility, these anomalies go unnoticed until they escalate into an outage or breach.
 
 ## II. Structure & Process
 

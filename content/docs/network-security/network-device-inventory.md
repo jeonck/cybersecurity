@@ -10,15 +10,21 @@ draft: false
 
 ## I. Overview
 
-A Network Device Inventory is the authoritative list of every physical and virtual network device — routers, switches, firewalls, load balancers, wireless access points, VPN concentrators — with its location, firmware version, and configuration baseline. The network security engineering team owns and maintains it, typically backed by a discovery or CMDB (Configuration Management Database) tool. Security programs depend on it because unpatched or unknown ("shadow") devices are a leading source of breaches, and neither vulnerability management nor incident response can function without knowing what is actually on the network.
-
 ```mermaid
 %%{init: { 'theme': 'base', 'themeVariables': { 'edgeLabelBackground': '#fff' }}}%%
 flowchart LR
-    A["Tribal knowledge of what devices exist on the network"] -- "Need for a verified, patchable, auditable device catalog" --> B["Formal Network Device Inventory"]
-    style A fill:#f9f9f9,stroke:#333,stroke-width:1px
-    style B fill:#e1f5fe,stroke:#01579b,stroke-width:1px
+    A["Tribal knowledge of what\ndevices exist on the network"] -- "Need for a verified,\npatchable, auditable device catalog" --> B["Formal Network Device\nInventory"]
+    style A fill:#f9f9f9,stroke:#333,stroke-width:3px
+    style B fill:#e1f5fe,stroke:#01579b,stroke-width:3px
 ```
+
+**Definition**: A Network Device Inventory is the authoritative list of every physical and virtual network device, with its location, firmware version, and configuration baseline.
+
+**Features**:  
+( **Ownership** ) Owned and maintained by the network security engineering team, typically backed by a discovery or CMDB (Configuration Management Database) tool.  
+( **Device Coverage** ) Spans routers, switches, firewalls, load balancers, wireless access points, and VPN concentrators.  
+( **Shadow Device Risk** ) Unpatched or unknown ("shadow") devices are a leading source of breaches when no inventory exists.  
+( **Dependency** ) Neither vulnerability management nor incident response can function without knowing what is actually on the network.
 
 ## II. Structure & Process
 

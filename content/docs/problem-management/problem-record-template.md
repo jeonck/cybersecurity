@@ -10,15 +10,21 @@ draft: false
 
 ## I. Overview
 
-A Problem Record is the individual working document that tracks one problem's investigation, from initial suspicion of a common root cause through diagnosis, workaround, and permanent resolution. It is opened and maintained by the problem manager, with technical input from the engineering or security teams best placed to diagnose the fault. Where an incident ticket exists to restore service and closes once service is back, a problem record deliberately stays open until the underlying cause is eliminated, giving the organization a single place to track that longer-running effort.
-
 ```mermaid
 %%{init: { 'theme': 'base', 'themeVariables': { 'edgeLabelBackground': '#fff' }}}%%
 flowchart LR
-    A["Multiple closed incidents with the same unresolved cause"] -- "Need one record to track the cause to elimination" --> B["Formal Problem Record"]
-    style A fill:#f9f9f9,stroke:#333,stroke-width:1px
-    style B fill:#e1f5fe,stroke:#01579b,stroke-width:1px
+    A["Multiple closed incidents\nwith the same unresolved cause"] -- "Need one record to track the cause to elimination" --> B["Formal Problem\nRecord"]
+    style A fill:#f9f9f9,stroke:#333,stroke-width:3px
+    style B fill:#e1f5fe,stroke:#01579b,stroke-width:3px
 ```
+
+**Definition**: A Problem Record is the individual working document that tracks one problem's investigation, from initial suspicion of a common root cause through diagnosis, workaround, and permanent resolution.
+
+**Features**:  
+( **Ownership** ) Opened and maintained by the problem manager, with technical input from the engineering or security teams best placed to diagnose the fault.  
+( **Lifecycle** ) Stays open until the underlying cause is eliminated, unlike an incident ticket that closes once service is restored.  
+( **Single Source** ) Gives the organization a single place to track that longer-running investigation effort.  
+( **Investigation Trail** ) Records the path from initial suspicion of a common root cause through diagnosis, workaround, and permanent resolution.
 
 ## II. Structure & Process
 

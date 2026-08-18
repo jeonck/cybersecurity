@@ -10,15 +10,20 @@ draft: false
 
 ## I. Overview
 
-A Document Retention & Disposal Tracker specifies how long each category of record must be kept to satisfy legal, contractual, or operational needs, and how it must be securely disposed of once that period expires. It is jointly owned by records management, legal, and the security team, since retention periods are driven by regulatory requirements while disposal methods are a security control. It matters because data kept beyond its necessary lifespan expands breach exposure and audit burden without any offsetting business value — minimizing retained data is one of the most effective ways to shrink the blast radius of a future incident.
-
 ```mermaid
 %%{init: { 'theme': 'base', 'themeVariables': { 'edgeLabelBackground': '#fff' }}}%%
 flowchart LR
-    A["Indefinite retention of records by default"] -- "Need to limit breach exposure and meet legal minimums/maximums" --> B["Formal Retention & Disposal Tracker"]
-    style A fill:#f9f9f9,stroke:#333,stroke-width:1px
-    style B fill:#e1f5fe,stroke:#01579b,stroke-width:1px
+    A["Indefinite retention\nof records by default"] -- "Need to limit breach exposure\nand meet legal minimums/maximums" --> B["Formal Retention &\nDisposal Tracker"]
+    style A fill:#f9f9f9,stroke:#333,stroke-width:3px
+    style B fill:#e1f5fe,stroke:#01579b,stroke-width:3px
 ```
+
+**Definition**: A Document Retention & Disposal Tracker specifies how long each category of record must be kept to satisfy legal, contractual, or operational needs, and how it must be securely disposed of once that period expires.
+
+**Features**:  
+( **Ownership** ) Jointly owned by records management, legal, and the security team, since retention periods are driven by regulatory requirements while disposal methods are a security control.  
+( **Exposure Reduction** ) Limits the breach exposure and audit burden created by data kept beyond its necessary lifespan without offsetting business value.  
+( **Blast Radius** ) Minimizing retained data is one of the most effective ways to shrink the blast radius of a future incident.
 
 ## II. Structure & Process
 

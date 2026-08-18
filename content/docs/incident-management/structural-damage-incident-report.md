@@ -10,15 +10,21 @@ draft: false
 
 ## I. Overview
 
-The Structural Damage Incident Report documents physical damage to a building, data center, or piece of infrastructure — from a leak or fire to storm or equipment-related damage — and the immediate and corrective actions taken. It is owned by facilities management, with IT security looped in whenever the damaged area houses servers, network equipment, or physical access-control systems. Organizations need this record for insurance claims, safety compliance, and to ensure that damage affecting IT infrastructure triggers the appropriate availability and data-integrity response alongside the physical repair.
-
 ```mermaid
 %%{init: { 'theme': 'base', 'themeVariables': { 'edgeLabelBackground': '#fff' }}}%%
 flowchart LR
-    A["Facilities damage handled verbally with no paper trail"] -- "Need for insurance, safety, and IT-impact documentation" --> B["Formal Structural Damage Incident Report"]
-    style A fill:#f9f9f9,stroke:#333,stroke-width:1px
-    style B fill:#e1f5fe,stroke:#01579b,stroke-width:1px
+    A["Facilities damage handled\nverbally with no paper trail"] -- "Need for insurance, safety, and IT-impact documentation" --> B["Formal Structural Damage\nIncident Report"]
+    style A fill:#f9f9f9,stroke:#333,stroke-width:3px
+    style B fill:#e1f5fe,stroke:#01579b,stroke-width:3px
 ```
+
+**Definition**: The Structural Damage Incident Report documents physical damage to a building, data center, or piece of infrastructure — from a leak or fire to storm or equipment-related damage — and the immediate and corrective actions taken.
+
+**Features**:  
+( **Ownership** ) Owned by facilities management, with IT security looped in whenever the damaged area houses servers, network equipment, or physical access-control systems.  
+( **Insurance & Compliance** ) Supports insurance claims and safety compliance documentation.  
+( **IT Impact** ) Ensures damage affecting IT infrastructure triggers the appropriate availability and data-integrity response.  
+( **Coordinated Response** ) Aligns the physical repair with any needed IT security response.
 
 ## II. Structure & Process
 

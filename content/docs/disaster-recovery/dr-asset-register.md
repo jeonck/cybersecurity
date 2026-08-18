@@ -10,15 +10,21 @@ draft: false
 
 ## I. Overview
 
-A DR Asset Register is the current, validated inventory of every system, application, and piece of infrastructure in scope for disaster recovery, mapped to its business owner, dependencies, criticality tier, and per-asset **RTO**/**RPO** targets. It is maintained by the IT infrastructure or asset management team in coordination with the DR coordinator, and it is the factual foundation every DR plan is sequenced against. A DR plan built on a stale asset list will recover systems in the wrong order, miss undocumented dependencies, or attempt to restore infrastructure that no longer exists.
-
 ```mermaid
 %%{init: { 'theme': 'base', 'themeVariables': { 'edgeLabelBackground': '#fff' }}}%%
 flowchart LR
-    A["Recovery plan referencing an untracked, stale system list"] -- "Need accurate mapping of assets to recovery priority" --> B["Maintained DR Asset Register"]
-    style A fill:#f9f9f9,stroke:#333,stroke-width:1px
-    style B fill:#e1f5fe,stroke:#01579b,stroke-width:1px
+    A["Recovery plan referencing an\nuntracked, stale system list"] -- "Need accurate mapping of\nassets to recovery priority" --> B["Maintained DR Asset\nRegister"]
+    style A fill:#f9f9f9,stroke:#333,stroke-width:3px
+    style B fill:#e1f5fe,stroke:#01579b,stroke-width:3px
 ```
+
+**Definition**: A DR Asset Register is the current, validated inventory of every system, application, and piece of infrastructure in scope for disaster recovery, mapped to its business owner, dependencies, criticality tier, and per-asset **RTO**/**RPO** targets.
+
+**Features**:  
+( **Ownership** ) Maintained by the IT infrastructure or asset management team in coordination with the DR coordinator.  
+( **Foundational Role** ) Serves as the factual foundation every DR plan is sequenced against.  
+( **Sequencing Risk** ) A DR plan built on a stale asset list recovers systems in the wrong order or misses undocumented dependencies.  
+( **Data Integrity** ) A stale register can point recovery efforts at infrastructure that no longer exists.
 
 ## II. Structure & Process
 

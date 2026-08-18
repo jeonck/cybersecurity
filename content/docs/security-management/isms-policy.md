@@ -10,15 +10,21 @@ draft: false
 
 ## I. Overview
 
-The ISMS (Information Security Management System) Policy is the top-level charter document that establishes the scope, objectives, and governance structure for how an organization manages information security on an ongoing basis, following a plan-do-check-act cycle of continual improvement. It is owned by the CISO and formally approved by executive leadership or the board, since it commits the organization to resourcing and accountability for security at the governance level. Organizations adopt an ISMS policy to move from isolated, project-based security efforts to a sustained management system — the structure expected by standards such as ISO/IEC 27001 and required for many certification and regulatory regimes.
-
 ```mermaid
 %%{init: { 'theme': 'base', 'themeVariables': { 'edgeLabelBackground': '#fff' }}}%%
 flowchart LR
-    A["Isolated, project-based security initiatives"] -- "Need for a continual, governed management system" --> B["Formal ISMS Policy"]
-    style A fill:#f9f9f9,stroke:#333,stroke-width:1px
-    style B fill:#e1f5fe,stroke:#01579b,stroke-width:1px
+    A["Isolated, project-based\nsecurity initiatives"] -- "Need for a continual,\ngoverned management system" --> B["Formal ISMS\nPolicy"]
+    style A fill:#f9f9f9,stroke:#333,stroke-width:3px
+    style B fill:#e1f5fe,stroke:#01579b,stroke-width:3px
 ```
+
+**Definition**: The ISMS (Information Security Management System) Policy is the top-level charter document that establishes the scope, objectives, and governance structure for how an organization manages information security on an ongoing basis.
+
+**Features**:  
+( **Ownership** ) Owned by the CISO and formally approved by executive leadership or the board.  
+( **Governance Commitment** ) Commits the organization to resourcing and accountability for security at the governance level.  
+( **Continual Improvement** ) Follows a plan-do-check-act cycle rather than isolated, project-based security efforts.  
+( **Standards Alignment** ) Provides the structure expected by standards such as ISO/IEC 27001 and required for many certification and regulatory regimes.
 
 ## II. Structure & Process
 

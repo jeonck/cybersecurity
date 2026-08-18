@@ -10,15 +10,21 @@ draft: false
 
 ## I. Overview
 
-A **DDoS** (Distributed Denial of Service) Attack Mitigation Plan Tracker is the document that inventories which attack vectors — volumetric floods, protocol exhaustion, reflection/amplification, and application-layer floods — a network is prepared to withstand, and which controls, thresholds, and escalation paths cover each one. It is owned by the network security engineering team and operated jointly with the NOC and SOC during live incidents. Without it, DDoS response tends to be reactive: ad hoc rule changes made mid-attack, with no record of what was tried, what worked, or what capacity limits were validated beforehand.
-
 ```mermaid
 %%{init: { 'theme': 'base', 'themeVariables': { 'edgeLabelBackground': '#fff' }}}%%
 flowchart LR
-    A["Reactive, undocumented firewall changes during an attack"] -- "Need for pre-validated, auditable DDoS defense" --> B["Formal DDoS Mitigation Plan Tracker"]
-    style A fill:#f9f9f9,stroke:#333,stroke-width:1px
-    style B fill:#e1f5fe,stroke:#01579b,stroke-width:1px
+    A["Reactive, undocumented\nfirewall changes"] -- "Need for pre-validated,\nauditable DDoS defense" --> B["Formal DDoS Mitigation\nPlan Tracker"]
+    style A fill:#f9f9f9,stroke:#333,stroke-width:3px
+    style B fill:#e1f5fe,stroke:#01579b,stroke-width:3px
 ```
+
+**Definition**: A **DDoS** (Distributed Denial of Service) Attack Mitigation Plan Tracker is the document that inventories which attack vectors a network is prepared to withstand, and which controls, thresholds, and escalation paths cover each one.
+
+**Features**:  
+( **Ownership** ) Owned by the network security engineering team and operated jointly with the NOC and SOC during live incidents.  
+( **Vector Coverage** ) Spans volumetric floods, protocol exhaustion, reflection/amplification, and application-layer floods in a single inventory.  
+( **Pre-Validated Response** ) Replaces reactive, ad hoc rule changes made mid-attack with controls and thresholds validated before an incident.  
+( **Traceability** ) Preserves a record of what was tried, what worked, and what capacity limits were confirmed for future incidents.
 
 ## II. Structure & Process
 

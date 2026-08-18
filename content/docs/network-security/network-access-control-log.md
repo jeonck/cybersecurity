@@ -10,15 +10,21 @@ draft: false
 
 ## I. Overview
 
-A Network Access Control Log records connection events into network zones and segments — VPN logins, 802.1X port authentications, VLAN assignments, and remote access sessions — and whether each event matched an authorized policy. It is maintained by the NOC for raw capture and reviewed by the SOC for anomaly detection. Security programs need it because access decisions made only at the moment of connection leave no trail for investigating lateral movement, policy violations, or unauthorized devices after the fact.
-
 ```mermaid
 %%{init: { 'theme': 'base', 'themeVariables': { 'edgeLabelBackground': '#fff' }}}%%
 flowchart LR
-    A["Access events visible only in live device sessions"] -- "Need for a persistent, reviewable trail of network access" --> B["Formal Network Access Control Log"]
-    style A fill:#f9f9f9,stroke:#333,stroke-width:1px
-    style B fill:#e1f5fe,stroke:#01579b,stroke-width:1px
+    A["Access events visible only\nin live device sessions"] -- "Need for a persistent,\nreviewable trail of network access" --> B["Formal Network Access\nControl Log"]
+    style A fill:#f9f9f9,stroke:#333,stroke-width:3px
+    style B fill:#e1f5fe,stroke:#01579b,stroke-width:3px
 ```
+
+**Definition**: A Network Access Control Log records connection events into network zones and segments and whether each event matched an authorized policy.
+
+**Features**:  
+( **Ownership** ) Maintained by the NOC for raw capture and reviewed by the SOC for anomaly detection.  
+( **Event Coverage** ) Spans VPN logins, 802.1X port authentications, VLAN assignments, and remote access sessions.  
+( **Investigative Trail** ) Without it, access decisions made only at the moment of connection leave no record for later investigation.  
+( **Use Case** ) Supports investigating lateral movement, policy violations, and unauthorized devices after the fact.
 
 ## II. Structure & Process
 

@@ -10,15 +10,21 @@ draft: false
 
 ## I. Overview
 
-Compliance Management is the ongoing program that maps applicable laws, regulations, industry standards, and contractual obligations (such as ISO/IEC 27001, ISMS-P, GDPR, or sector-specific rules) to internal controls, and tracks whether those controls are actually operating. It is owned by the CISO or a dedicated GRC function, with input from legal counsel on regulatory interpretation. Organizations need a structured compliance program because obligations multiply across jurisdictions and customer contracts, and without a central tracking mechanism, gaps go unnoticed until an audit finding or regulatory inquiry surfaces them.
-
 ```mermaid
 %%{init: { 'theme': 'base', 'themeVariables': { 'edgeLabelBackground': '#fff' }}}%%
 flowchart LR
-    A["Scattered, reactive responses to individual audits"] -- "Need for a continuous, mapped compliance program" --> B["Formal Compliance Management program"]
-    style A fill:#f9f9f9,stroke:#333,stroke-width:1px
-    style B fill:#e1f5fe,stroke:#01579b,stroke-width:1px
+    A["Scattered, reactive responses\nto individual audits"] -- "Need for a continuous,\nmapped compliance program" --> B["Formal Compliance\nManagement program"]
+    style A fill:#f9f9f9,stroke:#333,stroke-width:3px
+    style B fill:#e1f5fe,stroke:#01579b,stroke-width:3px
 ```
+
+**Definition**: Compliance Management is the ongoing program that maps applicable laws, regulations, industry standards, and contractual obligations to internal controls, and tracks whether those controls are actually operating.
+
+**Features**:  
+( **Ownership** ) Owned by the CISO or a dedicated GRC function, with input from legal counsel on regulatory interpretation.  
+( **Regulatory Scope** ) Spans obligations such as ISO/IEC 27001, ISMS-P, GDPR, and sector-specific rules across jurisdictions and customer contracts.  
+( **Central Tracking** ) Replaces scattered awareness with a central mechanism that tracks whether controls are actually operating.  
+( **Early Detection** ) Surfaces gaps before an audit finding or regulatory inquiry exposes them.
 
 ## II. Structure & Process
 

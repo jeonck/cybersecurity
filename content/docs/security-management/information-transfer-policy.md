@@ -10,15 +10,21 @@ draft: false
 
 ## I. Overview
 
-An Information Transfer Policy defines the approved methods, controls, and authorization steps for moving data between people, systems, or organizations — email, file transfer, physical media, or API integration — matched to the data's classification tier. It is maintained by the CISO or GRC team and applied by everyone who sends or receives organizational data, with heavier controls enforced through IT tooling such as encrypted transfer gateways or data loss prevention (DLP) systems. A formal policy is necessary because transfer is the point where data most often leaves the organization's direct control, and inconsistent handling there undermines classification and access controls set everywhere else.
-
 ```mermaid
 %%{init: { 'theme': 'base', 'themeVariables': { 'edgeLabelBackground': '#fff' }}}%%
 flowchart LR
-    A["Ad-hoc email and file-sharing of sensitive data"] -- "Need for controlled, classification-aware transfer channels" --> B["Formal Information Transfer Policy"]
-    style A fill:#f9f9f9,stroke:#333,stroke-width:1px
-    style B fill:#e1f5fe,stroke:#01579b,stroke-width:1px
+    A["Ad-hoc email and\nfile-sharing of sensitive data"] -- "Need for controlled,\nclassification-aware transfer channels" --> B["Formal Information\nTransfer Policy"]
+    style A fill:#f9f9f9,stroke:#333,stroke-width:3px
+    style B fill:#e1f5fe,stroke:#01579b,stroke-width:3px
 ```
+
+**Definition**: An Information Transfer Policy is the document that defines the approved methods, controls, and authorization steps for moving data between people, systems, or organizations, matched to the data's classification tier.
+
+**Features**:  
+( **Ownership** ) Maintained by the CISO or GRC team and applied by everyone who sends or receives organizational data.  
+( **Channel Coverage** ) Spans email, file transfer, physical media, and API integration.  
+( **Technical Enforcement** ) Enforces heavier controls through IT tooling such as encrypted transfer gateways or data loss prevention (DLP) systems.  
+( **Control Continuity** ) Protects the point where data most often leaves the organization's direct control, preserving classification and access controls set elsewhere.
 
 ## II. Structure & Process
 

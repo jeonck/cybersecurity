@@ -10,15 +10,21 @@ draft: false
 
 ## I. Overview
 
-A Patch & Update Tracker is the document that inventories every application, framework, and third-party library a team owns, alongside the patches or version updates available for each, their severity, and the deadline by which they must be applied. It is maintained by the AppSec team in coordination with the engineering teams that own each codebase, and it exists because unpatched software — not novel zero-days — is the vulnerability class attackers exploit most reliably. Without a tracker, patching becomes reactive: fixes ship only after an incident or an external scan flags a known **CVE** (Common Vulnerabilities and Exposures) that had been sitting unaddressed for months.
-
 ```mermaid
 %%{init: { 'theme': 'base', 'themeVariables': { 'edgeLabelBackground': '#fff' }}}%%
 flowchart LR
-    A["Patches applied reactively, only after exploitation or audit findings"] -- "Need for proactive, deadline-driven remediation" --> B["Formal Patch & Update Tracker"]
-    style A fill:#f9f9f9,stroke:#333,stroke-width:1px
-    style B fill:#e1f5fe,stroke:#01579b,stroke-width:1px
+    A["Patches applied reactively,\nonly after exploitation or audits"] -- "Need for proactive,\ndeadline-driven remediation" --> B["Formal Patch &\nUpdate Tracker"]
+    style A fill:#f9f9f9,stroke:#333,stroke-width:3px
+    style B fill:#e1f5fe,stroke:#01579b,stroke-width:3px
 ```
+
+**Definition**: A Patch & Update Tracker is the document that inventories every application, framework, and third-party library a team owns, alongside the patches or version updates available for each, their severity, and the deadline by which they must be applied.
+
+**Features**:  
+( **Ownership** ) Maintained by the AppSec team in coordination with the engineering teams that own each codebase.  
+( **Risk Rationale** ) Exists because unpatched software — not novel zero-days — is the vulnerability class attackers exploit most reliably.  
+( **Reactive Failure Mode** ) Without a tracker, patching becomes reactive, with fixes shipping only after an incident or an external scan flags a known **CVE** (Common Vulnerabilities and Exposures).  
+( **Prevents Neglect** ) Surfaces issues that would otherwise sit unaddressed for months.
 
 ## II. Structure & Process
 

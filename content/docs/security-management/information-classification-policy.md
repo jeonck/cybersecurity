@@ -10,15 +10,21 @@ draft: false
 
 ## I. Overview
 
-An Information Classification Policy defines a small set of sensitivity tiers — such as public, internal, confidential, and restricted — and the handling rules (access, storage, transmission, disposal) attached to each. It is owned by data owners in partnership with the CISO or security team, since data owners best understand the business impact of exposure while security defines the technical controls per tier. Without a shared classification scheme, every other control — access rights, encryption requirements, transfer restrictions — has no consistent basis to apply against, so this policy underpins most of the rest of the security program.
-
 ```mermaid
 %%{init: { 'theme': 'base', 'themeVariables': { 'edgeLabelBackground': '#fff' }}}%%
 flowchart LR
-    A["Data treated uniformly regardless of sensitivity"] -- "Need for tiered handling rules matched to risk" --> B["Formal Information Classification Policy"]
-    style A fill:#f9f9f9,stroke:#333,stroke-width:1px
-    style B fill:#e1f5fe,stroke:#01579b,stroke-width:1px
+    A["Data treated uniformly\nregardless of sensitivity"] -- "Need for tiered handling\nrules matched to risk" --> B["Formal Information\nClassification Policy"]
+    style A fill:#f9f9f9,stroke:#333,stroke-width:3px
+    style B fill:#e1f5fe,stroke:#01579b,stroke-width:3px
 ```
+
+**Definition**: An Information Classification Policy is the document that defines a small set of sensitivity tiers — such as public, internal, confidential, and restricted — and the handling rules attached to each.
+
+**Features**:  
+( **Ownership** ) Owned by data owners in partnership with the CISO or security team, pairing business-impact judgment with technical control design.  
+( **Handling Rules** ) Attaches access, storage, transmission, and disposal rules to each sensitivity tier.  
+( **Foundational Role** ) Underpins most of the rest of the security program, since access rights, encryption, and transfer restrictions all depend on it.  
+( **Consistent Basis** ) Gives every other control a consistent basis to apply against, rather than ad hoc judgment calls.
 
 ## II. Structure & Process
 

@@ -10,15 +10,21 @@ draft: false
 
 ## I. Overview
 
-A DR Approach Document is the strategic layer of disaster recovery: it states which systems are in scope, which recovery strategy tiers apply (hot site, warm site, cold site, or cloud-based DR), the governance model, and the target bands for **RTO** (Recovery Time Objective) and **RPO** (Recovery Point Objective) before any system-level plan is written. It is drafted by the DR coordinator or business continuity manager and endorsed by IT and security leadership, since it commits the organization to a funding and resourcing model. Without it, individual teams build recovery plans against inconsistent assumptions about acceptable downtime, data loss, and available recovery infrastructure.
-
 ```mermaid
 %%{init: { 'theme': 'base', 'themeVariables': { 'edgeLabelBackground': '#fff' }}}%%
 flowchart LR
-    A["Recovery strategy improvised during each past incident"] -- "Need a documented, leadership-endorsed recovery approach" --> B["Formal DR Approach Document"]
-    style A fill:#f9f9f9,stroke:#333,stroke-width:1px
-    style B fill:#e1f5fe,stroke:#01579b,stroke-width:1px
+    A["Recovery strategy improvised\nduring each past incident"] -- "Need a documented,\nleadership-endorsed recovery approach" --> B["Formal DR Approach\nDocument"]
+    style A fill:#f9f9f9,stroke:#333,stroke-width:3px
+    style B fill:#e1f5fe,stroke:#01579b,stroke-width:3px
 ```
+
+**Definition**: A DR Approach Document is the strategic layer of disaster recovery: it states which systems are in scope, which recovery strategy tiers apply, the governance model, and the target bands for **RTO** (Recovery Time Objective) and **RPO** (Recovery Point Objective) before any system-level plan is written.
+
+**Features**:  
+( **Ownership** ) Drafted by the DR coordinator or business continuity manager and endorsed by IT and security leadership.  
+( **Recovery Tiers** ) Defines strategy options such as hot site, warm site, cold site, or cloud-based DR.  
+( **Funding Commitment** ) Endorsement commits the organization to a funding and resourcing model backing the chosen tiers.  
+( **Consistency Risk** ) Without it, individual teams build recovery plans against inconsistent assumptions about downtime, data loss, and available infrastructure.
 
 ## II. Structure & Process
 

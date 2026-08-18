@@ -10,15 +10,21 @@ draft: false
 
 ## I. Overview
 
-A Network Security Risk Mitigation register catalogs identified network risks — unsegmented zones, legacy protocols, single points of failure, unmanaged remote access — and pairs each with a likelihood, impact, and a concrete mitigation plan with an owner and target date. It is maintained by the network security engineering team and reviewed by the CISO's office as part of the broader enterprise risk program. Without a formal register, network risk lives in engineers' heads and gets addressed only after an incident forces the issue, rather than being ranked and resourced proactively.
-
 ```mermaid
 %%{init: { 'theme': 'base', 'themeVariables': { 'edgeLabelBackground': '#fff' }}}%%
 flowchart LR
-    A["Network risks known informally, addressed only after incidents"] -- "Need for a prioritized, owned, and tracked mitigation plan" --> B["Formal Network Security Risk Mitigation register"]
-    style A fill:#f9f9f9,stroke:#333,stroke-width:1px
-    style B fill:#e1f5fe,stroke:#01579b,stroke-width:1px
+    A["Network risks known informally,\naddressed only after incidents"] -- "Need for a prioritized,\nowned, and tracked mitigation plan" --> B["Formal Network Security\nRisk Mitigation register"]
+    style A fill:#f9f9f9,stroke:#333,stroke-width:3px
+    style B fill:#e1f5fe,stroke:#01579b,stroke-width:3px
 ```
+
+**Definition**: A Network Security Risk Mitigation register catalogs identified network risks and pairs each with a likelihood, impact, and a concrete mitigation plan with an owner and target date.
+
+**Features**:  
+( **Ownership** ) Maintained by the network security engineering team and reviewed by the CISO's office as part of the broader enterprise risk program.  
+( **Risk Coverage** ) Spans unsegmented zones, legacy protocols, single points of failure, and unmanaged remote access.  
+( **Proactive Prioritization** ) Without it, network risk lives in engineers' heads and is ranked only after an incident forces the issue.  
+( **Accountability** ) Every risk carries an assigned owner and target date rather than staying informally tracked.
 
 ## II. Structure & Process
 
