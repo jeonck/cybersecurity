@@ -56,18 +56,14 @@ sequenceDiagram
 
 Threat modeling is performed at design time for any new system or major feature, and re-run whenever a trust boundary changes; AppSec reviews the model at each architecture review gate.
 
-## III. Best Practices & Comparison
+## III. Expected Benefits & Implications
 
-| Document | Primary Purpose | Update Cadence | Owner |
-|---|---|---|---|
-| Application Threat Modeling | Identify design-time attacker scenarios before implementation | At design and on major change | Engineering + AppSec |
-| [Secure Coding Checklist](../secure-coding-checklist/) | Implementation-time control derived from threat model mitigations | Per pull request | AppSec + Engineering |
-| [Web Application Vulnerability Tracker](../web-application-vulnerability-tracker/) | Confirms whether threat model mitigations held up under real testing | Per scan / pentest cycle | AppSec |
+Application Threat Modeling pays off before a line of code ships — its real value is turning "we think this is secure" into a documented, reviewable claim about specific trust boundaries, rather than a vague assurance from whoever built the feature. Measure its success by how many mitigations get designed in from the start, not by how many threat models get produced; a model that never influences the architecture is paperwork, not risk reduction.
 
-- Model the system before code is written, not as a retrospective exercise after launch.
-- Diagram every trust boundary explicitly — most missed threats live at boundaries no one drew.
-- Use a consistent taxonomy (STRIDE or equivalent) so threats across different systems remain comparable.
-- Assign a concrete owner and mitigation to every identified threat; an unowned threat is not actually mitigated.
-- Revisit the model whenever authentication, data flow, or a trust boundary changes, not only on a fixed schedule.
+| Benefit | Where It Shows Up |
+|---|---|
+| Cheaper fixes | Design changes cost far less than post-launch patches or incident response |
+| Traceable ownership | Every threat has an assigned mitigation and owner, not a diffuse "someone should handle this" |
+| Faster security review | AppSec reviews a documented model instead of reverse-engineering trust boundaries from code |
 
 Related: [Secure Coding Checklist](../secure-coding-checklist/), [Web Application Vulnerability Tracker](../web-application-vulnerability-tracker/)

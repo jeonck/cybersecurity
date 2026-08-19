@@ -44,16 +44,12 @@ flowchart LR
 | **2. Data Link** | MAC Flooding, ARP Spoofing | 802.1x, MAC filtering | L2 / L3 security switch |
 | **1. Physical** | Eavesdropping (Tapping), physical destruction | Physical shielding, port locking | CCTV, fingerprint recognition |
 
-## III. Advanced Topics & Comparison
+## III. Outlook & Future Direction
 
-### Upper-Layer (L4-L7) Focused Security Strengthening
+| Security Focus | Maturity | Direction |
+|---|---|---|
+| L3/L4 perimeter blocking (ACL, firewall) | Legacy baseline | Still necessary, no longer sufficient alone |
+| L7 DPI and SSL-visibility inspection | Mainstream | Required as encrypted traffic share keeps growing |
+| Zero Trust applied across all layers | Emerging | Becoming the organizing principle, not just an L3/L4 control |
 
-Where security once centered on simple blocking at L3/L4, it is now evolving toward intelligent, **DPI** (Deep Packet Inspection)-based security that analyzes application payloads.
-
-### Securing Visibility into Encrypted Traffic
-
-With the surge in **SSL** / **TLS** usage, deploying **SSL visibility solutions** (SSL Inspection) alongside existing defenses is essential to detect malware hidden inside encrypted traffic.
-
-### Integration with Zero Trust
-
-Beyond individual layer-by-layer responses, there is a growing need to move toward an integrated security architecture that applies "**never trust, always verify**" to every access request across all layers.
+Layer-by-layer defense was built for an era when most traffic was inspectable in the clear — that era is over. With the overwhelming majority of traffic now running over TLS, a security architecture that stops at L3/L4 ACLs is effectively blind to whatever crosses L6/L7, which is exactly where modern attacks live. Expect SSL-visibility inspection to shift from an optional add-on to a baseline requirement, and expect "never trust, always verify" to stop being a separate L3/L4 control and instead become the lens every layer's security decisions get made through.

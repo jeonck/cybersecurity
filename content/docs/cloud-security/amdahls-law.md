@@ -55,20 +55,12 @@ graph LR
     style Curve3 fill:#f1f8e9,stroke:#7cb342
 ```
 
-## III. Advanced Topics & Comparison
+## III. Key Strategies for Successful Adoption
 
-### Applications of Amdahl's Law in Parallel Computing Environments
+| Strategy | Approach | Where It Bites Back If Skipped |
+|---|---|---|
+| Maximize the parallelizable portion (P) | Design toward MSA and distributed architectures that minimize the sequential fraction (1-P) | Added nodes stop paying off past a low ceiling |
+| Cut inter-node communication overhead | Favor low-latency channels (gRPC, RDMA) between distributed components | Node-to-node chatter becomes the new sequential bottleneck |
+| Shrink the unit of work | Split large tasks into small, independent units rather than a few coarse ones | Coarse units serialize on whichever chunk finishes last |
 
-| Application Area | Details | Security and Performance Implications |
-|:---:|----------|------------------|
-| **Large-Scale Data Processing** | Big data analytics, machine learning model training, etc. | Optimizing sequential logic (preprocessing, result aggregation) is critical |
-| **Distributed Systems** | Inter-service communication within an MSA environment | Network latency acts as sequential processing time |
-| **Parallel Attack/Defense** | Distributed DDoS attacks, multi-threaded vulnerability scanning | Attack/defense efficiency does not scale proportionally with parallel resources |
-
-### Strategies for Overcoming the Limits of Amdahl's Law
-
-- **Maximizing the Parallelizable Portion**: Design the architecture to minimize the proportion of sequential work (1-P) in the overall system
-- **Efficient Communication Channels**: Maximize the value of P (proportion parallelizable) by reducing inter-node communication overhead (e.g. gRPC, RDMA)
-- **Finer-Grained Parallel Units**: Increase parallel processing efficiency by dividing the overall task into small, independent units rather than large ones
-
-> **Key point**: Amdahl's Law dispels the illusion that parallel computing is a cure-all, underscores the importance of **architectural design**, and shows that continually managing a system's **sequential bottlenecks** is the key to performance optimization.
+The number teams usually get wrong isn't P itself, it's what silently counts as sequential — network round-trips, distributed locks, and cross-service consensus all reintroduce serial time even in an architecture marketed as horizontally scalable. Before provisioning the tenth node, profile where the residual serial fraction actually lives; in most MSA and distributed defense/attack-surface designs it's coordination overhead, not raw compute, and no amount of added hardware fixes that.

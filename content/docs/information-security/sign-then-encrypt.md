@@ -64,7 +64,7 @@ flowchart TD
 | **Confidentiality Maintained** | Entire package is encrypted | A third party cannot learn the message content or the identity of the signer |
 | **Attack Resistance** | Defends against **surreptitious forwarding** | Resists an attack where someone intercepts only the signature and replays it |
 
-## III. Advanced Topics & Comparison
+## III. Comparison & Application
 
 | Comparison Item | Sign-then-Encrypt (Recommended) | Encrypt-then-Sign |
 |----------|-----------------------|-------------------|
@@ -72,3 +72,5 @@ flowchart TD
 | **Signature Target** | Hash of the original message (plaintext) | Hash of the ciphertext |
 | **Confidentiality Level** | High (the signer's identity is also encrypted) | Moderate (the signer may be exposed) |
 | **Standard Use** | **S/MIME**, **PGP**, application-level security | **IPSec** (network layer), among others |
+
+Encrypt-then-sign isn't simply the "wrong" order — it's the right order at the network layer, where the signature needs to authenticate the transmitted packet itself rather than the sender's identity to an application. The mistake is applying IPSec's ordering convention to an application-level exchange like email, where exposing the signer's identity on the wire is exactly the leak sign-then-encrypt was designed to prevent.

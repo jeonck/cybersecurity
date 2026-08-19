@@ -51,18 +51,14 @@ flowchart TD
 
 Drafting begins once the permanent fix is verified, and the report is finalized after stakeholder review confirms the root cause, impact figures, and follow-up actions are accurate and assigned.
 
-## III. Best Practices & Comparison
+## III. Trends & Future Direction
 
-| Document | Primary Purpose | Trigger | Owner |
-|---|---|---|---|
-| Major Problem Report Template | Formal post-resolution review with impact and lessons learned | Major problem resolved or under executive review | Problem manager / service owner |
-| Problem Record Template | Working record of investigation from open to closed | Recurring or significant incident pattern | Problem manager |
-| Major Incident Report Template | Document how a single major incident was detected and restored | Major incident declared | Incident commander |
+| Practice | Status | Direction |
+|---|---|---|
+| Siloed post-incident write-ups | Legacy pattern | Being displaced by structured, circulated reports |
+| Cost accounted only for the triggering incident | Common shortfall | Shifting toward cumulative cost across every recurrence |
+| Follow-up actions as open-ended commitments | Still common | Moving toward change-management-tracked owners and dates |
 
-- Quantify cumulative impact across all recurrences, not just the triggering incident, to justify remediation investment.
-- Separate root cause from contributing factors so the report does not overstate a single point of failure.
-- Route follow-up actions through change management with named owners and dates, not open-ended commitments.
-- Distinguish this report from a major incident report: incident response measures time-to-restore, problem review measures time-to-eliminate-cause.
-- Circulate lessons learned beyond the immediate team so similar architectures elsewhere can be checked proactively.
+The direction major problem reporting is heading is away from a document that gets filed and forgotten, toward one that actively feeds architecture review elsewhere in the organization — the report's real value isn't the write-up of what happened, it's whether a team running a similar stack two departments over ever sees it. Treat circulating lessons learned beyond the immediate team as the differentiator between a report that satisfies a governance checkbox and one that actually prevents the next occurrence somewhere else.
 
 Related: [Problem Record Template](../problem-record-template/), [Known Error (KE) Record Template](../known-error-record-template/), [Major Incident Report Template](/docs/incident-management/major-incident-report-template/).

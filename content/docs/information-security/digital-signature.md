@@ -58,7 +58,7 @@ sequenceDiagram
 | **Non-reusability** | The signature cannot be reused on another document | A unique hash value is generated per document |
 | **Immutability** | Any change to the document after signing invalidates the signature | Relies on the collision resistance of the hash algorithm |
 
-## III. Advanced Topics & Comparison
+## III. Outlook & Future Direction
 
 | Category | Accredited Certification Regime (Past) | Simple Authentication / Decentralized ID (Present) |
 |:---:|-------------------------|-----------------------|
@@ -66,3 +66,5 @@ sequenceDiagram
 | **Authentication Technology** | PKI-based, hard-coded methods | FIDO (biometric), cloud authentication, DID (blockchain) |
 | **User Experience** | ActiveX, complex passwords | Fingerprint, facial recognition, simple PIN |
 | **Security Trend** | Centralized CA management | Quantum-resistant signatures (PQC), distributed trust models |
+
+The shift away from accredited-certificate exclusivity was as much a usability correction as a security one — ActiveX-based signing collapsed under its own friction long before any cryptographic weakness forced the issue, and FIDO-based schemes won by being both easier and no less trustworthy. The next forcing function is quantum resistance: expect signature schemes to migrate to PQC algorithms (Dilithium, SPHINCS+) well ahead of encryption schemes, since a forged signature is exploitable the moment a quantum computer exists, with none of the "harvest now, decrypt later" grace period that encrypted data gets.

@@ -59,18 +59,13 @@ graph TD
 | **Model Inversion / Extraction** | Infers or steals the structure or training data of a trained model | - **Training-data privacy breach**: Risk of leaking sensitive personal information <br/>- **Model theft**: Leakage of proprietary technology or use in further attacks |
 | **Privacy Violation** | Leakage of personal information from the data a model was trained on | Includes **Membership Inference Attacks**, among others |
 
-## III. Advanced Topics & Comparison
+## III. Adoption Considerations
 
-### Securing the AI Lifecycle
+| Lifecycle Stage | Key Risk | Primary Mitigation |
+|---|---|---|
+| Data collection / preprocessing | Data poisoning, training-data privacy leakage | Data integrity verification, **pseudonymization**, **differential privacy** |
+| Model training / tuning | Adversarial attacks, model inversion / extraction | **Adversarial Training**, **Model Integrity Check** |
+| Deployment / serving (API) | Unauthorized access, abuse of AI service endpoints | Access control, **rate limiting**, input/output validation |
+| Inference / operation | Undetected model drift or anomalous behavior | Continuous monitoring, **UEBA**-based anomaly detection ( **AI for Security** ) |
 
-- **Data security**: Verify the integrity of training data and apply privacy-protection measures such as **pseudonymization** and **differential privacy**.
-- **Model security**: Apply adversarial-defense techniques ( **Adversarial Training** ) and model-integrity verification ( **Model Integrity Check** ).
-- **API security**: Enforce access control, **rate limiting**, and input/output validation ( **Input/Output Validation** ) on AI service APIs such as LLMs.
-- **Continuous monitoring**: Monitor AI system operational logs and model performance for signs of anomalies.
-
-### New Paradigms in AI Security
-
-- **AI for Security**: Use AI technology to strengthen security threat detection and response capabilities ( **UEBA**, **Anomaly Detection** ).
-- **Security for AI**: Develop technology to analyze and defend against vulnerabilities in AI systems themselves.
-
-> **Key point**: AI system security demands an approach fundamentally different from traditional IT security, and **multi-layered defense** spanning data, models, and infrastructure is essential.
+Most AI-security budgets still concentrate on the deployment stage, because API access control and rate limiting look and feel like familiar IT controls. But the incidents that actually do damage — poisoned training data, leaked training-set PII — originate upstream, in a data pipeline that security teams are rarely invited to review. Treat the MLOps pipeline as security-in-scope from day one, not as infrastructure owned solely by the data-engineering team.

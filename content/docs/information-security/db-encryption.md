@@ -52,7 +52,7 @@ flowchart LR
 | Performance Impact | Low load on the DB server | Possible load on the DB server | Low load due to in-engine optimization |
 | Index Usage | Exact-match search only | Limited usability | All indexes usable |
 
-## III. Advanced Topics & Comparison
+## III. Comparison & Application
 
 An architect must be able to propose the optimal combination (hybrid approach) for the operating environment, selecting among the following criteria.
 
@@ -61,3 +61,5 @@ An architect must be able to propose the optimal combination (hybrid approach) f
 | Preserving Legacy Systems | TDE / Plug-in | Minimizes the cost and risk of modifying source code |
 | Strong End-to-End Security | API | Data is encrypted before it ever travels across the network |
 | Performance First (High Volume) | TDE | Optimized via hardware acceleration (AES-NI) and full index usability |
+
+Default to TDE unless a specific requirement forces otherwise — it demands no application changes, preserves full index usability, and modern hardware acceleration has closed most of the historical performance gap. Reach for the API method only when data must be protected before it ever crosses the network boundary, since that end-to-end guarantee is the one thing TDE and Plug-in encryption structurally cannot provide.

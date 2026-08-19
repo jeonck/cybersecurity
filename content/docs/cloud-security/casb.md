@@ -44,13 +44,13 @@ flowchart LR
 | **Timing** | Analysis occurs after data has already been stored | Enables real-time blocking at the point of data transfer |
 | **Characteristics** | Easy to install but can be bypassed | Configured as a forward or reverse proxy |
 
-## III. Advanced Topics & Comparison
+## III. Comparison & Application
 
-### CASB vs. Traditional Security Solutions (DLP, Proxy)
-
-| Comparison Item | Traditional DLP / Proxy Solutions | CASB (Cloud Native) |
+| Comparison Item | Traditional DLP / Proxy Solutions | CASB (Cloud-Native) |
 |----------|-----------------------|---------------------|
 | **Security Scope** | Internal network and endpoints | External cloud services such as SaaS and PaaS |
 | **Identification Unit** | Centered on IP addresses and URLs | User accounts and app-level actions (e.g. share, delete) |
 | **Access Control** | Simple allow / deny | Fine-grained, behavior-based control (context-aware) |
 | **Visibility Scope** | Limited to internal network traffic | Includes external traffic from mobile and remote work |
+
+Don't retire the legacy DLP/proxy stack the day CASB goes live — they solve different problems, not the same problem better. CASB's context-aware controls have nothing to say about a file copied to a USB drive, and a network proxy has no visibility into an S3 bucket made public through an API call. Default to API-mode CASB for visibility into already-sanctioned SaaS, and reserve proxy-mode in-line inspection for where real-time blocking of unsanctioned Shadow IT use is a hard requirement — that real-time control comes at the cost of a traffic-path dependency most teams end up regretting.

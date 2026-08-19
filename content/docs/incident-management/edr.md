@@ -45,9 +45,7 @@ EDR operates as the second layer behind an EPP (antivirus / NGAV), stepping in w
 | Threat Hunting | Proactively traces potential threats via mapping to frameworks such as MITRE ATT&CK | Enables proactive threat identification and closes security blind spots |
 | Incident Response | Network isolation, process termination, file deletion, and similar actions | Prevents damage from spreading and supports rapid recovery |
 
-## III. Advanced Topics & Comparison
-
-### EPP vs. EDR: Core Comparison
+## III. Comparison & Application
 
 | Comparison Item | EPP (Endpoint Protection Platform) | EDR (Endpoint Detection & Response) |
 |---|---|---|
@@ -57,4 +55,4 @@ EDR operates as the second layer behind an EPP (antivirus / NGAV), stepping in w
 | Visibility | Low (focused mainly on block/allow decisions) | Very high (traces the attacker's entry path) |
 | Relationship | First line of defense (filtering) | Second-layer visibility and response platform (tracing) |
 
-> **Key point**: EPP and EDR are not competitors. Together they form a complementary, layered defense structure of primary prevention plus secondary detection and response.
+Deploying EDR without a strong EPP still running beneath it is the mistake to watch for — teams excited about behavioral detection sometimes treat EDR as a full replacement, but that just burns the analyst's detection budget re-flagging commodity malware a signature engine would have blocked for free. Keep EPP as the first-line filter and reserve EDR's visibility for the traffic that genuinely needs human judgment.

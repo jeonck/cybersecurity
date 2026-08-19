@@ -52,8 +52,12 @@ flowchart TD
 | Level 1-2 | Control (PLC, SCADA) | Control-loop segment; whitelist-based intrusion detection, protocol inspection |
 | Level 0 | Process (Sensor/Actuator) | Field physical devices; physical access control and monitoring for equipment anomalies |
 
-## III. Advanced Topics & Comparison
+## III. Adoption Considerations
 
-- **Achieving protocol visibility**: Deep packet inspection (DPI) is essential for vendor-specific industrial protocols such as Modbus, S7, and EtherNet/IP.
-- **Overcoming the limits of the air gap**: Even closed networks can be penetrated through USB drives or maintenance terminals, making zero-trust-based device authentication necessary.
-- **Complying with global standards**: Establish security governance by obtaining certification under IEC 62443, the international standard for industrial control system security.
+| Risk | Mitigation |
+|---|---|
+| Vendor-specific industrial protocols (Modbus, S7, EtherNet/IP) evade generic IT security tools | Deep packet inspection (DPI) tuned to industrial protocols |
+| Air-gap assumption broken by USB drives, maintenance laptops, or remote vendor access | Zero-trust device authentication at the point of connection, not just at the network perimeter |
+| Inconsistent security baseline across vendors and integrators | Governance and certification under IEC 62443 |
+
+Most OT breaches attributed to "the air gap failed" actually trace back to a maintenance laptop or USB drive that was trusted simply because it was physically present on-site. The fix isn't a tighter perimeter — it's authenticating every device at the point of connection, regardless of how it got there. Treat physical proximity to a Level 0/1 asset as zero evidence of trustworthiness.

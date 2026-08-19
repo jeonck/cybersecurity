@@ -44,13 +44,14 @@ flowchart LR
 | **SHA-2** | 224 / 256 / 384 / 512 | Currently the most widely used standard (e.g., **SHA-256**) |
 | **SHA-3** | 224 / 256 / 384 / 512 | Based on the Keccak algorithm; offers structural robustness beyond SHA-2 |
 
-## III. Advanced Topics & Comparison
+## III. Vulnerabilities & Security Measures
 
-### A. Key Use Cases
-- **Integrity verification**: Confirming that an original file has not been tampered with when distributing software
-- **Password storage**: Storing hash values instead of plaintext passwords to minimize damage in a breach (must be paired with **salting**)
-- **Digital signatures**: Signing the hash value rather than encrypting the entire message, improving computational efficiency
+Hash functions anchor three practical controls — file integrity verification, salted password storage, and the message digest inside every digital signature — and the choice of algorithm matters far less than whether these supporting practices are actually followed.
 
-### B. Attack Techniques and Countermeasures
-- **Rainbow table** attacks: Use precomputed tables of hash values → countered with **salting** and **key stretching**
-- **Birthday attack**: Exploits hash collisions → countered by using a sufficiently long hash length (256 bits or more)
+| Attack Vector | Primary Control |
+|---|---|
+| Rainbow table attacks | Salting + key stretching |
+| Birthday attack (collision) | Sufficiently long hash length (256 bits or more) |
+| Weak legacy algorithms (MD5, SHA-1) | Migrate to SHA-2/SHA-3; reject on ingestion |
+
+Salting is the control most teams treat as optional rather than mandatory, but an unsalted hash table is barely better than plaintext once a rainbow table matching that algorithm exists — the entire security value of hashing passwords collapses to "how expensive is the precomputed table," which is a solved problem for MD5 and SHA-1 today. Reject any new system design that stores password hashes without a per-record salt, regardless of which hash algorithm it proposes.

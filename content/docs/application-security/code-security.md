@@ -51,18 +51,16 @@ flowchart LR
 | Advantages | Early detection (Shift-Left), root-cause identification | Verification against a real attack environment, low false-positive rate |
 | Disadvantages | High false-positive rate, requires a build | Cannot pinpoint location in source code, remediation happens after the fact |
 
-## III. Advanced Topics & Comparison
+## III. Vulnerabilities & Security Measures
 
-### Secure Coding Guidelines (the 7 Self-Assessment Categories from Korea's Ministry of the Interior and Safety)
-
-The software security weakness diagnosis guide published by Korea's Ministry of the Interior and Safety is organized around the following 7 areas.
-
-| Area | Key Inspection Content | Countermeasure (Example) |
+| Weakness Area | Representative Risk | Primary Control |
 |:---:|--------------|-----------------|
-| 1. **Input Data Validation and Representation** | SQL injection, XSS, path manipulation | Use Prepared Statements, filter input values |
-| 2. **Security Features** | Authentication/authorization weaknesses, weak encryption | Multi-factor authentication (2FA), strong hash algorithms (SHA-256+) |
-| 3. **Time and State** | Race conditions, non-terminating loops | Synchronize shared resources, ensure proper resource release |
-| 4. **Error Handling** | System information exposure, improper exception handling | Apply custom error pages, hide detailed logs |
-| 5. **Code Errors** | Null pointer dereference, improper resource release | Add null checks, close resources in `finally` blocks |
-| 6. **Encapsulation** | Debug code left in place, information exposure | Prevent system information exposure, avoid public fields |
-| 7. **API Misuse** | Insecure API calls, use of unsafe functions | Use recommended standard libraries and APIs |
+| Input Data Validation | SQL injection, XSS, path manipulation | Prepared Statements, whitelist input filtering |
+| Security Features | Weak authentication, weak encryption | Multi-factor authentication, SHA-256+ hashing |
+| Time and State | Race conditions | Synchronized access to shared resources |
+| Error Handling | System information exposure | Custom error pages, no detailed logs in responses |
+| Code Errors | Null pointer dereference, leaked resources | Null checks, `finally`-block resource release |
+| Encapsulation | Debug code and internal data left exposed | No public fields, no system info exposure |
+| API Misuse | Unsafe function and API calls | Recommended standard libraries only |
+
+The seven categories exist because "write secure code" is not an actionable instruction — a scanner can only enforce a checklist, not a philosophy. The highest-leverage category to enforce first is Input Data Validation: it accounts for the largest share of exploitable findings in practice, and unlike Time-and-State or Encapsulation issues, it is the one category SAST tools catch with the fewest false positives.

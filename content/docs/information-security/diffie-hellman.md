@@ -64,7 +64,7 @@ sequenceDiagram
 | Perfect Forward Secrecy (PFS) | When ephemeral keys are used, past communications cannot be decrypted even if the server's long-term private key is later compromised |
 | Weakness | Vulnerable to **man-in-the-middle (MitM) attacks** — since it provides no authentication, the identity of the other party cannot be confirmed |
 
-## III. Advanced Topics & Comparison
+## III. Outlook & Future Direction
 
 ```mermaid
 flowchart LR
@@ -81,4 +81,4 @@ flowchart LR
 | DHE | Generates an ephemeral key each session → provides PFS | High | Recommended |
 | ECDHE | Applies elliptic-curve (ECC) cryptography → same security strength with shorter keys, faster computation | Very high | **Modern TLS standard** |
 
-> **Key point**: ECDHE delivers both high security strength and PFS with a short key length (256-bit ≈ RSA 3072-bit), which is why it was adopted as the default key exchange method in TLS 1.3.
+ECDHE's win over DHE was never really about security margin — both provide perfect forward secrecy — it was that ECC made ephemeral key exchange cheap enough to run on every connection instead of being reserved for high-value sessions. Expect the next step in this trajectory to repeat that pattern: post-quantum KEMs (ML-KEM) layered on top of ECDHE in hybrid mode, not replacing it outright, until PQC-only key exchange has enough of a track record to stand alone.

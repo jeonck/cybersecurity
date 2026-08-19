@@ -52,21 +52,12 @@ graph TD
 - **Add/Modify/Delete**: Changes information held in directory entries
 - **Unbind**: Terminates the client connection
 
-## III. Advanced Topics & Comparison
+## III. Comparison by Type & Selection Criteria
 
-### A. LDAP Security Threats
+| Implementation | Best Fit | Trade-off |
+|---|---|---|
+| Microsoft Active Directory | Windows-centric enterprises that need SSO, GPO, and Kerberos together | Tightly coupled to the Windows ecosystem, added licensing cost |
+| OpenLDAP / generic LDAPv3 servers | Cross-platform environments, custom or legacy applications | No built-in Kerberos/GPO — authentication and policy layers must be assembled separately |
+| Cloud directory (Entra ID, Okta, etc.) | SaaS-first organizations wanting less on-prem infrastructure | Trades direct LDAP control for a managed, API-first model |
 
-- **Credential theft**: Credentials can leak when using plaintext transport (LDAP) or weak authentication methods
-- **Information disclosure**: Sensitive directory information can be exposed if anonymous binding is allowed
-- **Denial of Service (DoS)**: Server resources can be exhausted by inefficient queries or an excessive number of connection requests
-- **LDAP injection**: Similar to SQL injection — manipulating an LDAP query to attempt unauthorized access
-
-### B. Security Hardening
-
-- **Use LDAPS/StartTLS**: Encrypt LDAP traffic with **SSL/TLS** to protect data in transit
-- **Disable anonymous binding**: Block unnecessary anonymous access, and require strong authentication (**SASL** or simple bind with credentials) when binding
-- **Least privilege**: Use access control lists (**ACL**s) to restrict per-user/per-group read/write privileges on the directory
-- **Query optimization and filtering**: Limit inefficient or overly broad search scopes, and detect malicious filter strings
-- **Regular auditing and monitoring**: Periodically review abnormal access attempts and change history
-
-> **Key Point**: Because LDAP is core infrastructure for authentication and access control, security must be applied rigorously — **LDAPS/StartTLS**, **ACL**-based privilege management, and **SASL** authentication among them.
+LDAP itself is only the query protocol — the real decision organizations face is which directory service to build on top of it, and that's driven far more by the surrounding ecosystem (existing Windows fleet, SaaS footprint, legacy app requirements) than by any difference in LDAP's own feature set. Default to Active Directory only where a Windows-centric identity story already exists; a greenfield or SaaS-heavy organization is usually better served standing up a cloud directory and speaking LDAP only where a stubborn legacy application demands it, rather than building on-prem LDAP infrastructure from scratch.

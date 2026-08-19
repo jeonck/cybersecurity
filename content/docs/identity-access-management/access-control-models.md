@@ -58,10 +58,12 @@ flowchart LR
 | **Flexibility** | Very high (user-centric) | Low (management overhead on change) | High (adapts easily to organizational change) |
 | **Typical Use** | Windows / Linux file permissions | Defense, government agencies (multilevel security) | General enterprise (ERP), financial industry |
 
-## III. Advanced Topics & Comparison
+## III. Comparison by Type & Selection Criteria
 
-| Model | Key Security Threat | Mitigation |
-|:---:|--------------|-----------------|
-| **DAC** | Trojan horses, privilege propagation | Security auditing (logging) and stronger ACLs |
-| **MAC** | Reduced availability, management complexity | Performance optimization of the security kernel |
-| **RBAC** | Role explosion | Role hierarchies and constraints |
+| Model | Best Fit | Trade-off |
+|:---:|----------|-----------|
+| **DAC** | Small teams, general-purpose OS file sharing | Flexible, but relies on every owner making a good judgment call |
+| **MAC** | Defense, government, multilevel classified systems | Strongest guarantee available, but rigid and costly to operate |
+| **RBAC** | Mainstream enterprise systems (ERP, financial services) | Balances security and manageability, but role design debt accumulates over time |
+
+In practice, RBAC wins the default slot for nearly every enterprise system built today — not because it is the most secure of the three, but because it is the only one that scales with organizational change: a new hire or transfer becomes a role reassignment instead of a manual ACL rewrite. Reserve MAC for the narrow band of systems that genuinely require it (classified data, weapons systems) and DAC for low-stakes, user-owned resources; treating RBAC as the safe default and the other two as deliberate exceptions keeps an organization's access model consistent enough to actually audit.

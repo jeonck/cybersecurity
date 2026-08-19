@@ -54,18 +54,14 @@ flowchart TD
 
 Facilities logs the report within hours of discovery, and IT security is notified immediately if the affected area houses infrastructure or physical access controls.
 
-## III. Best Practices & Comparison
+## III. Comparison & Application
 
-| Document | Primary Purpose | Trigger | Owner |
-|---|---|---|---|
-| Structural Damage Incident Report | Record physical damage to facilities or infrastructure | Physical damage discovered | Facilities |
-| [Major Incident Report Template](../major-incident-report-template/) | Record a critical or high-severity security incident | Critical security event | SOC / IR Team |
-| [Workplace Violence Report](../workplace-violence-report/) | Record threats or violence involving personnel | Threatening or violent conduct | HR / Security |
+| Report Type | Use When | Owner |
+|---|---|---|
+| Structural Damage Incident Report | Physical damage to a building or infrastructure, IT impact incidental | Facilities |
+| [Major Incident Report Template](../major-incident-report-template/) | The damage takes down or exposes IT infrastructure as the primary concern | SOC / IR Team |
+| [Workplace Violence Report](../workplace-violence-report/) | The event involves a person's conduct rather than the facility itself | HR / Security |
 
-- Photograph or otherwise capture visual evidence of the damage before repairs begin.
-- Assess IT infrastructure impact immediately, not only after physical repairs are scheduled.
-- Route any damage affecting server rooms or access-control panels to IT security in parallel with facilities.
-- File insurance claims and regulatory notifications within the required window, not after repairs complete.
-- Retain repair vendor documentation for audit and warranty purposes.
+The deciding factor is which risk is primary, not which one is merely present — a server-room flood is a Structural Damage report with an IT-impact field filled in if the servers were only at risk, but it graduates to a Major Incident Report the moment data availability or integrity is actually compromised. Facilities and IT security should agree on that threshold in advance, not while standing in a flooded server room deciding who owns the write-up.
 
 Related: [Major Incident Report Template](../major-incident-report-template/), [Incident Management Process](../incident-management-process/)

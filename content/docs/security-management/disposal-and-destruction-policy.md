@@ -55,18 +55,15 @@ sequenceDiagram
 
 IT operations initiates disposal once an asset's retention obligation has lapsed, routes sensitive media to a certified destruction vendor, and files the resulting certificate with security/GRC as audit evidence. The policy itself is reviewed annually or when new media types are introduced.
 
-## III. Best Practices & Comparison
+## III. Adoption Considerations & Security Measures
 
-| Document | Primary Purpose | Review Cadence | Owner |
-|---|---|---|---|
-| Disposal and Destruction Policy | Ensure secure end-of-life handling of data-bearing assets | Annual | CISO / GRC team, IT operations |
-| Information Classification Policy | Define sensitivity tiers that dictate destruction method | Annual or on data inventory change | Data owners, security team |
-| Backup and Recovery Policy | Govern retention of backup copies before they qualify for disposal | Annual | IT operations, CISO / GRC team |
+| Risk | Primary Control |
+|---|---|
+| Data leaving custody without a record | Chain-of-custody log at every transfer |
+| Improper disposal of end-of-life media | Certified destruction plus certificate retention |
+| Destruction method mismatched to data sensitivity | Method tied explicitly to classification tier |
+| Paper records overlooked in an electronics-focused policy | Explicit scope extension to printed output |
 
-- Match the destruction method to the data's classification tier — shredding or degaussing for the most sensitive media.
-- Require a certificate of destruction for every disposal event, especially when a third-party vendor is used.
-- Maintain chain of custody from decommission to destruction to close any gap where media could be diverted.
-- Confirm legal and regulatory retention periods have elapsed before authorizing disposal.
-- Extend the policy to paper records and printed output, not only electronic media.
+The certificate of destruction is the artifact regulators and auditors actually ask for — a documented disposal *process* without a retained certificate per batch is functionally unauditable. Keep destruction certificates for as long as the data itself would have been retained, and treat any gap in chain-of-custody as equivalent to an unconfirmed breach until proven otherwise.
 
 Related: [Information Classification Policy](../information-classification-policy/), [Backup and Recovery Policy](../backup-and-recovery-policy/).

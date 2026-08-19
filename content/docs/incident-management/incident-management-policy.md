@@ -51,18 +51,14 @@ flowchart TD
 
 The policy is reviewed at least annually or after any incident that exposes a gap in classification, escalation, or notification requirements.
 
-## III. Best Practices & Comparison
+## III. Expected Benefits & Implications
 
-| Document | Primary Purpose | Trigger | Owner |
-|---|---|---|---|
-| Incident Management Policy | Define what an incident is and set governance rules | Annual review or major incident finding | CISO / Executive Management |
-| [Incident Management Process](../incident-management-process/) | Operational step-by-step handling procedure | Any active incident | SOC / IR Team |
-| [Major Incident Report Template](../major-incident-report-template/) | Document a specific high-severity security incident | A critical or high-severity event occurs | SOC / IR Team |
+| Benefit | Where It Shows Up |
+|---|---|
+| Consistent severity classification | Cross-incident metrics become comparable instead of anecdotal |
+| Predictable escalation | Executives and regulators are notified inside the window, not after the fact |
+| Audit-ready governance | Compliance reviews cite the policy directly instead of reconstructing intent after an incident |
 
-- Define severity tiers in business-impact terms, not just technical terms, so non-technical stakeholders can classify correctly.
-- Align notification timelines with applicable regulatory deadlines (breach laws, contractual SLAs).
-- Keep the policy short and principle-based; put step-by-step detail in the companion process document.
-- Require executive sign-off on any change to severity thresholds or escalation authority.
-- Revisit the policy after every major incident post-mortem, not only on a fixed calendar.
+The real payoff of a written policy shows up in the incidents it prevents from getting worse, not the ones it handles cleanly — a severity tier that's ambiguous on paper gets resolved under pressure by whoever is loudest in the room, and that's exactly the moment a regulator-facing notification deadline gets missed. Treat the annual review less as a compliance ritual and more as the one guaranteed chance to close a gap the last incident exposed, before the next one finds it first.
 
 Related: [Incident Management Process](../incident-management-process/), [Major Incident Report Template](../major-incident-report-template/)

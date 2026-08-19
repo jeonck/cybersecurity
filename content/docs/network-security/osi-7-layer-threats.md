@@ -52,9 +52,7 @@ graph TD
     style L7 fill:#fff3e0,stroke:#ff9800
 ```
 
-## III. Advanced Topics & Comparison
-
-### Lower-Layer (L1-L3) vs. Upper-Layer (L4-L7) Security
+## III. Comparative Analysis
 
 | Comparison | Lower-Layer Security (L1-L3) | Upper-Layer Security (L4-L7) |
 |:---:|----------------------|----------------------|
@@ -63,10 +61,4 @@ graph TD
 | **Unit of Analysis** | Packet headers, **MAC/IP** addresses | Payload, message body, session |
 | **Primary Equipment** | Router, L3 switch, **VPN** | **WAF**, next-generation firewall ( **NGFW** ), **IPS** |
 
-### Practical Recommendations for Security Maturity
-
-- **Integrated Monitoring Across All Layers**: Use **SIEM** or **SOAR** to correlate logs generated at each layer, detecting composite attacks.
-- **Apply the Zero Trust Model**: Regardless of layer, apply micro-segmentation ( **Micro-segmentation** ) under the principle of "never trust, always verify."
-- **Ensure Encrypted Visibility**: Consider adopting **SSL Inspection** technology to detect malicious code hidden within **L6/L7**-level encrypted traffic.
-
-> **Key Point**: Since modern attacks are not confined to a single layer but evolve across all layers, building a defense-in-depth system spanning the entire **OSI 7-layer** model is fundamental to achieving cyber resilience ( **Resilience** ).
+Don't treat this as a checklist to fully cover both sides equally — budget and staff it in the order attackers actually escalate through. A network hardened at L1-L3 but wide open at L7 just pushes the compromise one layer up the stack (the attack chain scenario above shows exactly that progression); a network hardened only at L7 without L2/L3 controls like Port Security and DHCP Snooping is still trivially pivoted through via ARP spoofing. Prioritize closing the lower-layer gaps first — they're cheaper to fix, and an upper-layer control can't compensate for a compromised transport path underneath it.

@@ -54,19 +54,14 @@ sequenceDiagram
 | **OAuth 2.0** | An authorization protocol used to delegate resource-access privileges | User delegates access to **SP**'s resources to the **IdP** → **IdP** issues an **Access Token** → **SP** verifies the token and grants resource access |
 | **OpenID Connect (OIDC)** | An identity layer built on **OAuth 2.0** that supplies user authentication information (ID Token) | Adds an **ID Token** (user info) on top of the **OAuth 2.0** flow → **SP** verifies the ID Token and identifies the user |
 
-## III. Advanced Topics & Comparison
+## III. Expected Benefits & Implications
 
-### A. Potential Vulnerabilities in SSO Systems
+SSO's biggest measurable win usually isn't user convenience — it's the ability to instantly revoke access to every connected application from one place when someone leaves, instead of chasing down accounts app by app. Track offboarding completion time as the KPI, not login friction, when justifying an SSO investment to leadership.
 
-- **Centralized single point of failure**: If the **IdP** goes down, every connected service becomes inaccessible
-- **IdP account takeover**: If **IdP** credentials leak, every connected service account is put at risk
-- **Session hijacking**: A stolen **SSO** session token allows unauthorized access to services
+| Benefit | Where It Shows Up |
+|---|---|
+| Faster offboarding | Time-to-full-deprovisioning across every connected SP |
+| Fewer help-desk password resets | Support ticket volume |
+| Consistent MFA enforcement | Fewer weak-auth paths left unmonitored across services |
 
-### B. SSO Security Hardening
-
-- **Strong IdP authentication**: Apply **MFA**, a strict password policy, and **SSO** session timeouts
-- **Protocol security**: Require **HTTPS**; verify the signature and encryption of **SAML/OIDC** assertions and tokens
-- **Stronger session management**: Apply web security measures such as **HttpOnly**, **Secure** attributes, and **CSRF** tokens
-- **Regular auditing and monitoring**: Analyze **IdP** and connected-service access logs and detect abnormal behavior
-
-> **Key Point**: **SSO** improves user convenience, but because the **IdP** itself can become the focal point of an attack, hardening the **IdP** and rigorously managing every connected service are both essential.
+The flip side of that concentration is worth stating plainly: SSO doesn't reduce risk so much as relocate it entirely onto the IdP, so the security budget saved on per-app password policies should be reinvested directly into IdP hardening — MFA, session management, monitoring — rather than treated as a net security win on its own.

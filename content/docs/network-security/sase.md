@@ -54,13 +54,11 @@ flowchart LR
 | Security (SSE) | CASB | Cloud app visibility and control |
 | Security (SSE) | SWG | Secure web access and malware blocking |
 
-## III. Advanced Topics & Comparison
+## III. Outlook & Future Direction
 
-### SASE vs. the Traditional Network Security Model
+| Approach | Maturity | Direction |
+|---|---|---|
+| Hub-and-Spoke (data-center backhaul) | Legacy | Being displaced for remote and branch traffic |
+| SASE (cloud-native, converged) | Mainstream for new deployments | Default architecture for distributed workforces |
 
-| Comparison | Traditional Model (Hub-and-Spoke) | SASE (Cloud Native) |
-|----------|--------------------------|---------------------|
-| Network Structure | Routed through the data center (backhauling) | Direct connection to the cloud edge |
-| Security Services | Appliance-based (hardware) | Cloud-service-based (SaaS) |
-| Manageability | Each solution managed separately (complex) | Unified single-policy management (simple) |
-| Performance/Latency | High likelihood of bottlenecks | Low latency via distributed edge nodes |
+Expect SASE to finish absorbing the point solutions it currently sits alongside — CASB, SWG, and ZTNA are converging into a single policy plane not because bundling is fashionable, but because fragmented tools with fragmented policy are the actual root cause of the visibility gaps SASE was built to close. The organizations still backhauling remote traffic through a data center for inspection are paying a latency tax with no corresponding security benefit once an equivalent cloud-edge control exists.

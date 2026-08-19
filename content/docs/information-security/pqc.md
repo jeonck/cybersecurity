@@ -51,8 +51,15 @@ flowchart LR
 | Multivariate (MV) | Uses the difficulty of solving multivariate quadratic polynomial systems; fast signing speed | Rainbow |
 | Hash-based | Uses the security of one-way hash functions; very strong quantum resistance | SPHINCS+ |
 
-## III. Advanced Topics & Comparison
+## III. Outlook & Future Direction
 
-- **NIST Standardization**: Compatibility with existing IT infrastructure must be validated around the standard algorithms selected by NIST (Kyber and others)
-- **Crypto-Agility**: Establishing a flexible security architecture that can rapidly transition to a new cryptographic system is essential
-- **K-PQC Initiative**: Developing a domestically suited post-quantum cryptographic algorithm and prioritizing its rollout in the public and financial sectors is an urgent task
+| Algorithm Family | Mathematical Basis | Standardization Status |
+|------|------------------------|:------------:|
+| Lattice-based | Shortest vector problem (SVP) | NIST-selected (Kyber, Dilithium); most efficient, most widely adopted |
+| Code-based | Error-correcting code decoding | Long security track record; larger key sizes limit adoption |
+| Multivariate | Multivariate quadratic polynomial systems | Fast signing; narrower deployment |
+| Hash-based | One-way hash function security | Very strong quantum resistance (SPHINCS+) |
+
+The realistic transition path is hybrid, not a single cutover date — running existing RSA/ECC alongside PQC during the migration window protects against both a flawed new algorithm and the quantum threat itself, which is why "hybrid" already leads as the transitional strategy rather than serving as a mere stopgap. For any organization holding long-lived sensitive data, "harvest now, decrypt later" is a today problem, not a future one, since data encrypted with classical algorithms now can be stored and broken once a cryptographically relevant quantum computer exists.
+
+Domestic initiatives such as K-PQC that prioritize rollout in the public and financial sectors ahead of a global mandate are a sensible hedge, not overcaution — the sectors holding the most sensitive long-lived data have the least room to wait for full NIST-track maturity.

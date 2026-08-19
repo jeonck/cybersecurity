@@ -51,20 +51,13 @@ graph TD
 2. **Service ticket request (TGS)**: The user submits the **TGT** and the target service information to the **TGS** on the **KDC** → after verifying the **TGT**, the **TGS** issues an **ST** and a service session key, encrypted with the service's secret key
 3. **Service access (AP)**: The user presents the **ST** and the service session key to the target service server → after verifying the **ST**, the server provides the service
 
-## III. Advanced Topics & Comparison
+## III. Vulnerabilities & Security Measures
 
-### A. Strengths of Kerberos
+| Attack Vector | Primary Control |
+|---|---|
+| Kerberoasting (offline cracking of an SPN account's TGS ticket) | Strong, randomly generated service-account passwords; migrate to gMSA where possible |
+| Pass-the-Hash / Pass-the-Ticket | Restrict lateral movement, enable Credential Guard, limit where privileged accounts can log on |
+| Golden Ticket (forged TGT via a compromised KDC/krbtgt account) | Protect and periodically rotate the krbtgt account; monitor for anomalous TGT issuance |
+| Clock-skew authentication failure | Enforce NTP synchronization across all domain members |
 
-- **Cryptographic strength**: Ticket encryption protects both communication content and user information
-- **SSO support**: A single authentication grants access to multiple services
-- **Maturity**: Widely used and well-proven in **Active Directory** environments
-
-### B. Weaknesses and Attack Techniques
-
-- **Credential attacks**:
-    - **Kerberoasting**: Stealing the **TGS** ticket of a service account registered with an **SPN** (Service Principal Name) and cracking the password offline
-    - **Pass-the-Hash / Pass-the-Ticket**: Stealing an **NTLM** hash or a Kerberos ticket and reusing it
-- **KDC vulnerabilities**: Problems that arise if the **KDC** server itself is poorly secured (for example, the **Golden Ticket** attack)
-- **Time-synchronization dependency**: Kerberos requires **NTP**-based time synchronization; authentication fails if clocks drift out of sync
-
-> **Key Point**: Kerberos is a strong authentication protocol, but its exposure to attack depends heavily on the overall security posture of the **Active Directory** environment — **KDC** security, ticket management, and password policy all matter.
+Kerberos itself is cryptographically sound — nearly every practical attack against it, Kerberoasting and Golden Ticket included, targets a weak service-account password or a poorly protected KDC rather than a flaw in the protocol's design. That makes Kerberos security really a matter of Active Directory operational hygiene in disguise: rotating the krbtgt account and enforcing strong service-account passwords does more for real-world security than any Kerberos-specific configuration change.

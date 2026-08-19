@@ -52,12 +52,14 @@ flowchart LR
 | 4. Substitution | Replaces an identifier with an arbitrary unique or virtual number | Resident registration number → replaced with a serial number (A-001) |
 | 5. Aggregation | Processes data as a group total or average rather than individual records | Individual income → converted to average income by department |
 
-## III. Advanced Topics & Comparison
+## III. Comparison & Application
 
-Pseudonymization techniques are more often mixed according to the characteristics of the data than used alone, and the following privacy-protection models are compared when applying them.
+Pseudonymization techniques are more often mixed according to the characteristics of the data than used alone, and the resulting dataset is typically validated against one of the following privacy-protection models.
 
-| Comparison Item | k-Anonymity | l-Diversity | t-Closeness |
-|----------|----------------------|----------------------|----------------------|
-| Core Concept | Keeps at least k records sharing the same attributes | Requires at least l distinct sensitive values within each k-group | Minimizes the difference between the overall attribute distribution and a specific group's distribution |
-| Threat Defended | Linking attack | Homogeneity attack, background-knowledge attack | Skewness attack, similarity attack |
-| Limitation | Vulnerable to homogeneity attacks | May reduce data utility | Complex and costly to implement |
+| Model | Core Concept | Best Fit | Weakness |
+|---|---|---|---|
+| k-Anonymity | At least k records share the same attributes | Baseline defense against linking attacks | Vulnerable to homogeneity attacks within a k-group |
+| l-Diversity | At least l distinct sensitive values per k-group | Datasets where the sensitive value needs variation within each group | Can noticeably reduce data utility |
+| t-Closeness | A group's sensitive-value distribution stays close to the overall distribution | Highest-assurance releases against skewness and similarity attacks | Complex and costly to implement correctly |
+
+Don't pick a model based on which one is easiest to implement — pick it based on which attack the dataset is actually exposed to. A dataset with a skewed sensitive attribute, such as a rare condition concentrated in one subgroup, needs t-closeness or it isn't meaningfully protected even after it passes k-anonymity and l-diversity checks; teams that stop at k-anonymity because it's simplest are often defending against the attack that was already the least likely one.

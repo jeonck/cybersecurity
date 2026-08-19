@@ -54,22 +54,13 @@ sequenceDiagram
 | **SSDP** | Plug and play | About 30x | **UPnP** device discovery and information response |
 | **Memcached** | Distributed memory cache | **About 50,000x** | Returns large volumes of cached data when the **UDP** port is exposed |
 
-## III. Advanced Topics & Comparison
+## III. Vulnerabilities & Security Measures
 
-### DDoS vs. DRDoS Key Differences
+| Attack Vector | Root Vulnerability | Security Measure |
+|---|---|---|
+| Source IP spoofing | No verification that outbound packets carry a legitimate source address | Ingress/egress filtering (BCP38) at network boundaries |
+| Open reflector services | UDP services (DNS, NTP, SNMP, SSDP, Memcached) reachable from the internet with no rate limiting | Close unnecessary UDP services, disable legacy features like NTP monlist |
+| Domain-targeted floods | Attack traffic routed directly to the victim's published IP | DNS sinkhole redirecting to a cleansing facility |
+| Sudden protocol-specific surges | No baseline for normal UDP 53/123/etc. volume | Threshold-based blocking tied to real traffic baselines |
 
-| Comparison | General DDoS (Botnet-Based) | DRDoS (Reflector-Based) |
-|:---:|------------------------|-----------------------|
-| **Attack Origin** | Infected zombie **PCs** ( **Botnet** ) | Servers providing legitimate services ( **Reflector** ) |
-| **Core Technique** | Mobilizing a large number of hosts | **IP Spoofing** and response amplification |
-| **Securing Zombies** | Requires malware infection | Not required (scans for vulnerable servers) |
-| **Concealment** | Moderate (bot IPs exposed) | Very high (legitimate server IPs exposed) |
-
-### Technical and Administrative Countermeasures
-
-- **Ingress/Egress Filtering (BCP38)**: Blocks packets whose source **IP** does not belong to the originating network's address range at network ingress/egress points, preventing spoofing.
-- **DNS Sinkhole**: Redirects the **IP** for the targeted domain to a virtual site, routing attack traffic to a cleansing facility.
-- **Threshold-Based Blocking**: Automatically blocks and monitors traffic when specific protocols ( **UDP 53**, **123**, etc.) surge above normal levels.
-- **Reflector Server Management**: Closes unnecessary **UDP** services and applies the latest patches (e.g., disabling the **NTP monlist** feature).
-
-> **Key Point**: Since **DRDoS** weaponizes legitimate servers, worldwide strengthening of security configurations ( **Anti-spoofing** ) and cooperative defense at the **ISP** layer are essential.
+Ingress filtering (BCP38) is the control every network security engineer agrees on and almost none of them can force upstream — DRDoS persists mainly because it weaponizes servers on networks the victim doesn't control. Treat "does our upstream provider filter spoofed source IPs" as a vendor-selection question, not just a configuration checkbox on your own routers, and don't assume closing your own reflector services protects you from being a victim of someone else's.

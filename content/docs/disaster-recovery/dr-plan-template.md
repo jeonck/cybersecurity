@@ -50,17 +50,14 @@ flowchart LR
 | Dependencies & Prerequisites | Upstream systems, credentials, or infrastructure that must be available first. |
 | Test/Exercise History | Record of tabletop or full-failover exercises run against this plan and their outcomes. |
 
-## III. Best Practices & Comparison
+## III. Expected Benefits & Implications
 
-| Document | Primary Purpose | When Used | Owner |
-|---|---|---|---|
-| DR Plan Template | Provide step-by-step recovery procedures per system | Built and tested before activation; executed during it | System/application owners, DR coordinator |
-| DR Approach Document | Set strategy, scope, and recovery tiers | Before detailed planning; revisited annually | DR coordinator, IT/security leadership |
-| DR Closure Report | Record recovery outcomes and drive corrective action | After every exercise or real activation | DR coordinator, steering committee |
+| Benefit | Where It Shows Up |
+|---|---|
+| Faster actual recovery | Real-incident RTO vs. target, measured in the DR Closure Report |
+| Less key-person dependency | Recovery executable by someone other than the primary system owner |
+| Fewer surprises mid-recovery | Exercise findings closed before the next real activation, not discovered during it |
 
-- Test every plan at least annually, and after any material change to the system it covers.
-- Run tabletop exercises for lower-tier systems and full-failover tests for the highest-criticality tier.
-- Keep recovery steps executable by someone other than the primary system owner — key-person dependency defeats the plan.
-- Update the plan immediately from DR Closure Report findings rather than waiting for the next scheduled review.
+A DR plan is worth roughly what its most recent exercise says it's worth, not what its documentation looks like — a meticulously written runbook against a system that's been re-architected since the last full-failover test is a false sense of security dressed up as preparedness. The implication for planning is to budget the tabletop and full-failover cadence as a recurring cost of owning the system, the same as patching or backups, rather than a one-time deliverable that gets filed away once the plan is first approved.
 
 Related: [DR Approach Document](../dr-approach-document/), [DR Asset Register](../dr-asset-register/), [DR Closure Report](../dr-closure-report/). See also [Cloud Backup & Recovery Testing Tracker](/docs/cloud-security/cloud-backup-recovery-testing-tracker/) for backup restore validation feeding this plan.

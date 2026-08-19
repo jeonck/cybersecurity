@@ -57,18 +57,14 @@ sequenceDiagram
 
 Testing runs on every major release and on any build introducing new storage, networking, or authentication logic; the tracker is reviewed by the AppSec lead before store submission.
 
-## III. Best Practices & Comparison
+## III. Comparison & Application
 
-| Document | Primary Purpose | Update Cadence | Owner |
-|---|---|---|---|
-| Secure Mobile App Testing Tracker | Validate mobile-specific security controls per release | Per release | AppSec + Mobile Engineering |
-| [Web Application Vulnerability Tracker](../web-application-vulnerability-tracker/) | Equivalent tracking for web application findings | Per scan / pentest cycle | AppSec |
-| [Static Code Analysis Log](../static-code-analysis-log/) | Source-level scanning, complementary to binary-level mobile testing | Per build / commit | AppSec + Engineering |
+| Test Method | Best Fit | Weakness |
+|---|---|---|
+| Static binary analysis | Decompiled-code review, hardcoded secrets, insecure API usage | Cannot observe actual runtime behavior |
+| Dynamic instrumentation (rooted/jailbroken device) | Local storage, keychain, and certificate-pinning bypass testing | Requires a prepared test device and more tester time |
+| Manual review | Business logic and permission-scope misuse | Slowest, least repeatable method |
 
-- Test on both a clean device and a rooted/jailbroken device — some controls only fail once platform protections are bypassed.
-- Verify that sensitive data (tokens, credentials, PII) is never written to logs, backups, or unencrypted local storage.
-- Confirm certificate pinning and TLS configuration independently of the backend API's own transport security.
-- Review requested platform permissions against actual feature usage and flag any over-broad scope.
-- Retest every finding after remediation before approving the build for store submission.
+Testing only on a clean, unmodified device is the most common shortcut mobile teams take, and it is the one that produces false confidence — controls like certificate pinning and local storage encryption often hold on a stock device and fail the moment a tester roots or jailbreaks it, which is exactly the environment a motivated attacker actually uses. Dynamic instrumentation on a rooted device is not optional hardening of the test plan; it is the test that matters most.
 
 Related: [Web Application Vulnerability Tracker](../web-application-vulnerability-tracker/), [Static Code Analysis Log](../static-code-analysis-log/)

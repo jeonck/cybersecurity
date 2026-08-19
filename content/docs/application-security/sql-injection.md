@@ -52,20 +52,13 @@ sequenceDiagram
 | **Inferential** | Blind (Time) | Uses time-delay functions such as `SLEEP` to confirm the existence of data |
 | **Out-of-band** | OOB SQLi | Receives results via a separate channel such as **HTTP** or **DNS** |
 
-## III. Advanced Topics & Comparison
-
-### A. Technical Countermeasures (Secure Coding)
-
-- **Parameterized Query**: Use `PreparedStatement` so input values are treated as plain constants rather than part of the query's structure.
-- **Input Validation**: Apply whitelist-based filtering of special characters (`'`, `--`, `;`, etc.) and reserved words.
-- **Stored Procedures**: The query structure is precompiled, fundamentally blocking dynamic manipulation.
-
-### B. Administrative and Infrastructure Security Measures
+## III. Vulnerabilities & Security Measures
 
 | Control Area | Detailed Measure | Security Effect |
 |----------|----------|----------|
-| **Principle of Least Privilege** | Minimize the privileges of the DB connection account (allow only **SELECT** / **INSERT**) | Prevents system command execution and mass deletion |
-| **Error Handling** | Prohibit displaying detailed DB error messages (use a **Generic Error Page**) | Blocks exposure of server structure and query information |
-| **Infrastructure Security** | Deploy a Web Application Firewall (**WAF**) and keep detection rules continuously updated | Automatically blocks known **SQLi** attack patterns |
+| **Parameterized Query** | Treat input as a constant, never as part of query structure | Fundamentally blocks the injection, independent of filtering rules |
+| **Least Privilege** | Restrict the DB connection account to only the operations it needs | Limits blast radius even if a query is compromised |
+| **Error Handling** | Generic error pages, no DB error detail returned to the client | Removes the feedback channel blind and error-based SQLi depend on |
+| **WAF** | Signature-based blocking of known SQLi patterns | Catches known payloads, not a substitute for the code-level fix |
 
-> **Key Point**: The top priority in defending against **SQL Injection** is the use of **parameterized queries**, around which a layered defense system should be built.
+Parameterized queries are the only control on this list that closes the vulnerability itself rather than reducing its blast radius or catching it after the fact — everything else here is a compensating control, useful in depth but not a substitute. A WAF rule update after a new bypass technique is discovered is reactive by definition; a parameterized query written correctly the first time never needed the update at all.

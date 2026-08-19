@@ -43,13 +43,14 @@ flowchart LR
 - **Policy as Code (PaC)**: Manages security policy as code so it is validated and applied consistently throughout the pipeline.
 - **Automated Feedback Loops**: Delivers discovered vulnerabilities to developers in real time (e.g. via an IDE plugin) to drive immediate remediation.
 
-## III. Advanced Topics & Comparison
+## III. Expected Benefits & Implications
 
-### DevSecOps vs. Traditional Security Model
+Adopting DevSecOps is a resourcing decision before it is a tooling decision — the benefit does not materialize just because SAST and DAST scanners are wired into CI. It shows up only once security findings have an owner with the authority and time to act on them inside the same sprint they are found, which is a Development/Operations org-design question, not a security one.
 
-| Comparison | Traditional Security Model | DevSecOps (Shift-Left) |
-|----------|----------------|------------------------|
-| Timing of Security Activity | After development is complete, right before deployment (one-time) | Continuously integrated throughout the entire process |
-| Responsible Party | A separate security team (silo) | Shared responsibility across Development/Operations/Security |
-| Method | Manual review and report-driven | Automated tools and pipeline-based |
-| Response Speed to Change | Slow (security review creates a bottleneck) | Fast (bottleneck removed through automated validation) |
+| Benefit | Practical Implication |
+|---|---|
+| Lower remediation cost | Fixing a design flaw pre-release is far cheaper than a post-incident patch |
+| Faster release cadence | Automated gates replace a manual review bottleneck before deployment |
+| Reduced audit burden | Policy as code produces continuous compliance evidence instead of a point-in-time audit scramble |
+
+The teams that struggle with DevSecOps almost never fail at the automation — they fail at the shared-responsibility part, treating security findings as a queue for a separate team instead of a normal part of the sprint.

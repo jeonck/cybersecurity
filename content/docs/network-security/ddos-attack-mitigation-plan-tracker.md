@@ -56,18 +56,15 @@ sequenceDiagram
 
 The tracker is updated whenever a control changes or a drill runs, and reviewed quarterly by the security lead alongside capacity and threat-intelligence updates.
 
-## III. Best Practices & Comparison
+## III. Key Strategies for Successful Adoption
 
-| Document | Primary Purpose | Update Cadence | Owner |
-|---|---|---|---|
-| DDoS Attack Mitigation Plan Tracker | Map attack vectors to mitigation controls and validate readiness | Quarterly + post-incident | Network Security Engineering |
-| [Network Security Risk Mitigation](../network-security-risk-mitigation/) | Broad risk register across all network threats, not DDoS-specific | Quarterly | CISO / Network Security |
-| NIST SP 800-41 (Firewall Guidelines) | Baseline configuration guidance for perimeter devices | As-needed on standard revision | Network Security Engineering |
+| Adoption Pitfall | Consequence | Mitigation |
+|---|---|---|
+| Thresholds copied from vendor defaults | False negatives during a real attack | Validate every threshold against your own traffic baselines |
+| Single ISP escalation contact | No fallback when the primary contact is unreachable mid-attack | Document and test at least two upstream/scrubbing escalation paths |
+| Drills run once at rollout | Coverage silently rots as architecture changes | Re-run tabletop drills after every significant architecture or provider change |
+| Vectors tracked without an OSI mapping | Coverage gaps invisible until exploited | Cross-reference each vector with the layer it exploits |
 
-- Validate every mitigation threshold against real traffic baselines, not assumed values.
-- Keep at least one upstream scrubbing or ISP escalation path documented and tested.
-- Re-run tabletop drills after any significant architecture or provider change.
-- Record time-to-mitigate for every drill and real incident to track improvement.
-- Cross-reference each vector with the OSI layer it exploits so coverage gaps are visible at a glance.
+A tracker that only gets touched during quarterly review is already stale — the real test of this document is whether it gets pulled up and edited live during an actual incident, since that's the only way a mitigation threshold ever gets corrected before it's needed again. Treat a drill where nothing needed updating as a sign the drill wasn't realistic, not a sign of readiness.
 
 Related: [Network Traffic Monitoring Dashboard](../network-traffic-monitoring-dashboard/), [Network Security Risk Mitigation](../network-security-risk-mitigation/)

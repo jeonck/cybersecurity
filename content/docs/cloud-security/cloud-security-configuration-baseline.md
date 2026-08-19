@@ -56,18 +56,14 @@ sequenceDiagram
 
 The baseline is version-controlled and reviewed whenever a provider introduces new services or changes default behavior, while individual resources are checked continuously by CSPM tooling rather than on a periodic audit cycle — exceptions are logged with an expiry date and revisited at each baseline review.
 
-## III. Best Practices & Comparison
+## III. Adoption Considerations
 
-| Document | Primary Purpose | Update Cadence | Owner |
-|---|---|---|---|
-| Cloud Security Configuration Baseline | Define the hardened settings all cloud resources must meet | Version-controlled, updated per provider changes | Cloud security architecture team |
-| Cloud Access Control Matrix | Track which identities can act on which resources | Continuous, with periodic recertification | Cloud security/IAM team |
-| Cloud Asset Inventory Tracker | Track which resources exist to be checked against the baseline | Continuous, discovery-driven | Cloud platform team |
+| Risk | Primary Control |
+|---|---|
+| Configuration drift from cheap, self-service resource creation | Continuous CSPM scanning against the baseline, not periodic audit |
+| Baseline going stale as providers add or change services | Version-controlled review triggered by provider change |
+| Exceptions becoming permanent by default | Time-boxed exception process with a hard expiry date |
 
-- Derive the baseline from a recognized standard, such as CIS Benchmarks, rather than writing controls from scratch.
-- Enforce through policy-as-code and service control policies, not documentation teams are expected to remember.
-- Treat every exception as time-boxed and tracked, never a silent permanent deviation.
-- Version the baseline alongside provider service updates so new resource types are never left unscoped.
-- Validate continuously with CSPM scanning instead of relying on periodic manual configuration review.
+The baseline only earns its name if it's enforced somewhere a developer can't route around it — a document describing the hardened setting is a suggestion, while a service control policy or admission-control rule that blocks the non-compliant configuration is the actual control. Treat every documented exception as a loan with an expiry date, not a permanent carve-out, or the baseline quietly becomes whatever the noisiest team's exceptions happen to allow.
 
 Related: [Cloud Access Control Matrix](../cloud-access-control-matrix/), [Cloud Asset Inventory Tracker](../cloud-asset-inventory-tracker/).

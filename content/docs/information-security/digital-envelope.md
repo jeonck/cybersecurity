@@ -51,7 +51,7 @@ graph LR
 - **Recover session key**: The recipient uses their own **private key** to decrypt the digital envelope and obtain the session key
 - **Recover message**: The obtained session key is used to decrypt the encrypted message and recover the original
 
-## III. Advanced Topics & Comparison
+## III. Expected Benefits & Implications
 
 | Category | Key Feature | Security Property & Expected Benefit |
 |:---:|----------|----------------------|
@@ -59,3 +59,5 @@ graph LR
 | **Safety** | Prevents key-theft threats | The session key can only be recovered with the recipient's private key (**confidentiality**) |
 | **One-time Use** | A new key is generated per session | Even if a key is exposed, only that session's data is affected |
 | **Use Cases** | Email, financial payments, etc. | Used in standard protocols such as S/MIME, PGP, and SSL/TLS |
+
+The one-time session key is the detail that matters most in practice, more than the raw speed gain — it converts a single key compromise from "every past and future message is exposed" into "one session is exposed," which is the entire basis for forward secrecy in modern protocols. Any system reusing a static symmetric key instead of generating one per session is giving up that containment property for no real benefit.

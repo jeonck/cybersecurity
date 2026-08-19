@@ -45,7 +45,7 @@ flowchart LR
 | Control | DLP (Data Loss Prevention) | Controls removable media, prevents screen capture, blocks file exfiltration | Prevents leakage of internal information |
 | Management | Patch Management | Automates OS and application security updates | Removes vulnerabilities |
 
-## III. Advanced Topics & Comparison
+## III. Key Strategies for Successful Adoption
 
 ```mermaid
 flowchart TD
@@ -64,4 +64,4 @@ flowchart TD
 | Correlation Analysis | Links fragmented events across layers to identify the full attack path | Cross-layer correlation |
 | Automated Response | Automatically executes isolation and remediation when a threat is detected | Integrates with SOAR and cuts response time |
 
-> **Key point**: XDR is a next-generation, unified security platform that extends EDR's endpoint visibility to the network and cloud, overcoming the limits of fragmented security solutions by tracking the entire kill chain in a single view.
+Buying an XDR platform without first getting endpoint log quality and coverage right is the most common way this investment underperforms — correlation analysis is only as good as the weakest data source feeding it, and gaps in endpoint telemetry silently degrade every other layer's detections. Treat EDR coverage completeness as the prerequisite gate before adding SOAR-driven automation, not a parallel workstream.

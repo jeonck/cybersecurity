@@ -55,18 +55,17 @@ sequenceDiagram
 
 The CISO drafts the ISMS charter with the steering committee, executive leadership approves it and commits resources, and internal or external audit periodically validates that the ISMS operates as documented. Management review occurs at least annually, feeding into the plan-do-check-act improvement cycle.
 
-## III. Best Practices & Comparison
+## III. Expected Benefits & Implications
 
-| Document | Primary Purpose | Review Cadence | Owner |
-|---|---|---|---|
-| ISMS Policy | Charter the overarching security management system | Annual | CISO, executive leadership |
-| Compliance Management | Track adherence to obligations the ISMS commits to | Continuous, with periodic formal reporting | CISO / GRC team |
-| Acceptable Use of Assets Policy | Operationalize one subordinate control area of the ISMS | Annual | CISO / GRC team |
+The ISMS policy's real value isn't the charter document itself — it's that executive sign-off converts security from a line item IT negotiates for annually into a governance commitment the board is accountable for. That distinction is what survives a budget-cutting cycle and what an auditor actually checks for.
 
-- Keep the ISMS policy at the charter level — objectives, scope, governance — and push operational detail into subordinate policies it references.
-- Secure explicit executive or board sign-off, since the ISMS commits the organization to resourcing, not just intent.
-- Anchor the risk management approach referenced in the ISMS to a documented, repeatable methodology.
-- Schedule management review on a fixed cadence and use it to drive the plan-do-check-act improvement cycle, not as a formality.
-- Map every subordinate security policy explicitly back to this charter so the policy hierarchy stays coherent under audit.
+| Benefit | Where It Shows Up |
+|---|---|
+| Durable executive commitment to resourcing | Security budget survives leadership turnover and cost-cutting |
+| Coherent policy hierarchy | Subordinate policies map back to one charter instead of drifting independently |
+| Certification readiness | Baseline structure expected by ISO 27001 and similar regimes |
+| Structured continual improvement | PDCA cadence instead of reactive, project-based fixes |
+
+Push operational detail out of the charter and into subordinate policies — an ISMS policy that tries to specify password rules or backup cadences directly turns into a maintenance burden that needs revision every time an operational detail changes, defeating the point of having a stable top-level document.
 
 Related: [Compliance Management](../compliance-management/), [Acceptable Use of Assets Policy](../acceptable-use-of-assets-policy/).

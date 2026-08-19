@@ -50,18 +50,15 @@ flowchart LR
 
 Automated discovery scans populate and refresh the inventory continuously; a network engineer validates changes, and the full inventory is reconciled against the CMDB quarterly.
 
-## III. Best Practices & Comparison
+## III. Vulnerabilities & Security Measures
 
-| Document | Primary Purpose | Update Cadence | Owner |
-|---|---|---|---|
-| Network Device Inventory | Catalog every device, its version, and patch state | Continuous (automated) + quarterly review | Network Security Engineering |
-| [Network Security Risk Mitigation](../network-security-risk-mitigation/) | Tracks risks and remediation across the network, device inventory included | Quarterly | CISO / Network Security |
-| NIST SP 800-41 (Firewall Guidelines) | Baseline hardening standard applied to firewall devices | As-needed on standard revision | Network Security Engineering |
+| Risk | Root Cause | Security Measure |
+|---|---|---|
+| Shadow devices | Deployed outside procurement/change process, never entered manually | Automated discovery scan, not spreadsheet-based tracking |
+| Unowned devices | Team turnover, ownership never reassigned | Flag ownerless entries for immediate investigation |
+| Overdue firmware | Patch status tracked separately from vulnerability management | Tie patch status directly into the vulnerability management workflow |
+| Stale inventory | Decommissioned devices never removed | Retire entries promptly to avoid false coverage assumptions |
 
-- Run automated discovery rather than relying on manual spreadsheets to catch shadow devices.
-- Flag any device without a known owner for immediate investigation.
-- Tie patch status directly into the vulnerability management workflow, not a separate tracker.
-- Reconcile the inventory against the CMDB and asset management system on a fixed cadence.
-- Retire and remove decommissioned devices from the inventory promptly to avoid false coverage assumptions.
+The single most dangerous entry in this inventory is the device nobody remembers approving — an unowned access point or forgotten VPN concentrator is a standing foothold for an attacker, and it will never show up on a vulnerability scan that only checks devices someone already knows to point it at. Automated discovery isn't a nice-to-have here; it's the only mechanism that reliably surfaces what manual tracking always misses.
 
 Related: [Network Security Risk Mitigation](../network-security-risk-mitigation/), [Network Traffic Monitoring Dashboard](../network-traffic-monitoring-dashboard/)

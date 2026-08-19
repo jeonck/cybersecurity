@@ -46,12 +46,14 @@ flowchart LR
 - **Socket-Based**: Transfers data between memory using a dedicated communication protocol.
 - **IEEE 1394 / USB**: Direct connection between networks via serial bus (mainly used recently in virtualized approaches).
 
-## III. Advanced Topics & Comparison
+## III. Expected Benefits & Implications
 
-Even in a network-separated environment, bypass paths can emerge or configuration errors can cause the two networks to mix — a "network commingling" issue that becomes security's Achilles heel.
+Network separation's real payoff shows up not in attacks prevented but in blast-radius containment when the perimeter is inevitably breached anyway — the metric worth tracking isn't "did the internal network stay isolated" but "how many bypass paths existed that nobody had inventoried." Treat every convenience-driven exception (a tethered laptop, a maintenance remote-access rule) as a standing liability against the separation investment, not a one-off.
 
-| Issue Type | Cause | Countermeasure and Security Reinforcement |
-|----------|---------|---------------------|
-| Unauthorized Bypass | Tethering, use of rogue wireless APs | Introduce media control ( **DLP** ) and unauthorized wireless device detection ( **WIPS** ) |
-| Data Transfer Misuse | Bypassing security approval, unapproved large-volume transfers | Detailed logging ( **Audit Trail** ) and integration with personal-data detection solutions |
-| Convenience-Driven Exceptions | Allowing remote access for maintenance, etc. | Adopt **Zero Trust** ( **ZTNA** ), ensure per-session visibility |
+| Benefit | Where It Shows Up |
+|---|---|
+| Contained APT lateral movement | Incident scope during post-mortems |
+| Defensible compliance posture | ISMS-P and Personal Information Protection Act audits |
+| Reduced silent data-leak paths | DLP and audit-trail findings |
+
+The organizations that get the most value from network separation are the ones that budget for the data-transfer system as seriously as the separation itself — an air gap that nobody can safely move data across just gets bypassed informally, which recreates the exact "network commingling" risk the separation was meant to prevent.

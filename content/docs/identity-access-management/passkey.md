@@ -55,11 +55,12 @@ graph TD
 | **End-to-End Encryption** | Encrypts credentials when syncing via the cloud | Not even the cloud provider can read them |
 | **Multi-Device FIDO** | A credential created on one device can be used on other devices | The key differentiator of passkeys |
 
-## III. Advanced Topics & Comparison
+## III. Outlook & Future Direction
 
-| Comparison Item | Password | Traditional FIDO (Single Device) | Passkey |
-|----------|-------------------|--------------------------|-----------------|
-| **User Experience** | Must be remembered and typed | Must be registered on each device | Register once, use on every device |
-| **Security** | Vulnerable to phishing and brute force | Very high | Very high (blocks phishing at the source) |
-| **On Device Loss** | Can be reset | Credential must be reissued | Recoverable via the cloud |
-| **Core Philosophy** | Knowledge-based | Possession-based | Syncable credential |
+| Approach | Status | Direction |
+|---|---|---|
+| Password (knowledge-based) | Standard practice | Being displaced for new deployments |
+| Traditional FIDO (device-bound) | Mature, but limited by device-tied credentials | Largely absorbed into the passkey model |
+| Passkey (synced FIDO2/WebAuthn) | Growing platform support (Apple, Google, Microsoft) | Default for consumer-facing sign-in |
+
+Passkeys are clearing the adoption barrier that killed earlier passwordless attempts: platform-level support built into every major OS means users don't need to install anything or manage a separate hardware key, which is exactly the step every prior passwordless push — including early FIDO U2F — stalled on. Expect password-as-primary-auth to become the legacy fallback option within a few years for consumer products; enterprise adoption will lag given legacy IdP and device-management dependencies, but the direction is not in question.

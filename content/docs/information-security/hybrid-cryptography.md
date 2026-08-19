@@ -53,11 +53,12 @@ sequenceDiagram
 - **Decrypt session key**: The recipient uses their own **private key** to recover the encrypted session key
 - **Decrypt data**: The recovered session key is used to convert the received ciphertext back into plaintext
 
-## III. Advanced Topics & Comparison
+## III. Expected Benefits & Implications
 
-| Comparison Item | Symmetric-Key Cryptography | Asymmetric-Key Cryptography | Hybrid Cryptography |
-|----------|-----------------------|-------------------------|-----------------------|
-| **Main Algorithms** | AES, DES, ARIA | RSA, ECC, Diffie-Hellman | SSL/TLS, S/MIME, PGP |
-| **Key Management/Distribution** | Difficult (`N(N-1)/2`) | Easy (`2N`) | Key distribution solved via asymmetric keys |
-| **Processing Speed** | Very fast | Very slow | Retains symmetric-key speed |
-| **Core Use** | Encrypting large volumes of data | Key exchange, digital signatures | Web communication (HTTPS), email |
+| Benefit | Where It Shows Up | Practical Implication |
+|---|---|---|
+| Solved key distribution | No pre-shared secret needed between strangers | Enables secure communication with parties never met before (HTTPS, email) |
+| Retained symmetric speed | Bulk data still encrypted with AES-class ciphers | No meaningful performance penalty versus pure symmetric encryption |
+| Scalable key management | `2N` keys instead of `N(N-1)/2` | Key management stays tractable as the user population grows |
+
+Nearly every production protocol from TLS to PGP made the hybrid call decades ago, which is worth treating as settled precedent rather than a design decision to revisit — a proposal to encrypt bulk data with pure asymmetric cryptography, or to skip key exchange with pure symmetric encryption, is solving a problem that was already solved and should be flagged in review rather than re-litigated from scratch.

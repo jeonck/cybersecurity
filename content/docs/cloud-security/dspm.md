@@ -43,13 +43,12 @@ flowchart LR
 | **Shadow Data** Detection | Identifies copies and test databases unknown to the IT department | Eliminates security blind spots caused by neglected data |
 | **Contextual Analysis** | Combines infrastructure configuration (CSPM) with data sensitivity | Focuses management on assets with genuinely high exposure risk |
 
-## III. Advanced Topics & Comparison
+## III. Outlook & Future Direction
 
-### DSPM vs. Traditional Security Solutions (DLP, CSPM)
+| Data Security Approach | Status | Direction |
+|---|---|---|
+| Manual data classification | Legacy, doesn't scale to cloud sprawl | Being phased out |
+| Traditional DLP | Mature, perimeter-bound | Narrowing to endpoint/network-specific use cases |
+| DSPM (agentless, AI-classified) | Rapidly maturing, still consolidating | Becoming a standard CNAPP module rather than a standalone buy |
 
-| Comparison Item | Traditional DLP (Data Loss Prevention) | CSPM (Posture Management) | DSPM (Data Posture) |
-|----------|-------------------------------|---------------------------|---------------------|
-| **Security Focus** | Blocking data exfiltration actions | Infrastructure / service misconfiguration | Data existence and risk management |
-| **Primary Target** | Endpoints, network perimeter | Cloud resources (S3, EC2, etc.) | Data assets (databases, files, etc.) |
-| **Operating Method** | Rule-based (regex) real-time monitoring | API-based configuration checks | Scan-based data analysis |
-| **Core Value** | Prevention of leakage | Compliance assurance | Data visibility and governance |
+DSPM's rise says something uncomfortable about the last decade of cloud security spend: organizations hardened infrastructure (CSPM) and workloads (CWPP) heavily while quietly losing track of where the sensitive data itself actually lived — the shadow database copy or forgotten test bucket that never shows up in an infrastructure-centric scan. Expect DSPM to stop being sold as its own product category within a few budget cycles and instead show up as the data-classification layer bundled into every CNAPP platform; treat a standalone DSPM purchase today as a bridge, not a decade-long vendor relationship.

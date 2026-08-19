@@ -55,9 +55,7 @@ graph LR
 | **Deploy / CD** | **IaC** security scanning, container image scanning | **Terraform Compliance**, **Trivy**, **Clair** |
 | **Operate / Monitor** | Runtime security, visibility, incident response | **Falco**, **ELK Stack**, **WAF**, **RASP** |
 
-## III. Advanced Topics & Comparison
-
-### A. Key Analysis Technique Comparison: SAST vs. DAST vs. SCA
+## III. Comparison & Application
 
 | Comparison | SAST (Static) | DAST (Dynamic) | SCA (Software Composition) |
 |:---:|--------------|---------------|---------------------------|
@@ -66,10 +64,4 @@ graph LR
 | **Primary Goal** | Discover logic defects in code | Detect runtime vulnerabilities and configuration errors | Manage vulnerable libraries and licenses |
 | **Accuracy** | High potential for false positives ( **FP** ) | Accurate since it confirms real attack paths | Accurate, based on an established database |
 
-### B. Practical Implementation Guidelines
-
-- **Gradual Integration**: Rather than applying every security tool at once, integrate high-impact **SAST** and **SCA** first, in stages.
-- **Defining a Failure Threshold (Build Fail)**: Establish criteria to automatically halt the pipeline when vulnerabilities at or above a certain severity ( **Critical** ) are found.
-- **Developer-Friendly Feedback**: Connect security scan results with developer tools ( **Jira**, **Slack**, etc. ) so developers can be notified and remediate immediately.
-
-> **Key Point**: The success of a **DevSecOps** pipeline lies not in simply adopting tools, but in the combination of a **cultural shift** — where security is seen as part of quality rather than an obstacle to development — and **automation**.
+These three are not competing tools to choose between — they are complementary layers, and the actual design decision is sequencing and gating, not selection. Run SCA and SAST at commit time because they are cheap and catch the highest volume of issues early; save DAST for staging, where it earns its cost by confirming which of those findings are actually reachable and exploitable in a running system. A pipeline that only gates on DAST results has already shipped every SAST-catchable defect to a later, more expensive stage.

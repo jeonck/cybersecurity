@@ -44,6 +44,12 @@ flowchart LR
 - **CL (Capability List)**: Manages the list of objects a subject can access, organized from the subject's perspective
 - **ACL (Access Control List)**: Manages the list of subjects that can access an object, organized from the object's perspective
 
-## III. Advanced Topics & Comparison
+## III. Trends & Future Direction
 
-Beyond the DAC / MAC / RBAC models above, access control is trending toward two newer approaches: **Attribute-Based Access Control (ABAC)**, which makes access decisions dynamically from attributes of the subject, resource, and environment rather than a fixed role, and **Zero Trust**, which treats no request as implicitly trusted regardless of network location and continuously verifies identity and context on every access attempt.
+| Approach | Status | Direction |
+|---|---|---|
+| DAC / MAC / RBAC | Established, still the operational baseline | Remain the enforcement layer, not replaced outright |
+| ABAC (Attribute-Based) | Growing adoption in cloud/IAM platforms | Becoming the default for context-sensitive, dynamic authorization |
+| Zero Trust | Widely adopted as an architectural principle | Assumed baseline for new network and application design |
+
+Static role-based models are not going away, but they are increasingly just one input into a broader decision — ABAC and Zero Trust don't replace RBAC so much as wrap it, layering time, location, and device posture on top of the role a user already holds. The practical shift for most organizations is less "adopt ABAC" as a discrete project and more a continuous move toward evaluating access at the moment of the request rather than at the moment of role assignment; teams that keep treating access control as a one-time provisioning event will fall behind this shift.

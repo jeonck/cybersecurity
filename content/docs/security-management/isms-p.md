@@ -55,7 +55,11 @@ flowchart TD
 | 2. Protection Measure Requirements | 64 | Personnel security, physical security, network security, system access control, incident response |
 | 3. Requirements by Stage of Personal Information Processing | 22 | Protecting data subject rights and ensuring legal compliance during collection, use/provision, and destruction |
 
-## III. Advanced Topics & Comparison
+## III. Outlook & Future Direction
 
-- **Expected benefits**: Establishes organizational security governance, ensures legal compliance, and improves external credibility while reducing risk.
-- **Future direction**: With the recent spread of cloud services, ISMS-P needs closer linkage with **CSAP** (Cloud Security Assurance Program) and greater interoperability with global security standards such as ISO 27001.
+| Trend | Status | Direction |
+|---|---|---|
+| Cloud-native adoption by ISMS-P-certified organizations | Accelerating | Requires closer linkage with CSAP rather than parallel, disconnected certification tracks |
+| International interoperability with ISO 27001 | Limited today | Growing pressure to align so certification evidence isn't duplicated for global customers |
+
+The certification's real bottleneck going forward isn't the audit itself — it's that a Korean company selling globally often ends up running ISMS-P and ISO 27001 as two separate programs with heavily overlapping evidence requirements. Expect KISA to keep pushing toward mutual recognition or a shared control-mapping approach, and organizations that build their evidence collection to serve both standards from day one will spend far less on certification maintenance than those that treat them as unrelated projects.

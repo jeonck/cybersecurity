@@ -55,17 +55,16 @@ sequenceDiagram
 
 Log entries are generated automatically at each access attempt; the SOC reviews aggregated entries on a daily or weekly cadence and escalates recurring denials or unexpected access patterns.
 
-## III. Best Practices & Comparison
+## III. Expected Benefits & Implications
 
-| Document | Primary Purpose | Update Cadence | Owner |
-|---|---|---|---|
-| Network Access Control Log | Chronological record of access attempts and decisions | Continuous (event-driven) | NOC / SOC |
-| [IP Whitelist–Blacklist Tracker](../ip-whitelist-blacklist-tracker/) | Defines which addresses are pre-authorized or blocked | On request + quarterly review | Network Security Engineering |
-| SDP (Software Defined Perimeter) | Architecture that authenticates before any connection is visible | As-needed on strategy revision | Network Security Engineering |
+The value of this log isn't measured by how many entries it accumulates — it's measured by how fast an analyst can answer "was this device ever on our network, and what did it touch" during an incident. A log nobody has ever successfully queried under time pressure is functionally the same as no log at all.
 
-- Log both successful and denied access attempts — denials often reveal reconnaissance or misconfiguration first.
-- Retain logs long enough to support incident investigations per the organization's retention policy.
-- Correlate access logs with identity and endpoint posture data, not IP address alone.
-- Automate alerting on access from unexpected locations, times, or previously unseen devices.
+| Benefit | Where It Shows Up |
+|---|---|
+| Faster lateral-movement investigation | Time-to-scope during incident response |
+| Early misconfiguration/reconnaissance signal | Denied-access patterns reviewed before they escalate |
+| Defensible access history | Audit and compliance evidence requests |
+
+Prioritize retention length and query speed over field completeness — a log that's too slow to search during an active incident, or that's already rolled off retention by the time someone needs it, delivers none of the benefit above no matter how many fields it captures.
 
 Related: [IP Whitelist–Blacklist Tracker](../ip-whitelist-blacklist-tracker/), [Network Traffic Monitoring Dashboard](../network-traffic-monitoring-dashboard/)

@@ -56,7 +56,7 @@ graph TD
 | **Forensics** | Tracing evidence in files, network packets, and memory | **File Carving**, **PCAP Analysis**, **Memory Forensics** |
 | **Misc** | Programming, general knowledge, puzzles, and other areas | **Python Scripting**, **Steganography**, **PPC** |
 
-## III. Advanced Topics & Comparison
+## III. Comparison & Application
 
 ### A. Jeopardy vs. Attack-Defense Format
 
@@ -67,9 +67,11 @@ graph TD
 | **Competition Scale** | Can accommodate large numbers of participants (mostly online) | Aimed at a small number of selected teams (mostly offline) |
 | **Atmosphere** | Focused on individual/team problem solving | The urgency of real-time attack traffic analysis and response |
 
-### B. Strategic Recommendations for Winning a CTF
-- **Domain-based collaboration**: Divide the team by each member's strong domain to maximize the speed and accuracy of solving challenges.
-- **Develop automation tools**: Automate repetitive scanning or simple exploitation using Python ( **Pwntools**, etc. ).
-- **Follow the latest trends**: Continuously study the latest challenge trends and write-ups from global competitions via **CTFtime** and similar resources.
+Don't pick a format based on which one is more popular online — pick it based on the training gap you're trying to close. Jeopardy is the better onboarding tool for building broad, per-domain depth across a large or junior team, while Attack-Defense is the only format that actually rehearses the skill most security teams lack: patching and defending a live system under active, time-pressured attack. A mature internal training program runs both, not one or the other.
 
-> **Key Point**: **CTF** is the ultimate hands-on training ground spanning the full range of information security, and the technical insight gained there translates directly into the core capability of proactively defending real infrastructure.
+### B. Selecting a Format for Internal Training Programs
+- **Building foundational skill**: Run Jeopardy-style internal CTFs first, organized by domain (web, pwnable, crypto, forensics), so newer team members can specialize before being thrown into a live-fire exercise.
+- **Rehearsing incident response**: Once a team has domain depth, use Attack-Defense exercises to pressure-test the exact muscle memory needed during a real incident — patching under time pressure while under active attack.
+- **Automate the repetitive parts**: Encourage teams to script recurring exploitation and scanning steps ( **Pwntools**, etc.) rather than repeating manual work, since automation skill built in a CTF transfers directly to real engagement efficiency.
+
+> **Key Point**: The choice between Jeopardy and Attack-Defense isn't a matter of preference — it's a matter of which skill gap the organization is trying to close, and the strongest internal training programs deliberately rotate between both rather than defaulting to whichever is easier to run.

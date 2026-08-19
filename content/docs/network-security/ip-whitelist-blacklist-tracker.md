@@ -50,18 +50,13 @@ flowchart LR
 
 Entries are requested on demand, approved before implementation, and swept quarterly so expired or unjustified rules are removed rather than accumulating indefinitely.
 
-## III. Best Practices & Comparison
+## III. Comparison & Application
 
-| Document | Primary Purpose | Update Cadence | Owner |
-|---|---|---|---|
-| IP Whitelist–Blacklist Tracker | Justify and expire every explicit allow/deny rule | On request + quarterly review | Network Security Engineering |
-| [Network Access Control Log](../network-access-control-log/) | Records who accessed network resources, not IP-level rules | Continuous (event-driven) | SOC |
-| Zero Trust Architecture (NIST SP 800-207) | Replaces static IP trust with per-session identity verification | As-needed on strategy revision | CISO / Network Security |
+| Approach | Best Fit | Weakness |
+|---|---|---|
+| IP Whitelist / Blacklist | Static partner links, legacy systems that can't carry identity context | Address changes silently break access; spoofable; no user-level granularity |
+| Identity/Device-Based (Zero Trust) | Distributed workforce, SaaS, anything that can authenticate | Requires broader identity and device-posture tooling to be in place first |
 
-- Require a business justification and expiration date on every entry — no permanent exceptions.
-- Prefer identity- and device-based access controls over IP allow-listing where zero trust tooling is available.
-- Review blacklist entries against current threat intelligence feeds, not just historical incidents.
-- Log every add, modify, and remove action for audit traceability.
-- Alert on any whitelist entry approaching or past its review date before it becomes stale.
+Don't treat this as an either/or migration — most networks run both for years. The deciding factor per entry is whether the other end can authenticate at all: a partner's fixed egress IP for a legacy SFTP feed still belongs on this tracker, but any entry added purely because provisioning identity-based access felt like more work is a sign the org is defaulting to the weaker control out of convenience, not necessity.
 
 Related: [Network Access Control Log](../network-access-control-log/), [Network Device Inventory](../network-device-inventory/)

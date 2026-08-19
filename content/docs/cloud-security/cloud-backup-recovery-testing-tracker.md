@@ -55,18 +55,14 @@ sequenceDiagram
 
 Backup jobs run on their configured schedule, but restore tests are executed on a separate, explicit cadence — typically quarterly for critical workloads — with the workload owner signing off on whether the result met agreed RTO/RPO targets before the tracker entry is closed.
 
-## III. Best Practices & Comparison
+## III. Comparison by Type & Selection Criteria
 
-| Document | Primary Purpose | Update Cadence | Owner |
+| Backup Method | Typical RTO | Typical RPO | Best Fit |
 |---|---|---|---|
-| Cloud Backup & Recovery Testing Tracker | Verify backups can actually be restored within target objectives | Quarterly restore tests, continuous backup logging | Cloud platform/DR team |
-| Cloud Incident Response Log | Record and track security incidents through resolution | Per incident | Cloud security operations |
-| Cloud Security Configuration Baseline | Define hardened settings, including backup and replication requirements | Version-controlled, updated per provider changes | Cloud security architecture team |
+| Native snapshot | Minutes to hours | Minutes | Single-region workloads, fast operational rollback |
+| Managed backup service | Hours | Hours | Standard workloads without custom recovery logic |
+| Cross-region/cross-account replication | Minutes | Near-zero | Workloads whose RTO/RPO targets assume a region-level failure |
 
-- Schedule restore tests as a standing calendar commitment, not an ad hoc task triggered by concern.
-- Validate RTO/RPO against actual business requirements, not the provider's default backup settings.
-- Include cross-region and cross-account failure scenarios for workloads with high availability requirements.
-- Store restore test evidence (logs, timestamps, sign-off) for audit and compliance review.
-- Define backup and retention configuration as code to prevent silent drift from the approved baseline.
+Snapshot-based backup is the default nearly every team reaches for, and it's the wrong choice for anything with a genuine disaster-recovery requirement — a snapshot restores fine when the region hosting both the workload and the backup is healthy, which is precisely the condition a real disaster doesn't guarantee. Reserve cross-region replication for the workloads whose RTO/RPO targets actually assume the primary region is gone, and don't let a snapshot-only strategy pass a restore test that never leaves the region it's supposed to protect against.
 
 Related: [Cloud Incident Response Log](../cloud-incident-response-log/), [Cloud Security Configuration Baseline](../cloud-security-configuration-baseline/).

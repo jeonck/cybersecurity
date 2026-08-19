@@ -55,18 +55,17 @@ sequenceDiagram
 
 Data owners propose tier assignments for the datasets they are accountable for, security defines the corresponding technical controls, and the ISMS steering committee approves the scheme. Classification of individual datasets is revisited whenever data inventory changes; the policy framework itself is reviewed annually.
 
-## III. Best Practices & Comparison
+## III. Expected Benefits & Implications
 
-| Document | Primary Purpose | Review Cadence | Owner |
-|---|---|---|---|
-| Information Classification Policy | Define sensitivity tiers and handling rules | Annual or on data inventory change | Data owners, security team |
-| Information Transfer Policy | Govern secure movement of data between parties | Annual | CISO / GRC team |
-| Disposal and Destruction Policy | Define destruction method by sensitivity tier | Annual | CISO / GRC team, IT operations |
+Classification is the one policy everything else quietly depends on — access control, encryption requirements, transfer restrictions, and disposal methods are only as consistent as the tiering scheme underneath them. Let it drift into a rubber-stamped formality, and every downstream control ends up justified by individual judgment calls instead of a shared standard.
 
-- Keep the number of tiers small — three or four levels — so staff can apply them consistently without guesswork.
-- Define tier criteria in business-impact terms, not technical jargon, so data owners can classify without security involvement for routine cases.
-- Require labeling on both digital files and physical documents, not just one or the other.
-- Tie every other control — access, transfer, disposal — back to classification tier rather than defining them independently.
-- Revisit classification whenever a dataset's use, exposure, or regulatory context changes materially.
+| Benefit | Where It Shows Up |
+|---|---|
+| Consistent control application | Access, encryption, transfer, and disposal all reference one tier |
+| Faster new-system rollout | New systems inherit handling rules instead of defining them from scratch |
+| Reduced audit friction | One classification scheme, not ad hoc per-system judgment |
+| Clearer data-owner accountability | Named owners tied to each tier assignment |
+
+Keep the tier count small on purpose — three or four levels is what lets non-security staff classify data correctly without escalating every routine case, and a scheme with too many tiers usually collapses back to two in practice anyway.
 
 Related: [Information Transfer Policy](../information-transfer-policy/), [Disposal and Destruction Policy](../disposal-and-destruction-policy/).

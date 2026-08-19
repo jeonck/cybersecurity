@@ -55,18 +55,15 @@ sequenceDiagram
 
 The data owner authorizes transfer of confidential or restricted data, security confirms the required channel and encryption controls, and DLP tooling monitors for violations after the fact. The policy is reviewed annually and whenever a new transfer channel or third-party integration is introduced.
 
-## III. Best Practices & Comparison
+## III. Adoption Considerations & Security Measures
 
-| Document | Primary Purpose | Review Cadence | Owner |
-|---|---|---|---|
-| Information Transfer Policy | Govern secure movement of data between parties | Annual | CISO / GRC team |
-| Information Classification Policy | Define sensitivity tiers that transfer controls are matched to | Annual or on data inventory change | Data owners, security team |
-| Password Policy | Set authentication requirements protecting transfer channels | Annual | CISO / IAM team |
+| Risk | Primary Control |
+|---|---|
+| Sensitive data sent via an unapproved channel | Channel mapped explicitly to classification tier |
+| Data exposed while in transit | Mandatory encryption above the lowest sensitivity tier |
+| Vendor mishandling shared data | Data-protection clauses in place before transfer begins |
+| Transfer crossing a jurisdictional boundary unnoticed | Mandatory legal review for cross-border transfer |
 
-- Map every approved transfer channel explicitly to a classification tier, rather than leaving the choice to individual judgment.
-- Require encryption in transit for anything above the lowest sensitivity tier, with no exceptions for convenience.
-- Attach data-protection clauses to vendor and partner contracts before any transfer begins.
-- Deploy DLP monitoring on outbound channels most likely to carry sensitive data — email, cloud storage, removable media.
-- Require legal review for any transfer that crosses a jurisdictional boundary with different data-protection law.
+DLP monitoring catches violations after the fact — it's a detective control, not a preventive one. The real preventive work happens earlier, when the channel gets mapped to a classification tier and encryption gets made non-negotiable rather than "recommended," because by the time DLP flags an outbound email, the recipient has usually already opened it.
 
 Related: [Information Classification Policy](../information-classification-policy/), [Password Policy](../password-policy/).

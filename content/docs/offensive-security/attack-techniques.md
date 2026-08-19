@@ -53,7 +53,7 @@ flowchart LR
 | Command & Control (C2) | HTTP/DNS tunneling, Tor-based covert channels | Anomalous traffic detection, DNS sinkholing |
 | Actions on Objectives | Ransomware, data exfiltration, destruction | UEBA, DLP, backup and recovery |
 
-## III. Advanced Topics & Comparison
+## III. Vulnerabilities & Security Measures
 
 ### A. Classification by OSI Layer and Attack Target
 
@@ -64,7 +64,9 @@ flowchart LR
 | System layer | Ransomware, buffer overflow, privilege escalation | System takeover / file encryption | EDR, least privilege, ASLR |
 | Social engineering layer | Phishing, smishing, voice phishing, pretexting | Credential theft / trust abuse | Security awareness training, enforced MFA |
 
-### B. Latest Advanced Attack Trends
+Layer-based classification only pays off if the countermeasure budget is mapped to where the team actually has eyes — a WAF rule tuned for the application layer is dead weight if no one is watching network-layer traffic for the lateral movement that follows, so audit staffing and tooling coverage against this table before buying another point solution.
+
+### B. Latest Advanced Attack Trends and Their Countermeasures
 
 ```mermaid
 flowchart TD
@@ -82,3 +84,7 @@ flowchart TD
 | APT (Advanced Persistent Threat) | Long-term dwell time, focused targeting, multi-stage attack | Lazarus, APT41 | Threat hunting, MITRE ATT&CK mapping |
 | Supply Chain Attack | Indirect infiltration through trusted software or vendors | SolarWinds, XZ Utils | SBOM management, code signing verification |
 | Fileless Attack | Abuses legitimate processes (PowerShell, WMI) | Cobalt Strike | Behavior-based detection, memory analysis |
+
+Notice that none of these three trends map cleanly onto a single OSI layer or a single control in the table above — a modern intrusion typically chains a supply-chain foothold into fileless, in-memory persistence and APT-style dwell time, which is exactly why single-layer defenses fail against them. The practical takeaway: fund cross-layer visibility (EDR plus UEBA plus threat hunting working from the same data) over adding one more layer-specific tool.
+
+> **Key Point**: Classification is only useful insofar as it drives where the security budget goes — map every attack layer and trend in this table to an owned control and a named team, or the taxonomy is just documentation.

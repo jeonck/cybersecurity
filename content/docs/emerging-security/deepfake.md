@@ -50,18 +50,12 @@ sequenceDiagram
 3. **Content generation**: Feed inputs (a target face or voice) into the trained model to generate manipulated deepfake video or audio.
 4. **Post-processing (optional)**: Edit and refine the generated content so it appears more natural.
 
-## III. Advanced Topics & Comparison
+## III. Adoption Considerations
 
-### Deepfake Detection Techniques
+| Risk | Mitigation |
+|---|---|
+| Fabricated content spread as disinformation or used in impersonation fraud | AI-based detection of visual/auditory artifacts (unnatural blinking, voice-alteration traces), **watermarking** at creation time, blockchain-based digital provenance |
+| Voice/video impersonation used for social engineering (voice phishing, executive-impersonation fraud) | Out-of-band verification for high-value requests, not caller/sender identity alone |
+| Unauthorized use of a person's likeness or voice, and slow platform takedown | Stronger anti-abuse legislation, mandatory platform detection and takedown obligations, public awareness education |
 
-- **AI-based analysis**: AI models detect subtle visual or auditory inconsistencies in generated content, such as unnatural blinking, unnatural expressions, or traces of voice alteration.
-- **Watermarking**: Invisible identifying information is embedded in source data at creation time so authenticity can be verified later.
-- **Digital provenance**: Technology — including **blockchain** — is used to record and trace a piece of content's creation, editing, and distribution history.
-
-### Legal and Institutional Response
-
-- **Stronger anti-abuse laws**: Strengthening penalties for defamation, the production and distribution of illicit material, and election interference carried out using deepfakes.
-- **Greater platform responsibility**: Requiring social media and other distribution platforms to detect deepfakes and block their spread.
-- **Security awareness**: Expanding public education and outreach on the dangers of deepfakes and how to identify them.
-
-> **Key point**: As deepfakes grow more sophisticated alongside advancing technology, defense requires combining **AI-based detection technology** with **legal and institutional regulation**.
+The organizational fix for deepfake-enabled fraud looks a lot like the fix for email-based CEO fraud a decade ago: a mandatory out-of-band verification step for any high-value request, regardless of how convincing the voice or video sounds. Detection technology will keep losing an arms race against generation technology, so the process control — not detection accuracy — should carry the weight of the defense.

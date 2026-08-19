@@ -54,20 +54,13 @@ flowchart TD
 | **Application Layer** | **HTTP GET Flood** | Generates a large volume of seemingly normal **HTTP** requests to exhaust web server resources | **WAF**, threshold-based blocking, **CAPTCHA** |
 | **Sophisticated Attack** | **Slowloris** | Keeps connections open extremely slowly to gradually occupy the server's threads | Strengthened timeout settings, use of a reverse proxy |
 
-## III. Advanced Topics & Comparison
+## III. Comparison & Application
 
-### Phased Defense Strategy (Defense in Depth)
+| Mitigation Approach | Best Fit | Weakness |
+|---|---|---|
+| On-Prem Appliance (WAF, threshold blocking) | Application-layer floods, low-to-moderate volume | Link itself still saturates under large volumetric floods |
+| Cloud Mitigation (AWS Shield, Cloudflare) | Large-scale volumetric and reflection attacks | Ongoing service cost, routes traffic through a third party |
+| Anycast Routing | Geographically distributed attack sources | Doesn't stop application-layer floods on its own |
+| BGP Flowspec (ISP-level) | Attacks that already exceed local link capacity | Requires upstream ISP cooperation and BGP-capable infrastructure |
 
-- **Threshold-Based Blocking**: Monitors the number of packets or sessions occurring per unit of time and automatically blocks traffic that deviates from the normal range.
-- **Deep Packet Inspection (DPI)**: Verifies compliance with normal protocol specifications and selectively blocks packets containing known attack patterns ( **Signature** ).
-- **Clean Zone Service**: Proactively filters attack traffic within the **ISP** infrastructure so that only clean traffic enters the internal network.
-
-### Infrastructure and Cloud-Based Countermeasures
-
-| Countermeasure Area | Details | Security Effect |
-|----------|----------|----------|
-| **Cloud Mitigation** | Dedicated services such as **AWS Shield**, **Cloudflare** | Absorbs and distributes large-scale traffic via globally distributed edge nodes |
-| **Anycast Routing** | Routes attack traffic to the geographically nearest node | Distributes traffic load that would otherwise concentrate on one server |
-| **BGP Flowspec** | Defines attack traffic attributes along the routing path for immediate blocking | Enables rapid response at the network core layer |
-
-> **Key Point**: Modern **DDoS** defense is not a matter of a single appliance — it requires an integrated response system combining the **ISP**, cloud security services, and dedicated defense equipment.
+Sizing the response to the attack class is the decision that actually matters — an on-prem WAF stops a Slowloris or HTTP GET flood cold but does nothing once a volumetric flood fills the upstream link, and no amount of local appliance tuning fixes a saturated pipe. Once attack volume can plausibly exceed your own link capacity, cloud scrubbing or ISP-level Flowspec isn't an upgrade, it's the only tier that can actually absorb the traffic before it reaches you.

@@ -55,18 +55,18 @@ sequenceDiagram
 
 Entries are created the moment a breach is confirmed, updated continuously through containment and notification, and formally closed once all required disclosures are complete and remediation is verified.
 
-## III. Best Practices & Comparison
+## III. Implications & Recommendations
 
-| Document | Primary Purpose | Update Cadence | Owner |
-|---|---|---|---|
-| Data Breach Notification Log | Track breach disclosure obligations and deadlines | Per incident | CISO/incident response lead |
-| Data Loss Prevention (DLP) Incident Log | Track all data-exfiltration events, not only confirmed breaches | Per incident | Security operations |
-| Data Classification Register | Define which data categories trigger notification obligations | Annual or on data inventory change | Data owners, security team |
+Treating breach notification as a legal deadline rather than a security control is the mistake that turns a bad week into a regulatory enforcement action — the log's real value is proving the clock started at confirmed discovery, not suspicion, and that every hour after was accounted for. Tabletop exercises that never touch this log are testing containment speed while ignoring the disclosure deadline regulators actually measure.
+
+| Implication | Practical Effect | Time Horizon |
+|---|---|---|
+| Clean discovery timestamp | Withstands regulatory scrutiny on notification timing | Captured at time of confirmation |
+| Legal counsel engaged early | Jurisdiction-specific obligations identified before deadline pressure builds | First 24-48 hours |
+| Separation from general IR tickets | Regulatory evidence isn't buried in unrelated operational detail | Ongoing |
 
 - Start the notification clock from confirmed discovery, not from initial suspicion, and document that timestamp precisely.
-- Involve legal/privacy counsel early to determine jurisdiction-specific obligations rather than assuming a single global deadline.
-- Keep the log separate from general incident tickets so regulatory evidence is not buried in unrelated operational detail.
-- Record both regulator and individual notification separately, since deadlines and thresholds often differ.
+- Record regulator and individual notification separately, since deadlines and thresholds often differ.
 - Review closed entries during tabletop exercises to validate that response times can meet stated deadlines.
 
 Related: [Data Loss Prevention (DLP) Incident Log](../data-loss-prevention-incident-log/), [Data Classification Register](../data-classification-register/).

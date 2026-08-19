@@ -48,17 +48,14 @@ flowchart LR
 | Review Cadence | How often the approach is revisited relative to business and infrastructure change. |
 | Executive Sponsor | Leadership role accountable for the strategy and its funding. |
 
-## III. Best Practices & Comparison
+## III. Outlook & Future Direction
 
-| Document | Primary Purpose | When Used | Owner |
-|---|---|---|---|
-| DR Approach Document | Set strategy, scope, and recovery tiers | Before detailed planning; revisited annually | DR coordinator, IT/security leadership |
-| DR Plan Template | Provide step-by-step recovery procedures per system | Built after the approach is approved; invoked during a disaster | System/application owners, DR coordinator |
-| DR Asset Register | Inventory systems and their recovery priority | Continuously maintained; referenced by both documents above | IT infrastructure/asset management |
+| Recovery Tier | Status | Direction |
+|---|---|---|
+| Dedicated warm/hot site, standing capacity leased or owned | Legacy, capital-intensive | Being displaced in new approach documents |
+| Cloud-based multi-region failover | Growing default tier option | Metered cost, faster and cheaper to re-test |
+| Cold site / backup restore only | Still viable for low-tier systems | Retained for cost-insensitive, high-RTO-tolerance workloads |
 
-- Anchor recovery tiers to business impact analysis output, not to whichever infrastructure is easiest to stand up.
-- Get executive sign-off in writing — the approach commits real budget to standby capacity.
-- Revisit the approach whenever the organization adds a new critical system category or changes cloud providers.
-- Keep the approach at strategy level; push procedural detail into the DR Plan Template so the approach stays stable.
+Cloud-based failover is quietly erasing the cost gap between "warm site" and "hot site" that used to force approach documents into a hard, once-a-year tradeoff — when standby capacity is metered rather than a standing lease, funding commitment stops being about how much capacity to buy and becomes about how often the organization is willing to pay to actually prove failover works. The approach document's real leverage going forward is less in which tier it names and more in whether it mandates a testing cadence the funding model can sustain.
 
 Related: [DR Plan Template](../dr-plan-template/), [DR Asset Register](../dr-asset-register/).

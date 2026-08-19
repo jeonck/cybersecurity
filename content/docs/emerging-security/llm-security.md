@@ -55,7 +55,12 @@ flowchart LR
 | LLM06 | Sensitive Data Disclosure | Sensitive information leaking through training data or RAG (mitigated by data de-identification and PII filtering) |
 | Other | Training Data Poisoning | Injecting malicious data into training data to induce bias or a backdoor in the model |
 
-## III. Advanced Topics & Comparison
+## III. Outlook & Future Direction
 
-- **Human-in-the-loop (HITL) verification**: Include a human review step before trusting LLM output, to establish reliability.
-- **Applying LLM guardrails**: Build real-time filtering at both the input and output stages, using security solutions such as NeMo-Guardrails.
+| Control Category | Maturity | Direction |
+|---|---|---|
+| Prompt-injection input filtering | Early, heuristic-based | Converging toward structured separation of instructions and untrusted data |
+| Output/guardrail frameworks (e.g., NeMo-Guardrails) | Growing adoption | Becoming the primary real-time enforcement layer at both input and output |
+| Human-in-the-loop ( **HITL** ) review | Manual, applied selectively | Shifting toward risk-based triggers rather than blanket review of every response |
+
+The security community is converging on a conclusion the AI-safety community reached earlier: prompt injection can't be fully solved at the input-filtering layer, because there is no reliable way to separate "instruction" from "data" once both arrive as plain text. The more durable investment is constraining what a compromised LLM call can *do* next — output validation before any action executes, and human review reserved for consequential actions — rather than betting the defense on ever-better input classifiers.

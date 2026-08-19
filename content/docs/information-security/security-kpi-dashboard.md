@@ -55,18 +55,18 @@ sequenceDiagram
 
 Underlying metrics are refreshed continuously or weekly depending on the source system, the consolidated dashboard is compiled monthly, and a summarized version is presented to executive leadership or the board on a quarterly cycle.
 
-## III. Best Practices & Comparison
+## III. Expected Benefits & Implications
 
-| Document | Primary Purpose | Update Cadence | Owner |
-|---|---|---|---|
-| Security KPI Dashboard | Summarize program-wide security trends for leadership | Monthly, presented quarterly | CISO |
-| Data Loss Prevention (DLP) Incident Log | Source detail feeding exfiltration-related metrics | Per alert | Security operations |
-| Access Rights & Permissions Matrix | Source detail feeding access recertification completion metrics | Continuous | IAM/Security team |
+A dashboard with too many metrics produces the opposite of its intended effect — leadership disengages from a forty-row report the same way they would a forty-page memo, so cutting the metric set down to what's actually actionable matters more than the completeness of what's tracked. Every metric without a paired target and escalation trigger is a number, not a KPI, and should be removed or upgraded.
+
+| Benefit | Where It Shows Up | Time Horizon |
+|---|---|---|
+| Faster resourcing decisions | Leadership sees degrading trends before they become incidents | Ongoing, visible within 1-2 reporting cycles |
+| Reduced audit friction | Trends pulled from source systems serve as ready-made evidence | At audit time |
+| Program credibility | Consistent, source-linked metrics build trust that self-reported wins don't | 2-3 quarters |
 
 - Limit the dashboard to a small set of metrics leadership can act on, rather than every number the security team happens to collect.
-- Pair each metric with a defined target and an explicit escalation trigger so a breach of threshold produces a decision, not just a color change.
+- Pair each metric with a defined target and an explicit escalation trigger.
 - Pull metrics directly from source logs and trackers rather than re-entering figures manually, to avoid drift between the dashboard and underlying evidence.
-- Track trend direction alongside current value, since a single snapshot cannot show whether the program is improving.
-- Revisit the metric set annually to retire indicators that no longer drive decisions and add ones tied to emerging risks.
 
 Related: [Data Loss Prevention (DLP) Incident Log](../data-loss-prevention-incident-log/), [Access Rights & Permissions Matrix](../access-rights-permissions-matrix/).

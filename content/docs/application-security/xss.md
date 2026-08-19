@@ -50,22 +50,12 @@ sequenceDiagram
 | **Reflected XSS** | Input such as a search term is immediately reflected back into the response page | Response message ( **Non-persistent** ) | Search results, error messages, **URL** parameters |
 | **DOM-based XSS** | A client-side script dynamically processes **DOM** data | Client browser ( **DOM** ) | `innerHTML`, `document.write` in **JavaScript** |
 
-## III. Advanced Topics & Comparison
+## III. Vulnerabilities & Security Measures
 
-### A. Technical Countermeasures (Secure Coding)
+| Attack Vector | Primary Control |
+|---|---|
+| Stored XSS | Output encoding + CSP |
+| Reflected XSS | Input validation + output encoding |
+| DOM-based XSS | Safe DOM APIs (`textContent`) instead of `innerHTML` |
 
-- **Output Encoding**: When rendering user input as **HTML**, convert special characters ( `<`, `>`, `&`, `"`, etc. ) into **HTML Entities** to prevent execution.
-- **Input Filtering**: Apply whitelist-based validation against dangerous tags and event handlers such as `<script>`, `onerror`, and `onload`.
-- **Security Headers**:  
-  - **Content Security Policy** ( **CSP** ): Enforces a browser policy that only allows scripts from approved domains to execute.  
-  - **X-XSS-Protection**: Enables the browser's built-in **XSS** filter to help block attacks.
-
-### B. Browser-Side Security Measures
-
-| Measure | Details | Security Effect |
-|----------|----------|----------|
-| **HttpOnly Cookie** | Blocks **JavaScript** access via `document.cookie` | Fundamentally prevents session cookie theft ( **Session Hijacking** ) through **XSS** |
-| **Secure Cookie** | Transmits cookies only over the **HTTPS** protocol | Defends against cookie sniffing on the network segment |
-| **SameSite Cookie** | Controls how cookies are sent to third-party sites ( **Lax** / **Strict** ) | Defends against **CSRF** attacks and mitigates some **XSS** damage |
-
-> **Key Point**: The foundation of **XSS** defense is assuming that "all user input is untrusted," and applying thorough **entity encoding** at the output stage together with a **CSP**.
+Content Security Policy is the control most teams under-invest in relative to its impact — output encoding stops the majority of injection attempts, but a strict CSP is the one control that still helps the day a new encoding bypass is discovered. HttpOnly cookies matter for a related but distinct reason: they don't prevent the script from running, but they contain the blast radius so a successful injection doesn't automatically become session hijacking. Treat CSP rollout as its own security-debt-reduction project, not an afterthought bolted onto the XSS ticket.

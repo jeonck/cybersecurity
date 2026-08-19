@@ -54,7 +54,7 @@ graph TD
 | **Separation** | The level of separation and independence between security controls | Verifies the effectiveness of **Defense in Depth** |
 | **Limitations** | The inherent limits present within a security system | Identifies residual risk and informs response strategy |
 
-## III. Advanced Topics & Comparison
+## III. Comparison by Type & Selection Criteria
 
 ### A. Comparison of Major Security Methodologies
 
@@ -65,9 +65,11 @@ graph TD
 | **Assessment Perspective** | Whether penetration succeeded (attacker's view) | Operational effectiveness of security controls (defender's view) |
 | **Strength** | Concrete hacking technique guidelines | Quantitative figures suitable for executive reporting |
 
-### B. Recommendations for Effective Use of OSSTMM
-- **Link the RAV metric to the business**: Actively use **RAV** as a metric for demonstrating the **ROI** of security budget investment.
-- **Integrated channel testing**: Combine human security (social engineering) checks with physical security checks alongside IT infrastructure testing for full-spectrum security visibility.
-- **Support regulatory compliance**: Use it as objective evidence for domestic and international certifications ( **ISMS-P**, **ISO 27001**, etc. ) that require measuring security maturity.
+Don't treat this as an either/or choice — the two frameworks answer different questions for different audiences. Pull PTES's phase structure to actually run and manage the engagement day to day, and pull OSSTMM's RAV scoring for the moment the report reaches a CFO or board member who needs a trend line, not a stack of CVSS numbers. Most mature security programs end up running both side by side: PTES for process discipline, OSSTMM for the metric that survives translation to a non-technical audience.
 
-> **Key Point**: **OSSTMM** is the standard that turned security from something "felt" into something "measured," and it is a powerful tool for driving an organization's real security maturity through quantified data.
+### B. Selection Criteria by Program Maturity
+- **Early-stage program, first pentest**: Start with PTES-style execution discipline — the priority is getting a consistent, defensible process in place before worrying about quantified trend reporting.
+- **Established program, executive reporting needs**: Layer OSSTMM's RAV metric on top once the process is stable, so leadership can track security maturity numerically year over year instead of reading disconnected point-in-time reports.
+- **Regulated or compliance-heavy environment**: Use OSSTMM's channel-based scope (human, physical, wireless, data) as objective evidence for certifications like **ISMS-P** and **ISO 27001** that explicitly require measuring maturity, not just listing findings.
+
+> **Key Point**: The choice between PTES and OSSTMM is really a choice about audience — pick PTES when the deliverable's job is guiding remediation, pick OSSTMM when the deliverable's job is proving security maturity to people who don't read vulnerability reports.

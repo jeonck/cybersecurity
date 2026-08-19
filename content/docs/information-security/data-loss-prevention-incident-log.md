@@ -55,18 +55,18 @@ sequenceDiagram
 
 Each alert is logged at detection and closed once triaged, typically within one business day; the log itself is reviewed weekly by security operations and summarized monthly for management reporting.
 
-## III. Best Practices & Comparison
+## III. Adoption Considerations
 
-| Document | Primary Purpose | Update Cadence | Owner |
-|---|---|---|---|
-| Data Loss Prevention (DLP) Incident Log | Track detected exfiltration attempts and policy violations | Per alert | Security operations |
-| Data Breach Notification Log | Track confirmed breaches requiring regulatory disclosure | Per confirmed breach | CISO/incident response lead |
-| Access Rights & Permissions Matrix | Reduce exfiltration risk by limiting who can access sensitive data | Continuous | IAM/Security team |
+| Adoption Risk | Description | Mitigating Practice |
+|---|---|---|
+| Alert fatigue | High false-positive volume causes alerts to be dispositioned superficially | Tune DLP rules against logged false-positive trends, not intuition |
+| Unclosed dispositions | Alerts left open indefinitely erode trend visibility | Force every alert to a clear disposition before closure |
+| Siloed insider signals | Repeat low-severity events from the same user go unnoticed individually | Track repeat occurrence per user/device across the full log history |
 
-- Triage every alert to a clear disposition rather than leaving items open indefinitely, which erodes the log's usefulness for trend analysis.
-- Track repeat occurrences per user or device to catch patterns a single alert would miss.
+The log's real job is separating noise from pattern, and most teams under-invest in the second half of that job — a single DLP alert is rarely meaningful, but three low-severity alerts from the same user over a month is a different risk category entirely, one a per-alert triage process will never surface on its own. Building repeat-occurrence tracking into the triage workflow, not just the disposition field, is what actually catches insider risk.
+
+- Triage every alert to a clear disposition rather than leaving items open indefinitely.
 - Escalate any confirmed exfiltration of classified data into the breach notification process immediately, not after routine review.
-- Tune DLP rules based on false-positive trends visible in the log to reduce alert fatigue over time.
 - Report aggregate metrics (alert volume, false-positive rate, mean time to triage) into the [Security KPI Dashboard](../security-kpi-dashboard/) rather than only tracking individual incidents.
 
 Related: [Data Breach Notification Log](../data-breach-notification-log/), [Security KPI Dashboard](../security-kpi-dashboard/).

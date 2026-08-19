@@ -55,18 +55,17 @@ sequenceDiagram
 
 Security drafts the standard against current industry guidance, the ISMS steering committee approves it, and IT operations implements enforcement through directory policy and MFA configuration. The policy is reviewed annually and whenever authentication guidance from standards bodies materially changes.
 
-## III. Best Practices & Comparison
+## III. Expected Benefits & Implications
 
-| Document | Primary Purpose | Review Cadence | Owner |
-|---|---|---|---|
-| Password Policy | Set authentication strength and MFA requirements | Annual | CISO / IAM team |
-| Acceptable Use of Assets Policy | Define permitted use of company IT assets | Annual | CISO / GRC team |
-| Information Transfer Policy | Govern secure movement of data between parties | Annual | CISO / GRC team |
+The strongest practical shift in password policy over the last several years is moving away from forced frequent rotation toward passphrase length plus mandatory MFA — rotation policies that force frequent changes reliably push users toward predictable, incrementally modified passwords, which is worse for security than a longer password changed rarely.
 
-- Favor passphrase length and MFA over frequent forced rotation, which research shows drives weaker password choices.
-- Mandate MFA on all remote access, privileged accounts, and systems holding sensitive data.
-- Never store or log passwords in plaintext; require salted hashing at rest.
-- Vault and rotate service-account and shared credentials separately from user password rules.
-- Monitor for credential exposure in breach data and force resets when matches are found.
+| Benefit | Where It Shows Up |
+|---|---|
+| Fewer credential-based initial-access incidents | Reduced phishing and credential-reuse breach exposure |
+| Faster breach investigation | Documented baseline instead of per-system ad hoc rules |
+| Regulatory and audit defensibility | A written, enforced standard auditors can test against |
+| Reduced helpdesk load from forced resets | Passphrase guidance reduces lockouts compared to complex rotation rules |
+
+Treat MFA coverage, not password complexity, as the metric that actually predicts breach resistance — a compromised password behind MFA is a non-event, while a "strong" password without MFA is still one phishing email away from full account takeover.
 
 Related: [Acceptable Use of Assets Policy](../acceptable-use-of-assets-policy/), [Information Transfer Policy](../information-transfer-policy/).

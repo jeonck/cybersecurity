@@ -55,18 +55,17 @@ sequenceDiagram
 
 The GRC team maintains the obligation inventory and control mapping continuously, with legal input on interpretation. Status is reported to the ISMS steering committee on a fixed cadence, and external audits or certification assessments validate the program on their own cycle, typically annually.
 
-## III. Best Practices & Comparison
+## III. Expected Benefits & Implications
 
-| Document | Primary Purpose | Review Cadence | Owner |
-|---|---|---|---|
-| Compliance Management | Track and evidence adherence to laws, standards, contracts | Continuous, with periodic formal reporting | CISO / GRC team |
-| ISMS Policy | Set the management-system framework compliance operates within | Annual | CISO |
-| Information Classification Policy | Define data sensitivity tiers referenced by many compliance obligations | Annual or on data inventory change | Data owners, security team |
+A single control-mapping matrix is what actually saves effort here — treating each regulation as a separate checklist means re-proving the same encryption control five different ways for five different auditors, instead of proving it once against a shared control set.
 
-- Maintain a single control-mapping matrix rather than tracking each regulation or standard in isolation.
-- Collect evidence continuously, not just in the weeks before an audit.
-- Assign a named owner and deadline to every open compliance gap.
-- Monitor regulatory change sources actively rather than waiting for a customer or auditor to flag a new obligation.
-- Report compliance posture to leadership on a fixed, predictable cadence to keep it a standing agenda item.
+| Benefit | Where It Shows Up |
+|---|---|
+| Reduced duplicate audit effort | One control satisfies multiple obligations |
+| Earlier gap detection | Continuous evidence collection instead of a pre-audit scramble |
+| Predictable leadership visibility | Fixed-cadence reporting to the steering committee |
+| Lower regulatory exposure | Named owners and deadlines on every open gap |
+
+Continuous evidence collection is the detail that separates a real compliance program from one that only performs well in the weeks before an audit — build it into normal operations, or the gap-tracking register just becomes a pre-audit fire drill every cycle.
 
 Related: [ISMS Policy](../isms-policy/), [Information Classification Policy](../information-classification-policy/).

@@ -53,18 +53,14 @@ graph TD
 | Workload Layer | **CWPP** | Detects malware and protects running processes inside VMs, containers, and serverless functions |
 | Full Lifecycle | **CNAPP** | Integrates the solutions above into one platform, protecting from build to run |
 
-## III. Advanced Topics & Comparison
+## III. Expected Benefits & Implications
 
-### Interaction and Data Flow Between Solutions
+The payoff of layering CASB, CSPM, CWPP, and DSPM into one architecture instead of running them as unrelated purchases is correlation, not just coverage. Each tool already covers its own layer reasonably well in isolation; stacking them lets a CSPM-flagged public-facing resource get automatically escalated the moment DSPM confirms it holds regulated data, instead of sitting in a queue behind a thousand misconfigurations of equal apparent severity.
 
-- **Context** correlation: Combines the "internet-exposed configurations" found by **CSPM** with the "vulnerabilities" found by **CWPP** to prioritize assets with genuinely high attack likelihood
-- **Data-Centric** linkage: Implements risk-based security in which **CSPM** and **CWPP** intensively monitor the resources identified by **DSPM** as holding "sensitive data"
-- **Shift-Left** integration: Forms a feedback loop in which results scanned within the CI/CD pipeline are automatically reflected into operational-stage security policy (**CNAPP**)
+| Benefit | Where It Shows Up |
+|---|---|
+| Fewer false-priority alerts | Context correlation across CSPM, CWPP, and DSPM findings |
+| Shorter MTTR | Policy-based automated remediation instead of manual triage |
+| Reduced lateral-movement risk | Zero Trust applied at every layer boundary, not only the perimeter |
 
-### Strategies for Strengthening the Integrated Architecture
-
-| Category | Primary Response Strategy | Core Expected Effect |
-|:---:|--------------|--------------|
-| Unified Visibility | Build a single pane of glass dashboard | Eliminates security blind spots and reduces alert fatigue |
-| Automated Remediation | Policy-based automatic correction when misconfigurations occur | Shortens incident response time (MTTR) and minimizes human error |
-| Zero Trust | Apply continuous authentication and least privilege to every connection | Prevents account takeover and lateral movement |
+The implication most organizations underestimate is organizational rather than technical: a single-pane dashboard only delivers the efficiency it promises if the teams owning each layer agree on one shared severity model — otherwise "unified visibility" just means four teams staring at the same alert and still arguing over whose problem it is.

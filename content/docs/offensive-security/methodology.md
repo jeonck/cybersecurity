@@ -52,20 +52,17 @@ graph TD
 | **Post Exploitation** | Simulate privilege escalation, lateral movement, and data exfiltration | Business impact data |
 | **Reporting** | Detail discovered vulnerabilities and propose remediation measures | Final results report |
 
-## III. Advanced Topics & Comparison
+## III. Expected Benefits & Implications
 
-### A. Comparison of Test Approaches by Knowledge Level
+A formal methodology earns its value at the exact moment a finding gets disputed, not at the moment it's discovered — when a vulnerability report lands in front of a skeptical engineering team months later asking "are you sure this is exploitable," the only real leverage a pentester has is a documented, repeatable methodology that shows the result wasn't a fluke or a misconfigured scanner. Treat the methodology write-up as evidence, not paperwork.
 
-| Comparison | Black Box | White Box | Grey Box |
-|:---:|-------------------|-------------------|-------------------|
-| **Information Provided** | None (Zero Knowledge) | Full information (Full Knowledge) | Partial information (Partial Knowledge) |
-| **Attacker Perspective** | Similar to a real external attacker | Perspective of an internal collaborator/administrator | Perspective of a general user/partner |
-| **Assessment Efficiency** | Low (time spent on discovery) | High (deep analysis possible) | Moderate |
-| **Primary Purpose** | Validate the external defense perimeter | Analyze logic flaws and source code | Check for privilege abuse and insider threats |
+| Benefit | Where It Shows Up |
+|---|---|
+| Defensible, reproducible findings | Post-engagement disputes and remediation pushback |
+| Full assessment coverage, no blind spots | Audit and certification review ( **ISMS-P**, **PCI-DSS** ) |
+| Business-prioritized remediation | Limited patching budget and competing engineering priorities |
+| Consistent quality across assessors | Repeat engagements and multi-vendor testing programs |
 
-### B. Strategies for an Effective Penetration Test
-- **Understand the business context**: Design scenarios that prioritize the organization's core assets and business processes.
-- **Balance automation and manual assessment**: Combine efficient tool-based scanning with an expert's creative penetration techniques.
-- **Continuous feedback**: Ensure the assessment is not a one-off exercise by tracking remediation and linking results to security training.
+The knowledge-level choice — black, white, or grey box — is itself a methodology decision with a direct cost/benefit trade-off: black box buys realism but costs discovery time, white box buys depth but loses the "can an outsider actually get in" narrative that resonates with leadership. Most mature programs don't pick one permanently; they rotate the knowledge level year over year so the same asset gets tested from a different angle each cycle, which is worth more over time than repeatedly re-validating the same blind spots.
 
-> **Key Point**: A penetration testing methodology should be used not merely as a technical exercise, but as a core tool of **security governance** for measuring an organization's security maturity and responding to real threats.
+> **Key Point**: A penetration testing methodology pays for itself not in the vulnerabilities it finds, but in the credibility and consistency it gives the organization to act on those findings — treat it as a security governance investment, not a one-off technical exercise.

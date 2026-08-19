@@ -43,7 +43,7 @@ flowchart LR
 | Bootstrapping | Removes accumulated **noise** during computation so that operations can continue | The key technology enabling FHE |
 | Packing | Places multiple pieces of data into a single ciphertext for parallel processing | Improves computational efficiency |
 
-## III. Advanced Topics & Comparison
+## III. Comparison & Application
 
 | Comparison Item | Homomorphic Encryption | Differential Privacy (DP) |
 |----------|----------------------------------|-------------------------------------|
@@ -51,3 +51,5 @@ flowchart LR
 | Data Form | Ciphertext (results also remain encrypted) | Statistical values (results are plaintext but contain error) |
 | Computational Accuracy | 100% accurate (identical to plaintext once decrypted) | Approximate (error introduced by noise) |
 | Key Limitation | High computational load (CPU/memory consumption) | Loss of data utility (privacy budget management) |
+
+These solve different problems and shouldn't be picked from a single menu — reach for homomorphic encryption when a third party must compute on data it is never allowed to see in the clear (outsourced cloud computation), and reach for differential privacy when the goal is publishing aggregate statistics without exposing any individual record. Treating FHE's computational overhead as a reason to fall back to DP for an outsourced-computation use case just reintroduces the plaintext-exposure risk DP was never designed to close.

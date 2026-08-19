@@ -54,7 +54,7 @@ graph TD
 | **Contamination** | Whether paths exist through which abnormal data or code can be injected | Lower is better for security |
 | **Porosity** | The degree of small gaps through which security controls can be bypassed or passed through | Lower is better for security |
 
-## III. Advanced Topics & Comparison
+## III. Comparative Analysis
 
 ### A. RAV vs. CVSS (Common Vulnerability Scoring System)
 
@@ -65,9 +65,11 @@ graph TD
 | **Primary Use** | Determining patch priority | Measuring overall security maturity and ROI |
 | **Score Interpretation** | Higher score means higher risk (0–10) | Higher score means safer (0–100) |
 
-### B. Strengthening Security Governance with the RAV Metric
-- **Build a security visibility dashboard**: Visualize the **RAV** metric for each channel (network, human, physical, etc.) and feed it into integrated security monitoring.
-- **Vulnerability remediation guidance**: Go beyond simple patch recommendations and propose architectural improvements that address the root cause of a lower **RAV** score (e.g., excessive visibility exposure).
-- **Standardize periodic security audits**: Report quantitative changes in the organization's security maturity based on annual/quarterly **RAV** measurement data.
+RAV and CVSS answer different questions and shouldn't compete for the same slot on a dashboard. Use CVSS to drive the week-to-week patch queue and RAV to drive the quarterly conversation about whether the security program as a whole is actually improving — a team that only tracks CVSS can close every critical vulnerability in a quarter and still have no idea whether its overall attack surface shrank, because CVSS has nothing to say about visibility, access, or trust at the system level.
 
-> **Key Point**: **RAV** is an innovative metric that turned security from an abstract concept into "measurable data," enabling organizations to build a more scientific, evidence-driven security program.
+### B. Applying Both Metrics Together
+- **Patch triage, day to day**: Let CVSS drive the tactical remediation queue — it's the right tool for "what do we fix first this sprint."
+- **Program reporting, quarter to quarter**: Feed **RAV** into a per-channel dashboard (network, human, physical) so leadership sees a trend line instead of a fluctuating vulnerability count.
+- **Root-cause framing**: When a channel's **RAV** score is low, resist the urge to treat it as a patching problem — trace it back to excessive visibility, access, or trust exposure and propose an architectural fix, not just another patch.
+
+> **Key Point**: CVSS and RAV are complementary, not competing, metrics — the mistake is picking one and discarding the other, when the real governance value comes from running tactical CVSS triage and strategic RAV trend-tracking side by side.

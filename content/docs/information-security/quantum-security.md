@@ -48,10 +48,12 @@ flowchart LR
 - Fast computation speed and relatively efficient key sizes
 - Also used as the foundational technology for fully homomorphic encryption (FHE)
 
-## III. Advanced Topics & Comparison
+## III. Outlook & Future Direction
 
 | Stage | Initiative | Details |
 |:---:|----------|----------|
 | 1. **Apply Hybrid Approach** | Achieve crypto-agility | Combine existing cryptography with PQC to secure both security and compatibility at once |
 | 2. **Upgrade Infrastructure** | Deploy QKD on national/enterprise core networks | Build physical network infrastructure for segments requiring extremely high trust, such as finance and defense |
 | 3. **Standardize and Transition** | Adopt NIST standard algorithms | Gradually replace systems with standardized PQC algorithms (Kyber, etc.) |
+
+QKD and PQC are not competing roadmaps to choose between — QKD's distance limits and hardware cost mean it will stay confined to a small number of extremely high-trust physical links (national backbone, defense), while PQC does the actual work of protecting the vast majority of systems precisely because it is a software upgrade to existing infrastructure. Organizations sizing their quantum-readiness budget should weight PQC migration far higher than QKD deployment unless they operate one of those narrow high-trust segments.

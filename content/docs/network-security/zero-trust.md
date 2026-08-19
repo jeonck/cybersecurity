@@ -48,7 +48,11 @@ flowchart LR
 | Data Plane | PEP (Enforcement Point) | Creates or blocks the actual traffic path according to policy (Gatekeeper) |
 | Security Technology | Micro-Segmentation | Breaks the network into small segments to block an attacker's lateral movement |
 
-## III. Advanced Topics & Comparison
+## III. Outlook & Future Direction
 
-- **Phased Transition**: Applied progressively to core assets first, running in parallel with the existing perimeter security model (see **NIST SP 800-207**).
-- **Building a Trust-Signal Foundation**: Establishes a system for collecting multi-dimensional context — biometric authentication, device integrity, access location — rather than relying on simple ID/password credentials.
+| Aspect | Legacy Posture | Direction |
+|---|---|---|
+| Trust model | Perimeter-based, network location implies trust | Continuous, per-request verification (NIST SP 800-207) |
+| Rollout pattern | All-or-nothing architecture replacement | Phased, applied to core assets first, running alongside the existing perimeter |
+
+Zero Trust succeeds or fails on the quality of the trust signals feeding the policy engine, not on the enforcement mechanism itself — a PEP making decisions off nothing but ID/password is Zero Trust in name only. Expect the real maturity curve over the next few years to be less about ripping out perimeter controls and more about steadily enriching the signal set (device posture, behavioral biometrics, access location) that the policy engine scores against, since a phased rollout that skips straight to enforcement without that signal foundation just relocates the old perimeter's blind trust into a shinier policy engine.

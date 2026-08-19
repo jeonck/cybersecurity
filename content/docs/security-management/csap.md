@@ -50,8 +50,12 @@ flowchart LR
 | Medium | Non-public consultation data, services including personal information (equivalent to the existing CSAP level) | Protection of sensitive information, vulnerability inspection, incident response system | Physical network separation maintained (public-dedicated only) |
 | Low | Public services handling data without personal information, mainly public data | Commercial general-purpose services (SaaS/IaaS) allowed, demonstration-focused security | Logical network separation allowed (global CSPs can enter) |
 
-## III. Advanced Topics & Comparison
+## III. Comparison & Application
 
-- **Selecting a system tier**: Public agencies must evaluate the importance of their own service and select a CSP of the appropriate tier according to the official guidelines.
-- **SaaS Direct certification**: For the "Low" tier only, a simplified certification procedure lowers the barrier for innovative private-sector software to enter the public sector.
-- **Strengthening post-certification management**: To address security concerns raised by the relaxed tiering, the program needs to shift to continuous monitoring and inspection based on actual data.
+| Tier | Best Fit | Trade-off |
+|---|---|---|
+| High | Diplomacy, security, investigation/trial systems | Highest assurance, physical separation only, slowest CSP onboarding |
+| Medium | Systems handling personal or non-public consultation data | Equivalent to legacy CSAP; still public-dedicated CSPs only |
+| Low | Public-facing services with no personal information | Fastest path to market via SaaS Direct, weakest assurance floor |
+
+Don't default to the tier a service "feels" like it needs — map it against the data it actually touches, since over-tiering just slows procurement without adding real protection, and under-tiering is the finding an auditor catches first. The Low tier's SaaS Direct path is the one worth watching: it's the fastest on-ramp for global CSPs into Korea's public sector, but it also means post-certification monitoring, not the initial audit, is now doing most of the security work.

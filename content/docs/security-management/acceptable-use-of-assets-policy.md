@@ -55,18 +55,17 @@ sequenceDiagram
 
 The AUP is drafted by security with HR input, approved by the ISMS steering committee, and reissued for signature whenever materially revised — typically on an annual cycle or after a significant incident prompts a scope change.
 
-## III. Best Practices & Comparison
+## III. Expected Benefits & Implications
 
-| Document | Primary Purpose | Review Cadence | Owner |
-|---|---|---|---|
-| Acceptable Use of Assets Policy | Define permitted/prohibited use of company IT assets | Annual | CISO / GRC team |
-| Password Policy | Set authentication strength requirements | Annual | CISO / GRC team |
-| Information Classification Policy | Define sensitivity tiers for handling data | Annual or on data inventory change | Data owners, security team |
+The AUP's payoff rarely shows up in day-to-day operations — it shows up the one time a termination-for-cause decision gets challenged, or a regulator asks how misuse was even detected. An unsigned, informal expectation carries no weight in that conversation; a dated attestation does.
 
-- Require signed acknowledgment at onboarding and after every material revision, not just once at hire.
-- State the monitoring and privacy notice explicitly to avoid disputes over expectation of privacy.
-- Keep prohibited-activity language specific enough to be enforceable, not just aspirational.
-- Align disciplinary consequences with HR's existing progressive-discipline framework.
-- Review annually and after any incident that exposes a gap in current asset-use rules.
+| Benefit | Where It Shows Up |
+|---|---|
+| Defensible termination decisions | HR and legal disputes over disciplinary action |
+| Documented monitoring basis | Regulatory inquiries, privacy disputes |
+| Reduced insider-misuse exposure | Fewer unauthorized software and data incidents |
+| Faster onboarding and offboarding | Standardized rules instead of case-by-case judgment |
+
+Treat the signed acknowledgment as the actual deliverable, not the policy document itself — an AUP nobody signed is a draft, not a control, no matter how well it reads.
 
 Related: [Password Policy](../password-policy/), [Information Classification Policy](../information-classification-policy/).

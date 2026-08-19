@@ -40,7 +40,7 @@ flowchart LR
 
 **Key Element**: Delivers the user's profile information securely through an **ID Token** (JWT)
 
-## III. Advanced Topics & Comparison
+## III. Comparative Analysis
 
 ### A. OAuth 2.0 vs. OpenID Connect (OIDC)
 
@@ -52,11 +52,13 @@ flowchart LR
 | **Token Format** | Opaque or JWT | Always **JWT** (JSON Web Token) |
 | **Endpoints** | Token endpoint, auth endpoint | + adds a **UserInfo endpoint** |
 
-### B. OAuth 2.0 Grant Types
+### B. OAuth 2.0 Grant Types and When to Use Them
 
 | Grant Type | Description | Typical Use |
 |:---:|----|----------|
 | **Authorization Code** | Obtains a code first for security, then exchanges it for a token via server-to-server communication | General web applications (most secure) |
-| **Implicit** | Issues a token directly in the browser (increasingly deprecated due to security weaknesses) | Single-page apps (SPA) |
+| **Implicit** | Issues a token directly in the browser (increasingly deprecated due to security weaknesses) | Legacy SPAs — avoid for new builds |
 | **Client Credentials** | Issues a token using only the client's own credentials, with no user involved | Server-to-server (M2M) communication |
 | **Refresh Token** | A mechanism for reissuing an expired access token | Maintaining sessions and improving UX |
+
+A common design mistake is reaching for raw OAuth 2.0 when the actual requirement is "log the user in" — OAuth alone has no standardized way to answer "who is this," so any system that improvises identity on top of a bare access token is really reinventing OIDC, poorly. Default to OIDC whenever user login is involved, and reserve plain OAuth 2.0 for pure API-delegation cases (M2M, third-party data access) where there's no user-identity question to answer. For SPAs specifically, treat Authorization Code with PKCE as the only acceptable choice; the Implicit grant should be considered deprecated for anything new.

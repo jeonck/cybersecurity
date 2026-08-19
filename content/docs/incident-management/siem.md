@@ -66,9 +66,12 @@ flowchart TD
 | **Threat Detection & Alerting** | Detects suspicious activity via predefined rule sets or AI and issues an immediate alert | Enables rapid initial response when an incident occurs |
 | **Forensic Analysis & Reporting** | Analyzes incident causes and generates reports by storing and searching event logs | Supports measures to prevent recurrence and satisfies audit requirements |
 
-## III. Advanced Topics & Comparison
+## III. Outlook & Future Direction
 
-| Category | Details |
-|---|---|
-| Adoption Considerations | Scope of log collection, analytics engine performance, threat intelligence integration, SOC staffing and budget, and the choice between cloud SIEM and on-premises SIEM |
-| Expected Effects | Improved security visibility, faster threat detection and response, strengthened regulatory compliance, and greater overall efficiency of security operations |
+| Approach | Status | Direction |
+|---|---|---|
+| Rule-based correlation (signature) | Mature, still the baseline | Increasingly paired with ML-based anomaly scoring to cut false positives |
+| On-premises SIEM | Common in regulated/legacy environments | Steadily losing ground to cloud-native, consumption-priced platforms |
+| Standalone SIEM | Widely deployed today | Converging with EDR and SOAR into unified XDR/SOAR platforms |
+
+The next SIEM refresh decision is really a data-volume-and-cost decision more than a detection-capability one — as log volume grows, what decides the platform is increasingly whether its pricing and storage model scales with ingest without forcing the SOC to quietly narrow what it collects. A SIEM too expensive to keep fully fed is a SIEM that's blind exactly where the next breach shows up.

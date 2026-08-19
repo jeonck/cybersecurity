@@ -41,14 +41,14 @@ flowchart LR
 - **Runtime Protection**: Performs anomaly detection (EDR-like capability), anti-malware, and IPS functions
 - **Micro-Segmentation**: Visualizes communication between workloads (east-west traffic) and applies fine-grained access control
 
-## III. Advanced Topics & Comparison
+## III. Expected Benefits & Implications
 
-### Detailed Comparison of CSPM and CWPP
+Running CSPM and CWPP as a pair, not a choice, is the real implication of the control-plane/data-plane split: a correctly locked-down S3 bucket policy (CSPM) does nothing to stop a vulnerable package inside a running container from being exploited (CWPP's job), and a clean CWPP scan doesn't matter if the IAM role attached to that workload is over-permissioned. The organizational payoff of funding both as complementary programs is fewer blind spots at exactly the seam where real breaches happen — a correctly configured resource quietly running a compromised process.
 
-| Comparison Item | CSPM (Configuration Management) | CWPP (Workload Protection) |
-|----------|----------------|-------------------|
-| Security Target | Control plane (infrastructure configuration, services) | Data plane (VMs, containers, applications) |
-| Core Purpose | Preventing misconfiguration | Intrusion detection and vulnerability defense |
-| Key Technology | API-based scanning, policy engine | Agent-based or sidecar approach |
-| Managed By | Cloud administrators, security operators | Security operators, developers (DevOps) |
-| Relationship | Hardens the **"outside"** (perimeter security) | Hardens the **"inside"** (host security) |
+| Benefit | Where It Shows Up |
+|---|---|
+| Closed control-plane / data-plane gap | Misconfiguration and runtime findings correlated, not siloed |
+| Faster compliance evidence | Continuous CSPM scanning against CIS Benchmarks, NIST, ISMS-P |
+| Reduced shadow-cloud blind spots | CSPM asset discovery feeds CWPP workload coverage |
+
+Budget and staff both functions from day one rather than sequencing "CSPM now, CWPP later" — a program that only hardens configuration while workloads run unmonitored has secured a building's perimeter without ever checking who's inside.

@@ -36,22 +36,11 @@ flowchart LR
 | 3. **Limited Risk** | Chatbots (LLMs), deepfakes, emotion-recognition systems | Disclosure obligation (must notify users that content is AI-generated) |
 | 4. **Low / Minimal Risk** | Spam filters, AI-based games, simple algorithms | No regulation (voluntary code of conduct recommended) |
 
-## III. Advanced Topics & Comparison
+## III. Outlook & Future Direction
 
-### Key Response Measures and Compliance Requirements
+| Signal | Status | Direction |
+|---|---|---|
+| EU AI Act | In force, phased enforcement through 2026-2027 | Becoming the de facto global baseline for AI governance, the way GDPR became one for data protection |
+| Non-EU regulatory response | Early-stage, fragmented across sector guidance and voluntary codes | Likely to converge toward the EU AI Act's risk-tiering rather than invent a competing model |
 
-| Category | Response Measure Detail | Core Keyword |
-|:---:|--------------|-----------|
-| **Governance** | Build an AI risk management system and establish a quality management framework | AI Governance |
-| **Data Protection** | Remove bias from training data and strengthen personal-information protection measures | Data Lineage |
-| **Transparency** | Record the algorithm's decision-making process and secure explainability | XAI (Explainable AI) |
-| **Human Oversight** | Design human oversight (HITL) able to intervene when the system malfunctions | **HITL** (Human-in-the-Loop) |
-
-### EU AI Act vs. Existing Regulation (GDPR)
-
-| Comparison Item | GDPR (Personal Information Protection) | EU AI Act |
-|----------|----------------------|-----------------|
-| Primary Protected Interest | Data subjects' personal data | Human safety and fundamental rights |
-| Regulatory Approach | Regulates data-processing activity | Regulates the risk level of AI products and services |
-| Scope of Application | The entire personal-information processing system | AI system models |
-| Fine on Violation | Up to 4% of worldwide revenue | Up to 7% of worldwide revenue (for prohibited practices) |
+Expect the EU AI Act to follow GDPR's playbook: organizations outside the EU end up complying anyway, because maintaining a separate, lower-governance AI product line for non-EU markets costs more than building one compliant pipeline. Treat high-risk classification and human-oversight (HITL) design as a near-term roadmap item even for teams with no current EU footprint — retrofitting explainability and audit logging into a model that's already shipped is far more expensive than designing for it upfront.

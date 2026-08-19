@@ -53,20 +53,13 @@ sequenceDiagram
 | **Core Goal** | Information theft (cookies, sessions, etc.) | State change (modifying, deleting data, transferring funds, etc.) |
 | **Point of Action** | Data processing inside the user's browser | Business logic executed on the server side |
 
-## III. Advanced Topics & Comparison
+## III. Vulnerabilities & Security Measures
 
-### A. Technical Countermeasures (Secure Coding)
-
-- **Use of CSRF Tokens**: For every write operation ( **POST**, **PUT**, **DELETE**, etc.), validate a one-time token issued by the server to detect forgery.
-- **SameSite Cookie Setting**: Apply `SameSite=Lax` or `Strict` to the cookie attribute to block automatic cookie transmission from third-party sites.
-- **Double Submit Cookie**: The server compares the client's cookie value against the token value in the request parameters — useful in environments where session management is difficult.
-
-### B. Additional Security Controls
-
-| Control Area | Detailed Measure | Security Effect |
+| Control | Mechanism | Security Effect |
 |----------|----------|----------|
-| **Stronger Authentication** | Require re-entry of a password or an **OTP** before executing sensitive functions | Blocks final approval even if a forged request reaches the server |
-| **Referer Check** | Verify the **HTTP Referer** header to confirm the request originates from an allowed domain | Detects abnormal inflow from third-party sites |
-| **HTTP Method** | Design so **GET** is used only for reads and **POST** only for state changes | Defends against simple **GET**-based **CSRF** carried out via **IMG** tags, etc. |
+| CSRF Token | Server-issued one-time token validated on every write request | Detects forged requests that lack a valid token |
+| SameSite Cookie | `Lax` or `Strict` attribute on session cookies | Blocks automatic cookie transmission from third-party sites |
+| Double Submit Cookie | Compares cookie value against a request-parameter token | Works even where server-side session storage is limited |
+| Re-authentication | Requires password or OTP before sensitive actions | Blocks final execution even if a forged request reaches the server |
 
-> **Key Point**: The strongest defense against **CSRF** is a layered defense that combines **CSRF token** validation with **SameSite** cookie settings.
+No single control here is sufficient on its own — SameSite cookies stop most forged cross-origin requests today, but they depend on browser compliance the application doesn't control, which is exactly why a CSRF token check on the server side has to stay in place as the actual authoritative defense. Treat SameSite as defense-in-depth, not a replacement for token validation.

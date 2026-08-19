@@ -47,9 +47,12 @@ The five-step process for carrying out a digital forensic investigation while pr
 | 4. Evidence Analysis | Recovery of deleted files, timeline analysis | Data carving, slack space analysis |
 | 5. Report Writing | Objective recording of facts, testimony preparation | Analysis report, expert opinion |
 
-## III. Advanced Topics & Comparison
+## III. Vulnerabilities & Security Measures
 
-| Category | Details |
+| Risk | Primary Control |
 |---|---|
-| Anti-Forensics Techniques | Data encryption, steganography, and complete data wiping |
-| Countermeasures | Password cracking and recovering decryption keys through memory forensics (live response) |
+| Anti-forensic evasion (encryption, steganography, wiping tools) | Prioritize memory / live-response capture before full-disk imaging |
+| Chain-of-custody break during handoff between responders | Signed custody log at every transfer point, no exceptions |
+| Evidence deemed inadmissible due to a procedural gap | Standard operating procedure reviewed against legal counsel, not just internal IR practice |
+
+Anti-forensic techniques like full-disk encryption and secure wiping are why live response has quietly become the priority step rather than an optional add-on — volatile memory captured within minutes of detection often holds the only recoverable trace once a wiping tool finishes running, so a team that images the disk first and the memory second has usually already lost the case.

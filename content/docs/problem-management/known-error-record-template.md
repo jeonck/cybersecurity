@@ -51,18 +51,15 @@ flowchart TD
 
 The record is created as soon as a workaround exists, referenced by the service desk on every matching incident, and closed only after the linked permanent fix is confirmed to eliminate the root cause.
 
-## III. Best Practices & Comparison
+## III. Adoption Considerations
 
-| Document | Primary Purpose | Trigger | Owner |
-|---|---|---|---|
-| Known Error (KE) Record Template | Publish a workaround for a diagnosed but unfixed root cause | Root cause confirmed, no permanent fix yet | Problem manager |
-| Problem Record Template | Track investigation of a suspected root cause from open to closed | Recurring or significant incident pattern | Problem manager |
-| Major Problem Report Template | Formally review a major problem's cause, impact, and lessons learned | Major problem closed or under executive review | Problem manager / service owner |
+| Risk | Mitigation |
+|---|---|
+| Known error published but never reaches the service desk | Mandatory KE-to-helpdesk-KB sync, not manual notification |
+| Workaround documented too vaguely to execute under pressure | Require testable, step-by-step workaround text before publication |
+| Known error left open long after the permanent fix ships | Scheduled review tied to Permanent Fix Reference status, not ad hoc |
+| Known error opened before root cause is actually confirmed | Gate publication on completed root-cause analysis, not suspicion |
 
-- Publish the known error as soon as a workaround is validated — do not wait for the permanent fix.
-- Keep the workaround steps precise and testable so the service desk can apply them without escalation.
-- Link every recurring incident back to the known error to demonstrate ongoing impact and justify fix priority.
-- Review open known errors periodically to re-prioritize permanent fixes against current business risk.
-- Close the record only after verifying the permanent fix removes the root cause, not merely after deployment.
+The failure mode that costs the most in practice isn't a missing known error — it's a stale one still marked "workaround available" weeks after the permanent fix already deployed, sending service desk agents through unnecessary manual steps on every recurrence. Tie the Known Error Status field to the Permanent Fix Reference's actual deployment state instead of relying on someone remembering to close it by hand, and audit open known errors on a fixed cadence rather than only when a security reviewer asks why an old workaround is still live.
 
 Related: [Problem Record Template](../problem-record-template/), [Problem Management Process](../problem-management-process/).

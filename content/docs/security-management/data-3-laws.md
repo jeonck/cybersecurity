@@ -50,24 +50,12 @@ flowchart LR
 - **Preventing re-identification**: Mandates separate storage of the additional information, access control, and physical/technical safeguards.
 - **Prohibited acts**: Re-identifying a specific individual is prohibited (violations carry administrative fines and criminal penalties).
 
-## III. Advanced Topics & Comparison
+## III. Adoption Considerations & Security Measures
 
-### Combination Procedure for Pseudonymized Data (Between Different Data Controllers)
+| Risk | Primary Control |
+|---|---|
+| Re-identifying a pseudonymized individual | Legal prohibition — administrative fines and criminal penalties |
+| Uncontrolled combination of pseudonymized data across controllers | Combination permitted only through a specialized data combination institution |
+| Treating "pseudonymized" as equivalent to "anonymized" | Additional-information separation, access control, and adequacy review before release |
 
-Combining pseudonymized data is, for security reasons, only permitted through a "specialized data combination institution," and follows a 4-step procedure.
-
-```mermaid
-flowchart LR
-    S1["1. Combination request\nstates the purpose\nuses a combination key"] --> S2["2. Performing the combination\nthe specialized institution\nlinks records via the key"]
-    S2 --> S3["3. Adequacy review\nre-identification risk review\nwith external experts"]
-    S3 --> S4["4. Release and use\nsafely released\nafter passing review"]
-```
-
-### Detailed Comparison of Pseudonymized and Anonymized Data
-
-| Comparison Item | Pseudonymous Data | Anonymous Data |
-|----------|------------------------|---------------------|
-| Identifiability | Relative anonymity (identifiable if combined with additional information) | Absolute anonymity (irrecoverable) |
-| Data Utility | High (individual-level analysis possible) | Low (only statistical properties remain) |
-| Applicability of the Personal Information Protection Act | Applies (safeguard obligations apply) | Does not apply (free circulation) |
-| Liability on Incident | Legal penalties if re-identified | Not applicable |
+The single biggest compliance trap in practice is treating pseudonymized data as if it were anonymized — it isn't, and the additional-information separation requirement exists precisely because re-identification is one recombination away for as long as that additional information exists anywhere. Cross-controller combination has to go through a specialized institution's request-combine-review-release process rather than a bespoke bilateral data-sharing arrangement; an ad hoc combination outside that channel is a Data 3 Acts violation regardless of how good the intentions behind it were.

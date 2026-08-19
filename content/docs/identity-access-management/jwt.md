@@ -57,22 +57,14 @@ graph TD
 4. **On API requests**: The client sends the stored JWT to the server in the HTTP header (**Authorization: Bearer \<token\>**)
 5. **Server verification**: The server verifies the received JWT's **Signature** using the **Secret Key** and checks the **Payload**'s information (expiration, scope, etc.) before processing the request
 
-## III. Advanced Topics & Comparison
+## III. Vulnerabilities & Security Measures
 
-### A. JWT Security Vulnerabilities
+| Attack Vector | Primary Control |
+|---|---|
+| `alg: none` / algorithm confusion | Enforce the expected algorithm server-side; never trust the `alg` field in the token header |
+| Secret key exposure (HMAC) | Store the key safely, rotate it, or move to RS256 (asymmetric) |
+| Payload exposure (Base64, not encryption) | Never place sensitive data in the payload |
+| Unverified expiration / stolen token reuse | Always check `exp`; keep token lifetimes short |
+| Client-side storage (XSS via localStorage) | Prefer an HttpOnly cookie over localStorage |
 
-- **Secret key exposure**: If the secret key is exposed when using an **HMAC** algorithm, every token can be forged
-- **Algorithm abuse**: Exploiting `alg:none` or bypassing signature verification
-- **Payload exposure**: A JWT is only Base64-encoded, so decoding it reveals its contents (avoid storing sensitive information)
-- **Unverified expiration**: Failing to check the expiration time (**exp**) allows a stolen token to be reused
-- **Weak storage**: Storing a JWT client-side in **localStorage** is vulnerable to **XSS** attacks
-
-### B. JWT Security Hardening
-
-- **Strong secret-key management**: When using **HS256**, store the key safely and rotate it periodically; **RS256** (public/private key) is recommended
-- **Algorithm verification**: When receiving a **JWT**, verify that the signing algorithm (**alg**) is the expected one and is not `none`
-- **No sensitive data in the payload**: Never store sensitive personal information or passwords in a **JWT** (encrypt if necessary)
-- **Verify expiration (exp) and issued-at (iat)**: Always check whether the token has expired and when it was issued
-- **Use safe storage**: Prefer an **HttpOnly** cookie to block **JavaScript** access; if using **localStorage**, XSS defenses are mandatory
-
-> **Key Point**: JWT is a powerful tool for **stateless** authentication, but it demands strict adherence to security principles — careful **secret key** management, **signature** verification, and safe storage.
+The single most common JWT implementation bug is trusting the algorithm the token claims to use instead of the one the server expects — a library that blindly honors the `alg` header can be tricked into verifying an RS256-signed system with the public key treated as an HMAC secret, letting an attacker forge tokens at will. Hard-code the expected algorithm in verification code rather than reading it from the token, and treat RS256 as the default choice for anything beyond a single trusted backend.

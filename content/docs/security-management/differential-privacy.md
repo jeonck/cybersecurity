@@ -49,13 +49,11 @@ flowchart LR
 | Sensitivity | The maximum change a single record can cause in a query result | Determines the size of the noise |
 | Exponential Mechanism | Selects the optimal answer when responding with non-numerical (categorical) data | Applied to categorical data |
 
-## III. Advanced Topics & Comparison
+## III. Outlook & Future Direction
 
-### Differential Privacy vs. the k-Anonymity Model
+| Adoption Signal | Status | Direction |
+|---|---|---|
+| Local differential privacy (LDP) in consumer telemetry | Deployed at scale by major OS and browser vendors | Becoming the default for on-device usage analytics |
+| Regulatory recognition of DP as an anonymization standard | Emerging, inconsistent across jurisdictions | Likely to firm up as regulators grow more comfortable with the underlying mathematics |
 
-| Comparison Item | k-Anonymity Family | Differential Privacy |
-|----------|--------------------------|-------------------------------------|
-| Mathematical Definition | Empirical/structural de-identification (transforming values) | Based on rigorous mathematical proof (controlling the probability distribution) |
-| Attack Defense | Defends against linking attacks and re-identification attacks | Robust against background-knowledge attacks |
-| Data Form | Structured datasets (micro-data) | Query responses and statistics (statistical output) |
-| Limitation | Re-identification risk persists, weak against high-dimensional data | Data accuracy degrades due to noise injection |
+Expect differential privacy to keep displacing k-anonymity-family techniques wherever a rigorous, quantifiable privacy guarantee actually matters to a regulator or a court — k-anonymity's empirical approach is easier to explain but harder to defend once someone mounts a well-resourced background-knowledge attack. The catch practitioners should flag up front: shrinking ε to satisfy a security review can quietly wreck the statistical utility a data science team actually needed, so the privacy budget has to be a negotiated product decision, not something security sets unilaterally.

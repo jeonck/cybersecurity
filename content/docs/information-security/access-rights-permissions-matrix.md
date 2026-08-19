@@ -56,18 +56,18 @@ sequenceDiagram
 
 The matrix is updated at every access request or role change and undergoes a full recertification on a fixed schedule, typically quarterly for privileged roles and semi-annually for standard access, with the system/data owner attesting that each entry is still required.
 
-## III. Best Practices & Comparison
+## III. Adoption Considerations
 
-| Document | Primary Purpose | Update Cadence | Owner |
-|---|---|---|---|
-| Access Rights & Permissions Matrix | Track who has access to what, at what level | Continuous, with periodic recertification | IAM/Security team, system owners |
-| Data Classification Register | Define sensitivity tiers that access levels should map to | Annual or on data inventory change | Data owners, security team |
-| Data Loss Prevention (DLP) Incident Log | Record events where controlled data left approved boundaries | Per incident | Security operations |
+| Adoption Risk | Where It Shows Up | Mitigating Practice |
+|---|---|---|
+| Individual-level exceptions | Entries granted to a named person instead of a role | Standardize on role/group-based grants |
+| Stale privileged access | Recertification lapses on high-risk accounts | Shorter, enforced review cadence for admin/privileged roles |
+| Manual deprovisioning lag | Access outlives employment because revocation depends on a ticket | Automate triggers from HR termination and transfer events |
+
+Most access-related audit findings trace back to deprovisioning, not provisioning — approvals get scrutiny at grant time, but revocation quietly depends on someone remembering to file a ticket. Automating HR-triggered deprovisioning is the single highest-leverage investment in this control area, ahead of tightening the approval workflow itself.
 
 - Grant access by role or group, not by individual exception, to keep the matrix maintainable.
-- Tie every entry to a documented business justification and a named approver.
 - Recertify privileged and administrative access more frequently than standard user access.
-- Automate deprovisioning triggers from HR termination and transfer events rather than relying on manual cleanup.
 - Cross-reference access levels against the [Data Classification Register](../data-classification-register/) so higher-sensitivity data always maps to stricter access tiers.
 
 Related: [Data Classification Register](../data-classification-register/), [Security KPI Dashboard](../security-kpi-dashboard/).

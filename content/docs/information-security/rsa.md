@@ -71,7 +71,7 @@ sequenceDiagram
 | Use 2: Authentication | Encrypted (signed) with the sender's private key → verified with the sender's public key |
 | Constraint | Slower than symmetric-key cryptography, so it is used mainly for "session key encryption" or "signing" only |
 
-## III. Advanced Topics & Comparison
+## III. Vulnerabilities & Security Measures
 
 ```mermaid
 flowchart TD
@@ -90,4 +90,4 @@ flowchart TD
 | Chosen-ciphertext attack (CCA) | Apply **OAEP**, a padding technique that mixes randomness into the data |
 | Quantum computing threat | Can be defeated by Shor's algorithm → adoption of **PQC (post-quantum cryptography)** is required |
 
-> **Key point**: RSA underpins public key infrastructure (PKI), but in preparation for the quantum computing era, a transition plan to PQC (NIST standards such as Kyber and Dilithium) is essential.
+Textbook (unpadded) RSA is the vulnerability practitioners are most likely to reintroduce by accident, not the quantum threat — any implementation or library defaulting to raw RSA without OAEP padding is exploitable today via chosen-ciphertext attacks, while the quantum threat still has a migration runway ahead of it. Audit for correct padding usage first; treat the PQC transition as the longer-horizon project it actually is.

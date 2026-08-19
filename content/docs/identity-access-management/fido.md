@@ -63,10 +63,12 @@ sequenceDiagram
 | **Core Technology** | Requires a dedicated client app | **WebAuthn** (W3C standard API), **CTAP** |
 | **Extensibility** | Tied to a specific OS / device | General-purpose, browser-based authentication |
 
-## III. Advanced Topics & Comparison
+## III. Adoption Outlook & Future Direction
 
-| Category | Details | Expected Benefit |
-|:---:|----------|----------|
-| **Biometric Data Protection** | Biometric data is never sent to the server and stays on-device | Biometric data cannot leak even if the server is breached |
-| **Phishing Prevention** | Domain-binding technology blocks authentication on fake sites | Blocks man-in-the-middle (MitM) attacks and phishing at the source |
-| **Passkey** | Syncs FIDO credentials across multiple devices | Seamless authentication experience even after a device change |
+| Generation | Status | Direction |
+|---|---|---|
+| FIDO 1.0 (UAF / U2F) | Legacy, app- or hardware-key dependent | Being phased out in favor of WebAuthn |
+| FIDO2 / WebAuthn (single device) | Mature, broadly supported | Baseline capability, largely absorbed into passkeys |
+| Passkey (synced FIDO2) | Rapidly growing platform default | Becoming the standard consumer sign-in method |
+
+FIDO's own history shows why the passkey framing succeeded where FIDO 1.0 stalled: U2F and UAF solved the cryptography but still asked users to manage a device-bound credential, which is exactly the friction cloud sync removes. Expect FIDO2/WebAuthn to keep functioning as the underlying protocol while "passkey" becomes the user-facing product name — new deployments should target passkey UX flows rather than building against bare WebAuthn as an end state.

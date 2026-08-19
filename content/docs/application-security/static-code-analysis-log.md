@@ -56,19 +56,14 @@ sequenceDiagram
 
 The scan runs automatically on every commit or pull request; AppSec triages new findings within one business day, and the full log is reviewed weekly for aging high-severity items.
 
-## III. Best Practices & Comparison
+## III. Outlook & Future Direction
 
-| Document | Primary Purpose | Update Cadence | Owner |
-|---|---|---|---|
-| Static Code Analysis Log | Track source-level SAST findings from automated scanning | Per build / commit | AppSec + Engineering |
-| [Secure Coding Checklist](../secure-coding-checklist/) | Preventive standard SAST rules are derived from and enforce | Per pull request | AppSec + Engineering |
-| [Web Application Vulnerability Tracker](../web-application-vulnerability-tracker/) | Runtime (DAST) findings, complementary black-box view | Per scan / pentest cycle | AppSec |
-| SCA (Software Composition Analysis) tooling | Scans dependencies rather than first-party source code | Continuous | AppSec |
+| Practice | Maturity | Direction |
+|---|---|---|
+| Rule tuning per codebase | Standard practice | Moving toward auto-tuned baselines instead of manual rule curation |
+| Manual triage of every finding | Common today | Shrinking as tools improve confidence scoring and dedup accuracy |
+| IDE-integrated real-time feedback | Emerging | Becoming the default, pushing triage earlier than the CI log itself |
 
-- Tune the SAST ruleset for the codebase's actual languages and frameworks to keep the false-positive rate manageable.
-- Triage every new finding within a fixed SLA so the backlog does not become the default state.
-- Gate merges on new critical/high findings, but avoid blocking on unreviewed low-severity noise.
-- Track false-positive rate over time as a signal for when to retune rules, not just as review overhead.
-- Correlate recurring finding types back into the Secure Coding Checklist so the same mistake stops shipping.
+The direction this log is heading is toward its own obsolescence as a manual triage queue — as SAST tools get better at scoring exploitability and suppressing duplicate findings, the log's role shifts from where humans decide what is real to the audit trail for decisions the tool already made with high confidence. Teams still spending most of their AppSec triage time on findings a modern tool could auto-dismiss are tuning the wrong thing.
 
 Related: [Secure Coding Checklist](../secure-coding-checklist/), [Web Application Vulnerability Tracker](../web-application-vulnerability-tracker/)

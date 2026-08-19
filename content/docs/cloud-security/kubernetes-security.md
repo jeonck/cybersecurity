@@ -68,44 +68,13 @@ flowchart LR
 | Isolation | Pod Security Admission | Restricts privileged execution and defines isolation levels | Prevents container escape |
 | Data Protection | Secret Management | Encrypts and stores sensitive information such as API keys and certificates | Prevents credential leakage (KMS integration) |
 
-## III. Advanced Topics & Comparison
+## III. Outlook & Future Direction
 
-### Admission Control Flow for Supply Chain Security
+| Practice | Status | Direction |
+|---|---|---|
+| RBAC + Network Policy | Baseline, widely adopted | Table stakes for any production cluster |
+| Admission control (OPA/Kyverno) | Maturing, still inconsistently enforced | Moving from bolt-on to default-on cluster policy |
+| Service mesh mTLS (Istio/Linkerd) | Available, adoption lags awareness | Increasingly required wherever encryption-in-transit is mandated |
+| External secret management (Vault/KMS) | Mature pattern, still under-adopted | Becoming the default over built-in Secret objects |
 
-```mermaid
-sequenceDiagram
-    participant U as "User/CI-CD"
-    participant API as "API Server"
-    participant MUT as "Mutating Webhook"
-    participant VAL as "Validating Webhook"
-    participant ETCD as "ETCD Storage"
-
-    U->>API: "Resource creation request (e.g. Pod)"
-    API->>MUT: "Mutating admission"
-    Note over MUT: "Automatically adjusts configuration<br/>to meet security standards<br/>(PodPreset, custom webhooks)"
-    MUT->>VAL: "Validating admission"
-    Note over VAL: "Rejects on policy violation<br/>(OPA Gatekeeper, Kyverno)"
-    VAL-->>API: "Approve / reject"
-    API->>ETCD: "Store if policy check passes"
-```
-
-| Stage | Role | Key Tools |
-|-----|------|---------|
-| Mutating | Automatically adjusts requested resource configuration to meet security standards | PodPreset, custom webhooks |
-| Validating | Rejects creation on violation of security policy (e.g. non-root account enforcement) | OPA Gatekeeper, Kyverno |
-
-### Key Considerations for Practical Application
-
-**The Limits of Secrets and External Integration**: Kubernetes' built-in Secret objects are stored as Base64-encoded values, which is weak from a security standpoint — in practice they should be managed by integrating with HashiCorp Vault or a cloud provider's KMS (AWS/Azure).
-
-**Shift-Left Security**: Detection during operations matters, but performing image vulnerability scanning (Trivy, Clair) and IaC (Terraform, YAML) security checks earlier in the CI/CD pipeline — a Shift-Left strategy — is essential.
-
-**Zero Trust Networking**: Communication within a cluster is allowed by default (allow-all), so mutual authentication and fine-grained traffic control based on mTLS (Mutual TLS) via a service mesh (Istio, Linkerd) must be layered on top.
-
-```mermaid
-flowchart LR
-    CI["CI/CD pipeline\n(Shift-Left)"] -->|"Image scanning\nTrivy / Clair"| REG["Container registry\n(only signed images allowed)"]
-    REG -->|"Deploy"| K8S["K8s cluster\n(RBAC / Network Policy)"]
-    K8S -->|"Internal communication"| MTLS["Service mesh\nmTLS (Istio / Linkerd)"]
-    K8S -->|"Secret management"| VAULT["External KMS\n(HashiCorp Vault / AWS KMS)"]
-```
+Kubernetes' out-of-the-box defaults are still "allow-all" at the network layer and Base64-only (not encrypted) for Secrets — both exist for developer convenience, and a maturity assessment should treat both as failing conditions rather than acceptable starting points. The direction worth betting on is admission control shifting from something bolted on after an incident (installing OPA Gatekeeper post-mortem) to a cluster-provisioning requirement enforced before the first workload ever deploys. Any cluster without validating admission control and external secret management wired in from day one should be treated as pre-production, regardless of what's actually running on it.

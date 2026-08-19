@@ -55,18 +55,15 @@ sequenceDiagram
 
 Findings are logged continuously from scans, audits, and incidents; the log is reviewed monthly to identify recurring patterns worth fixing at the baseline-template level rather than per instance.
 
-## III. Best Practices & Comparison
+## III. Vulnerabilities & Security Measures
 
-| Document | Primary Purpose | Update Cadence | Owner |
-|---|---|---|---|
-| Security Misconfiguration Log | Track operational hardening gaps in running environments | Continuous, monthly review | AppSec + Platform/Ops |
-| [Patch & Update Tracker](../patch-update-tracker/) | Track known-vulnerability and version remediation, not configuration | Continuous, weekly review | AppSec Team |
-| [Web Application Vulnerability Tracker](../web-application-vulnerability-tracker/) | Track exploitable application-layer findings from testing | Per scan / pentest cycle | AppSec |
+| Misconfiguration Class | Primary Control |
+|---|---|
+| Default credentials left in place | Remove or rotate before an environment is release-ready |
+| Verbose errors / debug mode enabled | Disable by default outside development, enforce via config template |
+| Open storage or overly permissive CORS | Recurring automated posture audit (CSPM), not manual spot-checks |
+| Unnecessary open ports or services | Hardened base image with a minimal default surface |
 
-- Codify fixes as infrastructure-as-code or hardened base images so a fix is not needed again per environment.
-- Disable verbose error output and debug modes by default in every non-development environment.
-- Audit cloud storage and API gateway policies for public or overly permissive access on a recurring schedule, not only after an incident.
-- Remove default accounts and credentials before any environment is considered release-ready.
-- Track recurrence: a misconfiguration found in three environments points to a broken template, not three isolated mistakes.
+The real fix for a misconfiguration log entry is almost never the individual ticket — it is the base image or IaC template that produced the gap in the first place. Closing the same finding three times across three environments means the template is broken, and the log's most useful output is flagging that pattern before a fourth environment repeats it.
 
 Related: [Patch & Update Tracker](../patch-update-tracker/), [Web Application Vulnerability Tracker](../web-application-vulnerability-tracker/)

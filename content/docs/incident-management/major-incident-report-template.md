@@ -57,18 +57,14 @@ sequenceDiagram
 
 Evidence collection follows chain-of-custody practice — timestamped, hashed, and logged from collection to closure — so the report can withstand legal or regulatory scrutiny.
 
-## III. Best Practices & Comparison
+## III. Vulnerabilities & Security Measures
 
-| Document | Primary Purpose | Trigger | Owner |
-|---|---|---|---|
-| Major Incident Report Template | Document a critical/high-severity security incident in full | Critical or high-severity security event | SOC / IR Team |
-| [Incident Management Process](../incident-management-process/) | General operational handling for any severity | Any detected incident | SOC / IR Team |
-| [Structural Damage Incident Report](../structural-damage-incident-report/) | Document physical/facilities damage, not security-specific | Physical damage event | Facilities |
+| Risk | Primary Control |
+|---|---|
+| Evidence collected after remediation has already altered the system | Start the timeline and evidence capture at first detection, not after containment |
+| Report closed without independent verification | Mandatory CISO or incident commander sign-off before closure |
+| Speculation presented as root cause | Explicit separation of confirmed findings from unconfirmed hypotheses in the write-up |
 
-- Start the timeline the moment detection occurs; do not wait until containment to begin documentation.
-- Preserve volatile evidence before remediation actions overwrite it.
-- Separate factual findings from speculation; label unconfirmed hypotheses explicitly.
-- Require CISO or incident commander sign-off before marking the report closed.
-- Feed root-cause findings back into SIEM correlation rules and EDR detection logic to reduce recurrence.
+Sign-off discipline matters more than the report template itself — a well-structured report that the CISO rubber-stamps without probing the root-cause finding provides no more defensibility than no report at all. The sign-off should force an actual question ("does this corrective action address the root cause, or just the symptom") rather than serve as a formality, because that's the last moment before closure when a wrong conclusion can still be caught.
 
 Related: [Incident Management Process](../incident-management-process/), [Incident Management Policy](../incident-management-policy/)

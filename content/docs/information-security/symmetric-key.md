@@ -42,10 +42,12 @@ flowchart LR
 | **Examples** | RC4, A5/1, Salsa20 | DES, AES, SEED, ARIA |
 | **Trade-offs** | Easy hardware implementation, low diffusion | Higher security, but requires padding |
 
-## III. Advanced Topics & Comparison
+## III. Vulnerabilities & Security Measures
 
 | Limitation | Details | Solution |
 |:---:|----------|----------|
 | **Key Distribution Problem** | Safely delivering the key to the recipient is difficult | Diffie-Hellman, hybrid cryptography (envelope) |
 | **Key Management Burden** | `n(n-1)/2` keys are required among `n` users | KDC (key distribution center), integration with accredited certification systems |
 | **Lack of Integrity** | Exposure of the key threatens not just confidentiality but also tampering | Use authenticated encryption such as HMAC or GCM mode |
+
+The integrity gap is the limitation most likely to be silently overlooked in an implementation review — teams reliably remember to solve key distribution because it blocks basic functionality, but plain CBC or ECB mode encryption with no MAC ships more often than it should, leaving tampering undetected even though confidentiality looks fine on paper. Authenticated encryption (GCM, or encrypt-then-MAC) should be the non-negotiable default, not an opt-in hardening step.

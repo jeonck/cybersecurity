@@ -53,20 +53,13 @@ sequenceDiagram
 | **DNS Spoofing** | **DNS** query response | Pharming ( **Pharming** ), redirection to phishing sites | Poisoning the **DNS** cache or pre-empting the legitimate response |
 | **Email Spoofing** | Sender address | Social engineering attacks, spam/malware distribution | Forging sender information in the **SMTP** protocol |
 
-## III. Advanced Topics & Comparison
+## III. Vulnerabilities & Security Measures
 
-### Technical Defenses (Network Security)
+| Spoofing Type | Underlying Weakness | Security Measure |
+|---|---|---|
+| ARP Spoofing | ARP has no built-in authentication | Static ARP/MAC pinning for critical hosts, Dynamic ARP Inspection |
+| IP Spoofing | Source IP is trusted without verification | Ingress/egress filtering (BCP38) at the network boundary |
+| DNS Spoofing | Cache poisoning / response pre-emption | DNSSEC to sign and verify DNS responses |
+| Email Spoofing | SMTP sender fields are unauthenticated by design | SPF / DKIM / DMARC on the sending domain |
 
-- **Static ARP/MAC Configuration**: Manually pinning the **ARP** table between critical servers and the gateway so that forged **ARP** packets are ignored.
-- **Ingress/Egress Filtering**: Validating the legitimacy of source **IPs** at the network boundary to block inbound and outbound spoofed packets.
-- **Strong Authentication**: Moving away from simple **IP**-address-based trust relationships toward encryption-based authentication such as **SSL** / **TLS** or **IPSec**.
-
-### Infrastructure and Protocol Security Countermeasures
-
-| Countermeasure Area | Details | Security Effect |
-|----------|----------|----------|
-| **DNS Security** | Adopt **DNSSEC** ( **DNS Security Extensions** ) | Verifies the integrity and legitimacy of **DNS** responses via digital signatures |
-| **Email Security** | Configure **SPF** / **DKIM** / **DMARC** | Confirms sending-domain legitimacy to block forged mail |
-| **L2 Security** | **Port Security** / **DAI** ( **Dynamic ARP Inspection** ) | Blocks invalid **MAC** / **ARP** at the switch port level |
-
-> **Key Point**: Since **Spoofing** threatens confidentiality and integrity as well as availability, encrypted authentication of identification information and filtering at every network layer must be applied together.
+Every one of these defenses works by adding authentication to a protocol that was never designed to have any — which is also why none of them is optional or interchangeable with the others. DAI stops ARP spoofing on your own switch ports but does nothing for a spoofed DNS response, and DNSSEC does nothing for a spoofed email sender; treat spoofing defense as a checklist across protocols, not a single control to get right once.

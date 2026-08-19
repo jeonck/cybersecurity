@@ -56,18 +56,14 @@ sequenceDiagram
 
 New entries are logged continuously as scanners and vendor advisories surface issues; the tracker itself is reviewed weekly by the AppSec team and audited monthly for SLA compliance.
 
-## III. Best Practices & Comparison
+## III. Vulnerabilities & Security Measures
 
-| Document | Primary Purpose | Update Cadence | Owner |
-|---|---|---|---|
-| Patch & Update Tracker | Track known-vulnerability remediation across owned software | Continuous, weekly review | AppSec Team |
-| [Static Code Analysis Log](../static-code-analysis-log/) | Catch new coding weaknesses before they ship | Per build / commit | AppSec + Engineering |
-| [Security Misconfiguration Log](../security-misconfiguration-log/) | Track hardening gaps, not code or dependency flaws | Per deployment / audit | AppSec + Ops |
+| Severity | Typical SLA | Compensating Control While Open |
+|---|---|---|
+| Critical (actively exploited) | 24-72 hours | Emergency WAF rule, feature flag, or network isolation |
+| High | 1-2 weeks | Scoped access restriction, enhanced monitoring |
+| Medium / Low | Next scheduled release cycle | Standard monitoring, no interim control required |
 
-- Tie remediation deadlines to severity-based SLAs (e.g. critical within 72 hours, high within 2 weeks) and enforce them.
-- Feed the tracker directly from SCA and container-scanning tools rather than manual entry to avoid gaps.
-- Require an explicit, time-boxed risk acceptance with compensating controls for any deadline that cannot be met.
-- Track transitive (indirect) dependencies, not just direct ones — they are the most common source of missed patches.
-- Reconcile the tracker against production inventory regularly so shadow or forgotten services are not left unpatched.
+The SLA clock is the entire point of the tracker — a critical finding sitting in an Open status with no deadline is functionally the same as an untracked vulnerability. The harder discipline is enforcing the compensating-control requirement: a team that cannot patch within SLA but also skips the interim mitigation is choosing to carry unmanaged risk, not managed risk, even if the tracker entry looks the same either way.
 
 Related: [Static Code Analysis Log](../static-code-analysis-log/), [Security Misconfiguration Log](../security-misconfiguration-log/)

@@ -46,21 +46,14 @@ flowchart LR
 | **Authorization Server** | Authenticates the user and issues an **Access Token** to the client | Obtains the **Resource Owner**'s consent and issues or denies tokens |
 | **Resource Server** | The server hosting the protected resource (API) | Verifies the **Access Token** and provides the resource to the client |
 
-## III. Advanced Topics & Comparison
+## III. Vulnerabilities & Security Measures
 
-### A. OAuth 2.0 Security Threats
+| Attack Vector | Primary Control |
+|---|---|
+| Authorization code theft / redirect URI manipulation | Strict Redirect URI allowlisting on the authorization server |
+| CSRF via forged authorization requests | `state` parameter, verified on callback |
+| Stolen code replay (public clients, mobile/SPA) | PKCE (Proof Key for Code Exchange) |
+| Access token theft / long-lived token misuse | Short token lifetimes, HTTPS everywhere |
+| Compromised authorization server / IdP | Harden the IdP itself — it is the single point of failure for every connected client |
 
-- **Authorization code theft**: Manipulating the **Redirect URI** or exploiting a client vulnerability to steal the authorization code and obtain a token
-- **Access token theft**: Unauthorized resource access following a token leak from the client app or the transport channel
-- **Redirect URI tampering**: An attacker steals the client's registration information and changes the redirect address to a malicious site
-- **Weak authorization server**: A vulnerability in the **IdP** itself puts every connected client and resource at risk
-
-### B. OAuth 2.0 Security Hardening
-
-- **Redirect URI validation**: The authorization server should process a callback only if it matches a registered **Redirect URI**
-- **Use of the state parameter**: Pass a **state** value with the authorization request and verify it on callback to prevent CSRF attacks
-- **PKCE (Proof Key for Code Exchange)**: Prevents token issuance after a stolen code (mainly applied to public clients and mobile apps)
-- **Short access-token lifetimes**: Setting a short validity period limits the damage if a token is stolen
-- **Use HTTPS**: Apply **HTTPS** on every communication channel to encrypt data in transit
-
-> **Key Point**: OAuth 2.0 is the standard for delegated authorization, and it depends on the secure issuance, transmission, and verification of the **Access Token**, together with strong security management by the **IdP**.
+PKCE deserves to be treated as mandatory for any public client rather than the optional add-on the spec originally scoped it as — the cost of implementing it is near zero, and it closes the authorization-code-interception attack even when a redirect URI isn't perfectly locked down. Teams that skip PKCE because "we're a confidential client with a stored secret" are betting that client-secret storage was done correctly, which is a worse bet than just adding PKCE.

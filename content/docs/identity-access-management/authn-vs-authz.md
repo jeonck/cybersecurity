@@ -56,14 +56,11 @@ sequenceDiagram
 | **What Is Presented** | Credentials | Proof of authorization (access token, scope) |
 | **Result on Failure** | 401 Unauthorized (identity not confirmed) | 403 Forbidden (insufficient privileges) |
 
-## III. Advanced Topics & Comparison
+## III. Comparison & Application
 
-### A. Evolution of Authentication: Passkeys and MFA
+| Layer | Legacy Approach | Modern Standard | Selection Criteria |
+|---|---|---|---|
+| Authentication | ID/password only | MFA, FIDO2/Passkey | Choose passkeys wherever phishing risk matters, not just "add MFA everywhere" |
+| Authorization | Static per-app ACL | OAuth 2.0 scopes, ABAC | Choose scope- or attribute-based grants over per-app role tables as the number of integrated services grows |
 
-- **MFA (Multi-Factor Authentication)**: Combines two or more of knowledge (password), possession (OTP), and inherence (biometrics)
-- **FIDO2 / Passkey**: Implements a passwordless environment, cutting off phishing attacks at the source
-
-### B. Evolution of Authorization: OAuth 2.0 and ABAC
-
-- **OAuth 2.0**: Delegates only resource-access privileges to third-party applications without exposing the user's password
-- **ABAC (Attribute-Based)**: Dynamic authorization based on attributes beyond just job title — including access time, location, and device security posture
+The two failures rarely show up as clean "401 vs. 403" cases in practice — most real incidents are authorization bugs dressed up as authentication successes, where a correctly-authenticated user is handed a token with scope far broader than the action they're actually performing. When designing a system, budget separate review effort for authorization logic even after authentication is solved; a strong FIDO2 login sitting in front of an over-permissioned API is still a breach waiting to happen.

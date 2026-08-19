@@ -58,21 +58,14 @@ sequenceDiagram
 | **Alert** | Communicates errors or risk conditions that occur during communication | Error handling and session termination control |
 | **Record** | The basic unit that fragments, compresses, and encrypts actual data for transmission | Data encapsulation and integrity protection |
 
-## III. Advanced Topics & Comparison
+## III. Expected Benefits & Implications
 
-### TLS 1.2 vs. TLS 1.3 Key Differences
+Deprecating TLS 1.2 in favor of 1.3 isn't just a performance upgrade — it removes an entire category of downgrade and cipher-negotiation attacks by simply not allowing the weak options (static RSA/DH key exchange, plaintext handshake portions) to exist on the wire at all. The real-world payoff of PFS in particular is easy to underrate until a private key does eventually leak: without it, that single leak retroactively decrypts every past session ever captured, while with it the blast radius is one session.
 
-| Comparison | TLS 1.2 | TLS 1.3 |
-|:---:|---------|---------|
-| **Handshake Speed** | **2-RTT** (requires two round trips) | **1-RTT** / **0-RTT** (substantially faster) |
-| **Encryption Algorithms** | Includes **RSA**, **Static DH** (vulnerabilities exist) | Allows only algorithms that support **PFS** (e.g. **ECDHE**) |
-| **Security** | Part of the handshake is exposed in plaintext | Nearly all of the handshake is encrypted from the start |
-| **Cipher Suites** | Dozens of varied combinations (complex to manage) | Simplified to five secure combinations |
+| Benefit | Where It Shows Up |
+|---|---|
+| Faster handshake (1-RTT/0-RTT) | User-perceived latency, mobile performance |
+| Eliminated downgrade attack surface | Reduced exposure to MITM interception |
+| Forward secrecy by default | Bounded blast radius if a private key is later compromised |
 
-### TLS Security Hardening and Recent Trends
-
-- **PFS (Perfect Forward Secrecy)**: Essential adoption of one-time session keys so that even if the server's private key is later leaked, past communications cannot be decrypted.
-- **HSTS (HTTP Strict Transport Security)**: Forces browsers to use only **HTTPS** connections, defending against protocol downgrade attacks.
-- **SNI Encryption (ESNI / ECH)**: Encryption technology introduced to solve the problem of the Server Name Indication ( **SNI** ) being exposed in plaintext, revealing the connection destination.
-
-> **Key Point**: **TLS** is the foundation of modern web security, and adopting **TLS 1.3** in particular — eliminating security weaknesses while maximizing communication performance — is an essential security strategy.
+Budget SNI encryption (ECH) as the next adoption target, not TLS 1.3 itself — plenty of environments have already completed the 1.2-to-1.3 migration but still leak the destination hostname in plaintext, which is exactly the kind of half-finished hardening that gives a false sense of completion.

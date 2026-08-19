@@ -57,18 +57,16 @@ sequenceDiagram
 
 Every alert that reaches triage gets a log entry regardless of eventual severity, and the log is only closed once containment, root cause, and remediation are all recorded — with a post-incident review feeding lessons learned back into the configuration baseline.
 
-## III. Best Practices & Comparison
+## III. Expected Benefits & Implications
 
-| Document | Primary Purpose | Update Cadence | Owner |
-|---|---|---|---|
-| Cloud Incident Response Log | Track cloud security incidents from detection to closure | Per incident | Cloud security operations |
-| Cloud Security Configuration Baseline | Define the hardened settings incidents are measured against | Version-controlled, updated per provider changes | Cloud security architecture team |
-| Cloud Backup & Recovery Testing Tracker | Verify recovery options if an incident requires restoration | Quarterly restore tests, continuous backup logging | Cloud platform/DR team |
+A well-kept incident log's real payoff shows up months later, not during the incident itself — it's the only place a security program can prove, to an auditor or a board, that alerts were actually triaged and closed rather than accumulating in a dashboard nobody reopens. Logging every triaged alert, including the ones that turn out benign, is what makes mean-time-to-detect and mean-time-to-remediate honest program metrics instead of numbers cherry-picked from the incidents that made headlines.
 
-- Log every triaged alert, not only confirmed incidents, to support trend and near-miss analysis.
-- Tie root cause back to a specific control gap in the [Cloud Security Configuration Baseline](../cloud-security-configuration-baseline/) wherever possible.
-- Integrate detection sources (CNAPP, CSPM, CWPP) so evidence capture and timestamps are automatic, not manually transcribed.
-- Track mean time to detect and mean time to remediate as standing metrics, not one-off reporting.
-- Feed closed incidents into baseline hardening reviews so the same misconfiguration cannot recur.
+| Benefit | Where It Shows Up |
+|---|---|
+| Defensible audit trail | Root cause and remediation evidence recorded per incident |
+| Program-level trend visibility | MTTD/MTTR tracked across incidents, not just per case |
+| Fewer repeat misconfigurations | Root causes fed back into the configuration baseline |
+
+The habit that separates a mature program from one just going through the motions is closing that last loop back to the baseline — an incident whose root cause never becomes a new baseline control is simply a rehearsal for the same incident recurring.
 
 Related: [Cloud Security Configuration Baseline](../cloud-security-configuration-baseline/), [Cloud Backup & Recovery Testing Tracker](../cloud-backup-recovery-testing-tracker/).

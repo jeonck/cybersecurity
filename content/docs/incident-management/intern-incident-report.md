@@ -52,18 +52,14 @@ flowchart TD
 
 HR logs the report within 24 hours of notification and loops in IT security immediately if the incident involves system access, a company device, or data handling.
 
-## III. Best Practices & Comparison
+## III. Comparison & Application
 
-| Document | Primary Purpose | Trigger | Owner |
-|---|---|---|---|
-| Intern Incident Report | Record incidents involving interns/temporary staff | Any intern-related incident | HR |
-| [Workplace Violence Report](../workplace-violence-report/) | Record threats or violence involving any employee | Threatening or violent conduct | HR / Security |
-| [Major Incident Report Template](../major-incident-report-template/) | Record high-severity security incidents | Critical security event | SOC / IR Team |
+| Report Type | Use When | Owner |
+|---|---|---|
+| Intern Incident Report | Incident involves an intern/temporary staff member, regardless of category | HR |
+| [Workplace Violence Report](../workplace-violence-report/) | Any threat or violent conduct, involving any employee including interns | HR / Security |
+| [Major Incident Report Template](../major-incident-report-template/) | A security-critical event, regardless of who triggered it | SOC / IR Team |
 
-- Keep the description factual and free of subjective judgment; save conclusions for the corrective-action section.
-- Loop in IT security immediately whenever a company device, credential, or dataset is involved.
-- Store reports in the HR system with restricted access to protect the intern's privacy.
-- Track recurring incident types across cohorts to identify onboarding or supervision gaps.
-- Close every report with a documented follow-up action, even if the outcome is "no action required."
+The selection question is "what kind of incident is it," not "who was involved" — an intern who mishandles a company laptop is an Intern Incident Report, but an intern who threatens a coworker is a Workplace Violence Report first, with the intern angle noted as context rather than the primary lens. When category and population overlap, default to the report type that matches the risk (safety, security, or conduct), not the one that matches the person's job title.
 
 Related: [Workplace Violence Report](../workplace-violence-report/), [Incident Management Process](../incident-management-process/)

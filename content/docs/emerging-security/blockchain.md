@@ -66,7 +66,7 @@ flowchart LR
 | Hash Function | Encrypts the previous block's information to link it to the next | Integrity (tamper prevention) |
 | Smart Contract | Program code that executes automatically when specific conditions are met | Transaction trust and automation |
 
-## III. Advanced Topics & Comparison
+## III. Comparison & Application
 
 | Category | Public | Private | Consortium |
 |------|--------------|-----------------|---------------------|
@@ -75,3 +75,5 @@ flowchart LR
 | Processing speed | Slow (consensus overhead) | Very fast | Fast |
 | Incentive | Cryptocurrency reward required | Not required | Optional |
 | Examples | Bitcoin, Ethereum | Enterprise supply-chain management | Financial-sector shared networks (R3 CEV) |
+
+A private chain run and validated by a single company is, for most practical trust purposes, just a distributed database with extra steps — the trust model only meaningfully changes once governance and validator rights are genuinely shared across parties with competing interests, which is what a consortium chain is actually for. Pick public only when participants must transact without trusting each other or any operator; pick private or consortium when participants already have a legal relationship and simply need a shared, tamper-evident record of it.

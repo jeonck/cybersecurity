@@ -51,7 +51,7 @@ graph TD
 2. **Service ticket request**: Using the TGT, the user requests an **ST** (Service Ticket) to access a specific service, such as a file server (**TGS** — Ticket Granting Service)
 3. **Service access**: The user presents the ST to the target server to obtain authentication and access privileges (**AP** — Application Server)
 
-## III. Advanced Topics & Comparison
+## III. Vulnerabilities & Security Measures
 
 ### A. AD Vulnerabilities and Attack Types
 
@@ -66,4 +66,4 @@ graph TD
 - **Continuous monitoring**: Analyze **AD** audit logs, integrate with a **SIEM**, and build detection/response for abnormal access patterns
 - **Security patching and updates**: Keep the **DC** and related components such as **AD CS** (Certificate Services) on the latest security updates
 
-> **Key Point**: Because **Active Directory** is the foundation of an organization's IT infrastructure, rigorous security configuration and continuous monitoring are essential to keeping the **AD** environment safe.
+Most AD compromises trace back not to a novel exploit but to an over-privileged service account that sat untouched for years — Kerberoasting only pays off because someone gave a service account rights it never needed. Treat privileged-account review as a recurring audit item rather than a one-time hardening step, since AD's biggest attack surface grows quietly through accumulated privilege, not through newly discovered vulnerabilities.

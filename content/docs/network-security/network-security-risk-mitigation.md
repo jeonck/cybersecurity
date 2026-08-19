@@ -51,18 +51,16 @@ flowchart LR
 
 Risks are logged as they are identified through audits, penetration tests, or incidents, prioritized by score, and reviewed quarterly with the CISO's office to track mitigation progress and re-prioritize as the environment changes.
 
-## III. Best Practices & Comparison
+## III. Expected Benefits & Implications
 
-| Document | Primary Purpose | Update Cadence | Owner |
-|---|---|---|---|
-| Network Security Risk Mitigation | Prioritize and track remediation of identified network risks | Continuous intake + quarterly review | Network Security Engineering / CISO |
-| [DDoS Attack Mitigation Plan Tracker](../ddos-attack-mitigation-plan-tracker/) | Focused readiness plan for one risk category (availability attacks) | Quarterly + post-incident | Network Security Engineering |
-| Zero Trust Architecture (NIST SP 800-207) | Architectural strategy that reduces several network risk categories at once | As-needed on strategy revision | CISO / Network Security |
+The payoff of a formal risk register isn't the register itself — it's that every open risk has exactly one accountable owner and a target date, which is the single biggest predictor of whether a known weakness actually gets fixed versus quietly re-discovered during the next audit. A risk with no owner is not a tracked risk; it's a note to self.
 
-- Score risks consistently using a defined likelihood/impact matrix, not ad hoc judgment.
-- Assign a single accountable owner and target date to every open risk — no unowned entries.
-- Re-score risks after mitigation to confirm the control actually reduced exposure.
-- Feed findings from penetration tests and audits directly into the register rather than tracking them separately.
-- Escalate high-score risks with no assigned mitigation plan to the CISO immediately.
+| Benefit | Where It Shows Up |
+|---|---|
+| Prioritized remediation spend | Engineering roadmap and budget cycles |
+| Reduced repeat findings | Year-over-year audit and pentest results |
+| Defensible risk acceptance | CISO and board-level reporting |
+
+Re-scoring after mitigation matters as much as scoring on intake — a risk marked "closed" without re-verification is just an assumption wearing a status label, and it's exactly the kind of assumption that surfaces again as a finding in the next penetration test.
 
 Related: [DDoS Attack Mitigation Plan Tracker](../ddos-attack-mitigation-plan-tracker/), [Network Device Inventory](../network-device-inventory/)

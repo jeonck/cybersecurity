@@ -50,7 +50,7 @@ graph TD
 | 3. **Verification** | Confirm trustworthiness | The recipient verifies the signature inside the certificate using the CA's public key |
 | 4. **Revocation** | Manage loss of validity | If revoked before expiry, it is registered in the CRL or via OCSP |
 
-## III. Advanced Topics & Comparison
+## III. Comparison & Application
 
 | Comparison Item | Hierarchical Model | Network (Mesh) Model |
 |----------|-------------------------|-------------------|
@@ -58,3 +58,5 @@ graph TD
 | **Trust Path** | One-way, top to bottom | Bidirectional or a more complex path |
 | **Advantage** | Management is centralized and clear | High integration and scalability across organizations |
 | **Example** | National accredited certification systems, SSL/TLS | Cross-organizational federated security systems |
+
+Default to the hierarchical model unless cross-organizational federation is an explicit requirement — a single Root CA gives auditors and administrators one place to reason about trust, while mesh cross-certification multiplies the number of trust paths that must be validated and creates transitive-trust risk that is easy to overlook until a partner CA is compromised. Reserve mesh PKI for scenarios where no single organization can credibly serve as the root.

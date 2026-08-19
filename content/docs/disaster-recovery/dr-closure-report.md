@@ -49,17 +49,14 @@ flowchart LR
 | Action Owner & Due Date | Individual accountable for each corrective action and its deadline. |
 | Sign-off/Approval | Steering committee or leadership approval closing the event. |
 
-## III. Best Practices & Comparison
+## III. Comparison & Application
 
-| Document | Primary Purpose | When Used | Owner |
-|---|---|---|---|
-| DR Closure Report | Record recovery outcomes and drive corrective action | After every exercise or real activation | DR coordinator, steering committee |
-| DR Plan Template | Provide step-by-step recovery procedures per system | Built and tested before activation; executed during it | System/application owners, DR coordinator |
-| DR Communications Plan | Coordinate stakeholder messaging during the event | Activated alongside the DR plan | DR coordinator, corporate communications |
+| Document | Answers | Read When |
+|---|---|---|
+| DR Plan Template | How do we execute the recovery | During the event, and during pre-event testing |
+| DR Communications Plan | Who tells whom, and when | During the event, in parallel with execution |
+| DR Closure Report | Did it actually work, and what needs to change | After stand-down, before the next exercise is scheduled |
 
-- Write the closure report within days of stand-down, while details and timings are still fresh.
-- Compare actual RTO/RPO against target explicitly — a recovery that "worked" but blew past target still needs a corrective action.
-- Track every corrective action to closure and feed confirmed fixes back into the DR Plan Template.
-- Treat exercise closure reports with the same rigor as real-activation reports; both are evidence the program is tested.
+The closure report is the only one of the three graded against reality instead of intention — the plan and the comms protocol describe what was supposed to happen, while the closure report records what actually did. That makes a closure report with zero gaps and no corrective actions a warning sign rather than a good outcome: it more often means the exercise wasn't demanding enough to find anything than that the DR program has nothing left to fix.
 
 Related: [DR Plan Template](../dr-plan-template/), [DR Communications Plan](../dr-comms-plan/). See also the [Incident Management](/docs/incident-management/) category for post-incident review practices.

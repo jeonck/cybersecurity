@@ -55,18 +55,15 @@ sequenceDiagram
 
 IT operations proposes technical parameters, security/GRC validates them against business impact analysis, and the ISMS steering committee approves the policy. Test restorations are logged as evidence and reviewed by internal audit; the policy itself is reviewed annually or after any recovery failure.
 
-## III. Best Practices & Comparison
+## III. Adoption Considerations & Security Measures
 
-| Document | Primary Purpose | Review Cadence | Owner |
-|---|---|---|---|
-| Backup and Recovery Policy | Guarantee recoverability of data and systems | Annual | IT operations, CISO / GRC team |
-| Information Classification Policy | Define sensitivity tiers that drive backup encryption needs | Annual or on data inventory change | Data owners, security team |
-| ISMS Policy | Set the overarching management-system framework | Annual | CISO |
+| Risk | Primary Control |
+|---|---|
+| Ransomware encrypting backups alongside production | Offline or air-gapped copy, immutable storage |
+| Untested restore procedures failing under pressure | Scheduled test restorations with logged evidence |
+| Uniform RPO/RTO ignoring system criticality | Tiered targets set from business impact analysis |
+| Backup data exposed in transit or at rest | Mandatory encryption on offsite and cloud copies |
 
-- Set RPO/RTO per system tier based on business impact, not a single blanket target for everything.
-- Test restorations on a fixed schedule; an untested backup is an unverified assumption.
-- Keep at least one backup copy offsite or air-gapped to survive ransomware that targets connected backups.
-- Encrypt backup data at rest and in transit, especially for offsite and cloud copies.
-- Document and rehearse the restoration escalation path so recovery isn't improvised during an incident.
+An untested backup is a hypothesis, not a control — the only way to know a restore will actually work during a real incident is to have already done it under a fire drill. Ransomware operators now actively hunt for connected backup targets before triggering encryption, so at least one copy needs to be genuinely unreachable from the production network, not just "logically separate."
 
 Related: [ISMS Policy](../isms-policy/), [Disposal and Destruction Policy](../disposal-and-destruction-policy/).

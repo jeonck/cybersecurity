@@ -55,18 +55,13 @@ sequenceDiagram
 
 The dashboard ingests data continuously; the NOC watches it around the clock for operational anomalies and escalates suspected security events to the SOC, which periodically tunes alert thresholds based on investigation outcomes.
 
-## III. Best Practices & Comparison
+## III. Outlook & Future Direction
 
-| Document | Primary Purpose | Update Cadence | Owner |
-|---|---|---|---|
-| Network Traffic Monitoring Dashboard | Continuous visibility into traffic volume, mix, and anomalies | Continuous (real-time) | Network Security Engineering / NOC / SOC |
-| [Network Access Control Log](../network-access-control-log/) | Records discrete access decisions rather than ongoing traffic patterns | Continuous (event-driven) | NOC / SOC |
-| SASE (Secure Access Service Edge) | Cloud-delivered architecture combining network and security monitoring at the edge | As-needed on strategy revision | Network Security Engineering |
+| Approach | Maturity | Direction |
+|---|---|---|
+| Threshold alerts on raw flow/IDS feeds | Legacy | Still necessary, increasingly insufficient alone |
+| Behavioral baselining + cloud-delivered edge telemetry (SASE) | Emerging | Becoming the default as traffic shifts off the data-center path |
 
-- Establish traffic baselines per segment before setting alert thresholds, to reduce false positives.
-- Correlate flow anomalies with IDS/IPS and access logs rather than treating any single feed as sufficient.
-- Retain historical traffic data long enough to support post-incident forensic review.
-- Review and tune alert thresholds regularly as network usage patterns evolve.
-- Assign clear on-call ownership so critical alerts are never left unacknowledged.
+As more traffic bypasses the data center entirely for direct-to-cloud and SaaS paths, a dashboard built only on NetFlow and IDS feeds mirrored at the perimeter increasingly watches an empty hallway. Expect traffic visibility to keep migrating toward edge-delivered telemetry from SASE/SSE platforms and behavioral baselining that flags deviation from a learned normal rather than a fixed threshold — the org that hasn't budgeted for that shift will find its dashboard quietly blind to a growing share of its own traffic.
 
 Related: [Network Access Control Log](../network-access-control-log/), [DDoS Attack Mitigation Plan Tracker](../ddos-attack-mitigation-plan-tracker/)

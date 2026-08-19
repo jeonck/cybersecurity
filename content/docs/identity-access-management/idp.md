@@ -64,19 +64,14 @@ sequenceDiagram
 | **OpenID Connect** | Issues the **ID Token** and **Access Token** | Receives and verifies the **ID Token** / **Access Token** |
 | **OAuth 2.0** | Issues the **Access Token** (acts as the authorization server) | Receives the **Access Token** and checks resource-access privileges |
 
-## III. Advanced Topics & Comparison
+## III. Expected Benefits & Implications
 
-### A. Why IdP Security Matters, and Potential Threats
+Centralizing authentication behind an IdP pays off most clearly at the moments organizations tend to underestimate: onboarding and offboarding. Provisioning a new hire's access to every connected **SP** becomes a single account creation instead of N separate signups, and revoking a departing employee's access becomes a single account disable instead of a checklist that's easy to leave incomplete.
 
-- **Single Point of Failure**: If the **IdP** goes down, every connected service becomes unusable
-- **Centralized Attack Target**: Compromising the **IdP** account can grant access to every connected service (credential stuffing, phishing, etc.)
-- **Token/Assertion Vulnerabilities**: Flawed verification logic or reuse of a stolen token can lead to session hijacking
+| Benefit | Where It Shows Up |
+|---|---|
+| Faster onboarding/offboarding | Time-to-provision and time-to-deprovision across every connected SP |
+| Consistent security policy | One place to enforce MFA, password rules, and session timeouts |
+| Reduced credential sprawl | Fewer help-desk password resets, fewer reused passwords across services |
 
-### B. IdP Security Hardening Best Practices
-
-- **Strong Authentication Mechanisms**: Apply **MFA** (Multi-Factor Authentication), password policies, and **SSO** session timeouts
-- **Protocol Security**: Require **HTTPS**, thoroughly verify the signature and encryption of SAML/OIDC assertions and tokens
-- **Access Control and Logging**: Minimize access to the **IdP** admin console; keep detailed audit logs and monitoring
-- **Regular Vulnerability Reviews**: Apply the latest security patches to the **IdP** solution and conduct periodic security audits
-
-> **Key Point**: Because the **IdP** is an organization's identity management hub, maintaining strong security for the **IdP** itself and safely configuring every connected **SP** are both essential to overall security.
+The implication organizations tend to miss is that centralizing authentication also centralizes risk — an IdP is worth adopting specifically because it concentrates control, but that same concentration means IdP security investment (MFA, monitoring, admin console access) should scale ahead of the number of services it connects, not after.

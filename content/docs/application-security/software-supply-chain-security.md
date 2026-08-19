@@ -47,13 +47,12 @@ The SBOM (Software Bill of Materials) — a specification of a software's compon
 - **Build**: Building in an isolated environment and generating build provenance.
 - **Common**: Continuous security audits and vulnerability scanning.
 
-## III. Advanced Topics & Comparison
+## III. Outlook & Future Direction
 
-### Stage-by-Stage Response Strategy for Strengthening Supply Chain Security
+| Practice | Maturity | Direction |
+|---|---|---|
+| SBOM generation (SPDX / CycloneDX) | Emerging mandate | Moving from optional artifact to procurement and regulatory requirement |
+| SLSA build provenance | Early adoption | Following the same trajectory container-image signing already took |
+| VEX-based exploitability triage | Nascent | Becoming the standard way to suppress non-exploitable SBOM noise |
 
-| Stage | Response Strategy | Key Technologies / Tools |
-|:---:|----------|-----------------|
-| Development | Vetting and selecting open-source libraries | SCA (BlackDuck, Snyk), allow-list management |
-| Build | Proving the integrity of the build process, issuing an SBOM | Sigstore (digital signatures), Syft/Grype |
-| Deployment | Verifying deployment images, using only approved images | Admission Controller, image signature verification |
-| Operation | Runtime vulnerability monitoring and emergency patching | VEX (Vulnerability Exploitability eXchange) integration |
+Expect SBOM generation to follow the exact arc container-image signing already went through: optional best practice, then a customer RFP checkbox, then a contractual requirement within a couple of release cycles. The teams that will be caught flat-footed are not the ones without an SBOM today — they are the ones generating one only as a one-off compliance exercise rather than wiring it into the build pipeline as a standard artifact, which means it will be stale the moment a customer's security questionnaire actually asks for one.

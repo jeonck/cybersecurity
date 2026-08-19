@@ -56,18 +56,16 @@ sequenceDiagram
 
 The matrix is updated whenever a role, policy, or service account is provisioned or changed, and undergoes full recertification on a fixed cadence — typically monthly for administrative and cross-account roles, and quarterly for standard access — with resource owners attesting each entry is still required.
 
-## III. Best Practices & Comparison
+## III. Expected Benefits & Implications
 
-| Document | Primary Purpose | Update Cadence | Owner |
-|---|---|---|---|
-| Cloud Access Control Matrix | Track which identities can act on which cloud resources | Continuous, with periodic recertification | Cloud security/IAM team, resource owners |
-| Cloud Asset Inventory Tracker | Track which resources exist and who owns them | Continuous, discovery-driven | Cloud platform team |
-| Cloud Security Configuration Baseline | Define the hardened settings resources must meet | Version-controlled, updated per provider changes | Cloud security architecture team |
+The matrix's value isn't the spreadsheet of who-has-what — most teams could reconstruct that from IAM APIs in an afternoon — it's the recurring recertification trail proving privileged and cross-account access was actually reviewed, not just granted once and forgotten. That trail is what turns a least-privilege claim into evidence an ISMS-P or SOC 2 assessor will actually accept.
 
-- Grant access through roles or groups defined as code, not one-off console changes.
-- Require MFA and just-in-time elevation for any administrative or cross-account role.
-- Recertify service accounts and machine identities as rigorously as human accounts — they rarely expire on their own.
-- Tie every grant to a documented business justification and a named approver.
-- Cross-reference entries against the [Cloud Asset Inventory Tracker](../cloud-asset-inventory-tracker/) so access scope never outlives the resource it was granted for.
+| Benefit | Where It Shows Up |
+|---|---|
+| Faster access-review audits | Recertification records instead of ad hoc IAM exports |
+| Fewer orphaned service accounts | Scheduled attestation catches grants nobody remembers making |
+| Reduced blast radius on compromise | Least-privilege scoping limits what a stolen credential can reach |
+
+Machine identities are where this discipline usually collapses in practice: a service account never complains that its access is too broad, so privilege accumulates silently unless recertification is applied to it with the same rigor as a human account — arguably more, since nobody's badge access expiring will ever flag it.
 
 Related: [Cloud Asset Inventory Tracker](../cloud-asset-inventory-tracker/), [Cloud Security Configuration Baseline](../cloud-security-configuration-baseline/).

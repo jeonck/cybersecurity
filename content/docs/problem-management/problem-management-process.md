@@ -50,18 +50,17 @@ flowchart LR
 
 Problems are identified either proactively, through trend analysis of incident data, or reactively, from a single major incident; both paths converge on the same logging, diagnosis, and closure stages so every problem is tracked with equal rigor regardless of origin.
 
-## III. Best Practices & Comparison
+## III. Expected Benefits & Implications
 
-| Document | Primary Purpose | Trigger | Owner |
-|---|---|---|---|
-| Problem Management Process | Define the repeatable workflow from symptom to root-cause fix | Ongoing process governance | Problem manager |
-| Problem Record Template | Instance record of one problem moving through the process | Recurring or significant incident pattern | Problem manager |
-| Known Error (KE) Record Template | Interim workaround produced mid-process | Root cause confirmed, fix pending | Problem manager |
+A formal problem management process is often the easiest line item to cut, because in a quiet quarter it looks like documentation layered on top of incident response that already restored everything. The payoff is uneven by design — most incidents never touch this process, but the recurring ones that do would otherwise consume the same on-call hours over and over with nothing to show for it.
 
-- Run proactive trend analysis on closed incidents regularly, not only after a major incident forces reactive review.
-- Set explicit exit criteria per stage so problems cannot silently stall between diagnosis and fix.
-- Feed a security incident's confirmed root cause into this process as a formal problem, rather than closing it purely within incident response.
-- Prioritize problems by cumulative business impact across recurrences, not by the severity of any single incident.
-- Review the process itself periodically against actual cycle times to catch bottlenecks between diagnosis and permanent fix.
+| Benefit | Where It Shows Up |
+|---|---|
+| Falling repeat-incident rate | Incident trend reports, month over month |
+| Faster diagnosis on recurrence | Known Error Records reused instead of re-investigated |
+| Defensible root-cause evidence | Security and audit reviews of recurring exposure |
+| Bounded investigation backlog | Explicit exit criteria per stage, not open-ended tickets |
+
+Measure the process by the trend in repeat-incident rate, not by problem-record volume — a team can log plenty of problem records and still leave the same root causes unfixed. The more durable implication is organizational: feeding a security incident's confirmed root cause into this process, rather than closing it purely within incident response, is what turns a one-off patch into a documented, auditable decision that survives staff turnover.
 
 Related: [Problem Record Template](../problem-record-template/), [Known Error (KE) Record Template](../known-error-record-template/), [Major Problem Report Template](../major-problem-report-template/).

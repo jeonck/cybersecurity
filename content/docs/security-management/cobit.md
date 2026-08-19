@@ -43,15 +43,12 @@ flowchart LR
 | **DSS05** | Operating security services and incident response | Vulnerability management, account and access control |
 | **MEA02** | Systematically monitoring the security control system | Internal control and regulatory compliance |
 
-## III. Advanced Topics & Comparison
+## III. Expected Benefits & Implications
 
-### Considerations for Adoption (Tailoring)
+| Benefit | Where It Shows Up |
+|---|---|
+| Business Alignment | Security investment justified in the same terms as any other capital allocation |
+| Clear Accountability | A RACI chart (Responsible / Accountable / Consulted / Informed) removes ambiguity over who owns a control |
+| Risk Visibility | An enterprise-wide risk dashboard gives leadership real-time status instead of a quarterly slide |
 
-- **Design Factors**: Control items must be tailored to the organization's size, threat level, and compliance requirements.
-- **Focus Areas**: Security design needs to concentrate on specific areas such as cybersecurity and cloud computing.
-
-### Expected Benefits
-
-- **Business Alignment**: Demonstrates that security investment contributes to business value creation (Strategic Alignment).
-- **Clear Accountability**: A **RACI** chart (Responsible / Accountable / Consulted / Informed) clearly defines security roles and responsibilities.
-- **Risk Visibility**: An enterprise-wide risk dashboard enables real-time visibility into security status and faster decision-making.
+COBIT's real contribution isn't the control catalog — plenty of frameworks have one — it's the EDM/PBRM split that forces a board-level conversation about security risk appetite to happen separately from the operational conversation about how controls get built and run. Skip that separation and governance quietly collapses into management: the board rubber-stamps whatever IT already decided, and "risk appetite" never gets an actual decision behind it. Tailor the domain set to the organization's size and threat profile rather than implementing all of COBIT's domains uniformly, or the framework becomes a compliance exercise instead of a decision-making tool.

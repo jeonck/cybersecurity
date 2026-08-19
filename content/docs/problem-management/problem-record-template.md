@@ -51,18 +51,14 @@ flowchart TD
 
 The record stays open through diagnosis and remediation, referencing every linked incident as evidence of ongoing impact, and closes only when the permanent fix is verified to prevent recurrence.
 
-## III. Best Practices & Comparison
+## III. Comparison & Application
 
 | Document | Primary Purpose | Trigger | Owner |
 |---|---|---|---|
-| Problem Record Template | Track one problem's investigation from open to closed | Recurring or significant incident pattern | Problem manager |
-| Known Error (KE) Record Template | Publish the interim workaround for a diagnosed root cause | Root cause confirmed, fix pending | Problem manager |
-| Major Incident Report Template | Document how a single major incident was detected and restored | Major incident declared | Incident commander |
+| Problem Record | Track investigation of a suspected root cause from open to closed | Recurring or significant incident pattern | Problem manager |
+| Known Error (KE) Record | Publish the interim workaround once root cause is confirmed | Root cause confirmed, fix pending | Problem manager |
+| Major Problem Report | Formal post-resolution review for leadership | High-impact problem, after permanent fix verified | Problem manager / service owner |
 
-- Open a problem record as soon as a pattern of recurring incidents is detected, rather than waiting for a major incident.
-- Link every related incident to the problem record so its cumulative impact is visible when prioritizing fixes.
-- Keep root cause and workaround fields updated in real time so the known error record can be published without delay.
-- Do not close the record until the permanent fix is verified against a recurrence, not merely deployed.
-- Distinguish problem closure from incident closure explicitly: an incident can close while its root-cause problem remains open.
+The distinction that matters day to day is between the Problem Record and the Known Error Record it spawns midway through: the Problem Record is the open investigation, and the Known Error Record is what gets published once that investigation confirms a root cause but before a permanent fix exists. Treat the record's Known Error Status field as the trigger — the moment root cause is confirmed, publish the Known Error immediately rather than waiting for the Problem Record itself to close, since the service desk needs the workaround long before the permanent fix ships.
 
 Related: [Known Error (KE) Record Template](../known-error-record-template/), [Problem Management Process](../problem-management-process/), [Major Problem Report Template](../major-problem-report-template/).

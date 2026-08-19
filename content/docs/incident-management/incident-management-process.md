@@ -57,18 +57,14 @@ sequenceDiagram
 
 Every incident record is closed only after root cause and corrective actions are documented, and high-severity incidents proceed to a formal post-incident review meeting.
 
-## III. Best Practices & Comparison
+## III. Adoption Considerations
 
-| Document | Primary Purpose | Trigger | Owner |
-|---|---|---|---|
-| Incident Management Process | Step-by-step operational handling of any incident | Any detected event | SOC / IR Team |
-| [Incident Management Policy](../incident-management-policy/) | Governance rules and definitions behind the process | Annual review or policy gap | CISO / Executive Management |
-| [Major Incident Report Template](../major-incident-report-template/) | Detailed record of a single high-severity incident | Critical or high-severity event | SOC / IR Team |
+| Risk | Primary Control |
+|---|---|
+| Volatile evidence lost during containment | Capture memory / session state before isolating or rebuilding a host |
+| Inconsistent handling outside the process | Single intake queue for every incident, no informal side-channel triage |
+| Corrective actions never close the loop | Feed root-cause findings back into SIEM/EDR detection rules, not just the retro notes |
 
-- Preserve volatile evidence (memory, session state, logs) before containment actions destroy it.
-- Maintain a timestamped timeline in real time rather than reconstructing it after the fact.
-- Route every incident through the same intake queue so nothing is triaged informally outside the process.
-- Hold a blameless post-incident review for every medium-or-higher severity incident.
-- Feed corrective actions back into detection rules (SIEM/EDR) to close the loop on recurring root causes.
+The step teams skip under pressure is almost always evidence preservation before containment — isolating a compromised host feels like the responsible move in the moment, but it also destroys the memory-resident indicators that would have explained how the attacker got in. Build "capture before contain" into the runbook itself rather than leaving it to responder judgment, because judgment is exactly what's compromised at 2 a.m. during a live incident.
 
 Related: [Incident Management Policy](../incident-management-policy/), [Major Incident Report Template](../major-incident-report-template/)

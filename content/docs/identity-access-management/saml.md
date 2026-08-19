@@ -55,19 +55,11 @@ sequenceDiagram
 | **SAML Binding** | The transport mechanism for **SAML** messages, e.g. **HTTP POST**, **HTTP Redirect** | Defines the message-delivery channel |
 | **SAML Metadata** | Meta information exchanged to establish trust between **IdP** and **SP** | Supports interoperability and secure configuration |
 
-## III. Advanced Topics & Comparison
+## III. Comparison & Application
 
-### A. SAML Security Vulnerabilities
+| Protocol | Best Fit | Weakness |
+|---|---|---|
+| SAML 2.0 | Enterprise SSO, legacy and government IdPs | XML complexity, heavier payload, no native mobile support |
+| OAuth 2.0 + OIDC | API access, mobile apps, SPAs | Requires careful scope/claims design; not always present in older enterprise IdPs |
 
-- **Assertion forgery / replay**: Insufficient signature verification on a **SAML Assertion** allows access attempts with forged information
-- **Client-side attacks**: **XSS** and similar techniques can steal and replay a user's SAML request/response (**session hijacking**)
-- **IdP/SP misconfiguration**: Exploiting mistakes such as incorrect metadata exchange or a weak signature algorithm
-
-### B. SAML Security Hardening
-
-- **Strong signing and encryption**: Sign and encrypt **SAML Assertions** and **Metadata** to guarantee integrity and confidentiality
-- **Secure metadata exchange between IdP/SP**: Use **HTTPS** when exchanging **Metadata**, and periodically re-verify trust
-- **Time synchronization**: Keep **IdP** and **SP** clocks precisely synchronized via **NTP** to prevent replay attacks
-- **Least privilege**: When the **SP** verifies a **SAML Assertion**, extract only the attributes it actually needs
-
-> **Key Point**: Because **SAML** has a complex **XML**-based structure, using a standard implementation library and rigorously establishing trust and verifying metadata between **IdP** and **SP** are both critical.
+Default to OIDC for anything greenfield — SAML earns its place only when the identity provider on the other side of the integration (many enterprise IdPs, government and education systems) doesn't speak OIDC yet. Treat SAML support as a compatibility requirement to satisfy existing IdP relationships, not as a design goal for new systems, since new protocol investment in the identity space has effectively moved to the OAuth/OIDC family.

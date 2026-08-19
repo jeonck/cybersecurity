@@ -50,18 +50,14 @@ flowchart LR
 
 Discovery scans run continuously or on a fixed schedule (typically daily), with the platform team reconciling results into the inventory and routing any unowned or unexpected asset to security for a shadow-resource review before it is either assigned an owner or decommissioned.
 
-## III. Best Practices & Comparison
+## III. Vulnerabilities & Security Measures
 
-| Document | Primary Purpose | Update Cadence | Owner |
-|---|---|---|---|
-| Cloud Asset Inventory Tracker | Track which resources exist and who owns them | Continuous, discovery-driven | Cloud platform team |
-| Cloud Access Control Matrix | Track which identities can act on which resources | Continuous, with periodic recertification | Cloud security/IAM team |
-| CSPM tooling (Cloud Security Posture Management) | Automate configuration and compliance scanning across discovered assets | Continuous, real-time | Cloud security team |
+| Risk | Primary Control |
+|---|---|
+| Shadow or forgotten resources | Continuous agentless discovery (API scan, CSPM) |
+| Orphaned assets with no accountable owner | Scheduled reconciliation against cloud billing records |
+| Stale inventory feeding wrongly scoped reviews | Mandatory owner/environment tagging enforced at creation via policy-as-code |
 
-- Prefer agentless, API-based discovery over relying on teams to self-register resources.
-- Reconcile discovery results against cloud billing records to catch resources CSPM scans miss.
-- Enforce mandatory owner and environment tagging at resource creation through policy-as-code.
-- Treat any asset without a confirmed owner as a security finding, not a data-quality nuisance.
-- Review orphaned or long-idle resources on a fixed cadence and route them to decommissioning.
+Billing reconciliation is what actually catches what discovery scans consistently miss — a "decommissioned" VM that's still running, or a bucket spun up for a two-day proof of concept eighteen months ago, keeps generating a charge line long after it drops off every dashboard and tagging policy. Route anything unexplained on the monthly invoice straight into the shadow-resource review queue instead of a cost-optimization backlog; by the time finance flags it as a spend anomaly, it has typically already been an unmonitored attack surface for months.
 
 Related: [Cloud Access Control Matrix](../cloud-access-control-matrix/), [Cloud Security Configuration Baseline](../cloud-security-configuration-baseline/).

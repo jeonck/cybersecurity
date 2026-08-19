@@ -55,19 +55,14 @@ sequenceDiagram
 
 The checklist is applied on every pull request and re-validated at release time; AppSec updates the requirement set quarterly as new weakness classes emerge.
 
-## III. Best Practices & Comparison
+## III. Expected Benefits & Implications
 
-| Document | Primary Purpose | Update Cadence | Owner |
-|---|---|---|---|
-| Secure Coding Checklist | Prevent known weakness classes during development | Per pull request | AppSec + Engineering |
-| [Static Code Analysis Log](../static-code-analysis-log/) | Automated detection of violations already in code | Per build / commit | AppSec + Engineering |
-| OWASP ASVS | Comprehensive verification standard the checklist is derived from | On standard revision | AppSec |
-| [Web Application Vulnerability Tracker](../web-application-vulnerability-tracker/) | Track exploitable findings after code is deployed | Per scan / pentest cycle | AppSec |
+A secure coding checklist's value is not the checklist itself — it is the shared vocabulary it gives a reviewer to say "this needs a parameterized query" instead of relitigating the same argument on every pull request. Measure adoption by review-comment consistency and recurrence of the same finding class, not by checklist-completion rate, or the program optimizes for box-ticking instead of actual behavior change.
 
-- Derive checklist items from OWASP ASVS or an equivalent standard rather than inventing rules ad hoc.
-- Require parameterized queries and ORM-safe data access as a non-negotiable rule for all database interaction.
-- Mandate output encoding at every point untrusted data reaches HTML, JavaScript, or a URL context to prevent XSS.
-- Pair the checklist with automated SAST rules so common violations are caught before human review.
-- Revisit the checklist whenever a new vulnerability class is discovered in production, and add a corresponding rule.
+| Benefit | Where It Shows Up |
+|---|---|
+| Faster, more consistent code review | Reviewers cite a shared standard instead of individual judgment calls |
+| Fewer repeat vulnerability classes | SAST and pentest trend reports show the same CWE recurring less often |
+| Lighter AppSec review load | Only unresolved high-severity items need to be escalated, not every PR |
 
 Related: [Static Code Analysis Log](../static-code-analysis-log/), [Web Application Vulnerability Tracker](../web-application-vulnerability-tracker/)

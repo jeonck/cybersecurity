@@ -76,23 +76,12 @@ flowchart LR
 | Primary Use | Host-to-host (end-to-end) communication | Site-to-site VPN |
 | Characteristics | Lower overhead, but the original IP is exposed | Higher security, enables private IP communication |
 
-## III. Advanced Topics & Comparison
+## III. Comparison & Application
 
-### IPSec Security Policy Management: SPD and SAD
+| Approach | Best Fit | Weakness |
+|---|---|---|
+| IPSec (Tunnel Mode) | Site-to-site links between fixed networks, vendor-agnostic interop | SPD/SAD policy management is complex and easy to misconfigure |
+| WireGuard | Point-to-point tunnels needing minimal config and high throughput | Smaller ecosystem of enterprise policy/management tooling |
+| TLS-based VPN / ZTNA | Remote users, per-application access from untrusted networks | Requires an identity and policy layer beyond the tunnel itself |
 
-```mermaid
-flowchart LR
-    PKT["Incoming Packet"] -->|"SPI lookup"| SPD["SPD\nSecurity Policy DB\nDetermines traffic handling policy"]
-    SPD -->|"Requires protection"| SAD["SAD\nSecurity Association DB\nManages keys and algorithm info"]
-    SAD -->|"Applies SA"| DEC["Decryption / Authentication"]
-    SPD -->|"Passes through"| PASS["Passed through as-is"]
-    SPD -->|"Discarded"| DROP["Packet discarded"]
-```
-
-| Element | Detailed Description | Notes |
-|-----|---------|------|
-| SPD (Security Policy DB) | A policy database that decides which traffic to process for security | Determines protect / pass / discard |
-| SAD (Security Association DB) | Manages the encryption keys and algorithm information for currently active SAs | Active security information |
-| SPI (Index) | An index value that identifies which SA an incoming packet corresponds to | Included in the packet header |
-
-> **Key Point**: **IPSec** operates at the network layer (L3), so it can apply security transparently without requiring changes to upper-layer applications, and it serves as the core underlying technology for VPN implementations.
+The decision rarely comes down to cryptographic strength — all three do encryption and authentication well enough. It comes down to what has to interoperate: IPSec remains the default for site-to-site links because every enterprise firewall and router speaks it, while WireGuard and TLS-based ZTNA win wherever the endpoint is a laptop on an untrusted network rather than another network device. A misconfigured SPD is the single most common cause of "the tunnel is up but nothing passes" — audit it before touching the crypto settings.

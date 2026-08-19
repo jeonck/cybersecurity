@@ -55,7 +55,7 @@ graph TD
 | **Diffie-Hellman** | Discrete logarithm | A key-exchange-only algorithm, used in the early stages of SSL/TLS |
 | **ElGamal** | Discrete logarithm | Has the drawback that ciphertext grows to twice the size of the plaintext |
 
-## III. Advanced Topics & Comparison
+## III. Comparison & Application
 
 | Comparison Item | Symmetric-Key Cryptography | Asymmetric-Key Cryptography |
 |----------|------------|--------------|
@@ -63,3 +63,5 @@ graph TD
 | **Key Distribution** | Difficult (requires pre-sharing) | Very easy (public key can be distributed) |
 | **Computation Speed** | Fast (suited to large volumes) | Slow (roughly 100–1,000x slower) |
 | **Core Use** | Encrypting the data body | Key exchange, digital signatures, authentication |
+
+Treating this as an either/or choice is the wrong frame — asymmetric key's real job in production systems is almost never bulk encryption, it's solving the key distribution problem for a symmetric cipher that does the heavy lifting. Any design that proposes encrypting a large payload directly with RSA or ECC should be treated as a red flag in review; the default answer is a hybrid scheme that uses each algorithm for what it is actually good at.

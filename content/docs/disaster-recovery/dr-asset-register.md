@@ -52,17 +52,15 @@ sequenceDiagram
 | Recovery Site/Method | Where and how the asset is restored (hot site, cloud failover, backup restore). |
 | Last Validated Date | Date the entry was last confirmed accurate against the live environment. |
 
-## III. Best Practices & Comparison
+## III. Adoption Considerations
 
-| Document | Primary Purpose | When Used | Owner |
-|---|---|---|---|
-| DR Asset Register | Track which assets exist and their recovery priority | Continuously maintained, discovery-driven | IT infrastructure/asset management |
-| DR Plan Template | Provide step-by-step recovery procedures per system | Built from register data; invoked during a disaster | System/application owners, DR coordinator |
-| DR Approach Document | Define criticality tiers and recovery strategy options | Set once, revisited periodically | DR coordinator, IT/security leadership |
+| Risk | Mitigation |
+|---|---|
+| Register drifts from actual infrastructure between scheduled audits | Reconcile on change-management triggers (provisioning, decommission), not a calendar-only audit |
+| Dependencies left undocumented or partially recorded | Make the dependency field mandatory at asset creation, not an optional cleanup task |
+| Asset carries no accountable business owner | Withhold criticality-tier sign-off until an owner is named |
+| Entry past its review cadence still treated as reliable | Flag stale entries and exclude them from recovery sequencing until re-confirmed |
 
-- Reconcile the register against the CMDB or cloud asset inventory on a fixed cadence, not only before an exercise.
-- Record dependencies explicitly — a missed dependency is the most common cause of a failed recovery sequence.
-- Assign every asset a business owner accountable for confirming its criticality tier and recovery targets.
-- Treat an unvalidated entry older than the review cadence as untrustworthy until re-confirmed.
+An annual audit cadence is the register's biggest lie — a register is only as current as the last change that actually got recorded in it, so the fix is tying updates to the change-management process that already touches every asset being stood up or torn down, rather than to a point-in-time review that's stale again within a quarter. If reconciliation only happens before an exercise, the register is being validated against itself, not against production.
 
 Related: [DR Plan Template](../dr-plan-template/), [DR Approach Document](../dr-approach-document/). See also [Cloud Backup & Recovery Testing Tracker](/docs/cloud-security/cloud-backup-recovery-testing-tracker/) for cloud-specific restore validation.

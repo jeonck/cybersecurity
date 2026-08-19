@@ -60,10 +60,12 @@ graph TD
 | **Authentication** (A) | Digital signature | If the signature decrypts successfully with the sender's public key, the sender's identity is confirmed |
 | **Non-repudiation** (N) | Asymmetric key | Because only the sender holds the private key used to sign, the sender cannot deny having sent the message |
 
-## III. Advanced Topics & Comparison
+## III. Adoption Considerations
 
 | Consideration | Details & Response Strategy |
 |:---:|-------------------|
 | **Computational Load** | Asymmetric-key operations occur twice (signing, enveloping), so adopting a high-performance accelerator (HSM) should be considered |
 | **Certificate Validity** | Before verifying a signature, certificate revocation status must always be checked first via the CRL or OCSP |
 | **Standard Protocols** | Standardized mechanisms are used in **S/MIME**, **PGP**, and electronic tax-invoice systems |
+
+Skipping the revocation check is the failure mode that actually shows up in incident postmortems, not the computational overhead — teams budget for HSM capacity but treat CRL/OCSP lookups as an optional nicety, which quietly reopens the impersonation risk the signature was supposed to close. Wire revocation checking into the verification path as a hard dependency, not a best-effort call that fails open.

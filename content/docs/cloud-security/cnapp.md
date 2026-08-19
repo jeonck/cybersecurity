@@ -42,13 +42,12 @@ flowchart LR
 | **Agentless** Scanning | Snapshot-based analysis minimizes impact on workload performance | Enables flexible scalability and operational convenience |
 | Unified Visibility | Provides a consolidated dashboard for multi-cloud and hybrid-cloud assets | Strengthens governance and speeds up decision-making |
 
-## III. Advanced Topics & Comparison
+## III. Outlook & Future Direction
 
-### CNAPP vs. Siloed Point Solutions
+| Tool Category | Status | Direction |
+|---|---|---|
+| Standalone CSPM / CWPP | Mature, increasingly commoditized | Being absorbed as platform modules |
+| CI/CD artifact scanning | Maturing, still fragmented by ecosystem | Consolidating into platform-native scanning |
+| CNAPP (unified) | Consolidating market, uneven module maturity | Becoming the default RFP category |
 
-| Comparison Item | Individual Point Solutions | CNAPP (Integrated Platform) |
-|----------|----------------------------------|---------------------------|
-| **Structure** | CSPM, CWPP, etc. purchased and operated separately | All security functions integrated within a single platform |
-| **Risk Analysis** | Independent alerts from each tool (alert fatigue) | Context-based correlation analysis |
-| **Security Scope** | Limited to a specific stage (development or operations) | Protects from code to cloud |
-| **Operational Efficiency** | Delayed response due to fragmented data across tools | Immediate response based on unified visibility (SOAR integration) |
+CNAPP isn't really a new detection technology — it's the market correcting for the integration tax of buying CSPM, CWPP, and CI/CD scanning as separate products with separate dashboards and no shared risk context. The near-term risk for buyers isn't whether to consolidate — that direction is already set — it's vendors who bolted acquired point products together under one brand without unifying the underlying data model. Ask for the actual risk-scoring logic behind the dashboard, not just the combined UI, before treating "CNAPP" as a solved checkbox.

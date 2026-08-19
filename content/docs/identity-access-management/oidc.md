@@ -59,21 +59,14 @@ sequenceDiagram
 | **Resource Server** | The server hosting the protected resource (API) | Verifies the **Access Token** and provides the resource to the client |
 | **ID Token** | A **JWT** (JSON Web Token) carrying the user's authentication information | Confirms the user's identity and supplies basic profile information |
 
-## III. Advanced Topics & Comparison
+## III. Vulnerabilities & Security Measures
 
-### A. OIDC Security Vulnerabilities
+| Attack Vector | Primary Control |
+|---|---|
+| ID Token / access token theft | Enforce HTTPS on every channel; short token lifetimes |
+| Redirect URI manipulation | Allowlist only registered Redirect URIs at the IdP |
+| CSRF via forged authentication requests | Unique `state` parameter per request, verified on callback |
+| Stolen authorization code replay | PKCE, especially for public/mobile clients |
+| Forged or unverified ID Token | Verify signature, `exp`, `iss`, and `aud` on every ID Token — never trust an unverified claim |
 
-- **ID Token/Access Token theft**: Risk of account takeover if a token leaks due to a client vulnerability or a lack of **HTTPS**
-- **Weak Redirect URI validation**: Processing a callback outside the registered **Redirect URI** exposes the flow to attack
-- **No state parameter**: Vulnerable to CSRF attacks that can trigger malicious redirects
-- **IdP-level vulnerabilities**: If the **IdP**'s own security is weak, every connected service becomes vulnerable
-
-### B. OIDC Security Hardening
-
-- **Enforce HTTPS**: Use **HTTPS** on every communication channel to encrypt data in transit
-- **Redirect URI allowlisting**: Allow only the **Redirect URI**s registered with the **IdP**, preventing callback-address tampering
-- **Use the state parameter**: Generate a unique **state** value on each authentication request and verify it on callback to defend against CSRF
-- **PKCE (Proof Key for Code Exchange)**: Prevents token issuance after a stolen code — especially important for public clients and mobile apps
-- **ID Token verification**: Verify the **JWT** signature, expiration (**exp**), issuer (**iss**), audience (**aud**), and other required claims
-
-> **Key Point**: Because OIDC extends **OAuth 2.0** to add user authentication, the secure issuance, transmission, and verification of the **ID Token**, together with strong **IdP** security, are essential.
+The ID Token is where most OIDC integration bugs actually live, because it's trivial to decode the JWT and read its claims without ever validating the signature, issuer, or audience — a token that decodes cleanly is not the same as a token that has been verified. Treat "did we call the JWT verification library, not just the JWT parsing library" as a mandatory review question for any OIDC client integration, since the two are easy to confuse and only one of them is actually secure.

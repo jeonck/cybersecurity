@@ -56,18 +56,14 @@ sequenceDiagram
 
 Immediate safety takes priority over documentation; the written report is completed as soon as the situation is stabilized, and access to it is restricted to HR, security, and legal.
 
-## III. Best Practices & Comparison
+## III. Expected Benefits & Implications
 
-| Document | Primary Purpose | Trigger | Owner |
-|---|---|---|---|
-| Workplace Violence Report | Record threats or violence involving personnel | Threatening or violent conduct | HR / Security |
-| [Intern Incident Report](../intern-incident-report/) | Record incidents involving interns/temporary staff | Any intern-related incident | HR |
-| [Structural Damage Incident Report](../structural-damage-incident-report/) | Record physical damage to facilities | Physical damage discovered | Facilities |
+| Benefit | Where It Shows Up |
+|---|---|
+| Demonstrable duty of care | Organization can show it responded appropriately if challenged legally |
+| Consistent legal escalation | Nothing criminal or employment-law-relevant slips through informal handling |
+| Protective follow-through | Documented confirmation that safety measures were actually implemented, not just promised |
 
-- Prioritize physical safety and de-escalation before completing the paperwork.
-- Keep the written description strictly factual; avoid characterizing intent or motive.
-- Restrict report access to HR, security, and legal given the sensitivity of the content.
-- Notify legal counsel promptly whenever the incident may carry criminal or employment-law exposure.
-- Follow up on protective measures (schedule changes, access restrictions) and confirm they were implemented.
+A workplace violence report earns its value less as an HR record and more as evidence the organization took a threat seriously at the time, not just in hindsight — the follow-up field confirming a protective measure was actually implemented is the one practitioners most often skip, and it's precisely the field a plaintiff's attorney or auditor asks about first. Treat "follow-up confirmed" as a required close-out step, not an optional afterthought.
 
 Related: [Intern Incident Report](../intern-incident-report/), [Structural Damage Incident Report](../structural-damage-incident-report/)

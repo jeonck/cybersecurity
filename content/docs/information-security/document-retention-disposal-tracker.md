@@ -49,18 +49,18 @@ flowchart LR
 
 The tracker is updated whenever a new record category is onboarded or a regulation changes, and disposal actions are executed on a recurring schedule (commonly quarterly) once a record's retention period and disposal trigger have both been met, with evidence of destruction logged for audit purposes.
 
-## III. Best Practices & Comparison
+## III. Adoption Considerations
 
-| Document | Primary Purpose | Update Cadence | Owner |
-|---|---|---|---|
-| Document Retention & Disposal Tracker | Define how long records are kept and how they are destroyed | Annual or on regulatory change | Records management, legal |
-| Data Classification Register | Define sensitivity tiers that inform retention requirements | Annual or on data inventory change | Data owners, security team |
-| Data Breach Notification Log | Track breaches, which retained data directly increases the scope of | Per incident | CISO/incident response lead |
+| Adoption Risk | Description | Mitigating Practice |
+|---|---|---|
+| Indefinite retention by default | "Keep everything" becomes the unstated policy without an explicit tracker | Set explicit minimum and maximum retention periods per record category |
+| Soft deletion mistaken for disposal | Simple deletion leaves recoverable data on backups and storage | Tie disposal method to classification tier — cryptographic or physical destruction for restricted data |
+| Missing disposal evidence | No proof destruction occurred when auditors or regulators ask | Capture certificates, logs, and timestamps at the moment of destruction |
 
-- Set both minimum and maximum retention periods explicitly; "keep everything indefinitely" is not a compliant default in most regulatory regimes.
+The tracker's actual security value is shrinking the blast radius of a breach that hasn't happened yet, and that only works if disposal triggers are automated rather than tracked manually — a record category with a defined retention period but no enforced trigger is functionally identical to having no retention policy at all. Treat automating the disposal trigger, not defining the retention period itself, as the harder and more important half of this control.
+
+- Set both minimum and maximum retention periods explicitly.
 - Tie disposal methods to the data's classification tier so restricted data receives cryptographic or physical destruction, not simple deletion.
-- Capture disposal evidence (certificates, logs, timestamps) at the time of destruction, since this is what auditors and regulators will request.
 - Review the tracker whenever the Data Classification Register changes, as reclassified data may carry different retention obligations.
-- Automate disposal triggers where possible to avoid relying on manual tracking across large record volumes.
 
 Related: [Data Classification Register](../data-classification-register/), [Data Breach Notification Log](../data-breach-notification-log/).

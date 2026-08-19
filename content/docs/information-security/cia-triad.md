@@ -36,9 +36,7 @@ flowchart LR
 | Security Threats | Eavesdropping, social engineering, sniffing | Message tampering, replay attacks | DoS/DDoS, ransomware, physical destruction |
 | Countermeasures | Encryption, access control, DRM | Hash functions, digital signatures, MAC | Backups, redundancy (DR/BCP), load balancing |
 
-## III. Advanced Topics & Comparison
-
-### A. Security Trade-offs
+## III. Key Strategies for Successful Adoption
 
 ```mermaid
 flowchart LR
@@ -46,7 +44,9 @@ flowchart LR
     I2["Strengthening integrity\ndeep traffic inspection"] -->|"Service delay"| A3["Reduced availability\nslower response time"]
 ```
 
-### B. Optimization Strategies (Security Balance)
+| Strategy | Application | Risk If Skipped |
+|---|---|---|
+| Risk-based design | Apply differentiated security levels by asset value — confidentiality-first for financial data, availability-first for process control systems | Over-securing low-value assets while under-protecting critical ones |
+| Defense in depth | Layer controls across tiers so a single compromised element doesn't collapse the whole triad | One control failure cascades into a full security breakdown |
 
-- **Risk-based design**: Apply differentiated security levels depending on asset value — prioritizing confidentiality (financial data) or availability (process control systems)
-- **Defense in depth**: Design a layered security architecture so that if one element is compromised, the others can compensate
+Treating CIA as three properties to maximize simultaneously is the most common mistake in control design — nearly every meaningful security decision is actually a trade-off among them, and the real job is choosing which one to protect hardest for a given asset rather than pretending the trade-off doesn't exist. A control proposal that boosts confidentiality or integrity without an explicit accounting of its availability cost should not clear architecture review.

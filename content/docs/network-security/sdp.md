@@ -50,13 +50,11 @@ flowchart LR
 | SDP Gateway | Resource access gateway | Black Cloud: blocks scanning by unauthenticated users (concealment) |
 | SDP Client | User device software | Transmits device posture and location information |
 
-## III. Advanced Topics & Comparison
+## III. Outlook & Future Direction
 
-### SDP vs. Traditional VPN (Virtual Private Network)
+| Approach | Maturity | Direction |
+|---|---|---|
+| Perimeter VPN | Legacy | Being displaced for remote access |
+| SDP / ZTNA | Mainstream | Default for new remote-access deployments |
 
-| Comparison | VPN (Traditional) | SDP (Next Generation) |
-|----------|-----------|-------------|
-| Authentication Method | Authenticate after connecting (ID/password-centric) | Authenticate before connecting (multi-factor device/user verification) |
-| Visibility | All resources exposed upon network connection | Only authorized resources exposed, on a least-privilege basis |
-| Security Model | Perimeter security (a trusted zone exists) | Zero Trust (nothing is trusted) |
-| Connection Method | Network layer (L3/L4) connection | Fine-grained control centered on the application layer (L7) |
+Expect SDP to finish displacing traditional VPN for remote access the way SSL/TLS displaced plaintext HTTP — the pressure isn't purely security, it's that SDP's authenticate-before-connect model maps far more cleanly onto a workforce split across SaaS, cloud, and on-prem than a VPN's all-or-nothing network-level tunnel ever could. The practical tell is scope: a VPN grants network access and trusts firewall rules to restrict it after the fact, while SDP grants access to one resource at a time and never exposes the rest — that difference in default posture is why SDP keeps winning new deployments even where VPN infrastructure is already sunk cost.

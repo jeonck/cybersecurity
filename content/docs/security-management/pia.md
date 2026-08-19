@@ -43,22 +43,13 @@ flowchart LR
 | 4. Developing Improvements | Establish measures to remove or mitigate identified risks | Improvement recommendations |
 | 5. Reporting Results | Draft the assessment result report and submit it to the Ministry of the Interior and Safety / Personal Information Protection Commission | Assessment result report |
 
-## III. Advanced Topics & Comparison
+## III. Adoption Considerations & Security Measures
 
-### Risk Analysis Items and Response Measures
+| Risk Area | Primary Control |
+|---|---|
+| Collecting more personal information than the stated purpose requires | Minimum-collection principle, documented legal basis |
+| Weak technical safeguards around stored personal information | DB encryption (API/TDE), access control, 2FA, retained access logs |
+| Handlers without differentiated access or training | Internal management plan, regular training, role-based authority |
+| Physical exposure of storage media or the server room | Locking devices, media control solutions, restricted room access |
 
-| Risk Analysis Item (Area) | Key Review Content | Response and Improvement Measures |
-|-------------------|--------------|-----------------|
-| Managing the target system | Appropriateness of collection, retention, use, and provision procedures for personal information | Clarify the legal basis, apply the minimum-collection principle |
-| Technical protection measures | Whether encryption, access control, and access-log management are in place | DB encryption (API/TDE), adopt 2FA, retain logs |
-| Administrative protection measures | Establishing internal management plans, training, managing personal-information handlers | Regular training, differentiated authority for handlers |
-| Physical protection measures | Access control for the computer room, security of auxiliary storage media | Install locking devices, adopt media control solutions |
-
-### PIA vs. ISMS-P Certification
-
-| Comparison Item | Privacy Impact Assessment (PIA) | ISMS-P Certification |
-|----------|----------------------|------------|
-| Main Purpose | Preventing risk before introducing a specific system | Verifying the continuous operation of the security management system |
-| Timing | At system build/change time (pre-action) | During system operation (post-action/annual) |
-| Legal Basis | Article 33 of the Personal Information Protection Act | Article 32-2 of the Personal Information Protection Act |
-| Unit of Assessment | A specific personal information file and system | The entire organization or a service unit |
+Run the PIA before the system is built, not after — its entire value is catching a re-identification or over-collection risk while it's still a design change instead of a production incident. Treat it as complementary to, not a substitute for, ISMS-P: a PIA clears one system at build time (Article 33), while ISMS-P verifies the whole management system keeps operating correctly year over year, and organizations that only do one end up blind to the other's failure mode.

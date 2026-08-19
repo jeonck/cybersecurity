@@ -49,18 +49,18 @@ flowchart LR
 
 Classification is assigned when a data asset is created or onboarded, re-validated whenever its content or regulatory scope materially changes, and formally reviewed on an annual cycle by the data owner in coordination with security.
 
-## III. Best Practices & Comparison
+## III. Expected Benefits & Implications
 
-| Document | Primary Purpose | Update Cadence | Owner |
-|---|---|---|---|
-| Data Classification Register | Define sensitivity tiers for all data assets | Annual or on data inventory change | Data owners, security team |
-| Access Rights & Permissions Matrix | Enforce access controls proportionate to classification | Continuous | IAM/Security team |
-| Document Retention & Disposal Tracker | Define how long each classified asset is kept and how it is disposed | Annual | Records management, legal |
+Getting classification wrong doesn't just mis-tag one dataset — because access rights, encryption requirements, and retention periods all key off the tier assigned here, a register with inconsistent or overly granular tiers propagates that inconsistency into every downstream control. The highest-value discipline is keeping the tier scheme small and mechanically enforced, not exhaustively comprehensive.
+
+| Benefit | Where It Shows Up | Time Horizon |
+|---|---|---|
+| Proportionate control cost | Security spend matches actual data sensitivity instead of blanket policy | Ongoing |
+| Cleaner downstream automation | Access and retention systems key off tier without manual interpretation | 1-2 quarters after rollout |
+| Reduced re-identification risk | Re-classification on aggregation catches datasets that outgrew their original tier | Per data change event |
 
 - Use a small, fixed set of tiers (typically three to four) rather than a granular scale that becomes impractical to apply consistently.
 - Assign a named data owner per asset, not a department, so accountability for classification decisions is unambiguous.
-- Where feasible, apply pseudonymization or masking techniques to reduce classification tier and expand safe reuse of data for analytics.
 - Re-classify data whenever it is aggregated, combined, or repurposed, since combined datasets can raise re-identification risk beyond the original tier.
-- Feed classification tiers directly into access and retention decisions instead of maintaining them as separate, disconnected judgments.
 
 Related: [Access Rights & Permissions Matrix](../access-rights-permissions-matrix/), [Document Retention & Disposal Tracker](../document-retention-disposal-tracker/).

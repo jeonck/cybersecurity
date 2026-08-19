@@ -56,17 +56,13 @@ flowchart LR
 | Application Security | WAF, secure coding | Defending against web vulnerabilities (SQLi, XSS) and secure source-code development |
 | Data Security | Encryption, access-log management | Encrypting data at rest and data in transit |
 
-## III. Advanced Topics & Comparison
-
-### A. Comparing Access Control Models
+## III. Comparison & Application
 
 | Model | Key Features | Mechanism |
 |------|---------|---------|
 | Mandatory Access Control (MAC) | Access is granted based on security levels set by an administrator | Security kernel, rule-based |
 | Discretionary Access Control (DAC) | The resource owner grants permissions | ID-based, permission granting |
 | Role-Based Access Control (RBAC) | Permissions are assigned based on the user's job/role | Role-centered within the organization |
-
-### B. Secure OS Access Control Flow
 
 ```mermaid
 flowchart LR
@@ -80,4 +76,4 @@ flowchart LR
     MAC -->|"Level not satisfied"| DENY["Access denied + audit log"]
 ```
 
-> **Key point**: A secure OS's reference monitor mediates every resource access request, applying MAC, DAC, and RBAC in layers to realize the principle of least privilege.
+Most enterprise systems need RBAC as the default and MAC only where regulation demands it, not the other way around — DAC alone is too permissive for anything beyond personal workstations, while pure MAC's rigid labeling overhead rarely justifies itself outside government or defense-grade classification requirements. RBAC hits the maintainability sweet spot for the access-review workload most organizations actually have to sustain.

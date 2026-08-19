@@ -42,13 +42,11 @@ flowchart LR
 | **NGFW** / **SWG** | Detects unauthorized application traffic at the network gateway | Protocol-based identification |
 | **EASM** | Automatically identifies externally exposed assets (attack surface) | External attack surface management |
 
-## III. Advanced Topics & Comparison
+## III. Adoption Considerations
 
-### Comparison of Governance Strategies for Addressing Shadow IT
+| Approach | Strategic Direction | Where It Fits |
+|---|---|---|
+| Control-focused (block by default) | Prohibit unauthorized services outright | Regulated, air-gapped, or high-security environments (finance, defense) |
+| Enable-focused (adopt by default) | Formally onboard a service once it clears security review | Startups and product teams where blocking kills velocity |
 
-| Category | Control-Focused | Enabling-Focused |
-|------|---------------------------|----------------------------|
-| **Strategic Direction** | Outright blocking and prohibition of unauthorized services | Formal adoption of services as sanctioned assets once security requirements are met |
-| **Advantages** | Reliable elimination of security risk | Improved productivity and greater development agility |
-| **Disadvantages** | Increased user inconvenience, risk of workaround paths | Increased management points and higher security cost |
-| **Typical Use Cases** | Network-separated environments, closed networks in finance/defense | Startups, flexible IT environments in general enterprises |
+Outright blocking looks like the safer choice on paper, and in practice it's usually what manufactures the next round of Shadow IT — users don't stop needing the capability, they just find a way around the block that's now also invisible to the security team. The more durable strategy is a fast, well-publicized path to sanctioning a tool (CASB-backed review, a standard security questionnaire, a committed turnaround SLA), so that asking first actually becomes easier than asking forgiveness.
