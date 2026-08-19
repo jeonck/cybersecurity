@@ -15,6 +15,11 @@ hero:
   title: "Cybersecurity Knowledge Base"
   subtitle: A practitioner's library of **cybersecurity templates and documents** — policies, trackers, logs, and report formats — paired with a **concept reference library** covering cryptography, IAM, offensive security, and more, organised across **11 domains**.
 
+  image:
+    path: "images"
+    filename: "hero-illustration.svg"
+    alt: "Preview of a Cybersecurity Knowledge Base document page"
+
   ctaButton:
     icon: rocket_launch
     btnText: "Browse the Docs"
