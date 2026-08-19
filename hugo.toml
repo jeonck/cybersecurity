@@ -47,7 +47,9 @@ defaultContentLanguage = "en"
     copyright = "© :YEAR: Cybersecurity Knowledge Base. Built with [**Lotus Docs**](https://github.com/colinwilson/lotusdocs)"
 
   [params.social]
-    github = "https://github.com/jeonck/cybersecurity"
+    # Path only — the theme prepends "https://github.com/" itself.
+    # A full URL here produces https://github.com/https://github.com/... (404).
+    github = "jeonck/cybersecurity"
 
   [params.docs]
     title           = "Cybersecurity Knowledge Base"
